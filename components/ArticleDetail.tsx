@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import { ArrowLeft, Clock, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
-import { ArticleData } from '../types';
+import { ArrowLeft, Clock, Facebook, Twitter, Linkedin } from 'lucide-react';
+import type { ArticleData } from '../types';
 
 interface ArticleDetailProps {
   article: ArticleData;

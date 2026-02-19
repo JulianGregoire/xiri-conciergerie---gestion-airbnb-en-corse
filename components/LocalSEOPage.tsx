@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
-import { ShieldCheck, MapPin, CheckCircle, ArrowRight, Home, Star } from 'lucide-react';
-import { LocalCityData } from '../types';
+import { ShieldCheck, MapPin, CheckCircle, ArrowRight, Star } from 'lucide-react';
+import type { LocalCityData } from '../types';
 
 interface LocalSEOPageProps {
   city: LocalCityData;

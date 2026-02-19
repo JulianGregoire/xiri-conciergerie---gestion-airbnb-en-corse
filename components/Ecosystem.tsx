@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CreditCard, Zap, Heart, ShieldCheck } from 'lucide-react';
+import { CreditCard, Heart, ShieldCheck } from 'lucide-react';
 
 const Ecosystem: React.FC = () => {
   const advantages = [

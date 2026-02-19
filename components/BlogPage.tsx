@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Search, Filter } from 'lucide-react';
+import { ArrowRight, Search } from 'lucide-react';
 import { blogData } from '../data/blogData';
 
 interface BlogPageProps {

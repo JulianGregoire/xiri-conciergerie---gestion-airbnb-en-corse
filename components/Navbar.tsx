@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown, MapPin } from 'lucide-react';
-import { View } from '../types';
+import type { View } from '../types';
 
 interface NavbarProps {
   currentView: View;

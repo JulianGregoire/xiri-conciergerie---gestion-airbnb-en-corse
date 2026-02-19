@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { ArrowLeft, Minus } from 'lucide-react';
-import { ServiceData } from '../types';
+import type { ServiceData } from '../types';
 
 interface ServiceDetailProps {
   service: ServiceData;

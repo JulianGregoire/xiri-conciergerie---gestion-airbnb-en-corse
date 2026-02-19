@@ -1,0 +1,40 @@
+---
+import App from '../../App';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xiri Conciergerie | L'Art de Vivre en Corse</title>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'xiri-navy': '#1B2B44',
+              'xiri-gold': '#C5A059',
+              'xiri-bg': '#F0F7FA',
+            },
+            fontFamily: {
+              serif: ['Libre Baskerville', 'serif'],
+              sans: ['Montserrat', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <App client:load />
+  </body>
+</html>

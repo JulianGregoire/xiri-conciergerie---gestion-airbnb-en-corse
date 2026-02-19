@@ -1,5 +1,5 @@
 
-import { ServiceData } from '../types';
+import type { ServiceData } from '../types';
 
 export const servicesData: Record<string, ServiceData> = {
   "gestion-airbnb": {

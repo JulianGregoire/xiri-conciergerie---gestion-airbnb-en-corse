@@ -1,5 +1,5 @@
 
-import { LocalCityData } from '../types';
+import type { LocalCityData } from '../types';
 
 export const localSeoData: Record<string, LocalCityData> = {
   "porto-vecchio": {

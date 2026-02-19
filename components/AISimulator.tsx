@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
-import { Sparkles, Loader2, MapPin, CheckCircle2, ArrowRight, TrendingUp, Calendar, Info, Mail, FileText, Download, Check, Share2, ShieldCheck } from 'lucide-react';
+import { Sparkles, Loader2, MapPin, CheckCircle2, ArrowRight, TrendingUp, Mail, FileText, Download, Check, ShieldCheck } from 'lucide-react';
 
 const AISimulator: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -58,7 +58,7 @@ const AISimulator: React.FC = () => {
     setEmailSent(false);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.PUBLIC_GEMINI_API_KEY });
       const prompt = `Tu es un expert analyste du marché immobilier de prestige en Corse pour XIRI CONCIERGERIE. 
       Estime le potentiel locatif annuel pour ce bien :
       - Localisation : ${formData.city} (Corse)
@@ -109,7 +109,8 @@ const AISimulator: React.FC = () => {
     setGeneratingReport(true);
     
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.PUBLIC_GEMINI_API_KEY });
+
       const reportPrompt = `Rédige une note de synthèse professionnelle pour un propriétaire en Corse de la part de XIRI CONCIERGERIE.
       Détails : ${formData.type} à ${formData.city}. 
       Focus : Excellence opérationnelle, sécurité juridique et valorisation du bien. Ton : Sobre et luxueux.`;

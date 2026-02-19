@@ -19,7 +19,7 @@ import LocalSEOPage from './components/LocalSEOPage';
 import Footer from './components/Footer';
 import ServiceDetail from './components/ServiceDetail';
 import ArticleDetail from './components/ArticleDetail';
-import { View } from './types';
+import type { View } from './types';
 import { servicesData } from './data/servicesData';
 import { blogData } from './data/blogData';
 import { localSeoData } from './data/localSeoData';

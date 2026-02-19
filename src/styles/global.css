@@ -1,0 +1,33 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F0F7FA;
+  color: #1B2B44;
+  scroll-behavior: smooth;
+}
+
+.editorial-spacing {
+  letter-spacing: 0.05em;
+}
+
+.framed-img {
+  position: relative;
+  padding: 10px;
+  background: white;
+  box-shadow: 0 20px 40px rgba(27, 43, 68, 0.05);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
