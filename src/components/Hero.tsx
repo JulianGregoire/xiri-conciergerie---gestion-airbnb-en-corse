@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
               }`}
           >
             <img
-              src={img}
+              src={img.src}
               alt={`Xiri Conciergerie - Hero ${index + 1}`}
               className="w-full h-full object-cover scale-105 animate-[slow-zoom_20s_ease-in-out_infinite]"
             />

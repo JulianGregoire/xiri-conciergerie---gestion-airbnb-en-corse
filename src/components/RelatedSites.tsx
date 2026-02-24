@@ -59,7 +59,7 @@ const RelatedSites: React.FC = () => {
             >
               <div className="relative aspect-[3/4] overflow-hidden framed-img transition-transform duration-1000 group-hover:-translate-y-4">
                 <img
-                  src={site.image}
+                  src={site.image.src || site.image}
                   alt={site.title}
                   className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 grayscale-[0.3] group-hover:grayscale-0"
                 />
