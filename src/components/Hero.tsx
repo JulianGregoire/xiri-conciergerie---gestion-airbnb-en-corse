@@ -1,9 +1,23 @@
 
 // @ts-nocheck
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import heroImage from '../images/hero.xiri.jpg';
+import heroImage1 from '../images/hero.xiri1.jpg';
+import heroImage2 from '../images/hero.xiri2.jpg';
+import heroImage3 from '../images/hero.xiri3.jpg';
 
 const Hero: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [heroImage, heroImage1, heroImage2, heroImage3];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(timer);
+  }, [images.length]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -23,16 +37,24 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Xiri Conciergerie - Gestion Airbnb en Corse"
-          className="w-full h-full object-cover scale-105 animate-[slow-zoom_20s_ease-in-out_infinite]"
-        />
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-xiri-navy/20"></div>
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+          >
+            <img
+              src={img}
+              alt={`Xiri Conciergerie - Hero ${index + 1}`}
+              className="w-full h-full object-cover scale-105 animate-[slow-zoom_20s_ease-in-out_infinite]"
+            />
+          </div>
+        ))}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-xiri-navy/20 z-10"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 text-center text-white">
         <div className="space-y-8 max-w-5xl mx-auto">
           <div className="space-y-4 animate-fade-in-up">
             <span className="text-[10px] md:text-[11px] uppercase tracking-[0.6em] text-xiri-gold font-extrabold block mb-4 drop-shadow-md">
@@ -65,7 +87,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-
       <style dangerouslySetInnerHTML={{
         __html: `
         @keyframes slow-zoom {
@@ -86,3 +107,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
