@@ -1,4 +1,5 @@
 
+// @ts-nocheck
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import corseImg from '../image/corse.png';

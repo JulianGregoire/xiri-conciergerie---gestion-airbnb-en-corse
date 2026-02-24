@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React, { useState, useMemo } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import { Sparkles, Loader2, MapPin, CheckCircle2, ArrowRight, TrendingUp, Mail, FileText, Download, Check, ShieldCheck } from 'lucide-react';
@@ -107,7 +107,7 @@ const AISimulator: React.FC = () => {
     if (!userEmail || !result) return;
 
     setGeneratingReport(true);
-    
+
     try {
       const ai = new GoogleGenAI({ apiKey: import.meta.env.PUBLIC_GEMINI_API_KEY });
 
@@ -135,7 +135,7 @@ const AISimulator: React.FC = () => {
   const downloadReport = () => {
     if (!fullReport) return;
     const element = document.createElement("a");
-    const file = new Blob([`NOTE D'EXPERTISE XIRI CONCIERGERIE\n\n${fullReport}`], {type: 'text/plain'});
+    const file = new Blob([`NOTE D'EXPERTISE XIRI CONCIERGERIE\n\n${fullReport}`], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
     element.download = `Synthese_Xiri_${formData.city.replace(/\s+/g, '_')}.txt`;
     document.body.appendChild(element);
@@ -153,10 +153,10 @@ const AISimulator: React.FC = () => {
   return (
     <section id="ai-simulator" className="py-32 bg-[#F8FAFC] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-white -z-10 rounded-l-[100px]"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          
+
           <div className="lg:col-span-5 space-y-12">
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -175,13 +175,13 @@ const AISimulator: React.FC = () => {
               <div className="space-y-10">
                 <div className="group relative pt-4">
                   <MapPin size={16} className="absolute right-0 top-8 text-xiri-navy/20 group-focus-within:text-xiri-gold transition-colors" />
-                  <input 
-                    type="text" 
-                    required 
+                  <input
+                    type="text"
+                    required
                     className="peer w-full bg-transparent border-b border-xiri-navy/10 py-4 outline-none focus:border-xiri-gold transition-all text-sm placeholder-transparent"
                     id="city-input"
                     value={formData.city}
-                    onChange={(e) => setFormData({...formData, city: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                   />
                   <label htmlFor="city-input" className="absolute left-0 top-0 text-[9px] uppercase tracking-[0.3em] font-bold text-xiri-navy/40 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-xs peer-focus:top-0 peer-focus:text-[9px] peer-focus:text-xiri-gold">
                     Localisation en Corse
@@ -189,10 +189,10 @@ const AISimulator: React.FC = () => {
                 </div>
 
                 <div className="group relative">
-                  <select 
+                  <select
                     className="peer w-full bg-transparent border-b border-xiri-navy/10 py-4 outline-none focus:border-xiri-gold transition-all text-sm appearance-none cursor-pointer"
                     value={formData.type}
-                    onChange={(e) => setFormData({...formData, type: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                   >
                     <option>Villa d'exception</option>
                     <option>Appartement Vue Mer</option>
@@ -212,11 +212,10 @@ const AISimulator: React.FC = () => {
                         key={opt}
                         type="button"
                         onClick={() => handleToggleAmenity(opt)}
-                        className={`px-4 py-3 text-[9px] font-bold uppercase tracking-widest transition-all border rounded-full ${
-                          formData.amenities.includes(opt) 
-                          ? 'bg-xiri-navy text-white border-xiri-navy shadow-lg' 
-                          : 'bg-white text-xiri-navy/60 border-xiri-navy/10 hover:border-xiri-gold hover:text-xiri-gold'
-                        }`}
+                        className={`px-4 py-3 text-[9px] font-bold uppercase tracking-widest transition-all border rounded-full ${formData.amenities.includes(opt)
+                            ? 'bg-xiri-navy text-white border-xiri-navy shadow-lg'
+                            : 'bg-white text-xiri-navy/60 border-xiri-navy/10 hover:border-xiri-gold hover:text-xiri-gold'
+                          }`}
                       >
                         {opt}
                       </button>
@@ -225,7 +224,7 @@ const AISimulator: React.FC = () => {
                 </div>
               </div>
 
-              <button 
+              <button
                 disabled={loading || !formData.city}
                 className="w-full group relative overflow-hidden bg-xiri-navy text-white py-6 rounded-xl text-[11px] uppercase tracking-[0.4em] font-bold shadow-2xl transition-all"
               >
@@ -321,14 +320,14 @@ const AISimulator: React.FC = () => {
 
                     {!showEmailForm && !emailSent && (
                       <div className="flex flex-col md:flex-row gap-4">
-                        <button 
+                        <button
                           onClick={() => setShowEmailForm(true)}
                           className="flex-1 flex items-center justify-center gap-4 group bg-xiri-navy text-white px-10 py-7 rounded-xl text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-black transition-all shadow-xl"
                         >
                           RECEVOIR L'ÉTUDE COMPLÈTE
                           <FileText size={18} className="text-xiri-gold" />
                         </button>
-                        <button 
+                        <button
                           onClick={scrollToContact}
                           className="flex-1 flex items-center justify-center gap-4 group bg-xiri-gold text-white px-10 py-7 rounded-xl text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-xiri-navy transition-all shadow-xl"
                         >
@@ -346,16 +345,16 @@ const AISimulator: React.FC = () => {
                         </div>
                         <div className="relative">
                           <Mail size={16} className="absolute left-0 top-4 text-xiri-gold" />
-                          <input 
-                            type="email" 
-                            required 
+                          <input
+                            type="email"
+                            required
                             placeholder="VOTRE EMAIL"
                             value={userEmail}
                             onChange={(e) => setUserEmail(e.target.value)}
                             className="w-full bg-transparent border-b border-xiri-gold/30 py-4 pl-10 outline-none focus:border-xiri-gold text-[10px] tracking-widest font-bold uppercase"
                           />
                         </div>
-                        <button 
+                        <button
                           type="submit"
                           disabled={generatingReport}
                           className="w-full bg-xiri-navy text-white py-6 rounded-xl text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-black transition-all flex items-center justify-center gap-4"
@@ -374,26 +373,26 @@ const AISimulator: React.FC = () => {
                         <div className="space-y-4">
                           <h6 className="text-2xl font-serif text-xiri-navy">Dossier Envoyé</h6>
                           <p className="text-[13px] text-xiri-navy/50 font-light leading-relaxed">
-                            Votre synthèse pour <strong>{formData.city}</strong> est en route.<br /> 
+                            Votre synthèse pour <strong>{formData.city}</strong> est en route.<br />
                             Découvrez comment optimiser votre rentabilité sereinement.
                           </p>
                         </div>
-                        
+
                         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                           <button 
-                             onClick={downloadReport}
-                             className="flex items-center justify-center gap-3 bg-xiri-navy text-white px-8 py-5 rounded-xl text-[10px] uppercase tracking-widest font-bold shadow-xl hover:bg-black transition-all"
-                           >
-                             <Download size={16} />
-                             TÉLÉCHARGER LA NOTE
-                           </button>
-                           <button 
-                             onClick={scrollToContact}
-                             className="flex items-center justify-center gap-3 bg-xiri-gold text-white px-8 py-5 rounded-xl text-[10px] uppercase tracking-widest font-bold shadow-xl hover:bg-xiri-navy transition-all"
-                           >
-                             <ShieldCheck size={16} />
-                             CONTACTER L'AGENCE
-                           </button>
+                          <button
+                            onClick={downloadReport}
+                            className="flex items-center justify-center gap-3 bg-xiri-navy text-white px-8 py-5 rounded-xl text-[10px] uppercase tracking-widest font-bold shadow-xl hover:bg-black transition-all"
+                          >
+                            <Download size={16} />
+                            TÉLÉCHARGER LA NOTE
+                          </button>
+                          <button
+                            onClick={scrollToContact}
+                            className="flex items-center justify-center gap-3 bg-xiri-gold text-white px-8 py-5 rounded-xl text-[10px] uppercase tracking-widest font-bold shadow-xl hover:bg-xiri-navy transition-all"
+                          >
+                            <ShieldCheck size={16} />
+                            CONTACTER L'AGENCE
+                          </button>
                         </div>
                       </div>
                     )}

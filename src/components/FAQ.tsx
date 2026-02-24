@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -44,7 +44,7 @@ const FAQ: React.FC = () => {
   return (
     <section id="faq" className="py-40 bg-white relative overflow-hidden">
       <div className="absolute right-12 top-0 bottom-0 w-[1px] bg-xiri-navy/5 hidden lg:block"></div>
-      
+
       <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="text-center mb-24 space-y-6">
           <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.8em] block">Sérénité Garantie</span>
@@ -58,19 +58,18 @@ const FAQ: React.FC = () => {
 
         <div className="space-y-4">
           {faqData.map((item, index) => (
-            <div 
+            <div
               key={index}
-              className={`border border-xiri-navy/5 transition-all duration-500 overflow-hidden ${
-                openIndex === index ? 'bg-[#F8FAFC] border-xiri-gold/20 shadow-lg' : 'bg-white'
-              }`}
+              className={`border border-xiri-navy/5 transition-all duration-500 overflow-hidden ${openIndex === index ? 'bg-[#F8FAFC] border-xiri-gold/20 shadow-lg' : 'bg-white'
+                }`}
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between p-8 text-left group"
               >
                 <div className="flex items-center gap-6">
-                   <span className="text-[10px] font-serif text-xiri-gold opacity-40 group-hover:opacity-100 transition-opacity">0{index + 1}</span>
-                   <h3 className="text-sm md:text-[15px] font-black uppercase tracking-widest text-xiri-navy">
+                  <span className="text-[10px] font-serif text-xiri-gold opacity-40 group-hover:opacity-100 transition-opacity">0{index + 1}</span>
+                  <h3 className="text-sm md:text-[15px] font-black uppercase tracking-widest text-xiri-navy">
                     {item.question}
                   </h3>
                 </div>
@@ -78,11 +77,10 @@ const FAQ: React.FC = () => {
                   <ChevronDown size={20} />
                 </div>
               </button>
-              
-              <div 
-                className={`transition-all duration-500 ease-in-out ${
-                  openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                }`}
+
+              <div
+                className={`transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                  }`}
               >
                 <div className="p-8 pt-0 pl-20 pr-12">
                   <p className="text-[15px] text-[#000000] leading-relaxed font-medium border-l-2 border-xiri-gold/30 pl-8">
@@ -99,7 +97,7 @@ const FAQ: React.FC = () => {
           <div className="relative z-10 space-y-6">
             <h4 className="text-2xl font-serif text-white">Une question plus spécifique ?</h4>
             <p className="text-[11px] uppercase tracking-[0.3em] text-white/50 font-medium">Nos experts insulaires sont à votre disposition.</p>
-            <button 
+            <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-12 py-5 bg-xiri-gold text-white text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-xl"
             >

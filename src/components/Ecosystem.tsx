@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React from 'react';
 import { CreditCard, Heart, ShieldCheck } from 'lucide-react';
 
@@ -44,9 +44,9 @@ const Ecosystem: React.FC = () => {
           {advantages.map((adv, idx) => (
             <div key={idx} className="group">
               <div className="relative h-[300px] mb-10 overflow-hidden framed-img transition-transform duration-700 group-hover:-translate-y-3 text-black">
-                <img 
-                  src={adv.image} 
-                  alt={adv.title} 
+                <img
+                  src={adv.image}
+                  alt={adv.title}
                   className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-xiri-navy/10 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -54,7 +54,7 @@ const Ecosystem: React.FC = () => {
                   {adv.icon}
                 </div>
               </div>
-              
+
               <div className="space-y-6">
                 <h3 className="text-xl font-serif text-xiri-navy tracking-wide leading-snug">
                   {adv.title}

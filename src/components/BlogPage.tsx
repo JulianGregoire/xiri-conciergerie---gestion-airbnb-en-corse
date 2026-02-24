@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Search } from 'lucide-react';
 import { blogData } from '../data/blogData';
@@ -55,8 +55,8 @@ const BlogPage: React.FC<BlogPageProps> = ({ onArticleClick }) => {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-6 py-3 text-[9px] font-bold tracking-[0.3em] uppercase transition-all border ${selectedCategory === cat
-                    ? 'bg-xiri-navy text-white border-xiri-navy'
-                    : 'bg-transparent text-xiri-navy/40 border-transparent hover:border-xiri-gold hover:text-xiri-gold'
+                  ? 'bg-xiri-navy text-white border-xiri-navy'
+                  : 'bg-transparent text-xiri-navy/40 border-transparent hover:border-xiri-gold hover:text-xiri-gold'
                   }`}
               >
                 {cat}

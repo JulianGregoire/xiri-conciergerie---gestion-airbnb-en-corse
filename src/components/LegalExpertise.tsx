@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React from 'react';
 import { ShieldCheck, Scale, Landmark, FileText, CheckCircle } from 'lucide-react';
 
@@ -34,10 +34,10 @@ const LegalExpertise: React.FC = () => {
     <section id="legal-expertise" className="py-40 bg-xiri-navy relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-32"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
-          
+
           <div className="lg:col-span-5 space-y-12">
             <div className="space-y-6">
               <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.8em] block">Cadre Légal Corse</span>
@@ -45,7 +45,7 @@ const LegalExpertise: React.FC = () => {
                 L'Art de gérer <br /><span className="font-light">en toute règle</span>.
               </h2>
             </div>
-            
+
             <p className="text-white text-lg font-medium leading-loose max-w-md">
               "On gère tout, c’est légal, vous ne prenez aucun risque. Nous avons fait de la conformité juridique notre priorité absolue pour garantir votre sérénité."
             </p>

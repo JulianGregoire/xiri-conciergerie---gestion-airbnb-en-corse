@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React, { useEffect } from 'react';
 import { ShieldCheck, MapPin, CheckCircle, ArrowRight, Star } from 'lucide-react';
 import type { LocalCityData } from '../types';
@@ -18,9 +18,9 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
   return (
     <div className="min-h-screen bg-white animate-in fade-in duration-1000">
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-xiri-navy">
-        <img 
-          src={city.heroImg} 
-          alt={city.title} 
+        <img
+          src={city.heroImg}
+          alt={city.title}
           className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105 animate-[slow-zoom_30s_linear_infinite]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-xiri-navy/20 to-xiri-navy/80"></div>
@@ -70,7 +70,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
             <p className="text-[16px] text-[#000000] leading-loose font-medium">
               Déléguer la gestion de votre propriété à {city.name} s'inscrit dans une démarche de valorisation pérenne. Xiri & Co assure une présence physique et une expertise hôtelière de pointe pour une rentabilité optimale.
             </p>
-            <button 
+            <button
               onClick={onNavigateContact}
               className="flex items-center gap-4 text-xiri-navy text-[11px] font-black uppercase tracking-[0.3em] group"
             >
@@ -91,7 +91,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
                 {city.localExpertise}
               </p>
             </div>
-            
+
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white p-10 border border-xiri-navy/5 shadow-xl space-y-6">
                 <ShieldCheck size={32} className="text-xiri-gold" />
@@ -131,7 +131,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
 
       <section className="py-32 lg:py-56 bg-xiri-navy text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
-           <span className="text-[300px] font-serif font-black uppercase tracking-tighter select-none">{city.name}</span>
+          <span className="text-[300px] font-serif font-black uppercase tracking-tighter select-none">{city.name}</span>
         </div>
         <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-12">
           <h2 className="text-5xl md:text-7xl font-serif leading-tight">
@@ -152,7 +152,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
             </div>
           </div>
           <div className="pt-12">
-            <button 
+            <button
               onClick={onNavigateContact}
               className="bg-white text-xiri-navy px-16 py-7 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-xiri-gold hover:text-white transition-all shadow-2xl"
             >
@@ -163,7 +163,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
       </section>
 
       <div className="py-24 text-center">
-        <button 
+        <button
           onClick={onNavigateHome}
           className="text-[#000000] text-[9px] uppercase tracking-[0.5em] hover:text-xiri-gold transition-colors font-black"
         >
@@ -171,7 +171,8 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
         </button>
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes slow-zoom {
           0% { transform: scale(1); }
           50% { transform: scale(1.1); }

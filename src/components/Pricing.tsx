@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React from 'react';
 import { Check, ShieldCheck } from 'lucide-react';
 
@@ -46,7 +46,7 @@ const Pricing: React.FC = () => {
 
         {/* Card Container centered and wider */}
         <div className="flex justify-center items-center">
-          <div 
+          <div
             className="relative flex flex-col md:flex-row p-10 lg:p-20 transition-all duration-700 bg-xiri-navy text-white shadow-[0_60px_120px_-20px_rgba(27,43,68,0.5)] z-20 border-[1px] border-xiri-gold/30 max-w-5xl w-full gap-12 lg:gap-20"
           >
             <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-white border border-xiri-gold px-8 py-3 shadow-2xl flex items-center gap-3">

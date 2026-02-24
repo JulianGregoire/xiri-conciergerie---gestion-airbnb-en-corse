@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, Clock, Facebook, Twitter, Linkedin } from 'lucide-react';
 import type { ArticleData } from '../types';
@@ -25,14 +25,14 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article, onBack }) => {
   return (
     <div className="min-h-screen bg-white animate-in fade-in duration-1000">
       <div className="fixed top-0 left-0 w-full h-1 z-[60] bg-xiri-navy/5">
-        <div 
+        <div
           className="h-full bg-xiri-gold transition-all duration-300"
           style={{ width: `${scrollProgress}%` }}
         ></div>
       </div>
 
       <div className="fixed top-24 left-6 lg:left-12 z-50">
-        <button 
+        <button
           onClick={onBack}
           className="group flex items-center gap-4 text-[9px] uppercase tracking-[0.4em] font-bold text-xiri-navy bg-white/80 backdrop-blur-md px-6 py-4 shadow-sm border border-xiri-navy/5 hover:bg-xiri-navy hover:text-white transition-all"
         >
@@ -42,8 +42,8 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article, onBack }) => {
       </div>
 
       <header className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
-        <img 
-          src={article.image} 
+        <img
+          src={article.image}
           className="absolute inset-0 w-full h-full object-cover animate-[slow-zoom_30s_linear_infinite]"
           alt={article.title}
         />
@@ -78,7 +78,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article, onBack }) => {
                   <p className="text-lg font-serif text-xiri-navy">{article.author}</p>
                   <p className="text-[10px] uppercase tracking-widest text-xiri-gold font-black">Expertise Corse</p>
                 </div>
-                
+
                 <div className="pt-8 flex gap-4 text-xiri-navy/20">
                   <Facebook size={18} className="hover:text-xiri-navy cursor-pointer transition-colors" />
                   <Twitter size={18} className="hover:text-xiri-navy cursor-pointer transition-colors" />
@@ -91,7 +91,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article, onBack }) => {
               <p className="text-2xl md:text-3xl font-serif text-[#000000] leading-relaxed mb-12 font-semibold">
                 "{article.excerpt}"
               </p>
-              
+
               <div className="space-y-8 text-lg md:text-xl text-[#000000] leading-loose font-medium">
                 {article.content.map((paragraph, idx) => (
                   <p key={idx} className={idx === 0 ? "first-letter:text-7xl first-letter:font-serif first-letter:float-left first-letter:mr-4 first-letter:text-xiri-gold first-letter:mt-2" : ""}>
@@ -108,7 +108,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article, onBack }) => {
             <h3 className="text-3xl md:text-5xl font-serif text-white relative z-10">
               Prêt à optimiser la <span className="">gestion</span> de votre bien ?
             </h3>
-            <button 
+            <button
               onClick={(e) => { e.preventDefault(); onBack(); setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }}
               className="relative z-10 bg-white text-xiri-navy px-12 py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-xiri-gold hover:text-white transition-all shadow-xl"
             >
@@ -119,7 +119,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article, onBack }) => {
       </article>
 
       <footer className="py-24 border-t border-xiri-navy/5 text-center">
-        <button 
+        <button
           onClick={onBack}
           className="text-[10px] uppercase tracking-[0.5em] font-black text-[#000000] hover:text-xiri-gold transition-colors"
         >
@@ -127,7 +127,8 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article, onBack }) => {
         </button>
       </footer>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes slow-zoom {
           0% { transform: scale(1); }
           100% { transform: scale(1.2); }

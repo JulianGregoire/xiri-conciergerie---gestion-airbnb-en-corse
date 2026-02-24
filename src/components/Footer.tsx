@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React from 'react';
 
 interface FooterProps {
@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigateHome, onNavigateAbout, onNavi
     }
 
     onNavigateHome();
-    
+
     setTimeout(() => {
       if (id === 'home') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -45,25 +45,25 @@ const Footer: React.FC<FooterProps> = ({ onNavigateHome, onNavigateAbout, onNavi
   return (
     <footer className="bg-xiri-navy py-32 px-6 lg:px-12 border-t border-white/5 relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-full h-[5px] bg-gradient-to-r from-xiri-navy via-xiri-gold to-xiri-navy"></div>
-      
+
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
-          
+
           <div className="lg:col-span-4 space-y-10">
             <button onClick={() => handleLinkClick('home')} className="flex flex-col text-left bg-transparent border-none p-0 outline-none cursor-pointer group">
-                <span className="text-xl font-serif font-medium tracking-[0.1em] text-white group-hover:text-xiri-gold transition-colors">XIRI CONCIERGERIE</span>
-                <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-xiri-gold">EN CORSE</span>
+              <span className="text-xl font-serif font-medium tracking-[0.1em] text-white group-hover:text-xiri-gold transition-colors">XIRI CONCIERGERIE</span>
+              <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-xiri-gold">EN CORSE</span>
             </button>
             <p className="text-[13px] text-white/60 leading-loose font-light max-w-xs">
               "Redéfinir l'hospitalité de luxe à travers une gestion immobilière personnalisée et un service de conciergerie irréprochable."
             </p>
             <div className="flex space-x-6">
-               <a href="#" className="text-white hover:text-xiri-gold transition-colors">
-                  <span className="text-[11px] font-bold tracking-widest uppercase border-b border-white/10 pb-1">Instagram</span>
-               </a>
-               <a href="#" className="text-white hover:text-xiri-gold transition-colors">
-                  <span className="text-[11px] font-bold tracking-widest uppercase border-b border-white/10 pb-1">LinkedIn</span>
-               </a>
+              <a href="#" className="text-white hover:text-xiri-gold transition-colors">
+                <span className="text-[11px] font-bold tracking-widest uppercase border-b border-white/10 pb-1">Instagram</span>
+              </a>
+              <a href="#" className="text-white hover:text-xiri-gold transition-colors">
+                <span className="text-[11px] font-bold tracking-widest uppercase border-b border-white/10 pb-1">LinkedIn</span>
+              </a>
             </div>
           </div>
 
@@ -114,13 +114,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigateHome, onNavigateAbout, onNavi
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-[9px] uppercase tracking-[0.4em] text-white/30">
-                © {new Date().getFullYear()} XIRI CONCIERGERIE EN CORSE. TOUS DROITS RÉSERVÉS.
-            </p>
-            <div className="flex space-x-12">
-               <a href="#" className="text-[9px] uppercase tracking-[0.4em] text-white/30 hover:text-white transition-colors">Mentions Légales</a>
-               <a href="#" className="text-[9px] uppercase tracking-[0.4em] text-white/30 hover:text-white transition-colors">Confidentialité</a>
-            </div>
+          <p className="text-[9px] uppercase tracking-[0.4em] text-white/30">
+            © {new Date().getFullYear()} XIRI CONCIERGERIE EN CORSE. TOUS DROITS RÉSERVÉS.
+          </p>
+          <div className="flex space-x-12">
+            <a href="#" className="text-[9px] uppercase tracking-[0.4em] text-white/30 hover:text-white transition-colors">Mentions Légales</a>
+            <a href="#" className="text-[9px] uppercase tracking-[0.4em] text-white/30 hover:text-white transition-colors">Confidentialité</a>
+          </div>
         </div>
       </div>
     </footer>

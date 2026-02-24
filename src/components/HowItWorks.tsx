@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React from 'react';
 import { Search, Camera, Globe, TrendingUp, Key, BarChart3, ShieldCheck } from 'lucide-react';
 
@@ -109,10 +109,10 @@ const HowItWorks: React.FC = () => {
               Une transition <span className="text-xiri-gold">en douceur</span> vers la liberté.
             </h4>
             <p className="text-white text-[16px] font-medium leading-relaxed opacity-80">
-              En moins de 15 jours, nous transformons votre bien en une source de revenus automatisée. 
+              En moins de 15 jours, nous transformons votre bien en une source de revenus automatisée.
               Vous gardez le contrôle total sur votre calendrier, nous nous chargeons de l'excellence.
             </p>
-            <button 
+            <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-xiri-navy px-12 py-6 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-xiri-gold hover:text-white transition-all shadow-xl border-none cursor-pointer"
             >

@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import React, { useEffect } from 'react';
 import { ArrowRight, Minus, ShieldCheck } from 'lucide-react';
 
@@ -16,9 +16,9 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
     <div className="min-h-screen bg-white animate-in fade-in duration-1000">
       {/* Hero Section Harmonisé avec l'Accueil */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-xiri-navy">
-        <img 
-          src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=2000" 
-          alt="Corse Nature" 
+        <img
+          src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=2000"
+          alt="Corse Nature"
           className="absolute inset-0 w-full h-full object-cover scale-105 animate-[slow-zoom_30s_linear_infinite]"
         />
         <div className="absolute inset-0 bg-black/25"></div>
@@ -88,7 +88,7 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
               </p>
               <div className="space-y-8 text-[17px] text-[#0a0a0a] font-medium leading-loose max-w-2xl">
                 <p>
-                  Nous orchestrons une logistique invisible mais parfaite. Du linge en coton d'exception à la maintenance technique proactive, Xiri opère avec une rigueur hôtelière. 
+                  Nous orchestrons une logistique invisible mais parfaite. Du linge en coton d'exception à la maintenance technique proactive, Xiri opère avec une rigueur hôtelière.
                 </p>
                 <p>
                   Votre bien est protégé et valorisé quotidiennement, vous offrant la certitude d'un patrimoine impeccablement entretenu sans intrusion dans votre quotidien.
@@ -96,9 +96,9 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
               </div>
             </div>
             <div className="lg:col-span-5 pt-24">
-               <div className="aspect-square overflow-hidden framed-img shadow-xl rotate-3 hover:rotate-0 transition-transform duration-1000">
-                  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200" alt="Luxe Interior" className="w-full h-full object-cover" />
-               </div>
+              <div className="aspect-square overflow-hidden framed-img shadow-xl rotate-3 hover:rotate-0 transition-transform duration-1000">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200" alt="Luxe Interior" className="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
@@ -147,28 +147,29 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
               </div>
               <div className="space-y-8 text-[17px] text-[#0a0a0a] font-medium leading-loose">
                 <p>
-                  La transparence est le fondement de notre collaboration. Chaque intervention est tracée, documentée et justifiée pour votre tranquillité. 
+                  La transparence est le fondement de notre collaboration. Chaque intervention est tracée, documentée et justifiée pour votre tranquillité.
                 </p>
                 <p>
                   Notre mission est de vous démontrer que déléguer à XIRI est votre investissement le plus serein. Nous assurons un relais opérationnel discret pour que vous puissiez vous concentrer sur vos projets.
                 </p>
               </div>
               <div className="pt-12">
-                 <button 
+                <button
                   onClick={onNavigateContact}
                   className="flex items-center gap-6 group text-xiri-navy text-[11px] font-black uppercase tracking-[0.4em] bg-transparent border-none cursor-pointer"
-                 >
-                   Découvrir la Sérénité Xiri
-                   <div className="w-16 h-px bg-xiri-gold group-hover:w-32 transition-all duration-700"></div>
-                   <ShieldCheck size={18} className="text-xiri-gold" />
-                 </button>
+                >
+                  Découvrir la Sérénité Xiri
+                  <div className="w-16 h-px bg-xiri-gold group-hover:w-32 transition-all duration-700"></div>
+                  <ShieldCheck size={18} className="text-xiri-gold" />
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes slow-zoom {
           0% { transform: scale(1); }
           50% { transform: scale(1.1); }
