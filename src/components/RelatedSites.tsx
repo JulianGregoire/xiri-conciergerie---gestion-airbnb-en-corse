@@ -1,6 +1,9 @@
 
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import corseImg from '../image/corse.png';
+import finistereImg from '../image/finister.png';
+import heraultImg from '../image/herault.png';
 
 const RelatedSites: React.FC = () => {
   const otherSites = [
@@ -8,21 +11,21 @@ const RelatedSites: React.FC = () => {
       title: "Maison d’Hôte en Corse",
       category: "CHARME & AUTHENTICITÉ",
       description: "Une immersion confidentielle dans le maquis. Pierres ancestrales et hospitalité traditionnelle au cœur de l'île.",
-      image: "https://images.unsplash.com/photo-1563298244-6351d3886b62?auto=format&fit=crop&q=80&w=800",
+      image: corseImg,
       link: "#"
     },
     {
       title: "Mobilhome au Finistère",
       category: "ÉVASION IODÉE",
       description: "Le confort moderne face à la puissance de l'Atlantique. Une escale nature sur les côtes sauvages de Bretagne.",
-      image: "https://images.unsplash.com/photo-1548678967-f1fc5d936890?auto=format&fit=crop&q=80&w=800",
+      image: finistereImg,
       link: "#"
     },
     {
       title: "Maison d’Hôte au Hérault",
       category: "DOUCEUR OCCITANE",
       description: "L'élégance du Sud entre vignes et oliviers. Une parenthèse de sérénité dans l'arrière-pays héraultais.",
-      image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=800",
+      image: heraultImg,
       link: "#"
     }
   ];
@@ -46,21 +49,21 @@ const RelatedSites: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
           {otherSites.map((site, idx) => (
-            <a 
-              key={idx} 
+            <a
+              key={idx}
               href={site.link}
               target="_blank"
               rel="noopener noreferrer"
               className="group block space-y-10"
             >
               <div className="relative aspect-[3/4] overflow-hidden framed-img transition-transform duration-1000 group-hover:-translate-y-4">
-                <img 
-                  src={site.image} 
-                  alt={site.title} 
+                <img
+                  src={site.image}
+                  alt={site.title}
                   className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 grayscale-[0.3] group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-xiri-navy/5 group-hover:bg-transparent transition-colors duration-500"></div>
-                
+
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/90 backdrop-blur-sm p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-700">
                     <div className="flex justify-between items-center">
@@ -81,12 +84,12 @@ const RelatedSites: React.FC = () => {
                 <p className="text-[14px] text-[#000000] leading-relaxed font-medium max-w-xs mx-auto md:mx-0">
                   "{site.description}"
                 </p>
-                
+
                 <div className="pt-6">
-                   <div className="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-xiri-navy">
-                      Découvrir
-                      <div className="w-12 h-[1px] bg-xiri-navy/10 group-hover:w-24 group-hover:bg-xiri-gold transition-all duration-700"></div>
-                   </div>
+                  <div className="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-xiri-navy">
+                    Découvrir
+                    <div className="w-12 h-[1px] bg-xiri-navy/10 group-hover:w-24 group-hover:bg-xiri-gold transition-all duration-700"></div>
+                  </div>
                 </div>
               </div>
             </a>
