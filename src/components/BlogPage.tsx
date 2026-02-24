@@ -9,11 +9,21 @@ interface BlogPageProps {
 
 const BlogPage: React.FC<BlogPageProps> = ({ onArticleClick }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('TOUS');
-  const articles = Object.values(blogData);
+
+  const parseDate = (dateStr: string) => {
+    const months: Record<string, number> = {
+      'JANVIER': 0, 'FÉVRIER': 1, 'MARS': 2, 'AVRIL': 3, 'MAI': 4, 'JUIN': 5,
+      'JUILLET': 6, 'AOÛT': 7, 'SEPTEMBRE': 8, 'OCTOBRE': 9, 'NOVEMBRE': 10, 'DÉCEMBRE': 11
+    };
+    const [day, month, year] = dateStr.split(' ');
+    return new Date(parseInt(year), months[month.toUpperCase()], parseInt(day));
+  };
+
+  const articles = Object.values(blogData).sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
   const categories = ['TOUS', ...Array.from(new Set(articles.map(a => a.category.toUpperCase())))];
 
-  const filteredArticles = selectedCategory === 'TOUS' 
-    ? articles 
+  const filteredArticles = selectedCategory === 'TOUS'
+    ? articles
     : articles.filter(a => a.category.toUpperCase() === selectedCategory);
 
   useEffect(() => {
@@ -44,40 +54,39 @@ const BlogPage: React.FC<BlogPageProps> = ({ onArticleClick }) => {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-6 py-3 text-[9px] font-bold tracking-[0.3em] uppercase transition-all border ${
-                  selectedCategory === cat 
-                    ? 'bg-xiri-navy text-white border-xiri-navy' 
+                className={`px-6 py-3 text-[9px] font-bold tracking-[0.3em] uppercase transition-all border ${selectedCategory === cat
+                    ? 'bg-xiri-navy text-white border-xiri-navy'
                     : 'bg-transparent text-xiri-navy/40 border-transparent hover:border-xiri-gold hover:text-xiri-gold'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
             ))}
           </div>
-          
+
           <div className="relative group w-full md:w-auto">
-             <input 
-              type="text" 
-              placeholder="RECHERCHER..." 
+            <input
+              type="text"
+              placeholder="RECHERCHER..."
               className="bg-transparent border-b border-xiri-navy/10 py-3 pl-2 pr-10 text-[10px] tracking-[0.2em] uppercase font-bold focus:border-xiri-gold outline-none w-full md:w-64 transition-all"
-             />
-             <Search size={16} className="absolute right-2 top-1/2 -translate-y-1/2 text-xiri-navy/20 group-focus-within:text-xiri-gold" />
+            />
+            <Search size={16} className="absolute right-2 top-1/2 -translate-y-1/2 text-xiri-navy/20 group-focus-within:text-xiri-gold" />
           </div>
         </div>
 
         {/* Article Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-x-12 lg:gap-y-24">
           {filteredArticles.map((article, idx) => (
-            <article 
-              key={idx} 
+            <article
+              key={idx}
               className="group flex flex-col h-full cursor-pointer animate-in fade-in slide-in-from-bottom-4 duration-700"
               style={{ animationDelay: `${idx * 100}ms` }}
               onClick={() => onArticleClick(article.id)}
             >
               <div className="relative h-[400px] mb-10 overflow-hidden framed-img transition-transform duration-1000 group-hover:-translate-y-3">
-                <img 
-                  src={article.image} 
-                  alt={article.title} 
+                <img
+                  src={article.image}
+                  alt={article.title}
                   className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-xiri-navy/5 group-hover:bg-transparent transition-colors duration-500"></div>

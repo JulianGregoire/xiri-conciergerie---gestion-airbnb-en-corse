@@ -5,7 +5,7 @@ export const blogData: Record<string, ArticleData> = {
   "optimisation-annonce-2024": {
     id: "optimisation-annonce-2024",
     category: "CONSEILS",
-    date: "12 MAI 2024",
+    date: "12 FÉVRIER 2024",
     readTime: "5 MIN",
     author: "Elena Rossi, Directrice Artistique",
     title: "Optimiser votre annonce en Corse pour la saison 2024",
@@ -20,7 +20,7 @@ export const blogData: Record<string, ArticleData> = {
   "lmnp-corse-guide-2024": {
     id: "lmnp-corse-guide-2024",
     category: "FISCALITÉ",
-    date: "20 MAI 2024",
+    date: "20 FÉVRIER 2024",
     readTime: "10 MIN",
     author: "Marc-Antoine Paoli, Consultant Fiscal",
     title: "LMNP en Corse : Maximisez votre rentabilité nette",
@@ -35,7 +35,7 @@ export const blogData: Record<string, ArticleData> = {
   "taxe-sejour-corse-automatisation": {
     id: "taxe-sejour-corse-automatisation",
     category: "LÉGAL",
-    date: "18 MAI 2024",
+    date: "18 FÉVRIER 2024",
     readTime: "6 MIN",
     author: "Sophie Colonna, Responsable Administrative",
     title: "Taxe de séjour en Corse : Xiri automatise tout",
@@ -50,7 +50,7 @@ export const blogData: Record<string, ArticleData> = {
   "reglementation-airbnb-ajaccio": {
     id: "reglementation-airbnb-ajaccio",
     category: "MUNICIPAL",
-    date: "15 MAI 2024",
+    date: "15 FÉVRIER 2024",
     readTime: "7 MIN",
     author: "Jean-Baptiste G., Expert Réglementaire",
     title: "Réglementation Ajaccio : Ce qu'il faut savoir",
@@ -65,7 +65,7 @@ export const blogData: Record<string, ArticleData> = {
   "residence-secondaire-corse-liberte": {
     id: "residence-secondaire-corse-liberte",
     category: "GESTION",
-    date: "10 MAI 2024",
+    date: "10 FÉVRIER 2024",
     readTime: "9 MIN",
     author: "Marc-Antoine Paoli, Consultant Juridique",
     title: "Louer sa résidence secondaire en Corse sans limites",

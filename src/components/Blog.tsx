@@ -9,7 +9,18 @@ interface BlogProps {
 }
 
 const Blog: React.FC<BlogProps> = ({ onArticleClick, onSeeAll }) => {
-  const articles = Object.values(blogData).slice(0, 3); 
+  const parseDate = (dateStr: string) => {
+    const months: Record<string, number> = {
+      'JANVIER': 0, 'FÉVRIER': 1, 'MARS': 2, 'AVRIL': 3, 'MAI': 4, 'JUIN': 5,
+      'JUILLET': 6, 'AOÛT': 7, 'SEPTEMBRE': 8, 'OCTOBRE': 9, 'NOVEMBRE': 10, 'DÉCEMBRE': 11
+    };
+    const [day, month, year] = dateStr.split(' ');
+    return new Date(parseInt(year), months[month.toUpperCase()], parseInt(day));
+  };
+
+  const articles = Object.values(blogData)
+    .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <section id="blog" className="py-40 bg-white relative overflow-hidden">
@@ -23,7 +34,7 @@ const Blog: React.FC<BlogProps> = ({ onArticleClick, onSeeAll }) => {
               Le Blog de la <br /><span className="">Conciergerie</span>.
             </h2>
           </div>
-          <button 
+          <button
             onClick={onSeeAll}
             className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.4em] font-bold text-xiri-navy hover:text-xiri-gold transition-colors pb-2 border-b border-xiri-navy/10 bg-transparent"
           >
@@ -34,15 +45,15 @@ const Blog: React.FC<BlogProps> = ({ onArticleClick, onSeeAll }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-12">
           {articles.map((article, idx) => (
-            <article 
-              key={idx} 
+            <article
+              key={idx}
               className="group flex flex-col h-full cursor-pointer"
               onClick={() => onArticleClick(article.id)}
             >
               <div className="relative h-[300px] mb-10 overflow-hidden framed-img transition-transform duration-700 group-hover:-translate-y-2">
-                <img 
-                  src={article.image} 
-                  alt={article.title} 
+                <img
+                  src={article.image}
+                  alt={article.title}
                   className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-xiri-navy/5 group-hover:bg-transparent transition-colors duration-500"></div>
