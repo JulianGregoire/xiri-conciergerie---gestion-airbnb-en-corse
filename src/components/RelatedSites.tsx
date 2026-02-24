@@ -2,9 +2,9 @@
 // @ts-nocheck
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
-import corseImg from '../image/corse.png';
-import finistereImg from '../image/finister.png';
-import heraultImg from '../image/herault.png';
+import corseImg from '../images/corse.png';
+import finistereImg from '../images/finister.png';
+import heraultImg from '../images/herault.png';
 
 const RelatedSites: React.FC = () => {
   const otherSites = [

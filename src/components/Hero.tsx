@@ -1,7 +1,7 @@
 
 // @ts-nocheck
 import React from 'react';
-import heroImage from '../image/hero.xiri.jpg';
+import heroImage from '../images/hero.xiri.jpg';
 
 const Hero: React.FC = () => {
   const scrollToSection = (id: string) => {
