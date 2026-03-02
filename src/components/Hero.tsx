@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 bg-white overflow-hidden border-b border-xiri-navy/5">
+    <section id="home" className="relative pt-20 pb-10 md:pt-24 md:pb-12 lg:pt-32 lg:pb-16 bg-white overflow-hidden border-b border-xiri-navy/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden shadow-xl border border-xiri-navy/5">
+          <div className="lg:col-span-5 relative h-[280px] sm:h-[340px] lg:h-[420px] overflow-hidden shadow-xl border border-xiri-navy/5">
             <img
               src={heroImage.src}
               alt="Xiri Conciergerie"

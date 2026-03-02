@@ -116,6 +116,19 @@ const App: React.FC = () => {
             <Testimonials />
             <FAQ />
             <Contact />
+            <div className="h-20 lg:hidden" aria-hidden="true"></div>
+
+            <button
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  window.scrollTo({ top: element.offsetTop - 80, behavior: 'smooth' });
+                }
+              }}
+              className="fixed bottom-4 left-4 right-4 z-40 lg:hidden bg-xiri-navy text-white py-4 text-[11px] uppercase tracking-[0.14em] font-bold shadow-xl border-none cursor-pointer"
+            >
+              Estimer ma rentabilité
+            </button>
           </>
         )}
         

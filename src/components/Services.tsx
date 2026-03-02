@@ -65,7 +65,7 @@ const serviceSlides = [
 
 const Services: React.FC<{ onServiceClick?: (id: string) => void }> = ({ onServiceClick }) => {
   return (
-    <section id="services" className="py-14 md:py-16 bg-white relative overflow-hidden">
+    <section id="services" className="py-10 md:py-14 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10 px-6 lg:px-12">
         <div className="mb-10 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-5">
           <div className="max-w-3xl">

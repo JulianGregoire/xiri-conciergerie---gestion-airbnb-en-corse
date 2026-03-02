@@ -73,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
 
   return (
     <>
-      <nav className={`w-full z-50 transition-all duration-500 ${!isTransparent ? 'fixed top-0 bg-white/95 backdrop-blur-sm shadow-md py-3' : 'absolute top-0 bg-transparent py-5'}`}>
+      <nav className={`w-full fixed top-0 z-50 transition-all duration-500 ${!isTransparent ? 'bg-white/95 backdrop-blur-sm shadow-md py-3' : 'bg-transparent py-4'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             <button onClick={() => handleLinkClick('home')} className="flex flex-col items-center group cursor-pointer border-none bg-transparent text-left outline-none">

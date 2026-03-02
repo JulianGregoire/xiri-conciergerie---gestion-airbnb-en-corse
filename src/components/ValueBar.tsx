@@ -5,7 +5,7 @@ import { UserCheck, ShieldCheck, TrendingUp } from 'lucide-react';
 
 const ValueBar: React.FC = () => {
   return (
-    <section className="bg-white py-12 md:py-14 relative z-20 border-b border-xiri-navy/5">
+    <section className="bg-white py-10 md:py-12 relative z-20 border-b border-xiri-navy/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-8 md:mb-10">
           <h2 className="text-[28px] md:text-[34px] font-serif text-xiri-navy leading-tight">

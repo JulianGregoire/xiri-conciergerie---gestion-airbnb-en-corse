@@ -49,7 +49,7 @@ const plans = [
 
 const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-14 md:py-16 bg-white relative overflow-hidden border-y border-xiri-navy/5">
+    <section id="pricing" className="py-10 md:py-14 bg-white relative overflow-hidden border-y border-xiri-navy/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="text-center mb-10 md:mb-12 space-y-4">
           <span className="text-xiri-gold text-[11px] font-black uppercase tracking-[0.25em] block">Tarification claire</span>
