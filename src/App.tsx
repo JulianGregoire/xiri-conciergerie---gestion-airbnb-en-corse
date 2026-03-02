@@ -125,7 +125,7 @@ const App: React.FC = () => {
                   window.scrollTo({ top: element.offsetTop - 80, behavior: 'smooth' });
                 }
               }}
-              className="fixed bottom-4 left-4 right-4 z-40 lg:hidden bg-xiri-navy text-white py-4 text-[11px] uppercase tracking-[0.14em] font-bold shadow-xl border-none cursor-pointer"
+              className="fixed bottom-4 left-4 right-4 z-40 lg:hidden bg-xiri-navy text-white py-4 text-[11px] uppercase tracking-[0.14em] font-bold shadow-xl border-none cursor-pointer rounded-xl"
             >
               Estimer ma rentabilité
             </button>

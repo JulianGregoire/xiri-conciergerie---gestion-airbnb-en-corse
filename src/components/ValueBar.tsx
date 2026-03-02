@@ -14,8 +14,8 @@ const ValueBar: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5">
-            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm">
+          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl">
+            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm rounded-xl">
               <TrendingUp size={20} />
             </div>
             <div className="space-y-1">
@@ -26,8 +26,8 @@ const ValueBar: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5">
-            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm">
+          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl">
+            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm rounded-xl">
               <UserCheck size={20} />
             </div>
             <div className="space-y-1">
@@ -38,8 +38,8 @@ const ValueBar: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5">
-            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm">
+          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl">
+            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm rounded-xl">
               <ShieldCheck size={20} />
             </div>
             <div className="space-y-1">

@@ -65,13 +65,13 @@ const Pricing: React.FC = () => {
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className={`relative p-6 border flex flex-col ${plan.recommended
+              className={`relative p-6 border flex flex-col rounded-2xl ${plan.recommended
                 ? 'bg-xiri-navy text-white border-xiri-gold/40 shadow-[0_24px_60px_-20px_rgba(27,43,68,0.55)]'
                 : 'bg-white text-xiri-navy border-xiri-navy/10'}
               `}
             >
               {plan.recommended && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-xiri-gold text-white text-[10px] uppercase tracking-[0.18em] font-bold whitespace-nowrap">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-xiri-gold text-white text-[10px] uppercase tracking-[0.18em] font-bold whitespace-nowrap rounded-full">
                   Recommandé
                 </div>
               )}
@@ -107,7 +107,7 @@ const Pricing: React.FC = () => {
                 className={`mt-6 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold border-none cursor-pointer transition-all ${plan.recommended
                   ? 'bg-xiri-gold text-white hover:bg-white hover:text-xiri-navy'
                   : 'bg-xiri-navy text-white hover:bg-xiri-gold'}
-                `}
+                } rounded-xl`}
               >
                 Demander un audit
               </button>
@@ -118,7 +118,7 @@ const Pricing: React.FC = () => {
         <div className="mt-8 text-center">
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-white border border-xiri-navy/20 text-xiri-navy px-7 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all cursor-pointer"
+            className="bg-white border border-xiri-navy/20 text-xiri-navy px-7 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all cursor-pointer rounded-xl"
           >
             Comparer avec mon bien
           </button>

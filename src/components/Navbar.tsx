@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
             <div className="hidden lg:flex items-center gap-3">
               <button
                 onClick={() => handleLinkClick('contact')}
-                className={`px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border ${!isTransparent ? 'border-xiri-navy text-xiri-navy hover:bg-xiri-navy hover:text-white' : 'border-white text-white hover:bg-white hover:text-xiri-navy'} cursor-pointer`}
+                className={`px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border ${!isTransparent ? 'border-xiri-navy text-xiri-navy hover:bg-xiri-navy hover:text-white' : 'border-white text-white hover:bg-white hover:text-xiri-navy'} cursor-pointer rounded-xl`}
               >
                 Estimer ma rentabilité
               </button>
@@ -139,7 +139,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
             <div className="mt-auto flex flex-col gap-4">
               <button
                 onClick={() => handleLinkClick('contact')}
-                className="block w-full bg-xiri-navy text-white text-center py-4 text-[11px] uppercase tracking-[0.12em] font-bold shadow-xl border-none"
+                className="block w-full bg-xiri-navy text-white text-center py-4 text-[11px] uppercase tracking-[0.12em] font-bold shadow-xl border-none rounded-xl"
               >
                 ESTIMER MA RENTABILITÉ
               </button>

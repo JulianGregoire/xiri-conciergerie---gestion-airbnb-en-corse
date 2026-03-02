@@ -42,12 +42,12 @@ const HowItWorks: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {steps.map((step, idx) => (
-            <div key={idx} className="border border-xiri-navy/10 p-5 md:p-6">
+            <div key={idx} className="border border-xiri-navy/10 p-5 md:p-6 rounded-2xl">
               <div className="mb-5 flex items-end justify-between">
                 <span className="text-5xl font-serif text-xiri-navy/25 leading-none">
                   {step.number}
                 </span>
-                <div className="w-11 h-11 bg-xiri-bg flex items-center justify-center text-xiri-gold shadow-sm">
+                <div className="w-11 h-11 bg-xiri-bg flex items-center justify-center text-xiri-gold shadow-sm rounded-xl">
                   {step.icon}
                 </div>
               </div>
@@ -66,7 +66,7 @@ const HowItWorks: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-10 p-8 md:p-10 bg-xiri-navy text-center space-y-5 relative overflow-hidden shadow-xl">
+        <div className="mt-10 p-8 md:p-10 bg-xiri-navy text-center space-y-5 relative overflow-hidden shadow-xl rounded-3xl">
           <div className="relative z-10 max-w-2xl mx-auto space-y-5">
             <h4 className="text-[26px] md:text-[32px] font-serif text-white">
               Mise en route opérationnelle en moins de 15 jours.
@@ -76,7 +76,7 @@ const HowItWorks: React.FC = () => {
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white text-xiri-navy px-8 py-4 text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-xiri-gold hover:text-white transition-all shadow-xl border-none cursor-pointer"
+              className="bg-white text-xiri-navy px-8 py-4 text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-xiri-gold hover:text-white transition-all shadow-xl border-none cursor-pointer rounded-xl"
             >
               Lancer l'Audit de mon bien
             </button>

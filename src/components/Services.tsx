@@ -76,7 +76,7 @@ const Services: React.FC<{ onServiceClick?: (id: string) => void }> = ({ onServi
           </div>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-xiri-navy text-white px-6 py-3 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-gold transition-all duration-300 border-none cursor-pointer"
+            className="bg-xiri-navy text-white px-6 py-3 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-gold transition-all duration-300 border-none cursor-pointer rounded-xl"
           >
             Demander un audit
           </button>
@@ -84,9 +84,9 @@ const Services: React.FC<{ onServiceClick?: (id: string) => void }> = ({ onServi
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {serviceSlides.map((slide, idx) => (
-            <div key={idx} className="bg-white border border-xiri-navy/10 p-5 md:p-6 h-full flex flex-col">
+            <div key={idx} className="bg-white border border-xiri-navy/10 p-5 md:p-6 h-full flex flex-col rounded-2xl shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-xiri-bg flex items-center justify-center text-xiri-gold flex-shrink-0">
+                <div className="w-10 h-10 bg-xiri-bg flex items-center justify-center text-xiri-gold flex-shrink-0 rounded-xl">
                   {slide.icon}
                 </div>
                 <h3 className="text-[22px] font-serif text-xiri-navy leading-tight">{slide.title}</h3>
@@ -106,7 +106,7 @@ const Services: React.FC<{ onServiceClick?: (id: string) => void }> = ({ onServi
                   onClick={() => {
                     if (onServiceClick) onServiceClick(slide.title.toLowerCase().replace(/\s+/g, '-'));
                   }}
-                  className="bg-xiri-navy text-white px-6 py-3 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-gold transition-all w-full border-none cursor-pointer"
+                  className="bg-xiri-navy text-white px-6 py-3 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-gold transition-all w-full border-none cursor-pointer rounded-xl"
                 >
                   En savoir plus
                 </button>

@@ -1,9 +1,23 @@
 
 // @ts-nocheck
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import heroImage from '../images/hero.xiri.jpg';
+import heroImage1 from '../images/hero.xiri1.jpg';
+import heroImage2 from '../images/hero.xiri2.jpg';
+import heroImage3 from '../images/hero.xiri3.jpg';
 
 const Hero: React.FC = () => {
+  const images = [heroImage, heroImage1, heroImage2, heroImage3];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 7000);
+
+    return () => clearInterval(timer);
+  }, [images.length]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -40,15 +54,15 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3">
+              <div className="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3 rounded-xl">
                 <p className="text-[10px] uppercase tracking-[0.18em] text-xiri-navy/50 font-bold">Performance</p>
                 <p className="text-[20px] font-semibold text-xiri-navy">+27% revenu moyen</p>
               </div>
-              <div className="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3">
+              <div className="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3 rounded-xl">
                 <p className="text-[10px] uppercase tracking-[0.18em] text-xiri-navy/50 font-bold">Réactivité</p>
                 <p className="text-[20px] font-semibold text-xiri-navy">Réponse &lt; 24h</p>
               </div>
-              <div className="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3">
+              <div className="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3 rounded-xl">
                 <p className="text-[10px] uppercase tracking-[0.18em] text-xiri-navy/50 font-bold">Transparence</p>
                 <p className="text-[20px] font-semibold text-xiri-navy">Reporting mensuel</p>
               </div>
@@ -57,27 +71,36 @@ const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <button
                 onClick={() => scrollToSection('contact')}
-                className="bg-xiri-navy text-white px-7 py-4 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-gold transition-all duration-300 border-none cursor-pointer"
+                className="bg-xiri-navy text-white px-7 py-4 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-gold transition-all duration-300 border-none cursor-pointer rounded-xl"
               >
                 Estimer ma rentabilité
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="bg-white text-xiri-navy border border-xiri-navy/20 px-7 py-4 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all duration-300 cursor-pointer"
+                className="bg-white text-xiri-navy border border-xiri-navy/20 px-7 py-4 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all duration-300 cursor-pointer rounded-xl"
               >
                 Voir les services
               </button>
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative h-[280px] sm:h-[340px] lg:h-[420px] overflow-hidden shadow-xl border border-xiri-navy/5">
-            <img
-              src={heroImage.src}
-              alt="Xiri Conciergerie"
-              className="w-full h-full object-cover"
-            />
+          <div className="lg:col-span-5 relative h-[280px] sm:h-[340px] lg:h-[420px] overflow-hidden shadow-xl border border-xiri-navy/5 rounded-3xl">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+              >
+                <img
+                  src={image.src}
+                  alt={`Xiri Conciergerie ${index + 1}`}
+                  className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-out ${index === currentImageIndex ? 'scale-105' : 'scale-100'}`}
+                />
+              </div>
+            ))}
 
-            <div className="absolute bottom-0 left-0 right-0 bg-xiri-navy/90 text-white p-4">
+            <div className="absolute inset-0 bg-gradient-to-t from-xiri-navy/60 via-xiri-navy/20 to-transparent"></div>
+
+            <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm text-xiri-navy p-4 rounded-2xl">
               <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-xiri-gold">Pack Performance 360</p>
               <p className="text-[15px] font-medium">Une seule commission, exécution complète.</p>
             </div>

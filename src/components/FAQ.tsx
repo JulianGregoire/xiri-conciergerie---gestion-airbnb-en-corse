@@ -60,7 +60,7 @@ const FAQ: React.FC = () => {
           {faqData.map((item, index) => (
             <div
               key={index}
-              className={`border border-xiri-navy/5 transition-all duration-500 overflow-hidden ${openIndex === index ? 'bg-[#F8FAFC] border-xiri-gold/20 shadow-lg' : 'bg-white'
+              className={`border border-xiri-navy/5 transition-all duration-500 overflow-hidden rounded-2xl ${openIndex === index ? 'bg-[#F8FAFC] border-xiri-gold/20 shadow-lg' : 'bg-white'
                 }`}
             >
               <button
@@ -92,14 +92,14 @@ const FAQ: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-10 p-8 bg-xiri-navy text-center space-y-5 relative group overflow-hidden">
+        <div className="mt-10 p-8 bg-xiri-navy text-center space-y-5 relative group overflow-hidden rounded-3xl">
           <div className="absolute inset-0 bg-xiri-gold/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
           <div className="relative z-10 space-y-6">
             <h4 className="text-[24px] font-serif text-white">Une question plus spécifique ?</h4>
             <p className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">Nos experts insulaires sont à votre disposition.</p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 bg-xiri-gold text-white text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-xl"
+              className="px-8 py-4 bg-xiri-gold text-white text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-xl rounded-xl"
             >
               Contacter un conseiller
             </button>
