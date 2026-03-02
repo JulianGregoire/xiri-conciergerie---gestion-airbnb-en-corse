@@ -13,7 +13,7 @@ import iconAssurance from '../images/Assurances.png';
 
 const serviceSlides = [
   {
-    icon: <img src={iconGestion.src} alt="Gestion d'annonces" className="w-full h-full object-cover scale-150" />,
+    icon: <img src={iconGestion.src} alt="Gestion d'annonces" className="w-full h-full object-cover scale-110" />,
     title: "Gestion d'annonces",
     points: [
       "Création d'un site internet dédié",
@@ -23,7 +23,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <img src={iconSelection.src} alt="Sélection des voyageurs" className="w-full h-full object-cover scale-150" />,
+    icon: <img src={iconSelection.src} alt="Sélection des voyageurs" className="w-full h-full object-cover scale-110" />,
     title: "Sélection des voyageurs",
     points: [
       "Analyse rigoureuse des profils",
@@ -33,7 +33,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1521791136064-7986c29535a7?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <img src={iconCheckin.src} alt="Check-in / Check-out" className="w-full h-full object-cover scale-150" />,
+    icon: <img src={iconCheckin.src} alt="Check-in / Check-out" className="w-full h-full object-cover scale-110" />,
     title: "Check-in / Check-out",
     points: [
       "Accueil physique personnalisé",
@@ -43,7 +43,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1531234799389-dcb7651eb0a2?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <img src={iconMenage.src} alt="Ménage et blanchisserie" className="w-full h-full object-cover scale-150" />,
+    icon: <img src={iconMenage.src} alt="Ménage et blanchisserie" className="w-full h-full object-cover scale-110" />,
     title: "Ménage et blanchisserie",
     points: [
       "Ménage professionnel hôtelier",
@@ -53,7 +53,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <img src={iconAssurance.src} alt="Assurances & cautions" className="w-full h-full object-cover scale-150" />,
+    icon: <img src={iconAssurance.src} alt="Assurances & cautions" className="w-full h-full object-cover scale-110" />,
     title: "Assurances & cautions",
     points: [
       "Gestion des formalités légales",
