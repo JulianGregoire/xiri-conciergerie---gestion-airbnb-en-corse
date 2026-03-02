@@ -1,7 +1,7 @@
 // @ts-nocheck
 
-import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ChevronDown, MapPin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 import type { View } from '../types';
 
 interface NavbarProps {
@@ -16,10 +16,13 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavigateHome, onNavigateBlog, onNavigateAbout, onNavigateCity }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isCitiesOpen, setIsCitiesOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const citiesRef = useRef<HTMLDivElement>(null);
+  const navLinks = [
+    { id: 'services', label: 'Services' },
+    { id: 'how-it-works', label: 'Méthode' },
+    { id: 'pricing', label: 'Tarifs' },
+    { id: 'testimonials', label: 'Avis' },
+    { id: 'faq', label: 'FAQ' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,36 +31,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false);
-      }
-      if (citiesRef.current && !citiesRef.current.contains(event.target as Node)) {
-        setIsCitiesOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const services = [
-    { name: "Gestion d'annonces Airbnb", id: "gestion-airbnb" },
-    { name: "Sélection des voyageurs", id: "selection-voyageurs" },
-    { name: "Check-in / Check-out", id: "check-in-out" },
-    { name: "Le ménage et le linge", id: "menage-linge" },
-    { name: "Assurances & cautions", id: "assurances-cautions" },
-    { name: "Maintenance & assistance", id: "maintenance-assistance" }
-  ];
-
-  const cities = [
-    { name: "Porto-Vecchio", id: "porto-vecchio" },
-    { name: "Bonifacio", id: "bonifacio" },
-    { name: "Ajaccio", id: "ajaccio" },
-    { name: "Calvi", id: "calvi" },
-    { name: "Bastia", id: "bastia" }
-  ];
 
   const handleLinkClick = (id: string) => {
     if (id === 'blog') {
@@ -74,8 +47,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
 
     onNavigateHome();
     setIsMobileMenuOpen(false);
-    setIsServicesOpen(false);
-    setIsCitiesOpen(false);
 
     setTimeout(() => {
       if (id === 'home') {
@@ -98,124 +69,39 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
     }, 100);
   };
 
-  const handleServiceClick = (id: string) => {
-    onNavigateService(id);
-    setIsServicesOpen(false);
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleCityClick = (id: string) => {
-    onNavigateCity(id);
-    setIsCitiesOpen(false);
-    setIsMobileMenuOpen(false);
-  };
-
   const isTransparent = currentView === 'home' && !isScrolled;
 
   return (
     <>
-      <nav className={`w-full z-50 transition-all duration-700 ${!isTransparent ? 'fixed top-0 bg-white shadow-xl py-4' : 'absolute top-0 bg-transparent py-8'}`}>
+      <nav className={`w-full z-50 transition-all duration-500 ${!isTransparent ? 'fixed top-0 bg-white/95 backdrop-blur-sm shadow-md py-3' : 'absolute top-0 bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             <button onClick={() => handleLinkClick('home')} className="flex flex-col items-center group cursor-pointer border-none bg-transparent text-left outline-none">
-              <span className={`text-base md:text-lg font-serif font-medium tracking-[0.1em] transition-colors duration-500 ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>XIRI CONCIERGERIE</span>
-              <span className={`text-[8px] md:text-[9px] uppercase tracking-[0.5em] -mt-0.5 font-bold transition-colors duration-500 ${!isTransparent ? 'text-xiri-gold' : 'text-xiri-gold'}`}>RÉSEAU PREMIUM</span>
+              <span className={`text-base md:text-lg font-serif font-medium tracking-[0.08em] transition-colors duration-500 ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>XIRI CONCIERGERIE</span>
+              <span className="text-[9px] uppercase tracking-[0.22em] -mt-0.5 font-bold text-xiri-gold">RÉSEAU PREMIUM</span>
             </button>
 
-            {/* Desktop Menu */}
-            <div className="hidden lg:flex space-x-8 items-center">
-              <button onClick={() => handleLinkClick('home')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
-                Accueil
-              </button>
-
-              <div className="relative" ref={dropdownRef}>
+            <div className="hidden lg:flex items-center gap-6">
+              {navLinks.map((link) => (
                 <button
-                  onMouseEnter={() => { setIsServicesOpen(true); setIsCitiesOpen(false); }}
-                  className={`flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}
+                  key={link.id}
+                  onClick={() => handleLinkClick(link.id)}
+                  className={`text-[11px] uppercase tracking-[0.14em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}
                 >
-                  Services
-                  <ChevronDown size={12} className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                  {link.label}
                 </button>
+              ))}
+            </div>
 
-                <div
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 bg-white shadow-2xl border border-xiri-navy/5 p-6 space-y-4 transition-all duration-500 origin-top ${isServicesOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
-                >
-                  <div className="grid grid-cols-1 gap-4">
-                    {services.map((service, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleServiceClick(service.id)}
-                        className="group block border-b border-xiri-navy/5 pb-2 last:border-0 w-full text-left bg-transparent"
-                      >
-                        <p className="text-[10px] text-xiri-navy font-bold uppercase tracking-widest group-hover:text-xiri-gold transition-colors">{service.name}</p>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative" ref={citiesRef}>
-                <button
-                  onMouseEnter={() => { setIsCitiesOpen(true); setIsServicesOpen(false); }}
-                  className={`flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}
-                >
-                  Nos Conciergeries
-                  <ChevronDown size={12} className={`transition-transform duration-300 ${isCitiesOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                <div
-                  onMouseLeave={() => setIsCitiesOpen(false)}
-                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-white shadow-2xl border border-xiri-navy/5 p-6 space-y-4 transition-all duration-500 origin-top ${isCitiesOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
-                >
-                  <div className="grid grid-cols-1 gap-4">
-                    {cities.map((city, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleCityClick(city.id)}
-                        className="group flex items-center gap-3 border-b border-xiri-navy/5 pb-2 last:border-0 w-full text-left bg-transparent"
-                      >
-                        <MapPin size={12} className="text-xiri-gold" />
-                        <p className="text-[10px] text-xiri-navy font-bold uppercase tracking-widest group-hover:text-xiri-gold transition-colors">{city.name}</p>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <button onClick={() => handleLinkClick('about')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
-                Notre approche
-              </button>
-              <button onClick={() => handleLinkClick('pricing')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
-                Tarifs
-              </button>
-              <button onClick={() => handleLinkClick('testimonials')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
-                Avis
-              </button>
-              <button onClick={() => handleLinkClick('contact')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
-                Contact
+            <div className="hidden lg:flex items-center gap-3">
+              <button
+                onClick={() => handleLinkClick('contact')}
+                className={`px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border ${!isTransparent ? 'border-xiri-navy text-xiri-navy hover:bg-xiri-navy hover:text-white' : 'border-white text-white hover:bg-white hover:text-xiri-navy'} cursor-pointer`}
+              >
+                Estimer ma rentabilité
               </button>
             </div>
 
-            <div className="hidden lg:flex items-center gap-4">
-              <button
-                onClick={() => handleLinkClick('contact')}
-                className={`px-5 py-3 text-[9px] uppercase tracking-[0.3em] font-bold transition-all border ${!isTransparent ? 'border-xiri-navy text-xiri-navy hover:bg-xiri-navy hover:text-white' : 'border-white text-white hover:bg-white hover:text-xiri-navy'} cursor-pointer`}
-              >
-                DÉLÉGUER À XIRI
-              </button>
-              <button
-                onClick={() => handleLinkClick('contact')}
-                className={`px-5 py-3 text-[9px] uppercase tracking-[0.3em] font-bold transition-all shadow-lg ${!isTransparent
-                  ? 'bg-xiri-navy text-white hover:bg-xiri-gold'
-                  : 'bg-white text-xiri-navy hover:bg-xiri-gold hover:text-white'
-                  } cursor-pointer`}
-              >
-                ESTIMER MA RENTABILITÉ
-              </button>
-            </div>
-
-            {/* Mobile Toggle */}
             <div className="lg:hidden">
               <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className={`bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
                 {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -224,56 +110,36 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div className={`lg:hidden fixed inset-0 z-50 bg-white transition-transform duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="h-full flex flex-col p-10">
-            <div className="flex justify-between items-center mb-16">
+          <div className="h-full flex flex-col p-8">
+            <div className="flex justify-between items-center mb-10">
               <div className="flex flex-col">
                 <span className="text-lg font-serif font-medium tracking-[0.1em] text-xiri-navy">XIRI CONCIERGERIE</span>
-                <span className="text-[9px] uppercase tracking-[0.3em] font-bold text-xiri-gold">RÉSEAU PREMIUM</span>
+                <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-xiri-gold">RÉSEAU PREMIUM</span>
               </div>
               <button onClick={() => setIsMobileMenuOpen(false)} className="text-xiri-navy bg-transparent">
                 <X size={32} />
               </button>
             </div>
 
-            <div className="flex-grow overflow-y-auto space-y-8 pb-10">
-              <button onClick={() => handleLinkClick('home')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent border-none p-0 text-left w-full">Accueil</button>
-
-              <div className="space-y-4">
-                <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-xiri-gold">Nos Conciergeries</p>
-                <div className="pl-4 space-y-4 border-l border-xiri-gold/20">
-                  {cities.map((city, idx) => (
-                    <button key={idx} onClick={() => handleCityClick(city.id)} className="block text-sm font-medium text-xiri-navy/80 bg-transparent border-none p-0 text-left">{city.name}</button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-xiri-gold">Services</p>
-                <div className="pl-4 space-y-4 border-l border-xiri-gold/20">
-                  {services.map((service, idx) => (
-                    <button key={idx} onClick={() => handleServiceClick(service.id)} className="block text-sm font-medium text-xiri-navy/80 bg-transparent border-none p-0 text-left">{service.name}</button>
-                  ))}
-                </div>
-              </div>
-
-              <button onClick={() => handleLinkClick('about')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Notre approche</button>
-              <button onClick={() => handleLinkClick('pricing')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Tarifs</button>
-              <button onClick={() => handleLinkClick('testimonials')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Avis</button>
-              <button onClick={() => handleLinkClick('contact')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Contact</button>
+            <div className="flex-grow overflow-y-auto space-y-5 pb-8">
+              <button onClick={() => handleLinkClick('home')} className="block text-[22px] font-serif text-xiri-navy bg-transparent border-none p-0 text-left w-full">Accueil</button>
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => handleLinkClick(link.id)}
+                  className="block text-[22px] font-serif text-xiri-navy bg-transparent border-none p-0 text-left w-full"
+                >
+                  {link.label}
+                </button>
+              ))}
+              <button onClick={() => handleLinkClick('about')} className="block text-[22px] font-serif text-xiri-navy bg-transparent border-none p-0 text-left w-full">Notre approche</button>
             </div>
 
             <div className="mt-auto flex flex-col gap-4">
               <button
                 onClick={() => handleLinkClick('contact')}
-                className="block w-full border border-xiri-navy text-xiri-navy text-center py-4 text-[10px] uppercase tracking-[0.4em] font-bold bg-transparent"
-              >
-                DÉLÉGUER À XIRI
-              </button>
-              <button
-                onClick={() => handleLinkClick('contact')}
-                className="block w-full bg-xiri-navy text-white text-center py-4 text-[10px] uppercase tracking-[0.4em] font-bold shadow-xl border-none"
+                className="block w-full bg-xiri-navy text-white text-center py-4 text-[11px] uppercase tracking-[0.12em] font-bold shadow-xl border-none"
               >
                 ESTIMER MA RENTABILITÉ
               </button>

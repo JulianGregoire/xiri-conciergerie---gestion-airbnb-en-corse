@@ -1,100 +1,127 @@
 // @ts-nocheck
 import React from 'react';
-import { Check, ShieldCheck } from 'lucide-react';
+import { Check } from 'lucide-react';
 
-const plan = {
-  id: "03",
-  name: "Pack PERFORMANCE 360",
-  price: "15%",
-  unit: "COMMISSION SUR REVENUS",
-  desc: "Accélérez votre rentabilité sans compromis.",
-  tagline: "Excellence marketing et gestion invisible.",
-  features: [
-    "Inclusion Pack DIGITAL",
-    "Marketing ciblé Europe",
-    "Yield Management Expert",
-    "Contenu visuel haute définition",
-    "Audit de performance régulier",
-    "Reporting mensuel détaillé"
-  ],
-  cta: "Viser l'Excellence",
-};
+const plans = [
+  {
+    id: '01',
+    name: 'Pack ESSENTIEL',
+    price: '12%',
+    unit: 'commission sur revenus',
+    description: 'Gestion opérationnelle locale et sérénité quotidienne.',
+    features: [
+      'Check-in / check-out',
+      'Ménage et linge',
+      'Support voyageurs',
+      'Gestion incidents'
+    ],
+    recommended: false
+  },
+  {
+    id: '02',
+    name: 'Pack PERFORMANCE 360',
+    price: '15%',
+    unit: 'commission sur revenus',
+    description: 'Le meilleur équilibre entre pilotage digital et opération premium.',
+    features: [
+      'Tout le Pack Essentiel',
+      'Yield management avancé',
+      'Optimisation multi-canaux',
+      'Reporting mensuel détaillé'
+    ],
+    recommended: true
+  },
+  {
+    id: '03',
+    name: 'Pack SIGNATURE',
+    price: '18%',
+    unit: 'commission sur revenus',
+    description: 'Accompagnement stratégique renforcé pour biens à haut potentiel.',
+    features: [
+      'Tout le Pack Performance',
+      'Acquisition réservations directes',
+      'Shooting & contenu premium',
+      'Comité performance trimestriel'
+    ],
+    recommended: false
+  }
+];
 
 const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-14 md:py-16 bg-white relative overflow-hidden">
+    <section id="pricing" className="py-14 md:py-16 bg-white relative overflow-hidden border-y border-xiri-navy/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="text-center mb-10 md:mb-12 space-y-4">
           <span className="text-xiri-gold text-[11px] font-black uppercase tracking-[0.25em] block">Tarification claire</span>
           <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight tracking-tight">
-            Un modèle simple: vous gagnez, nous performons.
+            Comparez les packs en 30 secondes.
           </h2>
           <p className="text-[16px] text-xiri-navy/80 max-w-2xl mx-auto font-medium leading-relaxed">
-            Sans frais fixes ni coûts cachés. Une commission unique alignée sur vos revenus.
+            Sans frais fixes ni coûts cachés. La commission est prélevée uniquement sur les revenus générés.
           </p>
         </div>
 
-        <div className="flex justify-center items-center">
-          <div
-            className="relative flex flex-col md:flex-row p-7 md:p-10 transition-all duration-700 bg-xiri-navy text-white shadow-[0_30px_70px_-20px_rgba(27,43,68,0.55)] z-20 border-[1px] border-xiri-gold/30 max-w-5xl w-full gap-8 md:gap-10"
-          >
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white border border-xiri-gold px-6 py-2 shadow-xl flex items-center gap-2">
-              <ShieldCheck size={14} className="text-xiri-gold animate-pulse" />
-              <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">
-                SÉRÉNITÉ OPTIMISÉE
-              </span>
-            </div>
-
-            <div className="flex-1 space-y-7">
-              <div className="relative">
-                <div className="text-[11px] font-black tracking-[0.2em] uppercase mb-6 text-xiri-gold">
-                  {plan.name}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+          {plans.map((plan) => (
+            <div
+              key={plan.id}
+              className={`relative p-6 border flex flex-col ${plan.recommended
+                ? 'bg-xiri-navy text-white border-xiri-gold/40 shadow-[0_24px_60px_-20px_rgba(27,43,68,0.55)]'
+                : 'bg-white text-xiri-navy border-xiri-navy/10'}
+              `}
+            >
+              {plan.recommended && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-xiri-gold text-white text-[10px] uppercase tracking-[0.18em] font-bold whitespace-nowrap">
+                  Recommandé
                 </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-6xl md:text-7xl font-serif leading-none tracking-tighter text-white">
-                    {plan.price}
-                  </span>
-                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/40">
-                    {plan.unit}
-                  </span>
-                </div>
-              </div>
+              )}
 
-              <div className="space-y-4">
-                <p className="text-[18px] lg:text-[20px] leading-relaxed font-serif text-white italic">
-                  "{plan.tagline}"
-                </p>
-                <p className="text-[15px] leading-relaxed text-white/80 font-medium">
-                  {plan.desc}
+              <p className={`text-[11px] uppercase tracking-[0.16em] font-black ${plan.recommended ? 'text-xiri-gold' : 'text-xiri-navy/50'}`}>
+                {plan.name}
+              </p>
+
+              <div className="mt-3 mb-3">
+                <p className="text-5xl font-serif leading-none">{plan.price}</p>
+                <p className={`text-[11px] uppercase tracking-[0.12em] font-bold ${plan.recommended ? 'text-white/60' : 'text-xiri-navy/45'}`}>
+                  {plan.unit}
                 </p>
               </div>
 
-              <div className="w-24 h-[1px] bg-xiri-gold"></div>
+              <p className={`text-[14px] leading-relaxed font-medium min-h-[62px] ${plan.recommended ? 'text-white/85' : 'text-xiri-navy/75'}`}>
+                {plan.description}
+              </p>
 
-              <button className="hidden md:block w-full py-4 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-500 shadow-xl border bg-xiri-gold border-xiri-gold text-white hover:bg-white hover:text-xiri-navy hover:border-white">
-                {plan.cta}
-              </button>
-            </div>
-
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="space-y-4 mb-8">
-                {plan.features.map((feature, fIdx) => (
-                  <div key={fIdx} className="flex items-start gap-3 py-2 border-b border-white/5 last:border-0">
-                    <div className="mt-1 flex-shrink-0 w-4 h-4 flex items-center justify-center text-xiri-gold">
-                      <Check size={16} strokeWidth={3} />
-                    </div>
-                    <span className="text-[12px] uppercase tracking-[0.12em] font-bold text-white/90">
+              <div className="mt-5 space-y-2.5 flex-grow">
+                {plan.features.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-2.5">
+                    <Check size={15} className={`${plan.recommended ? 'text-xiri-gold' : 'text-xiri-gold'} mt-0.5 flex-shrink-0`} />
+                    <p className={`text-[13px] font-medium leading-relaxed ${plan.recommended ? 'text-white/90' : 'text-xiri-navy/80'}`}>
                       {feature}
-                    </span>
+                    </p>
                   </div>
                 ))}
               </div>
 
-              <button className="md:hidden w-full py-4 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-500 shadow-xl border bg-xiri-gold border-xiri-gold text-white hover:bg-white hover:text-xiri-navy hover:border-white">
-                {plan.cta}
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className={`mt-6 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold border-none cursor-pointer transition-all ${plan.recommended
+                  ? 'bg-xiri-gold text-white hover:bg-white hover:text-xiri-navy'
+                  : 'bg-xiri-navy text-white hover:bg-xiri-gold'}
+                `}
+              >
+                Demander un audit
               </button>
             </div>
-          </div>
+          ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <button
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-white border border-xiri-navy/20 text-xiri-navy px-7 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all cursor-pointer"
+          >
+            Comparer avec mon bien
+          </button>
         </div>
       </div>
     </section>
