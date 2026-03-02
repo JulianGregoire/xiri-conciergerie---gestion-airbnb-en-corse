@@ -42,17 +42,17 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-40 bg-white relative overflow-hidden">
+    <section id="faq" className="py-14 md:py-16 bg-white relative overflow-hidden">
       <div className="absolute right-12 top-0 bottom-0 w-[1px] bg-xiri-navy/5 hidden lg:block"></div>
 
       <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-24 space-y-6">
-          <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.8em] block">Sérénité Garantie</span>
-          <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight">
+        <div className="text-center mb-10 md:mb-12 space-y-4">
+          <span className="text-xiri-gold text-[11px] font-black uppercase tracking-[0.25em] block">Sérénité Garantie</span>
+          <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
             Questions <br /><span className="font-light">Fréquentes</span>.
           </h2>
-          <p className="text-[17px] text-[#000000] font-medium mt-8">
-            "La clarté est le fondement d'une collaboration durable."
+          <p className="text-[16px] text-xiri-navy/80 font-medium mt-2">
+            Les réponses aux points qui bloquent le plus souvent une décision.
           </p>
         </div>
 
@@ -65,7 +65,7 @@ const FAQ: React.FC = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-8 text-left group"
+                className="w-full flex items-center justify-between p-6 text-left group"
               >
                 <div className="flex items-center gap-6">
                   <span className="text-[10px] font-serif text-xiri-gold opacity-40 group-hover:opacity-100 transition-opacity">0{index + 1}</span>
@@ -82,8 +82,8 @@ const FAQ: React.FC = () => {
                 className={`transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
               >
-                <div className="p-8 pt-0 pl-20 pr-12">
-                  <p className="text-[15px] text-[#000000] leading-relaxed font-medium border-l-2 border-xiri-gold/30 pl-8">
+                <div className="p-6 pt-0 pl-16 pr-8">
+                  <p className="text-[14px] text-[#000000] leading-relaxed font-medium border-l-2 border-xiri-gold/30 pl-6">
                     {item.answer}
                   </p>
                 </div>
@@ -92,14 +92,14 @@ const FAQ: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-24 p-12 bg-xiri-navy text-center space-y-8 relative group overflow-hidden">
+        <div className="mt-10 p-8 bg-xiri-navy text-center space-y-5 relative group overflow-hidden">
           <div className="absolute inset-0 bg-xiri-gold/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
           <div className="relative z-10 space-y-6">
-            <h4 className="text-2xl font-serif text-white">Une question plus spécifique ?</h4>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-white/50 font-medium">Nos experts insulaires sont à votre disposition.</p>
+            <h4 className="text-[24px] font-serif text-white">Une question plus spécifique ?</h4>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">Nos experts insulaires sont à votre disposition.</p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-12 py-5 bg-xiri-gold text-white text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-xl"
+              className="px-8 py-4 bg-xiri-gold text-white text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-xl"
             >
               Contacter un conseiller
             </button>

@@ -79,21 +79,21 @@ const Testimonials: React.FC = () => {
   }, [handleNext]);
 
   return (
-    <section id="testimonials" className="py-32 bg-[#F8FAFC] relative overflow-hidden">
+    <section id="testimonials" className="py-14 md:py-16 bg-[#F8FAFC] relative overflow-hidden border-y border-xiri-navy/5">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col mb-20 gap-4 text-center">
-          <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em]">Excellence Reconnue</span>
-          <h2 className="text-4xl md:text-6xl font-serif text-xiri-navy">
+        <div className="flex flex-col mb-10 md:mb-12 gap-3 text-center">
+          <span className="text-xiri-gold text-[11px] font-bold uppercase tracking-[0.25em]">Excellence Reconnue</span>
+          <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
             Ce que disent nos <span className="text-xiri-gold font-light">propriétaires</span>.
           </h2>
-          <div className="flex justify-center items-center gap-4 mt-6">
+          <div className="flex justify-center items-center gap-3 mt-3">
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={24} className="text-[#fbbc04] fill-[#fbbc04]" />
+                <Star key={i} size={18} className="text-[#fbbc04] fill-[#fbbc04]" />
               ))}
             </div>
-            <span className="text-xl font-bold text-gray-900">4.9/5</span>
-            <span className="text-gray-500 font-medium">(130+ avis)</span>
+            <span className="text-[18px] font-bold text-gray-900">4.9/5</span>
+            <span className="text-gray-500 text-[14px] font-medium">(130+ avis)</span>
           </div>
         </div>
 

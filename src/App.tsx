@@ -4,12 +4,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ValueBar from './components/ValueBar';
 import Services from './components/Services';
-import Ecosystem from './components/Ecosystem';
 import HowItWorks from './components/HowItWorks';
 import Pricing from './components/Pricing';
-import AISimulator from './components/AISimulator';
-import RelatedSites from './components/RelatedSites';
-import Blog from './components/Blog';
 import BlogPage from './components/BlogPage';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
@@ -115,14 +111,10 @@ const App: React.FC = () => {
             <Hero />
             <ValueBar />
             <Services onServiceClick={navigateToService} />
-            <Ecosystem />
             <HowItWorks />
             <Pricing />
-            <AISimulator />
-            <Blog onArticleClick={navigateToArticle} onSeeAll={navigateToBlog} />
             <Testimonials />
             <FAQ />
-            <RelatedSites />
             <Contact />
           </>
         )}

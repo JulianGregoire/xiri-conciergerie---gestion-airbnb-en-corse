@@ -3,26 +3,23 @@ import React from 'react';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-40 bg-white relative overflow-hidden">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#F0F7FA]/30 hidden lg:block -z-0"></div>
+    <section id="contact" className="py-14 md:py-16 bg-white relative overflow-hidden border-t border-xiri-navy/5">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12">
 
-          {/* Left Side: Text and Info */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-12">
-            <div className="space-y-6">
-              <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Prendre Contact</span>
-              <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight">
-                Écrivons <br />la <span className="italic">suite</span>.
+          <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
+            <div className="space-y-4">
+              <span className="text-xiri-gold text-[11px] font-bold uppercase tracking-[0.25em] block">Prendre Contact</span>
+              <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
+                Demandez votre estimation de rentabilité.
               </h2>
-              <p className="text-[16px] text-xiri-navy/60 leading-loose font-light max-w-md">
-                Que vous soyez propriétaire d'une villa d'exception ou que vous souhaitiez confier votre appartement, nous sommes à votre écoute pour une étude personnalisée de votre projet.
+              <p className="text-[15px] text-xiri-navy/70 leading-relaxed font-medium max-w-md">
+                Réponse sous 24h avec un plan d'action adapté à votre bien et à vos objectifs.
               </p>
             </div>
 
-            <div className="space-y-10 pt-8 border-t border-xiri-navy/5">
+            <div className="space-y-6 pt-5 border-t border-xiri-navy/5">
               <div className="flex items-start space-x-6">
                 <div className="w-12 h-12 bg-[#F0F7FA] flex items-center justify-center text-xiri-gold">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -45,11 +42,10 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white p-8 md:p-16 framed-img shadow-[0_50px_100px_-20px_rgba(27,43,68,0.15)]">
-              <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="bg-white p-7 md:p-10 framed-img shadow-[0_24px_60px_-20px_rgba(27,43,68,0.2)]">
+              <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="group relative">
                     <input
                       type="text"
@@ -115,8 +111,8 @@ const Contact: React.FC = () => {
                   </label>
                 </div>
 
-                <div className="pt-6">
-                  <button className="group relative w-full bg-xiri-navy text-white overflow-hidden py-6 text-[11px] uppercase tracking-[0.4em] font-bold shadow-2xl transition-all hover:bg-black">
+                <div className="pt-2">
+                  <button className="group relative w-full bg-xiri-navy text-white overflow-hidden py-4 text-[11px] uppercase tracking-[0.2em] font-bold shadow-2xl transition-all hover:bg-black">
                     <span className="relative z-10">Envoyer ma demande</span>
                     <div className="absolute inset-0 bg-xiri-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 opacity-10"></div>
                   </button>
