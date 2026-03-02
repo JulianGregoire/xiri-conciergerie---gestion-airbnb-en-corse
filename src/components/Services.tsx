@@ -2,17 +2,18 @@
 
 import React from 'react';
 import {
-  Globe,
-  Users,
-  Key,
-  Sparkles,
-  ShieldCheck,
   CheckCircle2
 } from 'lucide-react';
 
+import iconGestion from '../images/Gestion d\'annonces.png';
+import iconSelection from '../images/Selct des voyageurs.png';
+import iconCheckin from '../images/Check-in _ Check-out.png';
+import iconMenage from '../images/Menage.png';
+import iconAssurance from '../images/Assurances.png';
+
 const serviceSlides = [
   {
-    icon: <Globe size={20} />,
+    icon: <img src={iconGestion.src} alt="Gestion d'annonces" className="w-6 h-6 object-contain" />,
     title: "Gestion d'annonces",
     points: [
       "Création d'un site internet dédié",
@@ -22,7 +23,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <Users size={20} />,
+    icon: <img src={iconSelection.src} alt="Sélection des voyageurs" className="w-6 h-6 object-contain" />,
     title: "Sélection des voyageurs",
     points: [
       "Analyse rigoureuse des profils",
@@ -32,7 +33,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1521791136064-7986c29535a7?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <Key size={20} />,
+    icon: <img src={iconCheckin.src} alt="Check-in / Check-out" className="w-6 h-6 object-contain" />,
     title: "Check-in / Check-out",
     points: [
       "Accueil physique personnalisé",
@@ -42,7 +43,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1531234799389-dcb7651eb0a2?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <Sparkles size={20} />,
+    icon: <img src={iconMenage.src} alt="Ménage et blanchisserie" className="w-6 h-6 object-contain" />,
     title: "Ménage et blanchisserie",
     points: [
       "Ménage professionnel hôtelier",
@@ -52,7 +53,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <ShieldCheck size={20} />,
+    icon: <img src={iconAssurance.src} alt="Assurances & cautions" className="w-6 h-6 object-contain" />,
     title: "Assurances & cautions",
     points: [
       "Gestion des formalités légales",
