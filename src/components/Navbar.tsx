@@ -119,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
           <div className="flex justify-between items-center">
             <button onClick={() => handleLinkClick('home')} className="flex flex-col items-center group cursor-pointer border-none bg-transparent text-left outline-none">
               <span className={`text-base md:text-lg font-serif font-medium tracking-[0.1em] transition-colors duration-500 ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>XIRI CONCIERGERIE</span>
-              <span className={`text-[8px] md:text-[9px] uppercase tracking-[0.5em] -mt-0.5 font-bold transition-colors duration-500 ${!isTransparent ? 'text-xiri-gold' : 'text-xiri-gold'}`}>EN CORSE</span>
+              <span className={`text-[8px] md:text-[9px] uppercase tracking-[0.5em] -mt-0.5 font-bold transition-colors duration-500 ${!isTransparent ? 'text-xiri-gold' : 'text-xiri-gold'}`}>RÉSEAU PREMIUM</span>
             </button>
 
             {/* Desktop Menu */}
@@ -160,7 +160,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
                   onMouseEnter={() => { setIsCitiesOpen(true); setIsServicesOpen(false); }}
                   className={`flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}
                 >
-                  Destinations
+                  Nos Conciergeries
                   <ChevronDown size={12} className={`transition-transform duration-300 ${isCitiesOpen ? 'rotate-180' : ''}`} />
                 </button>
 
@@ -193,8 +193,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
               <button
                 onClick={() => handleLinkClick('contact')}
                 className={`px-6 py-3 text-[10px] uppercase tracking-[0.3em] font-bold transition-all shadow-lg ${!isTransparent
-                    ? 'bg-xiri-navy text-white hover:bg-black'
-                    : 'bg-white text-xiri-navy hover:bg-xiri-gold hover:text-white'
+                  ? 'bg-xiri-navy text-white hover:bg-black'
+                  : 'bg-white text-xiri-navy hover:bg-xiri-gold hover:text-white'
                   }`}
               >
                 ESTIMER MON BIEN
@@ -216,7 +216,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
             <div className="flex justify-between items-center mb-16">
               <div className="flex flex-col">
                 <span className="text-lg font-serif font-medium tracking-[0.1em] text-xiri-navy">XIRI CONCIERGERIE</span>
-                <span className="text-[9px] uppercase tracking-[0.3em] font-bold text-xiri-gold">EN CORSE</span>
+                <span className="text-[9px] uppercase tracking-[0.3em] font-bold text-xiri-gold">RÉSEAU PREMIUM</span>
               </div>
               <button onClick={() => setIsMobileMenuOpen(false)} className="text-xiri-navy bg-transparent">
                 <X size={32} />
@@ -227,7 +227,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
               <button onClick={() => handleLinkClick('home')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent border-none p-0 text-left w-full">Accueil</button>
 
               <div className="space-y-4">
-                <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-xiri-gold">Destinations</p>
+                <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-xiri-gold">Nos Conciergeries</p>
                 <div className="pl-4 space-y-4 border-l border-xiri-gold/20">
                   {cities.map((city, idx) => (
                     <button key={idx} onClick={() => handleCityClick(city.id)} className="block text-sm font-medium text-xiri-navy/80 bg-transparent border-none p-0 text-left">{city.name}</button>

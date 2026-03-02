@@ -15,10 +15,10 @@ const ValueBar: React.FC = () => {
             </div>
             <div className="space-y-4">
               <h3 className="text-2xl font-serif text-xiri-navy tracking-normal leading-snug">
-                Un concierge local <br /><span className="font-light">dédié à votre logement</span>
+                Une stratégie <br /><span className="font-light">digitale de pointe</span>
               </h3>
               <p className="text-[15px] text-[#0a0a0a] leading-relaxed font-medium">
-                Vous serez en relation avec un professionnel de l’hébergement expérimenté, pour accueillir vos visiteurs dans les meilleures conditions et assurer un suivi méticuleux.
+                Nous optimisons vos annonces via des algorithmes de tarification dynamique et une diffusion multi-plateforme. Notre objectif premier : maximiser vos revenus locatifs.
               </p>
             </div>
           </div>
@@ -29,10 +29,10 @@ const ValueBar: React.FC = () => {
             </div>
             <div className="space-y-4">
               <h3 className="text-2xl font-serif text-xiri-navy tracking-normal leading-snug">
-                Gestion complète pour <br /><span className="font-light">une location 100% sereine</span>
+                Un ancrage <br /><span className="font-light">régional d'excellence</span>
               </h3>
               <p className="text-[15px] text-[#0a0a0a] leading-relaxed font-medium">
-                Notre équipe se charge de l'intégralité de la gestion (accueil, ménage, maintenance, etc.). Vous bénéficiez d'une location rentable, entièrement déléguée et sans contraintes.
+                Forts d'un réseau maîtrisé, nous déployons une exigence hôtelière haut de gamme grâce à des équipes locales expertes, garantissant un entretien rigoureux et une sérénité absolue.
               </p>
             </div>
           </div>

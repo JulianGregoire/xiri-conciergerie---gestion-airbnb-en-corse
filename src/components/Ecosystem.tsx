@@ -5,20 +5,20 @@ import { CreditCard, Heart, ShieldCheck } from 'lucide-react';
 const Ecosystem: React.FC = () => {
   const advantages = [
     {
-      title: "Encaissement Direct",
-      description: "Les fonds transitent sur votre compte personnel. Une transparence financière absolue soutenue par notre ingénierie technique.",
+      title: "Optimisation des Revenus",
+      description: "Algorithmes de tarification dynamique (Revenue Management) et veille marché quotidienne pour maximiser votre taux d'occupation et vos nuitées.",
       icon: <CreditCard className="w-6 h-6" />,
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "Expertise Règlementaire",
-      description: "Respect strict des normes locales : déclarations, taxes et conformités administratives sont opérées par nos experts.",
+      title: "Diffusion Omnicanale",
+      description: "Présence ultra-optimisée sur toutes les plateformes majeures (Airbnb, Booking...) soutenue par une création de contenu professionnel et un réseau direct.",
       icon: <ShieldCheck className="w-6 h-6" />,
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "Gestion Passive de Luxe",
-      description: "Profitez de votre investissement en toute sérénité. De la sélection à la maintenance, nous veillons sur votre patrimoine.",
+      title: "Logistique Hôtelière",
+      description: "Un entretien rigoureux par des équipes formées, une literie de qualité hôtelière et une disponibilité 24/7 pour des séjours sans la moindre friction.",
       icon: <Heart className="w-6 h-6" />,
       image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800"
     }
@@ -31,12 +31,12 @@ const Ecosystem: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="mb-32">
-          <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] mb-6 block">Confidentialité & Maîtrise</span>
+          <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] mb-6 block">Performance & Sérénité</span>
           <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight mb-8">
-            Une délégation <br /><span className="">sur-mesure</span>.
+            Pourquoi choisir <br /><span className="text-xiri-gold font-light">Xiri Conciergerie</span> ?
           </h2>
           <p className="text-[17px] text-[#0a0a0a] leading-relaxed font-medium max-w-xl editorial-spacing">
-            Nous avons conçu un écosystème où l'excellence opérationnelle rencontre la sécurité juridique, pour une valorisation pérenne de vos actifs.
+            Nous avons conçu un écosystème puissant où l'innovation digitale se met au service de l'excellence sur le terrain, garantissant la valorisation mathématique et opérationnelle de votre investissement.
           </p>
         </div>
 

@@ -43,15 +43,15 @@ const Hero: React.FC = () => {
           <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 z-10">
             <div className="space-y-4 animate-fade-in-up md:space-y-6">
               <span className="text-[10px] font-bold text-xiri-gold tracking-[0.6em] uppercase block">
-                L'Excellence Immobilière
+                GESTION LOCATIVE HAUT DE GAMME
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif text-xiri-navy leading-[1.1] tracking-normal">
-                Conciergerie et gestion de vos <span className="font-light text-xiri-gold">locations</span> courte durée
+                Maximisez la rentabilité de votre bien en toute <span className="font-light text-xiri-gold">sérénité</span>
               </h1>
             </div>
 
             <p className="text-[15px] text-[#0a0a0a] leading-relaxed max-w-xl font-medium">
-              Gestion de propriétés de prestige et services sur-mesure pour une sérénité absolue sur l'Île de Beauté.
+              Xiri Conciergerie allie expertise locale et stratégie digitale avancée pour valoriser votre patrimoine. Une gestion intégrale et transparente, pensée pour les propriétaires exigeants.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
@@ -59,13 +59,13 @@ const Hero: React.FC = () => {
                 onClick={() => scrollToSection('contact')}
                 className="bg-xiri-navy text-white px-8 py-4 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-extrabold hover:bg-xiri-gold transition-all duration-300 shadow-xl rounded-none border-none cursor-pointer"
               >
-                Confier mon bien
+                ESTIMER MA RENTABILITÉ
               </button>
               <button
                 onClick={() => scrollToSection('services')}
                 className="bg-transparent text-xiri-navy border border-xiri-navy/20 px-8 py-4 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all duration-300 rounded-none shadow-sm cursor-pointer"
               >
-                Découvrir nos services
+                DÉCOUVRIR NOTRE EXIGENCE
               </button>
             </div>
           </div>

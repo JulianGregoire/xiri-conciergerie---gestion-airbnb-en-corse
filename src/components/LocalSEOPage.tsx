@@ -27,7 +27,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
         <div className="relative z-10 text-center px-6 max-w-5xl">
           <div className="flex items-center justify-center gap-3 mb-8">
             <MapPin size={16} className="text-xiri-gold" />
-            <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[1em] block">Corse • {city.name}</span>
+            <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[1em] block">Réseau Xiri • {city.name}</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-serif text-white leading-tight mb-8">
             Conciergerie <br /><span className="font-light">{city.name}</span>.
@@ -68,7 +68,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
               "{city.intro}"
             </p>
             <p className="text-[16px] text-[#000000] leading-loose font-medium">
-              Déléguer la gestion de votre propriété à {city.name} s'inscrit dans une démarche de valorisation pérenne. Xiri & Co assure une présence physique et une expertise hôtelière de pointe pour une rentabilité optimale.
+              Notre conciergerie locale à {city.name} sécurise votre rendement immobilier. Profitez de la puissance technologique globale de Xiri couplée à une équipe sur le terrain, dédiée à l'excellence opérationnelle et hôtelière.
             </p>
             <button
               onClick={onNavigateContact}
@@ -86,7 +86,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({ city, onNavigateContact, on
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             <div className="lg:col-span-1 space-y-8">
               <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Savoir-faire Local</span>
-              <h3 className="text-4xl font-serif text-xiri-navy">Présence de terrain à <br />{city.name}.</h3>
+              <h3 className="text-4xl font-serif text-xiri-navy">L'ancrage territorial à <br />{city.name}.</h3>
               <p className="text-[15px] text-[#000000] font-medium leading-relaxed">
                 {city.localExpertise}
               </p>

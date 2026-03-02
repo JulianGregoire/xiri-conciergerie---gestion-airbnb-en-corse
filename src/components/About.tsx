@@ -33,7 +33,7 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
               Notre <span className="font-light">vision</span>
             </h1>
             <p className="text-[16px] md:text-[18px] text-white/90 leading-relaxed font-semibold max-w-2xl mx-auto editorial-spacing drop-shadow-md animate-in slide-in-from-bottom-12 duration-1000">
-              Une approche rigoureuse et sécurisée pour valoriser votre patrimoine insulaire avec élégance.
+              Une structure immobilière premium dédiée à la performance et gérée avec une exigence hôtelière de premier plan.
             </p>
             <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent mx-auto mt-12 opacity-50"></div>
           </div>
@@ -43,7 +43,7 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
       {/* Intro Text */}
       <section className="py-32 lg:py-48 max-w-4xl mx-auto px-6 text-center">
         <p className="text-2xl md:text-3xl font-serif text-[#0a0a0a] leading-relaxed font-medium italic">
-          "XIRI CONCIERGERIE simplifie l'exceptionnel : nous opérons avec une discrétion absolue pour que votre esprit soit entièrement libre."
+          "XIRI CONCIERGERIE simplifie l'exceptionnel. Nous conjuguons puissance digitale et ancrage territorial pour une rentabilité optimale, en toute sérénité."
         </p>
       </section>
 
@@ -58,15 +58,15 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
             </div>
             <div className="order-1 lg:order-2 space-y-12">
               <div className="space-y-6">
-                <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">L'Ancrage Local</span>
-                <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy">L'âme de la <span className="">Corse</span>.</h2>
+                <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Le Réseau Xiri</span>
+                <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy">L'ancrage <span className="">Régional</span>.</h2>
               </div>
               <div className="space-y-8 text-[17px] text-[#0a0a0a] font-medium leading-loose">
                 <p>
-                  Parce que la Corse exige une maîtrise irréprochable du terrain. Nous sommes présents au cœur des micro-régions pour veiller sur chaque détail.
+                  Xiri n'est pas une agence standardisée. Notre développement est maîtrisé au sein de micro-régions stratégiques pour garantir un niveau de qualité constant.
                 </p>
                 <p>
-                  Nous sécurisons l'aspect administratif et juridique, assurant une conformité rigoureuse avec les règlementations locales pour chaque propriété.
+                  Nos conciergeries locales bénéficient de notre puissance technologique de tarification tout en appliquant, sur le terrain, notre charte opérationnelle sans compromis.
                 </p>
               </div>
             </div>
@@ -84,14 +84,14 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
                 <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy">La quête de <span className="">l'Excellence</span>.</h2>
               </div>
               <p className="text-2xl font-serif text-xiri-navy border-l-2 border-xiri-gold pl-12 py-4 font-medium">
-                "Le vrai luxe pour un propriétaire, c'est la confiance aveugle en ceux qui prennent soin de son foyer."
+                "Notre promesse est mathématique : amplifier vos revenus tout en réduisant votre charge mentale."
               </p>
               <div className="space-y-8 text-[17px] text-[#0a0a0a] font-medium leading-loose max-w-2xl">
                 <p>
-                  Nous orchestrons une logistique invisible mais parfaite. Du linge en coton d'exception à la maintenance technique proactive, Xiri opère avec une rigueur hôtelière.
+                  Grâce à une optimisation de vos annonces (Revenue Management) et une analyse en temps réel des flux touristiques locaux, nous augmentons considérablement l'attractivité de votre patrimoine.
                 </p>
                 <p>
-                  Votre bien est protégé et valorisé quotidiennement, vous offrant la certitude d'un patrimoine impeccablement entretenu sans intrusion dans votre quotidien.
+                  En parallèle, nos équipes sur le terrain assurent une logistique hôtelière invisible mais parfaite. Votre bien est protégé et valorisé quotidiennement.
                 </p>
               </div>
             </div>
