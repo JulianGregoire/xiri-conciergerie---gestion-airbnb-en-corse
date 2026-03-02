@@ -184,20 +184,34 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
               </div>
 
               <button onClick={() => handleLinkClick('about')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
-                Vision
+                Notre approche
               </button>
-              <button onClick={() => handleLinkClick('blog')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
-                Blog
+              <button onClick={() => handleLinkClick('pricing')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
+                Tarifs
               </button>
+              <button onClick={() => handleLinkClick('testimonials')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
+                Avis
+              </button>
+              <button onClick={() => handleLinkClick('contact')} className={`text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-xiri-gold bg-transparent ${!isTransparent ? 'text-xiri-navy' : 'text-white'}`}>
+                Contact
+              </button>
+            </div>
 
+            <div className="hidden lg:flex items-center gap-4">
               <button
                 onClick={() => handleLinkClick('contact')}
-                className={`px-6 py-3 text-[10px] uppercase tracking-[0.3em] font-bold transition-all shadow-lg ${!isTransparent
-                  ? 'bg-xiri-navy text-white hover:bg-black'
-                  : 'bg-white text-xiri-navy hover:bg-xiri-gold hover:text-white'
-                  }`}
+                className={`px-5 py-3 text-[9px] uppercase tracking-[0.3em] font-bold transition-all border ${!isTransparent ? 'border-xiri-navy text-xiri-navy hover:bg-xiri-navy hover:text-white' : 'border-white text-white hover:bg-white hover:text-xiri-navy'} cursor-pointer`}
               >
-                ESTIMER MON BIEN
+                DÉLÉGUER À XIRI
+              </button>
+              <button
+                onClick={() => handleLinkClick('contact')}
+                className={`px-5 py-3 text-[9px] uppercase tracking-[0.3em] font-bold transition-all shadow-lg ${!isTransparent
+                  ? 'bg-xiri-navy text-white hover:bg-xiri-gold'
+                  : 'bg-white text-xiri-navy hover:bg-xiri-gold hover:text-white'
+                  } cursor-pointer`}
+              >
+                ESTIMER MA RENTABILITÉ
               </button>
             </div>
 
@@ -244,16 +258,24 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigateService, onNavig
                 </div>
               </div>
 
-              <button onClick={() => handleLinkClick('about')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Vision</button>
-              <button onClick={() => handleLinkClick('blog')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Blog</button>
+              <button onClick={() => handleLinkClick('about')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Notre approche</button>
+              <button onClick={() => handleLinkClick('pricing')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Tarifs</button>
+              <button onClick={() => handleLinkClick('testimonials')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Avis</button>
+              <button onClick={() => handleLinkClick('contact')} className="block text-xl font-serif text-xiri-navy tracking-widest bg-transparent w-full text-left">Contact</button>
             </div>
 
-            <div className="mt-auto">
+            <div className="mt-auto flex flex-col gap-4">
               <button
                 onClick={() => handleLinkClick('contact')}
-                className="block w-full bg-xiri-navy text-white text-center py-6 text-[11px] uppercase tracking-[0.4em] font-bold shadow-xl border-none"
+                className="block w-full border border-xiri-navy text-xiri-navy text-center py-4 text-[10px] uppercase tracking-[0.4em] font-bold bg-transparent"
               >
-                ESTIMER MON BIEN
+                DÉLÉGUER À XIRI
+              </button>
+              <button
+                onClick={() => handleLinkClick('contact')}
+                className="block w-full bg-xiri-navy text-white text-center py-4 text-[10px] uppercase tracking-[0.4em] font-bold shadow-xl border-none"
+              >
+                ESTIMER MA RENTABILITÉ
               </button>
             </div>
           </div>

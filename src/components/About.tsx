@@ -27,13 +27,13 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
         <div className="relative z-10 text-center px-6 max-w-5xl">
           <div className="space-y-8">
             <span className="text-xiri-gold text-[10px] md:text-[11px] uppercase tracking-[0.6em] font-extrabold block mb-4 drop-shadow-md animate-in slide-in-from-bottom-4 duration-700">
-              Expertise • Maîtrise • Sérénité
+              Stratégie • Performance • Gestion
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.2] tracking-tight text-white drop-shadow-2xl animate-in slide-in-from-bottom-8 duration-1000">
-              Notre <span className="font-light">vision</span>
+              Notre <span className="font-light">approche</span>
             </h1>
             <p className="text-[16px] md:text-[18px] text-white/90 leading-relaxed font-semibold max-w-2xl mx-auto editorial-spacing drop-shadow-md animate-in slide-in-from-bottom-12 duration-1000">
-              Une structure immobilière premium dédiée à la performance et gérée avec une exigence hôtelière de premier plan.
+              Une méthodologie immobilière premium, construite pour maximiser vos rendements tout en vous garantissant une tranquillité absolue.
             </p>
             <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent mx-auto mt-12 opacity-50"></div>
           </div>
@@ -43,7 +43,7 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
       {/* Intro Text */}
       <section className="py-32 lg:py-48 max-w-4xl mx-auto px-6 text-center">
         <p className="text-2xl md:text-3xl font-serif text-[#0a0a0a] leading-relaxed font-medium italic">
-          "XIRI CONCIERGERIE simplifie l'exceptionnel. Nous conjuguons puissance digitale et ancrage territorial pour une rentabilité optimale, en toute sérénité."
+          "Xiri n'est pas une simple agence locale. C'est une ingénierie locative qui allie puissance technologique et ancrage physique pour transformer votre bien en un actif ultra-performant."
         </p>
       </section>
 
@@ -58,15 +58,15 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
             </div>
             <div className="order-1 lg:order-2 space-y-12">
               <div className="space-y-6">
-                <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Le Réseau Xiri</span>
-                <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy">L'ancrage <span className="">Régional</span>.</h2>
+                <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">01. Un maillage territorial maîtrisé</span>
+                <h2 className="text-4xl md:text-6xl font-serif text-xiri-navy">Le pouvoir du <span className="">Réseau</span>.</h2>
               </div>
               <div className="space-y-8 text-[17px] text-[#0a0a0a] font-medium leading-loose">
                 <p>
-                  Xiri n'est pas une agence standardisée. Notre développement est maîtrisé au sein de micro-régions stratégiques pour garantir un niveau de qualité constant.
+                  Nous nous développons de manière chirurgicale, région par région, en y implantant nos propres équipes. Pas de sous-traitance opaque ni de centralisation déconnectée du terrain.
                 </p>
                 <p>
-                  Nos conciergeries locales bénéficient de notre puissance technologique de tarification tout en appliquant, sur le terrain, notre charte opérationnelle sans compromis.
+                  Chaque conciergerie locale opère avec la même rigueur hôtelière et bénéficie de notre support global, garantissant une exécution premium et un entretien méticuleux de votre patrimoine, où qu'il soit.
                 </p>
               </div>
             </div>
@@ -80,18 +80,18 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-7 space-y-16">
               <div className="space-y-6">
-                <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Savoir-Faire</span>
-                <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy">La quête de <span className="">l'Excellence</span>.</h2>
+                <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">02. Une présence omnicanale</span>
+                <h2 className="text-4xl md:text-6xl font-serif text-xiri-navy">La puissance <span className="">Digitale</span>.</h2>
               </div>
               <p className="text-2xl font-serif text-xiri-navy border-l-2 border-xiri-gold pl-12 py-4 font-medium">
-                "Notre promesse est mathématique : amplifier vos revenus tout en réduisant votre charge mentale."
+                "C'est la donnée qui dicte la performance, et notre réseau qui garantit l'expérience."
               </p>
               <div className="space-y-8 text-[17px] text-[#0a0a0a] font-medium leading-loose max-w-2xl">
                 <p>
-                  Grâce à une optimisation de vos annonces (Revenue Management) et une analyse en temps réel des flux touristiques locaux, nous augmentons considérablement l'attractivité de votre patrimoine.
+                  Un bien d'exception mérite une visibilité exceptionnelle. Nous déployons vos annonces simultanément sur Airbnb, Booking.com, Abritel, et notre propre réseau de réservation directe, en synchronisant parfaitement les calendriers.
                 </p>
                 <p>
-                  En parallèle, nos équipes sur le terrain assurent une logistique hôtelière invisible mais parfaite. Votre bien est protégé et valorisé quotidiennement.
+                  Nous produisons les contenus (photographie haute définition, copywriting ciblé SEO) pour séduire une clientèle nationale et internationale exigeante, propulsant mécaniquement votre bien au sommet des résultats de recherche.
                 </p>
               </div>
             </div>
@@ -110,20 +110,20 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <div className="max-w-3xl space-y-16">
             <div className="space-y-6">
-              <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Indépendance Financière</span>
-              <h2 className="text-5xl md:text-7xl font-serif">La maîtrise de vos <span className="">revenus</span>.</h2>
+              <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">03. Yield Management algorithmique</span>
+              <h2 className="text-4xl md:text-6xl font-serif">Optimisation des <span className="">Revenus</span>.</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <h4 className="text-xiri-gold text-[11px] font-black uppercase tracking-widest">Circuit Court</h4>
+                <h4 className="text-xiri-gold text-[11px] font-black uppercase tracking-widest">Tarification Dynamique</h4>
                 <p className="text-white text-[16px] font-medium leading-relaxed">
-                  L'argent est versé directement sur votre compte. Une solution transparente pour une gestion financière saine et sans intermédiaire.
+                  Grâce à l'analyse de millions de données en temps réel, nos algorithmes ajustent les prix de vos nuitées quotidiennement. Nous maximisons le taux d'occupation en basse saison et le prix moyen en haute saison.
                 </p>
               </div>
               <div className="space-y-6">
-                <h4 className="text-xiri-gold text-[11px] font-black uppercase tracking-widest">Valorisation Directe</h4>
+                <h4 className="text-xiri-gold text-[11px] font-black uppercase tracking-widest">Direct et Désintermédié</h4>
                 <p className="text-white text-[16px] font-medium leading-relaxed">
-                  Nous développons votre propre canal de réservation, augmentant votre rentabilité tout en réduisant votre dépendance aux plateformes mondiales.
+                  Au-delà des plateformes classiques, notre force est de bâtir votre propre canal de réservation directe. Moins de commissions concédées aux géants du web équivaut à un niveau de rentabilité significativement supérieur.
                 </p>
               </div>
             </div>
@@ -142,15 +142,15 @@ const About: React.FC<AboutProps> = ({ onNavigateHome, onNavigateContact }) => {
             </div>
             <div className="w-full lg:w-1/2 space-y-12">
               <div className="space-y-6">
-                <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Relation de Confiance</span>
-                <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy">Une gestion <span className="">limpide</span>.</h2>
+                <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">04. Confiance structurelle</span>
+                <h2 className="text-4xl md:text-6xl font-serif text-xiri-navy">Une transparence <span className="">totale</span>.</h2>
               </div>
               <div className="space-y-8 text-[17px] text-[#0a0a0a] font-medium leading-loose">
                 <p>
-                  La transparence est le fondement de notre collaboration. Chaque intervention est tracée, documentée et justifiée pour votre tranquillité.
+                  Avec Xiri, vous conservez un contrôle total. Les encaissements vous parviennent directement, et nous vous offrons une visibilité exhaustive sur nos actions. Un espace sécurisé vous permet de suivre l'évolution précise de la rentabilité de vos actifs.
                 </p>
                 <p>
-                  Notre mission est de vous démontrer que déléguer à XIRI est votre investissement le plus serein. Nous assurons un relais opérationnel discret pour que vous puissiez vous concentrer sur vos projets.
+                  De la gestion des litiges et cautions à l'optimisation fiscale de vos meublés de tourisme, nous vous déchargeons entièrement sans jamais vous déposséder de votre autonomie décisionnelle.
                 </p>
               </div>
               <div className="pt-12">
