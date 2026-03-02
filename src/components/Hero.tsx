@@ -38,32 +38,32 @@ const Hero: React.FC = () => {
     <section id="home" className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          
+
           {/* Left Text Content */}
           <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 z-10">
-            <div className="space-y-4 animate-fade-in-up">
-              <span className="text-sm font-bold text-xiri-gold tracking-widest uppercase">
+            <div className="space-y-4 animate-fade-in-up md:space-y-6">
+              <span className="text-[10px] font-bold text-xiri-gold tracking-[0.6em] uppercase block">
                 L'Excellence Immobilière
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-gray-900 leading-[1.1] tracking-tight">
-                Conciergerie et gestion de vos <span className="text-[#FF385C]">locations</span> courte durée
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif text-xiri-navy leading-[1.1] tracking-normal">
+                Conciergerie et gestion de vos <span className="font-light text-xiri-gold">locations</span> courte durée
               </h1>
             </div>
 
-            <p className="text-lg sm:text-xl text-gray-500 leading-relaxed max-w-xl font-medium">
+            <p className="text-[15px] text-[#0a0a0a] leading-relaxed max-w-xl font-medium">
               Gestion de propriétés de prestige et services sur-mesure pour une sérénité absolue sur l'Île de Beauté.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <button
                 onClick={() => scrollToSection('contact')}
-                className="bg-[#FF385C] hover:bg-[#E31C5F] text-white px-8 py-4 rounded-xl text-base font-bold transition-all duration-300 shadow-md"
+                className="bg-xiri-navy text-white px-8 py-4 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-extrabold hover:bg-xiri-gold transition-all duration-300 shadow-xl rounded-none border-none cursor-pointer"
               >
                 Confier mon bien
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="bg-white text-gray-900 border border-gray-300 px-8 py-4 rounded-xl text-base font-bold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
+                className="bg-transparent text-xiri-navy border border-xiri-navy/20 px-8 py-4 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all duration-300 rounded-none shadow-sm cursor-pointer"
               >
                 Découvrir nos services
               </button>
@@ -71,33 +71,26 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Image Content */}
-          <div className="w-full lg:w-1/2 relative h-[450px] sm:h-[500px] lg:h-[650px] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="w-full lg:w-1/2 relative h-[450px] sm:h-[500px] lg:h-[700px] rounded-none overflow-hidden shadow-2xl border border-xiri-navy/5">
             {images.map((img, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
               >
                 <img
                   src={img.src}
                   alt={`Xiri Conciergerie - Hero ${index + 1}`}
-                  className={`w-full h-full object-cover transition-transform duration-[10000ms] ease-linear ${
-                    index === currentImageIndex ? 'scale-110' : 'scale-100'
-                  }`}
+                  className={`w-full h-full object-cover transition-transform duration-[10000ms] ease-linear ${index === currentImageIndex ? 'scale-110' : 'scale-100'
+                    }`}
                 />
               </div>
             ))}
-            
-            {/* Optional Floating Badge Airbnb Style */}
-            <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl flex items-center gap-4">
-              <div className="w-12 h-12 bg-[#FF385C] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                ★
-              </div>
-              <div>
-                <p className="text-sm font-bold text-gray-900">Service Premium</p>
-                <p className="text-xs text-gray-500 font-medium">Superhost & Conciergerie</p>
-              </div>
+
+            {/* Elegant Xiri Badge */}
+            <div className="absolute bottom-0 left-0 bg-white p-6 md:p-8 shadow-2xl border-t border-r border-xiri-navy/5 flex flex-col justify-center gap-2 rounded-none z-20 hidden md:flex">
+              <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.4em]">Excellence</span>
+              <span className="font-serif text-xl sm:text-2xl text-xiri-navy tracking-wide">Service Premium</span>
             </div>
           </div>
 
