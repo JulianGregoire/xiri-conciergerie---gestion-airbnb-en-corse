@@ -20,7 +20,7 @@ const navLinks = [
             >
                 <span
                     id="nav-logo-text"
-                    class="text-base md:text-lg font-serif font-medium tracking-[0.08em] transition-colors duration-500 text-white"
+                    class="text-base md:text-lg font-serif font-medium tracking-[0.08em] transition-colors duration-500 text-xiri-navy"
                     >XIRI CONCIERGERIE</span
                 >
                 <span
@@ -34,7 +34,7 @@ const navLinks = [
                     navLinks.map((link) => (
                         <a
                             href={link.href}
-                            class="nav-link text-[11px] uppercase tracking-[0.14em] font-bold transition-all hover:text-xiri-gold text-white no-underline"
+                            class="nav-link text-[11px] uppercase tracking-[0.14em] font-bold transition-all hover:text-xiri-gold text-xiri-navy no-underline"
                         >
                             {link.label}
                         </a>
@@ -46,7 +46,7 @@ const navLinks = [
                 <a
                     href="/#contact"
                     id="nav-cta"
-                    class="px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border border-white text-white hover:bg-white hover:text-xiri-navy cursor-pointer rounded-xl no-underline"
+                    class="px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border border-xiri-navy/20 text-xiri-navy hover:bg-xiri-navy hover:text-white cursor-pointer rounded-xl no-underline"
                 >
                     Estimer ma rentabilité
                 </a>
@@ -55,7 +55,7 @@ const navLinks = [
             <div class="lg:hidden">
                 <button
                     id="mobile-menu-button"
-                    class="bg-transparent text-white border-none cursor-pointer"
+                    class="bg-transparent text-xiri-navy border-none cursor-pointer"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -165,9 +165,9 @@ const navLinks = [
 
     const updateNav = () => {
         const isScrolled = window.scrollY > 50;
-        const isHomePage = window.location.pathname === "/";
 
-        if (isScrolled || !isHomePage) {
+        // On force un fond blanc et texte sombre dès qu'on scrolle
+        if (isScrolled) {
             nav?.classList.add(
                 "bg-white/95",
                 "backdrop-blur-sm",
@@ -176,10 +176,8 @@ const navLinks = [
             );
             nav?.classList.remove("bg-transparent", "py-4");
             logoText?.classList.add("text-xiri-navy");
-            logoText?.classList.remove("text-white");
             navLinks.forEach((link) => {
                 link.classList.add("text-xiri-navy");
-                link.classList.remove("text-white");
             });
             navCta?.classList.add(
                 "border-xiri-navy",
@@ -187,15 +185,10 @@ const navLinks = [
                 "hover:bg-xiri-navy",
                 "hover:text-white",
             );
-            navCta?.classList.remove(
-                "border-white",
-                "text-white",
-                "hover:bg-white",
-                "hover:text-xiri-navy",
-            );
+            navCta?.classList.remove("border-xiri-navy/20");
             mobileMenuButton?.classList.add("text-xiri-navy");
-            mobileMenuButton?.classList.remove("text-white");
         } else {
+            // État initial (en haut de page)
             nav?.classList.remove(
                 "bg-white/95",
                 "backdrop-blur-sm",
@@ -203,26 +196,15 @@ const navLinks = [
                 "py-3",
             );
             nav?.classList.add("bg-transparent", "py-4");
-            logoText?.classList.remove("text-xiri-navy");
-            logoText?.classList.add("text-white");
+
+            // On reste en texte sombre car le Hero est blanc
+            logoText?.classList.add("text-xiri-navy");
             navLinks.forEach((link) => {
-                link.classList.remove("text-xiri-navy");
-                link.classList.add("text-white");
+                link.classList.add("text-xiri-navy");
             });
-            navCta?.classList.remove(
-                "border-xiri-navy",
-                "text-xiri-navy",
-                "hover:bg-xiri-navy",
-                "hover:text-white",
-            );
-            navCta?.classList.add(
-                "border-white",
-                "text-white",
-                "hover:bg-white",
-                "hover:text-xiri-navy",
-            );
-            mobileMenuButton?.classList.remove("text-xiri-navy");
-            mobileMenuButton?.classList.add("text-white");
+            navCta?.classList.add("border-xiri-navy/20", "text-xiri-navy");
+            navCta?.classList.remove("border-xiri-navy");
+            mobileMenuButton?.classList.add("text-xiri-navy");
         }
     };
 
