@@ -34,12 +34,7 @@ const HeroSlider: React.FC = () => {
                 </div>
             ))}
 
-            <div className="absolute inset-0 bg-gradient-to-t from-xiri-navy/60 via-xiri-navy/10 to-transparent"></div>
-
-            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md text-xiri-navy p-6 rounded-3xl shadow-xl border border-white/20">
-                <span className="text-[10px] uppercase tracking-[0.3em] font-black text-xiri-gold block mb-2">Expertise Immobilière</span>
-                <p className="text-[17px] font-serif leading-tight">Valorisation patrimoniale <br /><span className="font-light italic text-xiri-navy/60">en toute transparence.</span></p>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-xiri-navy/30 via-transparent to-transparent"></div>
         </div>
     );
 };
