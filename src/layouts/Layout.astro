@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const {
+    title,
+    description = "Xiri Conciergerie - Gestion premium de locations saisonnières en Corse. Optimisez vos revenus locatifs en toute sérénité.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="bg-xiri-bg text-xiri-navy">
+        <Navbar />
+        <slot />
+        <Footer />
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+            45deg,
+            rgb(var(--accent)),
+            rgb(var(--accent-light)) 30%,
+            white 60%
+        );
+    }
+    html {
+        font-family: "Montserrat", system-ui, sans-serif;
+        scroll-behavior: smooth;
+    }
+</style>

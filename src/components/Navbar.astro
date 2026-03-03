@@ -1,0 +1,246 @@
+---
+const navLinks = [
+    { href: "/#services", label: "Services" },
+    { href: "/#how-it-works", label: "Méthode" },
+    { href: "/#pricing", label: "Tarifs" },
+    { href: "/#testimonials", label: "Avis" },
+    { href: "/#faq", label: "FAQ" },
+];
+---
+
+<nav
+    id="main-nav"
+    class="w-full fixed top-0 z-50 transition-all duration-500 bg-transparent py-4"
+>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex justify-between items-center">
+            <a
+                href="/"
+                class="flex flex-col items-center group cursor-pointer no-underline"
+            >
+                <span
+                    id="nav-logo-text"
+                    class="text-base md:text-lg font-serif font-medium tracking-[0.08em] transition-colors duration-500 text-white"
+                    >XIRI CONCIERGERIE</span
+                >
+                <span
+                    class="text-[9px] uppercase tracking-[0.22em] -mt-0.5 font-bold text-xiri-gold"
+                    >RÉSEAU PREMIUM</span
+                >
+            </a>
+
+            <div class="hidden lg:flex items-center gap-6">
+                {
+                    navLinks.map((link) => (
+                        <a
+                            href={link.href}
+                            class="nav-link text-[11px] uppercase tracking-[0.14em] font-bold transition-all hover:text-xiri-gold text-white no-underline"
+                        >
+                            {link.label}
+                        </a>
+                    ))
+                }
+            </div>
+
+            <div class="hidden lg:flex items-center gap-3">
+                <a
+                    href="/#contact"
+                    id="nav-cta"
+                    class="px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border border-white text-white hover:bg-white hover:text-xiri-navy cursor-pointer rounded-xl no-underline"
+                >
+                    Estimer ma rentabilité
+                </a>
+            </div>
+
+            <div class="lg:hidden">
+                <button
+                    id="mobile-menu-button"
+                    class="bg-transparent text-white border-none cursor-pointer"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-menu"
+                        ><line x1="3" x2="21" y1="6" y2="6"></line><line
+                            x1="3"
+                            x2="21"
+                            y1="12"
+                            y2="12"></line><line x1="3" x2="21" y1="18" y2="18"
+                        ></line></svg
+                    >
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+        id="mobile-menu"
+        class="lg:hidden fixed inset-0 z-50 bg-white transition-transform duration-500 ease-in-out translate-x-full"
+    >
+        <div class="h-full flex flex-col p-8">
+            <div class="flex justify-between items-center mb-10">
+                <div class="flex flex-col">
+                    <span
+                        class="text-lg font-serif font-medium tracking-[0.1em] text-xiri-navy"
+                        >XIRI CONCIERGERIE</span
+                    >
+                    <span
+                        class="text-[9px] uppercase tracking-[0.2em] font-bold text-xiri-gold"
+                        >RÉSEAU PREMIUM</span
+                    >
+                </div>
+                <button
+                    id="close-menu-button"
+                    class="text-xiri-navy bg-transparent border-none cursor-pointer"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-x"
+                        ><path d="M18 6 6 18"></path><path d="m6 6 12 12"
+                        ></path></svg
+                    >
+                </button>
+            </div>
+
+            <div class="flex-grow overflow-y-auto space-y-5 pb-8">
+                <a
+                    href="/"
+                    class="mobile-nav-link block text-[22px] font-serif text-xiri-navy no-underline"
+                    >Accueil</a
+                >
+                {
+                    navLinks.map((link) => (
+                        <a
+                            href={link.href}
+                            class="mobile-nav-link block text-[22px] font-serif text-xiri-navy no-underline"
+                        >
+                            {link.label}
+                        </a>
+                    ))
+                }
+                <a
+                    href="/a-propos"
+                    class="mobile-nav-link block text-[22px] font-serif text-xiri-navy no-underline"
+                    >Notre approche</a
+                >
+            </div>
+
+            <div class="mt-auto flex flex-col gap-4">
+                <a
+                    href="/#contact"
+                    class="mobile-nav-link block w-full bg-xiri-navy text-white text-center py-4 text-[11px] uppercase tracking-[0.12em] font-bold shadow-xl rounded-xl no-underline"
+                >
+                    ESTIMER MA RENTABILITÉ
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const nav = document.getElementById("main-nav");
+    const logoText = document.getElementById("nav-logo-text");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navCta = document.getElementById("nav-cta");
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const closeMenuButton = document.getElementById("close-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+    const updateNav = () => {
+        const isScrolled = window.scrollY > 50;
+        const isHomePage = window.location.pathname === "/";
+
+        if (isScrolled || !isHomePage) {
+            nav?.classList.add(
+                "bg-white/95",
+                "backdrop-blur-sm",
+                "shadow-md",
+                "py-3",
+            );
+            nav?.classList.remove("bg-transparent", "py-4");
+            logoText?.classList.add("text-xiri-navy");
+            logoText?.classList.remove("text-white");
+            navLinks.forEach((link) => {
+                link.classList.add("text-xiri-navy");
+                link.classList.remove("text-white");
+            });
+            navCta?.classList.add(
+                "border-xiri-navy",
+                "text-xiri-navy",
+                "hover:bg-xiri-navy",
+                "hover:text-white",
+            );
+            navCta?.classList.remove(
+                "border-white",
+                "text-white",
+                "hover:bg-white",
+                "hover:text-xiri-navy",
+            );
+            mobileMenuButton?.classList.add("text-xiri-navy");
+            mobileMenuButton?.classList.remove("text-white");
+        } else {
+            nav?.classList.remove(
+                "bg-white/95",
+                "backdrop-blur-sm",
+                "shadow-md",
+                "py-3",
+            );
+            nav?.classList.add("bg-transparent", "py-4");
+            logoText?.classList.remove("text-xiri-navy");
+            logoText?.classList.add("text-white");
+            navLinks.forEach((link) => {
+                link.classList.remove("text-xiri-navy");
+                link.classList.add("text-white");
+            });
+            navCta?.classList.remove(
+                "border-xiri-navy",
+                "text-xiri-navy",
+                "hover:bg-xiri-navy",
+                "hover:text-white",
+            );
+            navCta?.classList.add(
+                "border-white",
+                "text-white",
+                "hover:bg-white",
+                "hover:text-xiri-navy",
+            );
+            mobileMenuButton?.classList.remove("text-xiri-navy");
+            mobileMenuButton?.classList.add("text-white");
+        }
+    };
+
+    window.addEventListener("scroll", updateNav);
+    window.addEventListener("popstate", updateNav);
+    updateNav();
+
+    mobileMenuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.remove("translate-x-full");
+    });
+
+    closeMenuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.add("translate-x-full");
+    });
+
+    mobileNavLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileMenu?.classList.add("translate-x-full");
+        });
+    });
+</script>

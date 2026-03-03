@@ -1,0 +1,164 @@
+---
+const plans = [
+    {
+        id: "01",
+        name: "Pack ESSENTIEL",
+        price: "12%",
+        unit: "commission sur revenus",
+        description: "Gestion opérationnelle locale et sérénité quotidienne.",
+        features: [
+            "Check-in / check-out",
+            "Ménage et linge",
+            "Support voyageurs",
+            "Gestion incidents",
+        ],
+        recommended: false,
+    },
+    {
+        id: "02",
+        name: "Pack PERFORMANCE 360",
+        price: "15%",
+        unit: "commission sur revenus",
+        description:
+            "Le meilleur équilibre entre pilotage digital et opération premium.",
+        features: [
+            "Tout le Pack Essentiel",
+            "Yield management avancé",
+            "Optimisation multi-canaux",
+            "Reporting mensuel détaillé",
+        ],
+        recommended: true,
+    },
+    {
+        id: "03",
+        name: "Pack SIGNATURE",
+        price: "18%",
+        unit: "commission sur revenus",
+        description:
+            "Accompagnement stratégique renforcé pour biens à haut potentiel.",
+        features: [
+            "Tout le Pack Performance",
+            "Acquisition réservations directes",
+            "Shooting & contenu premium",
+            "Comité performance trimestriel",
+        ],
+        recommended: false,
+    },
+];
+---
+
+<section
+    id="pricing"
+    class="py-10 md:py-14 bg-white relative overflow-hidden border-y border-xiri-navy/5"
+>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div class="text-center mb-10 md:mb-12 space-y-4">
+            <span
+                class="text-xiri-gold text-[11px] font-black uppercase tracking-[0.25em] block"
+                >Tarification claire</span
+            >
+            <h2
+                class="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight tracking-tight"
+            >
+                Comparez les packs en 30 secondes.
+            </h2>
+            <p
+                class="text-[16px] text-xiri-navy/80 max-w-2xl mx-auto font-medium leading-relaxed"
+            >
+                Sans frais fixes ni coûts cachés. La commission est prélevée
+                uniquement sur les revenus générés.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+            {
+                plans.map((plan) => (
+                    <div
+                        class={`relative p-6 border flex flex-col rounded-2xl ${
+                            plan.recommended
+                                ? "bg-xiri-navy text-white border-xiri-gold/40 shadow-[0_24px_60px_-20px_rgba(27,43,68,0.55)]"
+                                : "bg-white text-xiri-navy border-xiri-navy/10"
+                        }
+          `}
+                    >
+                        {plan.recommended && (
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-xiri-gold text-white text-[10px] uppercase tracking-[0.18em] font-bold whitespace-nowrap rounded-full">
+                                Recommandé
+                            </div>
+                        )}
+
+                        <p
+                            class={`text-[11px] uppercase tracking-[0.16em] font-black ${plan.recommended ? "text-xiri-gold" : "text-xiri-navy/50"}`}
+                        >
+                            {plan.name}
+                        </p>
+
+                        <div class="mt-3 mb-3">
+                            <p class="text-5xl font-serif leading-none">
+                                {plan.price}
+                            </p>
+                            <p
+                                class={`text-[11px] uppercase tracking-[0.12em] font-bold ${plan.recommended ? "text-white/60" : "text-xiri-navy/45"}`}
+                            >
+                                {plan.unit}
+                            </p>
+                        </div>
+
+                        <p
+                            class={`text-[14px] leading-relaxed font-medium min-h-[62px] ${plan.recommended ? "text-white/85" : "text-xiri-navy/75"}`}
+                        >
+                            {plan.description}
+                        </p>
+
+                        <div class="mt-5 space-y-2.5 flex-grow">
+                            {plan.features.map((feature) => (
+                                <div class="flex items-start gap-2.5">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="15"
+                                        height="15"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="text-xiri-gold mt-0.5 flex-shrink-0"
+                                    >
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                    <p
+                                        class={`text-[13px] font-medium leading-relaxed ${plan.recommended ? "text-white/90" : "text-xiri-navy/80"}`}
+                                    >
+                                        {feature}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <a
+                            href="#contact"
+                            class={`mt-6 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold transition-all no-underline text-center block ${
+                                plan.recommended
+                                    ? "bg-xiri-gold text-white hover:bg-white hover:text-xiri-navy"
+                                    : "bg-xiri-navy text-white hover:bg-xiri-gold"
+                            }
+            } rounded-xl`}
+                        >
+                            Demander un audit
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="mt-8 text-center">
+            <a
+                href="#contact"
+                class="inline-block bg-white border border-xiri-navy/20 text-xiri-navy px-7 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all rounded-xl no-underline"
+            >
+                Comparer avec mon bien
+            </a>
+        </div>
+    </div>
+</section>
