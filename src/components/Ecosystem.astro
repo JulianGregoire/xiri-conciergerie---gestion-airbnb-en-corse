@@ -1,0 +1,90 @@
+---
+import { CreditCard, Heart, ShieldCheck } from "lucide-react";
+
+const advantages = [
+    {
+        title: "Optimisation des Revenus",
+        description:
+            "Algorithmes de tarification dynamique (Revenue Management) et veille marché quotidienne pour maximiser votre taux d'occupation et vos nuitées.",
+        icon: CreditCard,
+        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+        title: "Diffusion Omnicanale",
+        description:
+            "Présence ultra-optimisée sur toutes les plateformes majeures (Airbnb, Booking...) soutenue par une création de contenu professionnel et un réseau direct.",
+        icon: ShieldCheck,
+        image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+        title: "Logistique Hôtelière",
+        description:
+            "Un entretien rigoureux par des équipes formées, une literie de qualité hôtelière et une disponibilité 24/7 pour des séjours sans la moindre friction.",
+        icon: Heart,
+        image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800",
+    },
+];
+---
+
+<section class="pt-16 pb-40 bg-white relative overflow-hidden">
+    <div
+        class="absolute top-0 right-0 w-1/2 h-full bg-[#F0F7FA]/20 -z-0 rounded-l-[100px] hidden lg:block"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div class="mb-32">
+            <span
+                class="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] mb-6 block"
+                >Performance & Sérénité</span
+            >
+            <h2
+                class="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight mb-8"
+            >
+                Pourquoi choisir <br /><span class="text-xiri-gold font-light"
+                    >Xiri Conciergerie</span
+                > ?
+            </h2>
+            <p
+                class="text-[17px] text-[#0a0a0a] leading-relaxed font-medium max-w-xl"
+            >
+                Nous avons conçu un écosystème puissant où l'innovation digitale
+                se met au service de l'excellence sur le terrain, garantissant
+                la valorisation mathématique et opérationnelle de votre
+                investissement.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+            {
+                advantages.map((adv) => (
+                    <div class="group">
+                        <div class="relative h-[300px] mb-10 overflow-hidden p-[10px] bg-white shadow-lg transition-transform duration-700 group-hover:-translate-y-3">
+                            <img
+                                src={adv.image}
+                                alt={adv.title}
+                                class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                            />
+                            <div class="absolute inset-0 bg-xiri-navy/10 group-hover:bg-transparent transition-colors duration-500" />
+                            <div class="absolute -bottom-6 -right-6 w-20 h-20 bg-white shadow-xl flex items-center justify-center text-xiri-gold transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                                <adv.icon class="w-6 h-6" />
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-serif text-xiri-navy tracking-wide leading-snug">
+                                {adv.title}
+                            </h3>
+                            <p class="text-[15px] text-[#0a0a0a] leading-relaxed font-medium">
+                                {adv.description}
+                            </p>
+                            <div class="pt-4 overflow-hidden">
+                                <div class="h-[2px] w-12 bg-xiri-gold group-hover:w-full transition-all duration-700" />
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

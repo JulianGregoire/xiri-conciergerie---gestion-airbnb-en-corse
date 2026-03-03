@@ -1,40 +1,50 @@
 ---
-import App from '../App';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import ValueBar from "../components/ValueBar.astro";
+import Services from "../components/Services.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Ecosystem from "../components/Ecosystem.astro";
+import LegalExpertise from "../components/LegalExpertise.astro";
+import Pricing from "../components/Pricing.astro";
+import AISimulator from "../components/AISimulator";
+import Testimonials from "../components/Testimonials";
+import FAQ from "../components/FAQ";
+import Contact from "../components/Contact";
+import RelatedSites from "../components/RelatedSites.astro";
+
+// Define the title and description for SEO
+const title =
+  "Xiri Conciergerie | L'Art de Vivre en Corse - Gestion Locative Premium";
+const description =
+  "Xiri Conciergerie : Gestion complète de vos locations saisonnières en Corse. Optimisation des revenus, ménage, maintenance et accueil premium.";
 ---
 
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xiri Conciergerie | L'Art de Vivre en Corse</title>
-    <script is:inline src="https://cdn.tailwindcss.com"></script>
-    <script is:inline>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'xiri-navy': '#1B2B44',
-              'xiri-gold': '#C5A059',
-              'xiri-bg': '#F0F7FA',
-            },
-            fontFamily: {
-              serif: ['Libre Baskerville', 'serif'],
-              sans: ['Montserrat', 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <App client:load />
-  </body>
-</html>
+<Layout title={title} description={description}>
+  <main>
+    <Hero />
+    <ValueBar />
+    <Services />
+    <HowItWorks />
+    <Ecosystem />
+    <LegalExpertise />
+    <Pricing />
+    <section id="simulator">
+      <AISimulator client:visible />
+    </section>
+    <Testimonials client:visible />
+    <FAQ client:visible />
+    <section id="contact">
+      <Contact client:visible />
+    </section>
+    <RelatedSites />
+
+    <!-- Mobile Sticky CTA -->
+    <a
+      href="#contact"
+      class="fixed bottom-4 left-4 right-4 z-40 lg:hidden bg-xiri-navy text-white py-4 text-[11px] uppercase tracking-[0.14em] font-bold shadow-xl rounded-xl no-underline text-center"
+    >
+      Estimer ma rentabilité
+    </a>
+  </main>
+</Layout>
