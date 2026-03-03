@@ -1,0 +1,276 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { localSeoData } from "../../data/localSeoData";
+import {
+    MapPin,
+    ShieldCheck,
+    TrendingUp,
+    Star,
+    ArrowRight,
+} from "lucide-react";
+
+export function getStaticPaths() {
+    return Object.keys(localSeoData).map((city) => ({
+        params: { city },
+        props: { data: localSeoData[city] },
+    }));
+}
+
+const { data } = Astro.props;
+---
+
+<Layout title={data.metaTitle} description={data.metaDesc}>
+    <main class="bg-white">
+        <!-- Hero Section -->
+        <section class="relative h-[85vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0">
+                <img
+                    src={data.heroImg}
+                    alt={data.name}
+                    class="w-full h-full object-cover scale-105 animate-slow-zoom"
+                />
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-xiri-navy/80 via-xiri-navy/40 to-transparent"
+                >
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+                <div class="max-w-3xl space-y-8">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-[1px] bg-xiri-gold"></span>
+                        <span
+                            class="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em]"
+                            >Expertise Locale</span
+                        >
+                    </div>
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1]"
+                    >
+                        {
+                            data.title
+                                .split(":")
+                                .map((part, i) => (
+                                    <span
+                                        class={
+                                            i === 1
+                                                ? "block mt-4 font-light text-xiri-gold"
+                                                : ""
+                                        }
+                                    >
+                                        {part}
+                                    </span>
+                                ))
+                        }
+                    </h1>
+                    <p
+                        class="text-xl text-white/90 leading-relaxed font-light max-w-xl"
+                    >
+                        {data.intro}
+                    </p>
+                    <div class="pt-8">
+                        <a
+                            href="#contact"
+                            class="bg-xiri-gold text-white px-10 py-6 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-2xl no-underline inline-block"
+                        >
+                            Estimer mon bien à {data.name}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Expertise Section -->
+        <section class="py-32 lg:py-48 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center"
+                >
+                    <div class="space-y-12">
+                        <div class="space-y-6">
+                            <span
+                                class="text-xiri-gold text-[10px] font-black uppercase tracking-[0.4em]"
+                                >Présence Terrain</span
+                            >
+                            <h2
+                                class="text-4xl md:text-5xl font-serif text-xiri-navy leading-tight"
+                            >
+                                Une gestion <span class="font-light italic"
+                                    >millimétrée</span
+                                > au cœur de {data.name}.
+                            </h2>
+                        </div>
+                        <p
+                            class="text-lg text-[#000000] leading-loose font-medium border-l-2 border-xiri-gold pl-8"
+                        >
+                            {data.localExpertise}
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+                            <div class="space-y-4">
+                                <ShieldCheck
+                                    className="text-xiri-gold w-8 h-8"
+                                />
+                                <h4
+                                    class="text-[11px] font-black uppercase tracking-widest text-xiri-navy"
+                                >
+                                    Conformité Totale
+                                </h4>
+                                <p
+                                    class="text-sm text-xiri-navy/60 font-medium"
+                                >
+                                    Gestion des déclarations en mairie et taxes
+                                    de séjour.
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <TrendingUp
+                                    className="text-xiri-gold w-8 h-8"
+                                />
+                                <h4
+                                    class="text-[11px] font-black uppercase tracking-widest text-xiri-navy"
+                                >
+                                    Revenus Optimisés
+                                </h4>
+                                <p
+                                    class="text-sm text-xiri-navy/60 font-medium"
+                                >
+                                    Algorithmes de prix dynamiques selon
+                                    l'actualité locale.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div
+                            class="aspect-[4/5] overflow-hidden p-[10px] bg-white shadow-2xl -rotate-2"
+                        >
+                            <img
+                                src={data.heroImg}
+                                alt="Local expertise"
+                                class="w-full h-full object-cover grayscale-[0.2]"
+                            />
+                        </div>
+                        <div
+                            class="absolute -bottom-12 -right-12 bg-xiri-navy p-10 text-white hidden md:block max-w-xs shadow-3xl"
+                        >
+                            <p
+                                class="text-[13px] font-serif leading-relaxed italic"
+                            >
+                                "La connaissance parfaite du terrain est notre
+                                plus grand atout pour garantir la sécurité de
+                                votre investissement."
+                            </p>
+                            <div class="mt-6 flex items-center gap-4">
+                                <span class="w-10 h-[1px] bg-xiri-gold"></span>
+                                <span
+                                    class="text-[9px] uppercase tracking-widest font-black"
+                                    >Direction Régionale</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neighborhoods / Coverage -->
+        <section class="py-32 bg-xiri-navy text-white overflow-hidden relative">
+            <div
+                class="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-32"
+            >
+            </div>
+
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center"
+            >
+                <div class="mb-24 space-y-6">
+                    <span
+                        class="text-xiri-gold text-[10px] font-black uppercase tracking-[0.8em]"
+                        >Secteurs d'Intervention</span
+                    >
+                    <h2 class="text-4xl md:text-5xl font-serif leading-tight">
+                        Nous opérons dans tous les <br /><span
+                            class="font-light italic text-xiri-gold"
+                            >quartiers de {data.name}</span
+                        >.
+                    </h2>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 lg:gap-12">
+                    {
+                        data.neighborhoods.map((area) => (
+                            <div class="flex items-center gap-4 bg-white/5 backdrop-blur-md px-8 py-6 border border-white/10 hover:border-xiri-gold transition-all group">
+                                <MapPin size={16} className="text-xiri-gold" />
+                                <span class="text-[13px] font-black uppercase tracking-[0.2em]">
+                                    {area}
+                                </span>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="py-40 bg-white">
+            <div class="max-w-4xl mx-auto px-6 text-center space-y-12">
+                <div
+                    class="w-20 h-20 bg-xiri-gold/10 rounded-full flex items-center justify-center mx-auto mb-8"
+                >
+                    <Star className="text-xiri-gold w-8 h-8" />
+                </div>
+                <h2
+                    class="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight"
+                >
+                    Prêt à déléguer <br />votre bien à <span
+                        class="font-light text-xiri-gold">{data.name}</span
+                    > ?
+                </h2>
+                <p
+                    class="text-[17px] text-[#000000] leading-loose font-medium max-w-xl mx-auto"
+                >
+                    Rejoignez le réseau Xiri et profitez d'une expertise
+                    reconnue sur le plan national avec une exécution passionnée
+                    sur le terrain.
+                </p>
+
+                <div
+                    class="pt-12 flex flex-col sm:flex-row gap-6 justify-center"
+                >
+                    <a
+                        href="/#contact"
+                        class="bg-xiri-navy text-white px-12 py-7 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-black transition-all shadow-2xl no-underline"
+                    >
+                        Demander mon estimation
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Edition Label -->
+        <div class="py-12 border-t border-xiri-navy/5 text-center bg-white">
+            <span class="text-[9px] uppercase tracking-[1em] text-xiri-navy/20"
+                >XIRI CONCIERGE • {data.name} EDITION</span
+            >
+        </div>
+    </main>
+</Layout>
+
+<style>
+    @keyframes slow-zoom {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .animate-slow-zoom {
+        animation: slow-zoom 25s ease-in-out infinite;
+    }
+</style>

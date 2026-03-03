@@ -1,5 +1,35 @@
 ---
 const year = new Date().getFullYear();
+
+const regions = [
+    {
+        name: "Corse",
+        villes: [
+            { name: "Porto-Vecchio", href: "/villes/porto-vecchio" },
+            { name: "Bonifacio", href: "/villes/bonifacio" },
+            { name: "Ajaccio", href: "/villes/ajaccio" },
+            { name: "Calvi", href: "/villes/calvi" },
+            { name: "Bastia", href: "/villes/bastia" },
+            { name: "Lumio / Sant'Ambroggio", href: "/villes/lumio" },
+        ],
+    },
+    {
+        name: "Finistère Sud",
+        villes: [
+            { name: "Quimper", href: "/villes/quimper" },
+            { name: "Concarneau", href: "/villes/concarneau" },
+            { name: "Bénodet", href: "/villes/benodet" },
+        ],
+    },
+    {
+        name: "Hérault",
+        villes: [
+            { name: "Narbonne", href: "/villes/narbonne" },
+            { name: "Valras-Plage", href: "/villes/valras-plage" },
+            { name: "Cap d'Agde", href: "/villes/cap-dagde" },
+        ],
+    },
+];
 ---
 
 <footer
@@ -12,7 +42,7 @@ const year = new Date().getFullYear();
 
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
-            <div class="lg:col-span-4 space-y-10">
+            <div class="lg:col-span-3 space-y-10">
                 <a href="/" class="flex flex-col text-left no-underline group">
                     <span
                         class="text-xl font-serif font-medium tracking-[0.1em] text-white group-hover:text-xiri-gold transition-colors"
@@ -52,8 +82,8 @@ const year = new Date().getFullYear();
                 </div>
             </div>
 
-            <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12">
-                <div class="space-y-6">
+            <div class="lg:col-span-9 grid grid-cols-2 md:grid-cols-4 gap-12">
+                <div class="space-y-8">
                     <h5
                         class="text-[10px] font-bold tracking-[0.3em] text-xiri-gold uppercase"
                     >
@@ -80,10 +110,10 @@ const year = new Date().getFullYear();
                         </li>
                         <li>
                             <a
-                                href="/#pricing"
+                                href="/blog"
                                 class="hover:text-white transition-colors uppercase tracking-[0.2em] text-white/60 no-underline"
                             >
-                                Nos Tarifs
+                                Journal
                             </a>
                         </li>
                         <li>
@@ -96,53 +126,55 @@ const year = new Date().getFullYear();
                         </li>
                     </ul>
                 </div>
-                <div class="space-y-6">
+
+                <div class="col-span-2 space-y-8">
                     <h5
                         class="text-[10px] font-bold tracking-[0.3em] text-xiri-gold uppercase"
                     >
-                        Destinations
+                        Nos Conciergeries
                     </h5>
-                    <ul
-                        class="text-[11px] text-white/60 space-y-4 uppercase tracking-[0.2em] font-medium list-none p-0"
-                    >
-                        <li>
-                            <a
-                                href="/villes/porto-vecchio"
-                                class="hover:text-white transition-colors uppercase tracking-[0.2em] text-white/60 no-underline"
-                                >Porto-Vecchio</a
+                    <div class="grid grid-cols-2 gap-x-12 gap-y-12">
+                        {
+                            regions.map((region) => (
+                                <div class="space-y-4">
+                                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-white/30 border-b border-white/5 pb-2 block">
+                                        {region.name}
+                                    </span>
+                                    <ul class="text-[11px] space-y-3 list-none p-0">
+                                        {region.villes.map((ville) => (
+                                            <li>
+                                                <a
+                                                    href={ville.href}
+                                                    class="hover:text-white transition-colors uppercase tracking-[0.15em] text-white/60 no-underline"
+                                                >
+                                                    {ville.name}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))
+                        }
+                        <div class="space-y-4">
+                            <span
+                                class="text-[9px] font-black uppercase tracking-[0.2em] text-white/30 border-b border-white/5 pb-2 block"
                             >
-                        </li>
-                        <li>
-                            <a
-                                href="/villes/bonifacio"
-                                class="hover:text-white transition-colors uppercase tracking-[0.2em] text-white/60 no-underline"
-                                >Bonifacio</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="/villes/ajaccio"
-                                class="hover:text-white transition-colors uppercase tracking-[0.2em] text-white/60 no-underline"
-                                >Ajaccio</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="/villes/calvi"
-                                class="hover:text-white transition-colors uppercase tracking-[0.2em] text-white/60 no-underline"
-                                >Calvi</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="/villes/bastia"
-                                class="hover:text-white transition-colors uppercase tracking-[0.2em] text-white/60 no-underline"
-                                >Bastia</a
-                            >
-                        </li>
-                    </ul>
+                                Savoie
+                            </span>
+                            <ul class="text-[11px] space-y-3 list-none p-0">
+                                <li>
+                                    <a
+                                        href="/villes/megeve"
+                                        class="hover:text-white transition-colors uppercase tracking-[0.15em] text-white/60 no-underline"
+                                        >Megève</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="space-y-6 col-span-2 md:col-span-1">
+
+                <div class="space-y-8">
                     <h5
                         class="text-[10px] font-bold tracking-[0.3em] text-xiri-gold uppercase"
                     >
