@@ -1,0 +1,76 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { blogData } from "../../data/blogData";
+
+const articles = Object.values(blogData);
+const title = "Le Journal Xiri | Conseils & Actualités Conciergerie en Corse";
+const description =
+    "Découvrez nos guides sur la gestion locative, la fiscalité LMNP et l'optimisation de vos revenus saisonniers en Corse.";
+---
+
+<Layout title={title} description={description}>
+    <main class="pt-32 pb-24 bg-[#F8FAFC]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-16 space-y-4">
+                <span
+                    class="text-xiri-gold text-[11px] font-black uppercase tracking-[0.3em] block"
+                    >Journal & Insights</span
+                >
+                <h1
+                    class="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight"
+                >
+                    L'expertise <br /><span class="font-light">partagée</span>.
+                </h1>
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+            >
+                {
+                    articles.map((article) => (
+                        <a
+                            href={`/blog/${article.id}`}
+                            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-xiri-navy/5 no-underline flex flex-col h-full"
+                        >
+                            <div class="aspect-video overflow-hidden relative">
+                                <img
+                                    src={article.image}
+                                    alt={article.title}
+                                    class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
+                                />
+                                <div class="absolute top-4 left-4">
+                                    <span class="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-xiri-navy">
+                                        {article.category}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="p-8 space-y-4 flex-grow flex flex-col">
+                                <div class="flex items-center gap-4 text-[10px] text-xiri-navy/40 font-bold uppercase tracking-widest">
+                                    <span>{article.date}</span>
+                                    <span class="w-1 h-1 bg-xiri-gold rounded-full" />
+                                    <span>{article.readTime} LECTURE</span>
+                                </div>
+
+                                <h2 class="text-[22px] font-serif text-xiri-navy leading-snug group-hover:text-xiri-gold transition-colors">
+                                    {article.title}
+                                </h2>
+
+                                <p class="text-[14px] text-xiri-navy/70 leading-relaxed line-clamp-3">
+                                    {article.excerpt}
+                                </p>
+
+                                <div class="pt-4 mt-auto">
+                                    <span class="text-[11px] font-black uppercase tracking-widest text-xiri-navy flex items-center gap-3">
+                                        Lire l'article
+                                        <div class="w-8 h-[1px] bg-xiri-gold group-hover:w-16 transition-all duration-500" />
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </main>
+</Layout>
