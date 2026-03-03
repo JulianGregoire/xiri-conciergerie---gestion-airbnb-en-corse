@@ -1,5 +1,13 @@
 ---
 import HeroSlider from "./HeroSlider";
+import { Check } from "lucide-react";
+
+const strongPoints = [
+    "Gestion 100% déléguée & sereine",
+    "Tarification algorithmique dynamique",
+    "Maintenance & Entretien d'excellence",
+    "Visibilité financière en temps réel",
+];
 ---
 
 <section
@@ -8,88 +16,84 @@ import HeroSlider from "./HeroSlider";
 >
     <div class="max-w-7xl mx-auto px-6">
         <div
-            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center"
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
         >
-            <div class="lg:col-span-7 space-y-6 z-10">
-                <span
-                    class="text-[11px] font-bold text-xiri-gold tracking-[0.28em] uppercase block"
-                >
-                    Conciergerie premium en Corse
-                </span>
-
-                <h1
-                    class="text-[32px] sm:text-[40px] lg:text-[46px] font-serif text-xiri-navy leading-[1.15]"
-                >
-                    Confiez votre bien. Revenus optimisés, gestion 100%
-                    déléguée.
-                </h1>
-
-                <p
-                    class="text-[16px] text-xiri-navy/80 leading-relaxed max-w-2xl font-medium"
-                >
-                    Xiri pilote l'annonce, la sélection voyageurs,
-                    l'opérationnel terrain et le reporting mensuel. Vous gardez
-                    la visibilité financière, nous gérons l'exécution.
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div
-                        class="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3 rounded-xl"
+            <div class="lg:col-span-7 space-y-8 z-10">
+                <div class="space-y-4">
+                    <!-- Design Element: Gold Wave -->
+                    <svg
+                        class="text-xiri-gold w-20 h-2 opacity-80"
+                        viewBox="0 0 100 20"
+                        preserveAspectRatio="none"
                     >
-                        <p
-                            class="text-[10px] uppercase tracking-[0.18em] text-xiri-navy/50 font-bold"
-                        >
-                            Performance
-                        </p>
-                        <p class="text-[20px] font-semibold text-xiri-navy">
-                            +27% revenu moyen
-                        </p>
-                    </div>
-                    <div
-                        class="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3 rounded-xl"
+                        <path
+                            d="M0 10 Q 12.5 0 25 10 T 50 10 T 75 10 T 100 10"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="6"
+                            stroke-linecap="round"></path>
+                    </svg>
+
+                    <h1
+                        class="text-[38px] sm:text-[48px] lg:text-[56px] font-serif text-xiri-navy leading-[1.1] tracking-tight"
                     >
-                        <p
-                            class="text-[10px] uppercase tracking-[0.18em] text-xiri-navy/50 font-bold"
+                        Confiez vos clés. <br />
+                        <span class="font-light text-xiri-gold"
+                            >Libérez vos revenus.</span
                         >
-                            Réactivité
-                        </p>
-                        <p class="text-[20px] font-semibold text-xiri-navy">
-                            Réponse &lt; 24h
-                        </p>
-                    </div>
-                    <div
-                        class="border border-xiri-navy/10 bg-xiri-bg/30 px-4 py-3 rounded-xl"
+                    </h1>
+
+                    <p
+                        class="text-[17px] text-xiri-navy/70 leading-relaxed max-w-xl font-medium"
                     >
-                        <p
-                            class="text-[10px] uppercase tracking-[0.18em] text-xiri-navy/50 font-bold"
-                        >
-                            Transparence
-                        </p>
-                        <p class="text-[20px] font-semibold text-xiri-navy">
-                            Reporting mensuel
-                        </p>
-                    </div>
+                        Xiri orchestre la performance de votre patrimoine
+                        locatif. De la stratégie digitale à l'excellence
+                        opérationnelle sur le terrain.
+                    </p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-3 pt-1">
+                <!-- Bullet List with Gold Checks -->
+                <ul class="space-y-4 list-none p-0">
+                    {
+                        strongPoints.map((point) => (
+                            <li class="flex items-center gap-4 group">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-xiri-gold/10 flex items-center justify-center transition-transform group-hover:scale-110">
+                                    <Check
+                                        size={14}
+                                        className="text-xiri-gold stroke-[3px]"
+                                    />
+                                </div>
+                                <span class="text-[15px] font-semibold text-xiri-navy tracking-wide">
+                                    {point}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
                     <a
                         href="#contact"
-                        class="bg-xiri-navy text-white px-7 py-4 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-gold transition-all duration-300 rounded-xl no-underline text-center"
+                        class="bg-xiri-navy text-white px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:bg-xiri-gold transition-all duration-500 rounded-xl no-underline text-center shadow-lg shadow-xiri-navy/10"
                     >
                         Estimer ma rentabilité
                     </a>
                     <a
                         href="#services"
-                        class="bg-white text-xiri-navy border border-xiri-navy/20 px-7 py-4 text-[11px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-navy hover:text-white transition-all duration-300 rounded-xl no-underline text-center"
+                        class="bg-white text-xiri-navy border border-xiri-navy/10 px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:border-xiri-navy transition-all duration-500 rounded-xl no-underline text-center"
                     >
-                        Voir les services
+                        Explorer nos services
                     </a>
                 </div>
             </div>
 
             <div
-                class="lg:col-span-5 relative h-[280px] sm:h-[340px] lg:h-[420px]"
+                class="lg:col-span-5 relative h-[300px] sm:h-[400px] lg:h-[480px]"
             >
+                <div
+                    class="absolute -inset-4 bg-xiri-gold/5 rounded-[40px] -rotate-2"
+                >
+                </div>
                 <HeroSlider client:load />
             </div>
         </div>
