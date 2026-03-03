@@ -1,7 +1,9 @@
 // @ts-nocheck
 
 import React from 'react';
-import { UserCheck, ShieldCheck, TrendingUp } from 'lucide-react';
+import iconRevenue from '../images/revenue-pilote.png';
+import iconDelegation from '../images/delegue.png';
+import iconCadre from '../images/cadre-securise.png';
 
 const ValueBar: React.FC = () => {
   return (
@@ -14,9 +16,9 @@ const ValueBar: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl">
-            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm rounded-xl">
-              <TrendingUp size={20} />
+          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl items-center">
+            <div className="flex-shrink-0 w-20 h-20 bg-xiri-bg flex items-center justify-center text-xiri-gold flex-shrink-0 rounded-xl relative overflow-hidden">
+              <img src={iconRevenue.src} alt="Revenu piloté" className="w-full h-full object-cover scale-110" />
             </div>
             <div className="space-y-1">
               <h3 className="text-[20px] font-serif text-xiri-navy leading-snug">Revenu piloté</h3>
@@ -26,9 +28,9 @@ const ValueBar: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl">
-            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm rounded-xl">
-              <UserCheck size={20} />
+          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl items-center">
+            <div className="flex-shrink-0 w-20 h-20 bg-xiri-bg flex items-center justify-center text-xiri-gold flex-shrink-0 rounded-xl relative overflow-hidden">
+              <img src={iconDelegation.src} alt="Délégation totale" className="w-full h-full object-cover scale-110" />
             </div>
             <div className="space-y-1">
               <h3 className="text-[20px] font-serif text-xiri-navy leading-snug">Délégation totale</h3>
@@ -38,9 +40,9 @@ const ValueBar: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl">
-            <div className="flex-shrink-0 w-11 h-11 bg-white flex items-center justify-center text-xiri-gold shadow-sm rounded-xl">
-              <ShieldCheck size={20} />
+          <div className="flex gap-4 border border-xiri-navy/10 bg-xiri-bg/25 p-5 rounded-2xl items-center">
+            <div className="flex-shrink-0 w-20 h-20 bg-xiri-bg flex items-center justify-center text-xiri-gold flex-shrink-0 rounded-xl relative overflow-hidden">
+              <img src={iconCadre.src} alt="Cadre sécurisé" className="w-full h-full object-cover scale-110" />
             </div>
             <div className="space-y-1">
               <h3 className="text-[20px] font-serif text-xiri-navy leading-snug">Cadre sécurisé</h3>
