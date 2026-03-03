@@ -2,17 +2,18 @@
 
 import React from 'react';
 import {
-  Globe,
-  Users,
-  Key,
-  Sparkles,
-  ShieldCheck,
   CheckCircle2
 } from 'lucide-react';
 
+import iconGestion from '../images/Gestion d\'annonces.png';
+import iconSelection from '../images/Selct des voyageurs.png';
+import iconCheckin from '../images/Check-in _ Check-out.png';
+import iconMenage from '../images/Menage.png';
+import iconAssurance from '../images/Assurances.png';
+
 const serviceSlides = [
   {
-    icon: <Globe size={20} />,
+    icon: <img src={iconGestion.src} alt="Gestion d'annonces" className="w-full h-full object-cover scale-110" />,
     title: "Gestion d'annonces",
     points: [
       "Création d'un site internet dédié",
@@ -22,7 +23,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <Users size={20} />,
+    icon: <img src={iconSelection.src} alt="Sélection des voyageurs" className="w-full h-full object-cover scale-110" />,
     title: "Sélection des voyageurs",
     points: [
       "Analyse rigoureuse des profils",
@@ -32,7 +33,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1521791136064-7986c29535a7?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <Key size={20} />,
+    icon: <img src={iconCheckin.src} alt="Check-in / Check-out" className="w-full h-full object-cover scale-110" />,
     title: "Check-in / Check-out",
     points: [
       "Accueil physique personnalisé",
@@ -42,7 +43,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1531234799389-dcb7651eb0a2?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <Sparkles size={20} />,
+    icon: <img src={iconMenage.src} alt="Ménage et blanchisserie" className="w-full h-full object-cover scale-110" />,
     title: "Ménage et blanchisserie",
     points: [
       "Ménage professionnel hôtelier",
@@ -52,7 +53,7 @@ const serviceSlides = [
     image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <ShieldCheck size={20} />,
+    icon: <img src={iconAssurance.src} alt="Assurances & cautions" className="w-full h-full object-cover scale-110" />,
     title: "Assurances & cautions",
     points: [
       "Gestion des formalités légales",
@@ -86,7 +87,7 @@ const Services: React.FC<{ onServiceClick?: (id: string) => void }> = ({ onServi
           {serviceSlides.map((slide, idx) => (
             <div key={idx} className="bg-white border border-xiri-navy/10 p-5 md:p-6 h-full flex flex-col rounded-2xl shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-xiri-bg flex items-center justify-center text-xiri-gold flex-shrink-0 rounded-xl">
+                <div className="w-20 h-20 bg-xiri-bg flex items-center justify-center text-xiri-gold flex-shrink-0 rounded-xl relative overflow-visible">
                   {slide.icon}
                 </div>
                 <h3 className="text-[22px] font-serif text-xiri-navy leading-tight">{slide.title}</h3>
