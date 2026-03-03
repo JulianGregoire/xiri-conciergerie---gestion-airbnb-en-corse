@@ -6,7 +6,8 @@ import {
     ShieldCheck,
     TrendingUp,
     Star,
-    ArrowRight,
+    ArrowLeft,
+    Check,
 } from "lucide-react";
 
 export function getStaticPaths() {
@@ -17,71 +18,113 @@ export function getStaticPaths() {
 }
 
 const { data } = Astro.props;
+
+const strongPoints = [
+    "Gestion 100% déléguée & sereine",
+    "Tarification algorithmique dynamique",
+    "Maintenance & Entretien d'excellence",
+    "Visibilité financière en temps réel",
+];
 ---
 
 <Layout title={data.metaTitle} description={data.metaDesc}>
     <main class="bg-white">
-        <!-- Hero Section -->
-        <section class="relative h-[85vh] flex items-center overflow-hidden">
-            <div class="absolute inset-0">
-                <img
-                    src={data.heroImg}
-                    alt={data.name}
-                    class="w-full h-full object-cover scale-105 animate-slow-zoom"
-                />
+        <!-- Hero Section - Refactored to match Home design -->
+        <section
+            class="relative pt-20 pb-10 md:pt-24 md:pb-12 lg:pt-32 lg:pb-16 bg-white overflow-hidden border-b border-xiri-navy/5"
+        >
+            <div class="max-w-7xl mx-auto px-6">
                 <div
-                    class="absolute inset-0 bg-gradient-to-r from-xiri-navy/80 via-xiri-navy/40 to-transparent"
+                    class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
                 >
-                </div>
-            </div>
+                    <div class="lg:col-span-7 space-y-8 z-10">
+                        <div class="space-y-4">
+                            <!-- Design Element: Gold Wave -->
+                            <svg
+                                class="text-xiri-gold w-20 h-2 opacity-80"
+                                viewBox="0 0 100 20"
+                                preserveAspectRatio="none"
+                            >
+                                <path
+                                    d="M0 10 Q 12.5 0 25 10 T 50 10 T 75 10 T 100 10"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="6"
+                                    stroke-linecap="round"></path>
+                            </svg>
 
-            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
-                <div class="max-w-3xl space-y-8">
-                    <div class="flex items-center gap-3">
-                        <span class="w-8 h-[1px] bg-xiri-gold"></span>
-                        <span
-                            class="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em]"
-                            >Expertise Locale</span
-                        >
-                    </div>
-                    <h1
-                        class="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1]"
-                    >
-                        {
-                            data.title
-                                .split(":")
-                                .map((part, i) => (
-                                    <span
-                                        class={
-                                            i === 1
-                                                ? "block mt-4 font-light text-xiri-gold"
-                                                : ""
-                                        }
-                                    >
-                                        {part}
-                                    </span>
+                            <h1
+                                class="text-[38px] sm:text-[48px] lg:text-[64px] font-serif text-xiri-navy leading-[1.1] tracking-tight"
+                            >
+                                {data.name} : <br />
+                                <span class="font-light text-xiri-gold"
+                                    >L'Excellence Locative.</span
+                                >
+                            </h1>
+
+                            <p
+                                class="text-[17px] text-xiri-navy/70 leading-relaxed max-w-xl font-medium"
+                            >
+                                {data.intro}
+                            </p>
+                        </div>
+
+                        <!-- Bullet List with Gold Checks -->
+                        <ul class="space-y-4 list-none p-0">
+                            {
+                                strongPoints.map((point) => (
+                                    <li class="flex items-center gap-4 group">
+                                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-xiri-gold/10 flex items-center justify-center transition-transform group-hover:scale-110">
+                                            <Check
+                                                size={14}
+                                                className="text-xiri-gold stroke-[3px]"
+                                            />
+                                        </div>
+                                        <span class="text-[15px] font-semibold text-xiri-navy tracking-wide">
+                                            {point}
+                                        </span>
+                                    </li>
                                 ))
-                        }
-                    </h1>
-                    <p
-                        class="text-xl text-white/90 leading-relaxed font-light max-w-xl"
+                            }
+                        </ul>
+
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <a
+                                href="#contact"
+                                class="bg-xiri-navy text-white px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:bg-xiri-gold transition-all duration-500 rounded-xl no-underline text-center shadow-lg shadow-xiri-navy/10"
+                            >
+                                Estimer mon bien à {data.name}
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="lg:col-span-5 relative h-[300px] sm:h-[400px] lg:h-[520px]"
                     >
-                        {data.intro}
-                    </p>
-                    <div class="pt-8">
-                        <a
-                            href="#contact"
-                            class="bg-xiri-gold text-white px-10 py-6 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-2xl no-underline inline-block"
+                        <div
+                            class="absolute -inset-4 bg-xiri-gold/5 rounded-[40px] -rotate-2"
                         >
-                            Estimer mon bien à {data.name}
-                        </a>
+                        </div>
+                        <div
+                            class="relative h-full w-full overflow-hidden shadow-2xl border border-xiri-navy/5 rounded-[40px]"
+                        >
+                            <img
+                                src={data.heroImg}
+                                alt={data.name}
+                                class="w-full h-full object-cover scale-110 animate-slow-zoom"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-xiri-navy/30 via-transparent to-transparent"
+                            >
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Local Expertise Section -->
-        <section class="py-32 lg:py-48 relative">
+        <section class="py-32 lg:py-48 relative border-b border-xiri-navy/5">
             <div class="max-w-7xl mx-auto px-6 lg:px-12">
                 <div
                     class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center"
@@ -90,18 +133,18 @@ const { data } = Astro.props;
                         <div class="space-y-6">
                             <span
                                 class="text-xiri-gold text-[10px] font-black uppercase tracking-[0.4em]"
-                                >Présence Terrain</span
+                                >Expertise Terrain</span
                             >
                             <h2
                                 class="text-4xl md:text-5xl font-serif text-xiri-navy leading-tight"
                             >
-                                Une gestion <span class="font-light italic"
-                                    >millimétrée</span
-                                > au cœur de {data.name}.
+                                Une présence <span class="font-light italic"
+                                    >réelle</span
+                                > pour votre sérénité.
                             </h2>
                         </div>
                         <p
-                            class="text-lg text-[#000000] leading-loose font-medium border-l-2 border-xiri-gold pl-8"
+                            class="text-lg text-xiri-navy/80 leading-loose font-medium border-l-2 border-xiri-gold pl-8"
                         >
                             {data.localExpertise}
                         </p>
@@ -119,8 +162,8 @@ const { data } = Astro.props;
                                 <p
                                     class="text-sm text-xiri-navy/60 font-medium"
                                 >
-                                    Gestion des déclarations en mairie et taxes
-                                    de séjour.
+                                    Nous gérons les déclarations en mairie et la
+                                    taxe de séjour pour vous.
                                 </p>
                             </div>
                             <div class="space-y-4">
@@ -130,13 +173,13 @@ const { data } = Astro.props;
                                 <h4
                                     class="text-[11px] font-black uppercase tracking-widest text-xiri-navy"
                                 >
-                                    Revenus Optimisés
+                                    Rendement Maximal
                                 </h4>
                                 <p
                                     class="text-sm text-xiri-navy/60 font-medium"
                                 >
-                                    Algorithmes de prix dynamiques selon
-                                    l'actualité locale.
+                                    Optimisation des prix en temps réel selon la
+                                    demande locale.
                                 </p>
                             </div>
                         </div>
@@ -144,7 +187,7 @@ const { data } = Astro.props;
 
                     <div class="relative">
                         <div
-                            class="aspect-[4/5] overflow-hidden p-[10px] bg-white shadow-2xl -rotate-2"
+                            class="aspect-[4/5] overflow-hidden p-[10px] bg-white shadow-2xl skew-y-1"
                         >
                             <img
                                 src={data.heroImg}
@@ -152,30 +195,12 @@ const { data } = Astro.props;
                                 class="w-full h-full object-cover grayscale-[0.2]"
                             />
                         </div>
-                        <div
-                            class="absolute -bottom-12 -right-12 bg-xiri-navy p-10 text-white hidden md:block max-w-xs shadow-3xl"
-                        >
-                            <p
-                                class="text-[13px] font-serif leading-relaxed italic"
-                            >
-                                "La connaissance parfaite du terrain est notre
-                                plus grand atout pour garantir la sécurité de
-                                votre investissement."
-                            </p>
-                            <div class="mt-6 flex items-center gap-4">
-                                <span class="w-10 h-[1px] bg-xiri-gold"></span>
-                                <span
-                                    class="text-[9px] uppercase tracking-widest font-black"
-                                    >Direction Régionale</span
-                                >
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Neighborhoods / Coverage -->
+        <!-- Neighborhoods -->
         <section class="py-32 bg-xiri-navy text-white overflow-hidden relative">
             <div
                 class="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-32"
@@ -191,19 +216,19 @@ const { data } = Astro.props;
                         >Secteurs d'Intervention</span
                     >
                     <h2 class="text-4xl md:text-5xl font-serif leading-tight">
-                        Nous opérons dans tous les <br /><span
+                        Nous gérons vos biens dans tout <br /><span
                             class="font-light italic text-xiri-gold"
-                            >quartiers de {data.name}</span
+                            >{data.name}</span
                         >.
                     </h2>
                 </div>
 
-                <div class="flex flex-wrap justify-center gap-6 lg:gap-12">
+                <div class="flex flex-wrap justify-center gap-6 lg:gap-10">
                     {
                         data.neighborhoods.map((area) => (
-                            <div class="flex items-center gap-4 bg-white/5 backdrop-blur-md px-8 py-6 border border-white/10 hover:border-xiri-gold transition-all group">
+                            <div class="flex items-center gap-4 bg-white/5 backdrop-blur-md px-10 py-8 border border-white/10 hover:border-xiri-gold transition-all group">
                                 <MapPin size={16} className="text-xiri-gold" />
-                                <span class="text-[13px] font-black uppercase tracking-[0.2em]">
+                                <span class="text-[14px] font-black uppercase tracking-[0.2em]">
                                     {area}
                                 </span>
                             </div>
@@ -224,53 +249,44 @@ const { data } = Astro.props;
                 <h2
                     class="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight"
                 >
-                    Prêt à déléguer <br />votre bien à <span
-                        class="font-light text-xiri-gold">{data.name}</span
-                    > ?
+                    Votre succès à <br /><span class="font-light text-xiri-gold"
+                        >{data.name}</span
+                    > commence ici.
                 </h2>
                 <p
-                    class="text-[17px] text-[#000000] leading-loose font-medium max-w-xl mx-auto"
+                    class="text-[17px] text-xiri-navy/70 leading-loose font-medium max-w-xl mx-auto"
                 >
-                    Rejoignez le réseau Xiri et profitez d'une expertise
-                    reconnue sur le plan national avec une exécution passionnée
-                    sur le terrain.
+                    Confiez-nous la gestion de votre patrimoine et profitez
+                    d'une tranquillité totale alliée à une performance
+                    financière d'exception.
                 </p>
 
-                <div
-                    class="pt-12 flex flex-col sm:flex-row gap-6 justify-center"
-                >
+                <div class="pt-8">
                     <a
                         href="/#contact"
-                        class="bg-xiri-navy text-white px-12 py-7 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-black transition-all shadow-2xl no-underline"
+                        class="bg-xiri-navy text-white px-12 py-7 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-black transition-all shadow-2xl no-underline inline-block"
                     >
-                        Demander mon estimation
+                        Demander mon estimation gratuite
                     </a>
                 </div>
             </div>
         </section>
-
-        <!-- Edition Label -->
-        <div class="py-12 border-t border-xiri-navy/5 text-center bg-white">
-            <span class="text-[9px] uppercase tracking-[1em] text-xiri-navy/20"
-                >XIRI CONCIERGE • {data.name} EDITION</span
-            >
-        </div>
     </main>
 </Layout>
 
 <style>
     @keyframes slow-zoom {
         0% {
-            transform: scale(1);
-        }
-        50% {
             transform: scale(1.1);
         }
+        50% {
+            transform: scale(1.2);
+        }
         100% {
-            transform: scale(1);
+            transform: scale(1.1);
         }
     }
     .animate-slow-zoom {
-        animation: slow-zoom 25s ease-in-out infinite;
+        animation: slow-zoom 30s ease-in-out infinite;
     }
 </style>
