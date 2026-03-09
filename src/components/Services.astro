@@ -7,6 +7,7 @@ import img02 from "../images/selection_des_voyageurs.png";
 import img03 from "../images/checkin_checkout.png";
 import img04 from "../images/menagee.png";
 import img05 from "../images/assurances_cautions.png";
+import img06 from "../images/maintenance_assistance.png";
 
 const services = Object.values(servicesData);
 
@@ -17,7 +18,7 @@ const icons: Record<string, any> = {
     "03": img03,
     "04": img04,
     "05": img05,
-    "06": `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    "06": img06,
 };
 ---
 
@@ -59,7 +60,7 @@ const icons: Record<string, any> = {
                                         <Fragment set:html={icons[service.id]} />
                                     </div>
                                 ) : (
-                                    <Image src={icons[service.id]} alt={service.title} class="w-12 h-12 object-contain" />
+                                    <Image src={icons[service.id]} alt={service.title} class="w-20 h-20 sm:w-24 sm:h-24 object-contain" />
                                 )}
                             </div>
                             <h3 class="text-[22px] font-serif text-xiri-navy leading-tight">
