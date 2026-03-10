@@ -17,6 +17,7 @@ export interface ServiceData {
   id: string;
   title: string;
   description: string;
+  benefit: string;
   fullContent: string;
   img: string;
   gallery: string[];

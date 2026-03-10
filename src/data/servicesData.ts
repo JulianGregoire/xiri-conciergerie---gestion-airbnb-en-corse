@@ -6,6 +6,7 @@ export const servicesData: Record<string, ServiceData> = {
     id: "01",
     title: "Marketing & Boost d'Annonces",
     description: "Photos professionnelles, rédaction séduisante et tarification dynamique pour maximiser votre taux d'occupation.",
+    benefit: "Maximisez vos revenus",
     fullContent: "La visibilité est la clé de la réussite sur les plateformes de location saisonnière. Notre expertise Xiri transforme votre propriété en une annonce irrésistible. Nous ne nous contentons pas de poster des photos ; nous racontons une histoire, celle de votre bien partout en France. Grâce à des algorithmes prédictifs et une connaissance pointue du marché local, nous ajustons vos tarifs en temps réel pour capturer chaque opportunité.",
     img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1200",
     gallery: [
@@ -24,6 +25,7 @@ export const servicesData: Record<string, ServiceData> = {
     id: "02",
     title: "Filtrage & Sécurité Voyageurs",
     description: "Nous gérons toute la communication et filtrons rigoureusement les profils pour votre sérénité.",
+    benefit: "Louez en toute sérénité",
     fullContent: "Votre patrimoine mérite le respect. L'expertise Xiri en sélection des voyageurs repose sur un filtrage humain rigoureux soutenu par nos outils de vérification. Nous analysons les profils, les avis passés et les intentions de séjour pour ne retenir que les hôtes qui traiteront votre villa ou appartement comme le leur. Une communication fluide et réactive dès le premier message instaure un climat de confiance réciproque.",
     img: "https://images.unsplash.com/photo-1521791136064-7986c29535a7?auto=format&fit=crop&q=80&w=1200", // Image de confiance/accueil
     gallery: [
@@ -42,6 +44,7 @@ export const servicesData: Record<string, ServiceData> = {
     id: "03",
     title: "Accueil & Remise de Clés",
     description: "Un accueil personnalisé et un état des lieux rigoureux à chaque départ par nos équipes locales.",
+    benefit: "Une expérience 5 étoiles",
     fullContent: "L'arrivée est le moment où commence l'expérience client. L'expertise Xiri garantit un accueil chaleureux, souvent en personne, pour présenter les spécificités de votre bien et les pépites locales à découvrir. Au départ, nous réalisons un état des lieux minutieux, garantissant que votre propriété est prête pour les prochains occupants et signalant immédiatement le moindre incident.",
     img: "https://images.unsplash.com/photo-1531234799389-dcb7651eb0a2?auto=format&fit=crop&q=80&w=1200",
     gallery: [
@@ -60,6 +63,7 @@ export const servicesData: Record<string, ServiceData> = {
     id: "04",
     title: "Ménage Hôtelier & Blanchisserie",
     description: "Propreté hôtelière et linge de qualité premium pour chaque nouveau séjour.",
+    benefit: "Standard hôtelier garanti",
     fullContent: "La propreté est le critère numéro 1 pour obtenir des avis 5 étoiles. L'expertise Xiri s'appuie sur des équipes de nettoyage professionnelles formées aux standards de l'hôtellerie de luxe. Nous fournissons un linge de maison de haute qualité (coton percale, éponges denses) et des produits d'accueil raffinés qui enchantent vos voyageurs dès leur entrée dans les lieux.",
     img: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=1200",
     gallery: [
@@ -78,6 +82,7 @@ export const servicesData: Record<string, ServiceData> = {
     id: "05",
     title: "Garanties & Dépôts Sécurisés",
     description: "Protection complète de votre bien et gestion des litiges éventuels pour une tranquillité totale.",
+    benefit: "Protection 100% sécurisée",
     fullContent: "Louer en toute sérénité nécessite une protection sans faille. L'expertise Xiri inclut la gestion intégrale des cautions via des partenaires bancaires sécurisés. En cas de dégradation, nous nous chargeons de l'ouverture des dossiers de litige auprès des plateformes et des assurances, défendant vos intérêts avec détermination et professionnalisme.",
     img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
     gallery: [
@@ -96,6 +101,7 @@ export const servicesData: Record<string, ServiceData> = {
     id: "06",
     title: "Assistance & Réparations 24/7",
     description: "Réactivité totale pour tous les petits imprévus techniques du quotidien.",
+    benefit: "Intervention sous 24h",
     fullContent: "Une ampoule grillée ou une climatisation capricieuse ne doivent pas gâcher un séjour. L'expertise Xiri mobilise un réseau d'artisans réactifs pour intervenir rapidement. Nous assurons une maintenance préventive et curative, veillant à ce que votre investissement reste en parfait état tout au long de l'année.",
     img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200",
     gallery: [
