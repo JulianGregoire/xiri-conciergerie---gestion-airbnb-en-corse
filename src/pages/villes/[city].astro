@@ -6,7 +6,6 @@ import {
     ShieldCheck,
     TrendingUp,
     Star,
-    ArrowLeft,
     Check,
 } from "lucide-react";
 
@@ -41,17 +40,53 @@ const strongPoints = [
                         <div class="space-y-4">
                             <!-- Design Element: Gold Wave -->
                             <svg
-                                class="text-xiri-gold w-20 h-2 opacity-80"
+                                class="text-xiri-gold w-20 h-2 opacity-80 overflow-visible"
                                 viewBox="0 0 100 20"
                                 preserveAspectRatio="none"
                             >
                                 <path
+                                    class="animate-wave"
                                     d="M0 10 Q 12.5 0 25 10 T 50 10 T 75 10 T 100 10"
                                     fill="none"
                                     stroke="currentColor"
                                     stroke-width="6"
                                     stroke-linecap="round"></path>
                             </svg>
+
+                            <style>
+                                .animate-wave {
+                                    animation: wave-vibration 3s ease-in-out infinite;
+                                    /* We use stroke-dasharray to create a sense of movement */
+                                    stroke-dasharray: 200;
+                                    stroke-dashoffset: 200;
+                                    animation:
+                                        wave-vibration 3s ease-in-out infinite,
+                                        wave-flow 10s linear infinite;
+                                }
+
+                                @keyframes wave-vibration {
+                                    0%,
+                                    100% {
+                                        d: path(
+                                            "M0 10 Q 12.5 0 25 10 T 50 10 T 75 10 T 100 10"
+                                        );
+                                    }
+                                    50% {
+                                        d: path(
+                                            "M0 10 Q 12.5 15 25 10 T 50 5 T 75 15 T 100 10"
+                                        );
+                                    }
+                                }
+
+                                @keyframes wave-flow {
+                                    from {
+                                        stroke-dashoffset: 400;
+                                    }
+                                    to {
+                                        stroke-dashoffset: 0;
+                                    }
+                                }
+                            </style>
 
                             <h1
                                 class="text-[38px] sm:text-[48px] lg:text-[64px] font-serif text-xiri-navy leading-[1.1] tracking-tight"
@@ -290,3 +325,4 @@ const strongPoints = [
         animation: slow-zoom 30s ease-in-out infinite;
     }
 </style>
+
