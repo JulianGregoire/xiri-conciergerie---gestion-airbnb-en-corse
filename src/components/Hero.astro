@@ -20,21 +20,6 @@ const strongPoints = [
         >
             <div class="lg:col-span-7 space-y-8 z-10">
                 <div class="space-y-6">
-                    <!-- Google Rating Badge -->
-                    <div class="flex flex-col gap-2">
-                        <div class="flex items-center gap-1">
-                            {[...Array(5)].map((_, i) => (
-                                <Star
-                                    key={i}
-                                    size={16}
-                                    className="text-[#fbbc04] fill-[#fbbc04]"
-                                />
-                            ))}
-                        </div>
-                        <div class="text-[14px] font-bold text-xiri-navy/80 tracking-wide">
-                            4.9/5 <span class="font-normal opacity-60">sur Google</span>
-                        </div>
-                    </div>
 
                     <!-- Design Element: Gold Wave -->
                     <svg
@@ -127,18 +112,37 @@ const strongPoints = [
                 </ul>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a
-                        href="#contact"
-                        class="bg-xiri-navy text-white px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:bg-xiri-gold transition-all duration-500 rounded-xl no-underline text-center shadow-lg shadow-xiri-navy/10"
-                    >
-                        Estimer ma rentabilité
-                    </a>
-                    <a
-                        href="#services"
-                        class="bg-white text-xiri-navy border border-xiri-navy/10 px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:border-xiri-navy transition-all duration-500 rounded-xl no-underline text-center"
-                    >
-                        Explorer nos services
-                    </a>
+                    <div class="flex flex-col gap-3">
+                        <a
+                            href="#contact"
+                            class="bg-xiri-navy text-white px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:bg-xiri-gold transition-all duration-500 rounded-xl no-underline text-center shadow-lg shadow-xiri-navy/10"
+                        >
+                            Estimer ma rentabilité
+                        </a>
+                        <!-- Google Rating Badge -->
+                        <div class="flex flex-col gap-1 px-1">
+                            <div class="flex items-center gap-1">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star
+                                        key={i}
+                                        size={12}
+                                        className="text-[#fbbc04] fill-[#fbbc04]"
+                                    />
+                                ))}
+                            </div>
+                            <div class="text-[12px] font-bold text-xiri-navy/80 tracking-wide">
+                                4.9/5 <span class="font-normal opacity-60 italic">sur Google</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a
+                            href="#services"
+                            class="bg-white text-xiri-navy border border-xiri-navy/10 px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:border-xiri-navy transition-all duration-500 rounded-xl no-underline text-center w-full"
+                        >
+                            Explorer nos services
+                        </a>
+                    </div>
                 </div>
             </div>
 
