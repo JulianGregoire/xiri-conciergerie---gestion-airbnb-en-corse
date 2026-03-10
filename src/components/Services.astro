@@ -33,7 +33,7 @@ const icons: Record<string, any> = {
                     >Services opérés de A à Z</span
                 >
                 <h2
-                    class="text-[24px] md:text-[28px] font-serif text-xiri-navy leading-[1.2]"
+                    class="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-[1.2]"
                 >
                     Une exécution terrain complète, pilotée comme un service
                     pro.
@@ -60,17 +60,7 @@ const icons: Record<string, any> = {
                                         <Fragment set:html={icons[service.id]} />
                                     </div>
                                 ) : (
-                                    <Image 
-                                        src={icons[service.id]} 
-                                        alt={service.title} 
-                                        class={`${
-                                            service.id === '06' 
-                                                ? 'w-11 h-11 sm:w-13 sm:h-13' 
-                                                : ['01', '02', '03'].includes(service.id)
-                                                    ? 'w-12 h-12 sm:w-14 sm:h-14'
-                                                    : 'w-14 h-14 sm:w-16 sm:h-16'
-                                        } object-contain`} 
-                                    />
+                                    <Image src={icons[service.id]} alt={service.title} class="w-20 h-20 sm:w-24 sm:h-24 object-contain" />
                                 )}
                             </div>
                             <h3 class="text-[22px] font-serif text-xiri-navy leading-tight">
