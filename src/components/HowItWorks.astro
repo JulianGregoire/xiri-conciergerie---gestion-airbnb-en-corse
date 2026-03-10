@@ -5,7 +5,6 @@ const steps = [
         title: "Audit & cadrage",
         description:
             "Analyse du bien, potentiel locatif, contraintes légales et objectifs de revenu.",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
         reassurance: "Légalité garantie",
     },
     {
@@ -13,7 +12,6 @@ const steps = [
         title: "Mise en marché",
         description:
             "Photos, annonce optimisée, diffusion multi-canaux et stratégie de prix dynamique.",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`,
         reassurance: "Visibilité pilotée",
     },
     {
@@ -21,7 +19,6 @@ const steps = [
         title: "Exploitation continue",
         description:
             "Accueil voyageurs, opérations terrain, maintenance et reporting mensuel transparent.",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key"><path d="m21 2-2 2.27"/><path d="M21 2H9a7 7 0 0 0-3.03 13.31L2 21l3 3 4.58-4.58A7 7 0 1 0 21 2Z"/><path d="M11 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>`,
         reassurance: "Délégation totale",
     },
 ];
@@ -54,13 +51,10 @@ const steps = [
             {
                 steps.map((step) => (
                     <div class="border border-xiri-navy/10 p-5 md:p-6 rounded-2xl">
-                        <div class="mb-5 flex items-end justify-between">
+                        <div class="mb-5 flex items-center">
                             <span class="text-5xl font-serif text-xiri-navy/25 leading-none">
                                 {step.number}
                             </span>
-                            <div class="w-11 h-11 bg-xiri-bg flex items-center justify-center text-xiri-gold shadow-sm rounded-xl">
-                                <Fragment set:html={step.icon} />
-                            </div>
                         </div>
 
                         <div class="space-y-4">

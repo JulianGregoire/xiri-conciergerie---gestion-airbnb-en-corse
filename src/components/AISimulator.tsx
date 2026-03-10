@@ -159,15 +159,20 @@ const AISimulator: React.FC = () => {
 
           <div className="lg:col-span-5 space-y-12">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="h-[1px] w-8 bg-xiri-gold"></span>
-                <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.5em]">Analyse de Potentiel</span>
+              <div className="flex items-center gap-3 mb-8">
+                <span className="h-[1px] w-12 bg-xiri-gold"></span>
+                <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em]">Étude Prédictive</span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-serif text-xiri-navy leading-tight mb-8">
-                Valorisez votre <br /><span className="font-light">patrimoine</span>.
+              <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy leading-[1.1] mb-10">
+                Valorisez votre <br />
+                <span className="relative inline-block mt-2">
+                  patrimoine
+                  <span className="absolute bottom-2 left-0 w-full h-[6px] bg-xiri-gold/10 -z-10 rounded-full"></span>
+                </span>
+                .
               </h2>
-              <p className="text-[15px] text-xiri-navy/50 leading-relaxed font-light">
-                Découvrez le rendement optimal de votre bien en déléguant sa gestion à nos spécialistes de l'immobilier insulaire.
+              <p className="text-[17px] text-xiri-navy/60 leading-relaxed font-light max-w-md">
+                Libérez le plein potentiel de votre propriété. Nos algorithmes analysent le marché corse en temps réel pour vous offrir une projection de revenus nette, pilotée par l'excellence Xiri.
               </p>
             </div>
 
@@ -213,8 +218,8 @@ const AISimulator: React.FC = () => {
                         type="button"
                         onClick={() => handleToggleAmenity(opt)}
                         className={`px-4 py-3 text-[9px] font-bold uppercase tracking-widest transition-all border rounded-full ${formData.amenities.includes(opt)
-                            ? 'bg-xiri-navy text-white border-xiri-navy shadow-lg'
-                            : 'bg-white text-xiri-navy/60 border-xiri-navy/10 hover:border-xiri-gold hover:text-xiri-gold'
+                          ? 'bg-xiri-navy text-white border-xiri-navy shadow-lg'
+                          : 'bg-white text-xiri-navy/60 border-xiri-navy/10 hover:border-xiri-gold hover:text-xiri-gold'
                           }`}
                       >
                         {opt}
