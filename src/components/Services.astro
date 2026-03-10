@@ -60,7 +60,11 @@ const icons: Record<string, any> = {
                                         <Fragment set:html={icons[service.id]} />
                                     </div>
                                 ) : (
-                                    <Image src={icons[service.id]} alt={service.title} class="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
+                                    <Image 
+                                        src={icons[service.id]} 
+                                        alt={service.title} 
+                                        class={`${service.id === '06' ? 'w-11 h-11 sm:w-13 sm:h-13' : 'w-14 h-14 sm:w-16 sm:h-16'} object-contain`} 
+                                    />
                                 )}
                             </div>
                             <h3 class="text-[22px] font-serif text-xiri-navy leading-tight">
