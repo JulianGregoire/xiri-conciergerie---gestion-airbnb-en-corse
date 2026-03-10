@@ -11,16 +11,18 @@ const description =
 <Layout title={title} description={description}>
     <main class="pt-32 pb-24 bg-[#F8FAFC]">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="mb-16 space-y-4">
-                <span
-                    class="text-xiri-gold text-[11px] font-black uppercase tracking-[0.3em] block"
-                    >Journal & Insights</span
-                >
-                <h1
-                    class="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight"
-                >
-                    L'expertise <br /><span class="font-light">partagée</span>.
+            <div class="mb-20 space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="h-[1px] w-12 bg-xiri-gold"></span>
+                    <span class="text-xiri-gold text-[11px] font-black uppercase tracking-[0.6em] block">Journal & Insights</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-serif text-xiri-navy leading-[1.1]">
+                    L'expertise <br />
+                    <span class="text-xiri-gold italic font-light">partagée</span>.
                 </h1>
+                <p class="text-[17px] text-xiri-navy/60 leading-relaxed font-light max-w-2xl">
+                    Découvrez nos guides exclusifs sur la gestion locative de prestige, la fiscalité insulaire et l'art de recevoir en Corse.
+                </p>
             </div>
 
             <div
@@ -30,39 +32,39 @@ const description =
                     articles.map((article) => (
                         <a
                             href={`/blog/${article.id}`}
-                            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-xiri-navy/5 no-underline flex flex-col h-full"
+                            class="group bg-white rounded-[32px] overflow-hidden shadow-[0_20px_50px_-15px_rgba(15,23,42,0.05)] hover:shadow-[0_32px_60px_-15px_rgba(15,23,42,0.1)] transition-all duration-700 border border-xiri-navy/5 no-underline flex flex-col h-full"
                         >
-                            <div class="aspect-video overflow-hidden relative">
+                            <div class="aspect-[16/10] overflow-hidden relative">
                                 <img
                                     src={article.image}
                                     alt={article.title}
-                                    class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
+                                    class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
                                 />
-                                <div class="absolute top-4 left-4">
-                                    <span class="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-xiri-navy">
+                                <div class="absolute top-6 left-6">
+                                    <span class="bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm text-[9px] font-black uppercase tracking-widest text-xiri-navy">
                                         {article.category}
                                     </span>
                                 </div>
                             </div>
 
-                            <div class="p-8 space-y-4 flex-grow flex flex-col">
-                                <div class="flex items-center gap-4 text-[10px] text-xiri-navy/40 font-bold uppercase tracking-widest">
+                            <div class="p-10 space-y-6 flex-grow flex flex-col">
+                                <div class="flex items-center gap-4 text-[9px] text-xiri-navy/40 font-bold uppercase tracking-widest">
                                     <span>{article.date}</span>
                                     <span class="w-1 h-1 bg-xiri-gold rounded-full" />
                                     <span>{article.readTime} LECTURE</span>
                                 </div>
 
-                                <h2 class="text-[22px] font-serif text-xiri-navy leading-snug group-hover:text-xiri-gold transition-colors">
+                                <h2 class="text-2xl font-serif text-xiri-navy leading-tight group-hover:text-xiri-gold transition-colors">
                                     {article.title}
                                 </h2>
 
-                                <p class="text-[14px] text-xiri-navy/70 leading-relaxed line-clamp-3">
+                                <p class="text-[15px] text-xiri-navy/60 leading-relaxed font-light line-clamp-3">
                                     {article.excerpt}
                                 </p>
 
-                                <div class="pt-4 mt-auto">
-                                    <span class="text-[11px] font-black uppercase tracking-widest text-xiri-navy flex items-center gap-3">
-                                        Lire l'article
+                                <div class="pt-6 mt-auto">
+                                    <span class="text-[10px] font-black uppercase tracking-[0.2em] text-xiri-navy flex items-center gap-3">
+                                        Explorer
                                         <div class="w-8 h-[1px] bg-xiri-gold group-hover:w-16 transition-all duration-500" />
                                     </span>
                                 </div>
