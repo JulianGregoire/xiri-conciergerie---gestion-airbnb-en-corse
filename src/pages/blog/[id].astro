@@ -13,7 +13,7 @@ export function getStaticPaths() {
 const { article } = Astro.props;
 ---
 
-<Layout title={`${article.title} | Blog Xiri`} description={article.excerpt}>
+<Layout title={`${article.title} | Blog Xiri`} description={article.excerpt} navLight={true}>
     <div class="min-h-screen bg-white">
         <!-- Scroll Progress Bar -->
         <div
@@ -54,7 +54,7 @@ const { article } = Astro.props;
                         Le Blog Xiri • {article.category}
                     </span>
                     <h1
-                        class="text-5xl md:text-8xl font-serif leading-tight drop-shadow-2xl"
+                        class="text-4xl md:text-6xl font-serif leading-[1.15] drop-shadow-2xl"
                     >
                         {article.title}
                     </h1>

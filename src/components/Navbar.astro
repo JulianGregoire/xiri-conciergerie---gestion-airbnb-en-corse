@@ -1,4 +1,10 @@
 ---
+interface Props {
+    light?: boolean;
+}
+
+const { light = false } = Astro.props;
+
 const navLinks = [
     { href: "/#services", label: "Services" },
     { href: "/a-propos", label: "Notre Approche" },
@@ -11,6 +17,7 @@ const navLinks = [
 <nav
     id="main-nav"
     class="w-full fixed top-0 z-50 transition-all duration-500 bg-transparent py-4"
+    data-light={light}
 >
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="flex justify-between items-center">
@@ -20,9 +27,11 @@ const navLinks = [
             >
                 <span
                     id="nav-logo-text"
-                    class="text-base md:text-lg font-serif font-medium tracking-[0.08em] transition-colors duration-500 text-xiri-navy"
-                    >XIRI CONCIERGERIE</span
-                >
+                    class:list={[
+                        "text-base md:text-lg font-serif font-medium tracking-[0.08em] transition-colors duration-500",
+                        light ? "text-white" : "text-xiri-navy"
+                    ]}
+                >XIRI CONCIERGERIE</span>
                 <span
                     class="text-[9px] uppercase tracking-[0.22em] -mt-0.5 font-bold text-xiri-gold"
                     >RÉSEAU PREMIUM</span
@@ -34,7 +43,10 @@ const navLinks = [
                     navLinks.map((link) => (
                         <a
                             href={link.href}
-                            class="nav-link text-[11px] uppercase tracking-[0.14em] font-bold transition-all hover:text-xiri-gold text-xiri-navy no-underline"
+                            class:list={[
+                                "nav-link text-[11px] uppercase tracking-[0.14em] font-bold transition-all hover:text-xiri-gold no-underline",
+                                light ? "text-white" : "text-xiri-navy"
+                            ]}
                         >
                             {link.label}
                         </a>
@@ -46,7 +58,12 @@ const navLinks = [
                 <a
                     href="/#contact"
                     id="nav-cta"
-                    class="px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border border-xiri-navy/20 text-xiri-navy hover:bg-xiri-navy hover:text-white cursor-pointer rounded-xl no-underline"
+                    class:list={[
+                        "px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border rounded-xl no-underline cursor-pointer",
+                        light 
+                            ? "border-white/30 text-white hover:bg-white hover:text-xiri-navy" 
+                            : "border-xiri-navy/20 text-xiri-navy hover:bg-xiri-navy hover:text-white"
+                    ]}
                 >
                     Estimer ma rentabilité
                 </a>
@@ -55,7 +72,10 @@ const navLinks = [
             <div class="lg:hidden">
                 <button
                     id="mobile-menu-button"
-                    class="bg-transparent text-xiri-navy border-none cursor-pointer"
+                    class:list={[
+                        "bg-transparent border-none cursor-pointer",
+                        light ? "text-white" : "text-xiri-navy"
+                    ]}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +100,7 @@ const navLinks = [
         </div>
     </div>
 
-    <!-- Mobile Menu -->
+    <!-- Mobile Menu stays same as before (always white bg) -->
     <div
         id="mobile-menu"
         class="lg:hidden fixed inset-0 z-50 bg-white transition-transform duration-500 ease-in-out translate-x-full"
@@ -155,8 +175,9 @@ const navLinks = [
 
 <script>
     const nav = document.getElementById("main-nav");
+    const isLightMode = nav?.dataset.light === "true";
     const logoText = document.getElementById("nav-logo-text");
-    const navLinks = document.querySelectorAll(".nav-link");
+    const navLinksList = document.querySelectorAll(".nav-link");
     const navCta = document.getElementById("nav-cta");
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const closeMenuButton = document.getElementById("close-menu-button");
@@ -166,45 +187,56 @@ const navLinks = [
     const updateNav = () => {
         const isScrolled = window.scrollY > 50;
 
-        // On force un fond blanc et texte sombre dès qu'on scrolle
         if (isScrolled) {
-            nav?.classList.add(
-                "bg-white/95",
-                "backdrop-blur-sm",
-                "shadow-md",
-                "py-3",
-            );
+            nav?.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-md", "py-3");
             nav?.classList.remove("bg-transparent", "py-4");
+            
             logoText?.classList.add("text-xiri-navy");
-            navLinks.forEach((link) => {
+            logoText?.classList.remove("text-white");
+            
+            navLinksList.forEach((link) => {
                 link.classList.add("text-xiri-navy");
+                link.classList.remove("text-white");
             });
-            navCta?.classList.add(
-                "border-xiri-navy",
-                "text-xiri-navy",
-                "hover:bg-xiri-navy",
-                "hover:text-white",
-            );
-            navCta?.classList.remove("border-xiri-navy/20");
+            
+            navCta?.classList.add("border-xiri-navy", "text-xiri-navy", "hover:bg-xiri-navy", "hover:text-white");
+            navCta?.classList.remove("border-xiri-navy/20", "border-white/30", "text-white", "hover:bg-white", "hover:text-xiri-navy");
+            
             mobileMenuButton?.classList.add("text-xiri-navy");
+            mobileMenuButton?.classList.remove("text-white");
         } else {
-            // État initial (en haut de page)
-            nav?.classList.remove(
-                "bg-white/95",
-                "backdrop-blur-sm",
-                "shadow-md",
-                "py-3",
-            );
+            nav?.classList.remove("bg-white/95", "backdrop-blur-sm", "shadow-md", "py-3");
             nav?.classList.add("bg-transparent", "py-4");
 
-            // On reste en texte sombre car le Hero est blanc
-            logoText?.classList.add("text-xiri-navy");
-            navLinks.forEach((link) => {
-                link.classList.add("text-xiri-navy");
-            });
-            navCta?.classList.add("border-xiri-navy/20", "text-xiri-navy");
-            navCta?.classList.remove("border-xiri-navy");
-            mobileMenuButton?.classList.add("text-xiri-navy");
+            if (isLightMode) {
+                logoText?.classList.add("text-white");
+                logoText?.classList.remove("text-xiri-navy");
+                
+                navLinksList.forEach((link) => {
+                    link.classList.add("text-white");
+                    link.classList.remove("text-xiri-navy");
+                });
+                
+                navCta?.classList.add("border-white/30", "text-white", "hover:bg-white", "hover:text-xiri-navy");
+                navCta?.classList.remove("border-xiri-navy", "text-xiri-navy", "hover:bg-xiri-navy", "hover:text-white", "border-xiri-navy/20");
+                
+                mobileMenuButton?.classList.add("text-white");
+                mobileMenuButton?.classList.remove("text-xiri-navy");
+            } else {
+                logoText?.classList.add("text-xiri-navy");
+                logoText?.classList.remove("text-white");
+                
+                navLinksList.forEach((link) => {
+                    link.classList.add("text-xiri-navy");
+                    link.classList.remove("text-white");
+                });
+                
+                navCta?.classList.add("border-xiri-navy/20", "text-xiri-navy", "hover:bg-xiri-navy", "hover:text-white");
+                navCta?.classList.remove("border-xiri-navy", "border-white/30", "text-white", "hover:bg-white", "hover:text-xiri-navy");
+                
+                mobileMenuButton?.classList.add("text-xiri-navy");
+                mobileMenuButton?.classList.remove("text-white");
+            }
         }
     };
 

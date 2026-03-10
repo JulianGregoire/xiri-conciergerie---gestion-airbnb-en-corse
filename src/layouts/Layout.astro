@@ -6,11 +6,13 @@ import Footer from "../components/Footer.astro";
 interface Props {
     title: string;
     description?: string;
+    navLight?: boolean;
 }
 
 const {
     title,
     description = "Xiri Conciergerie - Gestion premium de locations saisonnières. Optimisez vos revenus locatifs en toute sérénité.",
+    navLight = false,
 } = Astro.props;
 ---
 
@@ -35,7 +37,7 @@ const {
         />
     </head>
     <body class="bg-xiri-bg text-xiri-navy">
-        <Navbar />
+        <Navbar light={navLight} />
         <slot />
         <Footer />
     </body>
