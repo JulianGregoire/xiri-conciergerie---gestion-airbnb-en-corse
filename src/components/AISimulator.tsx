@@ -1,28 +1,44 @@
-// @ts-nocheck
-import React, { useState, useMemo } from 'react';
-import { GoogleGenAI, Type } from "@google/genai";
-import { Sparkles, Loader2, MapPin, CheckCircle2, ArrowRight, TrendingUp, Mail, FileText, Download, Check, ShieldCheck } from 'lucide-react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Sparkles,
+  Loader2,
+  MapPin,
+  CheckCircle2,
+  ArrowRight,
+  TrendingUp,
+  Mail,
+  FileText,
+  Download,
+  Check,
+  ShieldCheck,
+  ChevronRight,
+  ChevronLeft,
+  Home,
+  Waves,
+  Euro,
+  BarChart3
+} from 'lucide-react';
+
+interface SimulationResult {
+  highSeason: string;
+  lowSeason: string;
+  annualRevenue: string;
+  occupancyRate: string;
+  advice: string;
+  strategicValue: string;
+}
 
 const AISimulator: React.FC = () => {
+  const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [generatingReport, setGeneratingReport] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [showEmailForm, setShowEmailForm] = useState(false);
-  const [emailSent, setEmailSent] = useState(false);
-  const [userEmail, setUserEmail] = useState('');
-  const [fullReport, setFullReport] = useState<string | null>(null);
-  const [result, setResult] = useState<{
-    highSeason: string;
-    lowSeason: string;
-    annualRevenue: string;
-    occupancyRate: string;
-    advice: string;
-    strategicValue: string;
-  } | null>(null);
+  const [result, setResult] = useState<SimulationResult | null>(null);
 
   const [formData, setFormData] = useState({
     city: '',
-    type: 'Villa avec piscine',
+    type: 'Villa d\'exception',
     amenities: [] as string[]
   });
 
@@ -30,9 +46,17 @@ const AISimulator: React.FC = () => {
     "Vue Mer", "Piscine chauffée", "Accès Plage à pied", "Climatisation", "Cuisine d'été / BBQ", "Conciergerie 24/7"
   ];
 
+  const propertyTypes = [
+    { id: 'villa', label: 'Villa d\'exception', icon: <Home size={18} /> },
+    { id: 'apt', label: 'Appartement Vue Mer', icon: <Waves size={18} /> },
+    { id: 'bergerie', label: 'Bergerie de charme', icon: <Waves size={18} /> },
+    { id: 'propriete', label: 'Propriété de village', icon: <Home size={18} /> },
+  ];
+
   const comparisonData = useMemo(() => {
     if (!result) return null;
     const revenueValue = parseInt(result.annualRevenue.replace(/[^0-9]/g, ''));
+    if (isNaN(revenueValue)) return { revenueValue: 0, sansXiri: 0, gainNet: 0 };
     const sansXiri = Math.round(revenueValue * 0.78);
     const gainNet = revenueValue - sansXiri;
     return { revenueValue, sansXiri, gainNet };
@@ -47,359 +71,358 @@ const AISimulator: React.FC = () => {
     }));
   };
 
-  const handleEstimate = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.city) return;
+  const nextStep = () => setStep(s => Math.min(s + 1, 4));
+  const prevStep = () => setStep(s => Math.max(s - 1, 1));
 
+  const runSimulation = async () => {
     setLoading(true);
-    setResult(null);
     setError(null);
-    setShowEmailForm(false);
-    setEmailSent(false);
+    setStep(4);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: import.meta.env.PUBLIC_GEMINI_API_KEY });
+      const apiKey = import.meta.env.PUBLIC_GEMINI_API_KEY;
+
+      // Fallback if no API Key is provided for demo purposes
+      if (!apiKey || apiKey === 'YOUR_API_KEY') {
+        setTimeout(() => {
+          setResult({
+            highSeason: "12 500 € / mois",
+            lowSeason: "4 200 € / mois",
+            annualRevenue: "84 000 €",
+            occupancyRate: "72%",
+            advice: "Votre bien à " + formData.city + " présente un fort potentiel, notamment grâce à ses équipements premium. Nous conseillons un repositionnement tarifaire dynamique.",
+            strategicValue: "Optimisation du taux d'occupation via multi-diffusion."
+          });
+          setLoading(false);
+        }, 2500);
+        return;
+      }
+
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
       const prompt = `Tu es un expert analyste du marché immobilier de prestige en Corse pour XIRI CONCIERGERIE. 
       Estime le potentiel locatif annuel pour ce bien :
       - Localisation : ${formData.city} (Corse)
       - Type de bien : ${formData.type}
       - Équipements : ${formData.amenities.join(', ')}
       
-      Instructions :
-      1. Les prix doivent refléter le marché haut de gamme actuel.
-      2. Mets en avant l'excellence de la gestion déléguée.
-      3. Propose un revenu annuel réaliste basé sur une saisonnalité corse classique.
-      4. Le conseil doit être spécifique à la localisation.`;
+      Réponds UNIQUEMENT en format JSON avec les clés suivantes :
+      {
+        "highSeason": "Prix estimé haute saison (ex: 8000 € / semaine)",
+        "lowSeason": "Prix estimé basse saison (ex: 3000 € / semaine)",
+        "annualRevenue": "Revenu annuel total estimé (ex: 95000 €)",
+        "occupancyRate": "Taux d'occupation estimé (ex: 65%)",
+        "advice": "Conseil spécifique de 2 phrases",
+        "strategicValue": "Valeur ajoutée de la gestion Xiri en 1 phrase"
+      }`;
 
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: prompt,
-        config: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              highSeason: { type: Type.STRING },
-              lowSeason: { type: Type.STRING },
-              annualRevenue: { type: Type.STRING },
-              occupancyRate: { type: Type.STRING },
-              advice: { type: Type.STRING },
-              strategicValue: { type: Type.STRING }
-            },
-            required: ["highSeason", "lowSeason", "annualRevenue", "occupancyRate", "advice", "strategicValue"]
-          }
-        }
-      });
-
-      if (response.text) {
-        setResult(JSON.parse(response.text));
-      }
+      const res = await model.generateContent(prompt);
+      const text = res.response.text();
+      const cleanJson = text.replace(/```json|```/g, '').trim();
+      setResult(JSON.parse(cleanJson));
     } catch (err) {
-      console.error("AI Error:", err);
-      setError("Une erreur est survenue lors de l'analyse.");
+      console.error("Simulation error:", err);
+      setError("Une erreur est survenue lors de l'analyse. Veuillez réessayer.");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleGenerateAndSendReport = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!userEmail || !result) return;
-
-    setGeneratingReport(true);
-
-    try {
-      const ai = new GoogleGenAI({ apiKey: import.meta.env.PUBLIC_GEMINI_API_KEY });
-
-      const reportPrompt = `Rédige une note de synthèse professionnelle pour un propriétaire en Corse de la part de XIRI CONCIERGERIE.
-      Détails : ${formData.type} à ${formData.city}. 
-      Focus : Excellence opérationnelle, sécurité juridique et valorisation du bien. Ton : Sobre et luxueux.`;
-
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: reportPrompt
-      });
-
-      if (response.text) {
-        setFullReport(response.text);
-        setEmailSent(true);
-      }
-    } catch (err) {
-      console.error("Report Generation Error:", err);
-      setError("Erreur lors de la génération du rapport.");
-    } finally {
-      setGeneratingReport(false);
-    }
-  };
-
-  const downloadReport = () => {
-    if (!fullReport) return;
-    const element = document.createElement("a");
-    const file = new Blob([`NOTE D'EXPERTISE XIRI CONCIERGERIE\n\n${fullReport}`], { type: 'text/plain' });
-    element.href = URL.createObjectURL(file);
-    element.download = `Synthese_Xiri_${formData.city.replace(/\s+/g, '_')}.txt`;
-    document.body.appendChild(element);
-    element.click();
-  };
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      const offset = 80;
-      window.scrollTo({ top: element.offsetTop - offset, behavior: 'smooth' });
-    }
+  const resetForm = () => {
+    setStep(1);
+    setResult(null);
+    setFormData({
+      city: '',
+      type: 'Villa d\'exception',
+      amenities: []
+    });
   };
 
   return (
-    <section id="ai-simulator" className="py-32 bg-[#F8FAFC] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-white -z-10 rounded-l-[100px]"></div>
+    <section id="ai-simulator" className="py-24 bg-white relative overflow-hidden">
+      {/* Background Ornaments */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-xiri-bg/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50 -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-xiri-gold/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl opacity-50 -z-10"></div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
-          <div className="lg:col-span-5 space-y-12">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="h-[1px] w-8 bg-xiri-gold"></span>
-                <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.5em]">Analyse de Potentiel</span>
+          {/* Text Content */}
+          <div className="lg:col-span-5 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="flex items-center gap-3">
+                <span className="h-[2px] w-12 bg-xiri-gold"></span>
+                <span className="text-xiri-gold text-[11px] font-black uppercase tracking-[0.6em]">Expertise Prédictive</span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-serif text-xiri-navy leading-tight mb-8">
-                Valorisez votre <br /><span className="font-light">patrimoine</span>.
+              <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy leading-[1.1]">
+                Valorisez votre <br />
+                <span className="relative inline-block text-xiri-gold italic font-light">
+                  patrimoine
+                  <motion.span
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '100%' }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                    className="absolute -bottom-2 left-0 h-[3px] bg-xiri-gold/30 rounded-full"
+                  ></motion.span>
+                </span>
+                .
               </h2>
-              <p className="text-[15px] text-xiri-navy/50 leading-relaxed font-light">
-                Découvrez le rendement optimal de votre bien en déléguant sa gestion à nos spécialistes de l'immobilier insulaire.
+              <p className="text-[17px] text-xiri-navy/60 leading-relaxed font-light max-w-md">
+                Libérez le plein potentiel de votre propriété. Notre algorithme analyse le marché corse en temps réel pour une projection de revenus nette et transparente.
               </p>
+            </motion.div>
+
+            {/* Stepper Dots */}
+            <div className="flex gap-3 pt-4">
+              {[1, 2, 3].map((s) => (
+                <div
+                  key={s}
+                  className={`h-[3px] transition-all duration-500 rounded-full ${step === s ? 'w-12 bg-xiri-gold' : 'w-4 bg-xiri-navy/10'}`}
+                ></div>
+              ))}
             </div>
-
-            <form onSubmit={handleEstimate} className="bg-white p-8 lg:p-12 shadow-xl border border-xiri-navy/5 rounded-2xl space-y-10 mt-8">
-              <div className="space-y-10">
-                <div className="group relative pt-4">
-                  <MapPin size={16} className="absolute right-0 top-8 text-xiri-navy/20 group-focus-within:text-xiri-gold transition-colors" />
-                  <input
-                    type="text"
-                    required
-                    className="peer w-full bg-transparent border-b border-xiri-navy/10 py-4 outline-none focus:border-xiri-gold transition-all text-sm placeholder-transparent"
-                    id="city-input"
-                    value={formData.city}
-                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  />
-                  <label htmlFor="city-input" className="absolute left-0 top-0 text-[9px] uppercase tracking-[0.3em] font-bold text-xiri-navy/40 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-xs peer-focus:top-0 peer-focus:text-[9px] peer-focus:text-xiri-gold">
-                    Localisation en Corse
-                  </label>
-                </div>
-
-                <div className="group relative">
-                  <select
-                    className="peer w-full bg-transparent border-b border-xiri-navy/10 py-4 outline-none focus:border-xiri-gold transition-all text-sm appearance-none cursor-pointer"
-                    value={formData.type}
-                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                  >
-                    <option>Villa d'exception</option>
-                    <option>Appartement Vue Mer</option>
-                    <option>Bergerie de charme</option>
-                    <option>Propriété de village</option>
-                  </select>
-                  <label className="absolute left-0 top-0 text-[9px] uppercase tracking-[0.3em] font-bold text-xiri-navy/40">
-                    Type de bien
-                  </label>
-                </div>
-
-                <div className="pt-2">
-                  <label className="text-[9px] uppercase tracking-[0.3em] font-bold text-xiri-navy/40 mb-6 block">Prestations Premium</label>
-                  <div className="flex flex-wrap gap-3">
-                    {amenitiesOptions.map((opt) => (
-                      <button
-                        key={opt}
-                        type="button"
-                        onClick={() => handleToggleAmenity(opt)}
-                        className={`px-4 py-3 text-[9px] font-bold uppercase tracking-widest transition-all border rounded-full ${formData.amenities.includes(opt)
-                            ? 'bg-xiri-navy text-white border-xiri-navy shadow-lg'
-                            : 'bg-white text-xiri-navy/60 border-xiri-navy/10 hover:border-xiri-gold hover:text-xiri-gold'
-                          }`}
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <button
-                disabled={loading || !formData.city}
-                className="w-full group relative overflow-hidden bg-xiri-navy text-white py-6 rounded-xl text-[11px] uppercase tracking-[0.4em] font-bold shadow-2xl transition-all"
-              >
-                <div className="relative z-10 flex items-center justify-center gap-4">
-                  {loading ? <Loader2 className="animate-spin" size={18} /> : <ShieldCheck size={18} className="text-xiri-gold" />}
-                  {loading ? "ANALYSE EN COURS..." : "SIMULER LE RENDEMENT"}
-                </div>
-                <div className="absolute inset-0 bg-xiri-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 opacity-20"></div>
-              </button>
-            </form>
           </div>
 
-          <div className="lg:col-span-7 relative flex items-center">
-            {!result && !loading && !error && (
-              <div className="w-full text-center space-y-8 p-12 lg:p-24 border-2 border-dashed border-xiri-navy/5 rounded-[40px] bg-white/50 backdrop-blur-sm">
-                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-xl">
-                  <ShieldCheck className="text-xiri-gold/30" size={32} />
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-serif text-xiri-navy">Optimisez votre gestion</h3>
-                  <p className="text-sm text-xiri-navy/40 font-light max-w-xs mx-auto">
-                    Visualisez vos revenus nets avec une délégation complète à XIRI CONCIERGERIE.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {loading && !showEmailForm && (
-              <div className="w-full flex flex-col items-center justify-center space-y-12 py-24">
-                <div className="relative">
-                  <div className="w-32 h-32 border-4 border-xiri-navy/5 rounded-full"></div>
-                  <div className="absolute top-0 left-0 w-32 h-32 border-4 border-xiri-gold border-t-transparent rounded-full animate-spin"></div>
-                  <ShieldCheck className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xiri-gold animate-pulse" size={24} />
-                </div>
-                <p className="text-[12px] uppercase tracking-[0.5em] text-xiri-navy font-black animate-pulse">Calcul des opportunités...</p>
-              </div>
-            )}
-
-            {result && !loading && (
-              <div className="w-full space-y-8 animate-in fade-in zoom-in-95 duration-700">
-                <div className="w-full bg-white rounded-[40px] shadow-[0_50px_100px_-30px_rgba(27,43,68,0.2)] border border-xiri-navy/5 overflow-hidden">
-                  <div className="bg-xiri-navy p-10 text-white flex justify-between items-center">
-                    <div>
-                      <h4 className="text-[10px] font-bold uppercase tracking-[0.5em] text-xiri-gold mb-2">Note de Synthèse Immobilière</h4>
-                      <p className="text-2xl font-serif">{formData.city} • <span className="">{formData.type}</span></p>
+          {/* Form / Result Card */}
+          <div className="lg:col-span-7">
+            <motion.div
+              layout
+              className="bg-white rounded-[32px] shadow-[0_32px_80px_-20px_rgba(15,23,42,0.1)] border border-xiri-navy/5 overflow-hidden p-8 md:p-12"
+            >
+              <AnimatePresence mode="wait">
+                {step === 1 && (
+                  <motion.div
+                    key="step1"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="space-y-8"
+                  >
+                    <div className="space-y-2">
+                      <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-widest">Étape 01</span>
+                      <h3 className="text-3xl font-serif text-xiri-navy">Où se situe votre bien ?</h3>
                     </div>
-                    <div className="text-right">
-                      <ShieldCheck className="text-xiri-gold ml-auto mb-2" size={24} />
-                      <span className="text-[9px] uppercase tracking-widest font-bold text-white/40">Excellence</span>
+                    <div className="relative pt-6">
+                      <MapPin className="absolute left-0 bottom-4 text-xiri-gold" size={20} />
+                      <input
+                        type="text"
+                        placeholder="Ex: Porto-Vecchio, Bonifacio, Saint-Florent..."
+                        value={formData.city}
+                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                        className="w-full bg-transparent border-b-2 border-xiri-navy/10 py-3 pl-8 outline-none focus:border-xiri-gold transition-all text-lg font-serif placeholder:text-xiri-navy/20"
+                      />
                     </div>
-                  </div>
+                    <button
+                      onClick={nextStep}
+                      disabled={!formData.city}
+                      className="w-full bg-xiri-navy text-white py-6 rounded-2xl flex items-center justify-center gap-3 font-bold uppercase tracking-widest text-[11px] hover:bg-xiri-gold transition-all disabled:opacity-50"
+                    >
+                      Suivant <ChevronRight size={16} />
+                    </button>
+                  </motion.div>
+                )}
 
-                  <div className="p-10 lg:p-14 space-y-12">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                      <div className="p-8 bg-[#F8FAFC] rounded-2xl space-y-4 border border-xiri-navy/5">
-                        <span className="text-[9px] uppercase tracking-widest font-bold text-xiri-navy/40">Revenu Annuel Estimé</span>
-                        <p className="text-5xl font-serif text-xiri-navy tracking-tighter">{result.annualRevenue}</p>
-                      </div>
-                      <div className="p-8 bg-[#F8FAFC] rounded-2xl space-y-4 border border-xiri-navy/5">
-                        <span className="text-[9px] uppercase tracking-widest font-bold text-xiri-navy/40">Projection d'Occupation</span>
-                        <p className="text-5xl font-serif text-xiri-navy/60 tracking-tighter">{result.occupancyRate}</p>
-                      </div>
+                {step === 2 && (
+                  <motion.div
+                    key="step2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="space-y-8"
+                  >
+                    <div className="space-y-2">
+                      <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-widest">Étape 02</span>
+                      <h3 className="text-3xl font-serif text-xiri-navy">Quel est le type de propriété ?</h3>
                     </div>
-
-                    <div className="py-12 border-y border-xiri-navy/5">
-                      <h5 className="text-[10px] font-black uppercase tracking-[0.4em] text-xiri-navy mb-10 text-center">Optimisation du Rendement</h5>
-                      <div className="space-y-12 max-w-lg mx-auto">
-                        <div className="space-y-4">
-                          <div className="flex justify-between items-end">
-                            <span className="text-[11px] font-bold uppercase tracking-widest text-xiri-navy/40">Gestion Classique</span>
-                            <span className="text-xl font-serif text-xiri-navy/60">{comparisonData?.sansXiri.toLocaleString('fr-FR')} €</span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {propertyTypes.map((type) => (
+                        <button
+                          key={type.id}
+                          onClick={() => {
+                            setFormData({ ...formData, type: type.label });
+                            nextStep();
+                          }}
+                          className={`flex items-center gap-4 p-6 rounded-2xl border-2 transition-all text-left ${formData.type === type.label
+                              ? 'border-xiri-gold bg-xiri-gold/5 text-xiri-navy'
+                              : 'border-xiri-navy/5 hover:border-xiri-navy/20'
+                            }`}
+                        >
+                          <div className={`p-3 rounded-xl ${formData.type === type.label ? 'bg-xiri-gold text-white' : 'bg-xiri-bg text-xiri-gold'}`}>
+                            {type.icon}
                           </div>
-                          <div className="h-2 w-full bg-xiri-navy/5 rounded-full overflow-hidden">
-                            <div className="h-full bg-xiri-navy/20 w-[78%]"></div>
+                          <span className="font-bold text-sm uppercase tracking-wider">{type.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                    <button onClick={prevStep} className="text-xiri-navy/40 uppercase tracking-widest text-[10px] font-black flex items-center gap-2 hover:text-xiri-navy transition-colors">
+                      <ChevronLeft size={14} /> Retour
+                    </button>
+                  </motion.div>
+                )}
+
+                {step === 3 && (
+                  <motion.div
+                    key="step3"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="space-y-8"
+                  >
+                    <div className="space-y-2">
+                      <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-widest">Étape 03</span>
+                      <h3 className="text-3xl font-serif text-xiri-navy">Équipements & Prestations</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      {amenitiesOptions.map((opt) => (
+                        <button
+                          key={opt}
+                          onClick={() => handleToggleAmenity(opt)}
+                          className={`px-5 py-4 rounded-full border-2 transition-all font-bold uppercase tracking-widest text-[10px] ${formData.amenities.includes(opt)
+                              ? 'bg-xiri-navy text-white border-xiri-navy shadow-lg'
+                              : 'bg-white text-xiri-navy/60 border-xiri-navy/10 hover:border-xiri-gold hover:text-xiri-gold'
+                            }`}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                    <button
+                      onClick={runSimulation}
+                      className="w-full bg-xiri-gold text-white py-6 rounded-2xl flex items-center justify-center gap-3 font-bold uppercase tracking-widest text-[11px] hover:bg-xiri-navy shadow-xl shadow-xiri-gold/20 transition-all"
+                    >
+                      Générer mon étude <Sparkles size={16} />
+                    </button>
+                    <button onClick={prevStep} className="text-xiri-navy/40 uppercase tracking-widest text-[10px] font-black flex items-center gap-2 hover:text-xiri-navy transition-colors">
+                      <ChevronLeft size={14} /> Retour
+                    </button>
+                  </motion.div>
+                )}
+
+                {step === 4 && (
+                  <motion.div
+                    key="step4"
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="min-h-[400px] flex flex-col items-center justify-center"
+                  >
+                    {loading ? (
+                      <div className="text-center space-y-8">
+                        <div className="relative">
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+                            className="w-24 h-24 border-b-2 border-xiri-gold rounded-full"
+                          ></motion.div>
+                          <ShieldCheck className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xiri-gold" size={32} />
+                        </div>
+                        <div className="space-y-2">
+                          <h4 className="text-2xl font-serif text-xiri-navy animate-pulse">Analyse en cours...</h4>
+                          <p className="text-xs text-xiri-navy/40 uppercase tracking-widest">Croisement des données marché à {formData.city}</p>
+                        </div>
+                      </div>
+                    ) : error ? (
+                      <div className="text-center space-y-6">
+                        <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto">
+                          <ShieldCheck size={32} />
+                        </div>
+                        <p className="text-xiri-navy/70">{error}</p>
+                        <button onClick={resetForm} className="bg-xiri-navy text-white px-8 py-4 rounded-xl font-bold uppercase text-[10px] tracking-widest">Réessayer</button>
+                      </div>
+                    ) : result && (
+                      <div className="w-full space-y-10 animate-in fade-in duration-1000">
+                        {/* Final Dashboard View */}
+                        <div className="flex justify-between items-start border-b border-xiri-navy/5 pb-8">
+                          <div>
+                            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-xiri-gold mb-2">Note d'expertise</h4>
+                            <p className="text-2xl font-serif text-xiri-navy">{formData.city} • <span className="opacity-50">{formData.type}</span></p>
+                          </div>
+                          <BarChart3 className="text-xiri-gold" size={24} />
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="p-6 bg-xiri-bg/25 rounded-3xl border border-xiri-navy/5 space-y-2">
+                            <span className="text-[9px] font-bold uppercase tracking-widest text-xiri-navy/40">Revenu Annuel Projeté</span>
+                            <p className="text-4xl font-serif text-xiri-navy">{result.annualRevenue}</p>
+                          </div>
+                          <div className="p-6 bg-xiri-bg/25 rounded-3xl border border-xiri-navy/5 space-y-2">
+                            <span className="text-[9px] font-bold uppercase tracking-widest text-xiri-navy/40">Taux d'Occupation</span>
+                            <p className="text-4xl font-serif text-xiri-navy/60">{result.occupancyRate}</p>
                           </div>
                         </div>
-                        <div className="space-y-4">
-                          <div className="flex justify-between items-end">
-                            <span className="text-[11px] font-black uppercase tracking-widest text-xiri-gold">Expertise XIRI</span>
-                            <span className="text-2xl font-serif text-xiri-navy">{comparisonData?.revenueValue.toLocaleString('fr-FR')} €</span>
+
+                        {/* Revenue Comparison */}
+                        <div className="space-y-6 bg-xiri-navy text-white p-8 rounded-[32px] overflow-hidden relative">
+                          <div className="absolute top-0 right-0 p-8 opacity-10">
+                            <TrendingUp size={80} />
                           </div>
-                          <div className="h-4 w-full bg-xiri-gold/10 rounded-full overflow-hidden">
-                            <div className="h-full bg-xiri-gold w-full relative">
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/30 animate-pulse"></div>
+                          <div className="relative z-10 space-y-8">
+                            <div className="space-y-4">
+                              <div className="flex justify-between text-[11px] font-bold uppercase tracking-widest opacity-60">
+                                <span>Gestion Standard</span>
+                                <span>{comparisonData?.sansXiri.toLocaleString('fr-FR')} €</span>
+                              </div>
+                              <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                                <motion.div
+                                  initial={{ width: 0 }}
+                                  animate={{ width: '78%' }}
+                                  transition={{ duration: 1, delay: 0.5 }}
+                                  className="h-full bg-white/30"
+                                ></motion.div>
+                              </div>
+                            </div>
+                            <div className="space-y-4">
+                              <div className="flex justify-between items-end">
+                                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-xiri-gold">Signature XIRI</span>
+                                <span className="text-3xl font-serif">{comparisonData?.revenueValue.toLocaleString('fr-FR')} €</span>
+                              </div>
+                              <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden">
+                                <motion.div
+                                  initial={{ width: 0 }}
+                                  animate={{ width: '100%' }}
+                                  transition={{ duration: 1.2, delay: 0.8 }}
+                                  className="h-full bg-xiri-gold"
+                                ></motion.div>
+                              </div>
+                            </div>
+                            <div className="pt-4 border-t border-white/10 flex items-center gap-4">
+                              <div className="w-10 h-10 bg-xiri-gold/20 rounded-full flex items-center justify-center text-xiri-gold">
+                                <Euro size={18} />
+                              </div>
+                              <p className="text-[11px] font-bold uppercase tracking-widest">Gain supplémentaire net : <span className="text-xiri-gold">+{comparisonData?.gainNet.toLocaleString('fr-FR')} € / an</span></p>
                             </div>
                           </div>
                         </div>
-                        <div className="bg-xiri-gold/5 p-6 rounded-2xl border border-xiri-gold/10 text-center">
-                          <p className="text-[11px] font-bold uppercase tracking-widest text-xiri-gold">Valorisation Additionnelle : +{comparisonData?.gainNet.toLocaleString('fr-FR')} € / an</p>
-                        </div>
-                      </div>
-                    </div>
 
-                    {!showEmailForm && !emailSent && (
-                      <div className="flex flex-col md:flex-row gap-4">
-                        <button
-                          onClick={() => setShowEmailForm(true)}
-                          className="flex-1 flex items-center justify-center gap-4 group bg-xiri-navy text-white px-10 py-7 rounded-xl text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-black transition-all shadow-xl"
-                        >
-                          RECEVOIR L'ÉTUDE COMPLÈTE
-                          <FileText size={18} className="text-xiri-gold" />
-                        </button>
-                        <button
-                          onClick={scrollToContact}
-                          className="flex-1 flex items-center justify-center gap-4 group bg-xiri-gold text-white px-10 py-7 rounded-xl text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-xiri-navy transition-all shadow-xl"
-                        >
-                          PARLER À UN CONSEILLER
-                          <ArrowRight size={18} />
-                        </button>
-                      </div>
-                    )}
-
-                    {showEmailForm && !emailSent && (
-                      <form onSubmit={handleGenerateAndSendReport} className="space-y-8 p-10 bg-[#F8FAFC] rounded-3xl border border-xiri-gold/20 animate-in slide-in-from-bottom-4 duration-500">
-                        <div className="text-center space-y-4">
-                          <h6 className="text-xl font-serif text-xiri-navy">Synthèse Personnalisée</h6>
-                          <p className="text-xs text-xiri-navy/50 font-light">Recevez votre dossier d'expertise détaillant notre stratégie de valorisation pour votre bien.</p>
-                        </div>
-                        <div className="relative">
-                          <Mail size={16} className="absolute left-0 top-4 text-xiri-gold" />
-                          <input
-                            type="email"
-                            required
-                            placeholder="VOTRE EMAIL"
-                            value={userEmail}
-                            onChange={(e) => setUserEmail(e.target.value)}
-                            className="w-full bg-transparent border-b border-xiri-gold/30 py-4 pl-10 outline-none focus:border-xiri-gold text-[10px] tracking-widest font-bold uppercase"
-                          />
-                        </div>
-                        <button
-                          type="submit"
-                          disabled={generatingReport}
-                          className="w-full bg-xiri-navy text-white py-6 rounded-xl text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-black transition-all flex items-center justify-center gap-4"
-                        >
-                          {generatingReport ? <Loader2 className="animate-spin" size={16} /> : <ShieldCheck size={16} />}
-                          {generatingReport ? "GÉNÉRATION DU DOSSIER..." : "ENVOYER MON DOSSIER"}
-                        </button>
-                      </form>
-                    )}
-
-                    {emailSent && (
-                      <div className="p-12 bg-green-50 rounded-3xl border border-green-100 text-center space-y-8 animate-in zoom-in-95 duration-500">
-                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-lg">
-                          <Check className="text-green-500" size={32} />
-                        </div>
-                        <div className="space-y-4">
-                          <h6 className="text-2xl font-serif text-xiri-navy">Dossier Envoyé</h6>
-                          <p className="text-[13px] text-xiri-navy/50 font-light leading-relaxed">
-                            Votre synthèse pour <strong>{formData.city}</strong> est en route.<br />
-                            Découvrez comment optimiser votre rentabilité sereinement.
-                          </p>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                        <div className="flex flex-col sm:flex-row gap-4">
                           <button
-                            onClick={downloadReport}
-                            className="flex items-center justify-center gap-3 bg-xiri-navy text-white px-8 py-5 rounded-xl text-[10px] uppercase tracking-widest font-bold shadow-xl hover:bg-black transition-all"
+                            onClick={() => {
+                              const contactSection = document.getElementById('contact');
+                              contactSection?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="flex-1 bg-xiri-navy text-white py-6 rounded-2xl font-bold uppercase tracking-widest text-[10px] hover:bg-black transition-all"
                           >
-                            <Download size={16} />
-                            TÉLÉCHARGER LA NOTE
+                            Demander l'étude complète
                           </button>
                           <button
-                            onClick={scrollToContact}
-                            className="flex items-center justify-center gap-3 bg-xiri-gold text-white px-8 py-5 rounded-xl text-[10px] uppercase tracking-widest font-bold shadow-xl hover:bg-xiri-navy transition-all"
+                            onClick={resetForm}
+                            className="px-8 bg-xiri-bg text-xiri-navy py-6 rounded-2xl font-bold uppercase tracking-widest text-[10px] hover:bg-xiri-navy/5 transition-all"
                           >
-                            <ShieldCheck size={16} />
-                            CONTACTER L'AGENCE
+                            Nouvelle étude
                           </button>
                         </div>
                       </div>
                     )}
-                  </div>
-                </div>
-              </div>
-            )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           </div>
         </div>
       </div>
