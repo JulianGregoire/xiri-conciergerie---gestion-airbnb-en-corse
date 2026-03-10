@@ -1,0 +1,39 @@
+---
+import { Zap } from "lucide-react";
+---
+
+<section class="py-24 md:py-40 bg-xiri-navy relative overflow-hidden">
+    <!-- Background Decor -->
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-xiri-gold/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px]"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-xiri-gold/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-[100px]"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div class="flex flex-col items-center text-center space-y-12">
+            <!-- Icon/Badge -->
+            <div class="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-2 rounded-full backdrop-blur-sm">
+                < Zap size={16} className="text-xiri-gold fill-xiri-gold animate-pulse" />
+                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/80">Déploiement Ultra-Rapide</span>
+            </div>
+
+            <div class="space-y-6 max-w-4xl">
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] tracking-tight">
+                    Mise en route opérationnelle <br />
+                    <span class="text-xiri-gold font-light italic">en moins de 15 jours.</span>
+                </h2>
+                <p class="text-[17px] md:text-[20px] text-white/60 leading-relaxed font-medium max-w-2xl mx-auto">
+                    Vous gardez la maîtrise des décisions, nous pilotons l'exécution quotidienne pour transformer votre bien en source de revenus.
+                </p>
+            </div>
+
+            <div class="pt-8">
+                <a
+                    href="#contact"
+                    class="group relative inline-flex items-center gap-8 bg-xiri-gold text-white px-12 py-6 text-[11px] uppercase tracking-[0.4em] font-black hover:bg-white hover:text-xiri-navy transition-all duration-700 rounded-xl no-underline shadow-2xl shadow-xiri-gold/20"
+                >
+                    Lancer l'audit de mon bien
+                    <div class="w-8 h-[1px] bg-white group-hover:bg-xiri-navy group-hover:w-16 transition-all duration-700"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
