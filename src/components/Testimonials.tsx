@@ -11,7 +11,7 @@ const testimonials = [
     avatar: "https://ui-avatars.com/api/?name=Jean-Pierre+C&background=f0f2f5&color=1B2B44&bold=true"
   },
   {
-    text: "Enfin une conciergerie sérieuse en Corse. Le ménage est impeccable et le suivi via l'application me rassure énormément car je vis sur le continent. Très professionnels.",
+    text: "Enfin une conciergerie sérieuse. Le ménage est impeccable et le suivi via l'application me rassure énormément car je vis loin de mon bien. Très professionnels.",
     author: "Lætitia S.",
     time: "il y a 1 mois",
     avatar: "https://ui-avatars.com/api/?name=Laetitia+S&background=f0f2f5&color=C5A059&bold=true"
@@ -23,7 +23,7 @@ const testimonials = [
     avatar: "https://ui-avatars.com/api/?name=Dominique+M&background=f0f2f5&color=1B2B44&bold=true"
   },
   {
-    text: "Une équipe qui comprend les enjeux du luxe. Ma propriété de Calvi est gérée avec un soin méticuleux, comme si c'était la leur. Excellent relationnel avec les équipes.",
+    text: "Une équipe qui comprend les enjeux du luxe. Ma propriété est gérée avec un soin méticuleux, comme si c'était la leur. Excellent relationnel avec les équipes.",
     author: "Marc-Antoine B.",
     time: "il y a 3 mois",
     avatar: "https://ui-avatars.com/api/?name=Marc-Antoine+B&background=f0f2f5&color=C5A059&bold=true"

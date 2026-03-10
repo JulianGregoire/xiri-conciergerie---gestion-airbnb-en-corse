@@ -11,7 +11,7 @@ interface Props {
 
 const {
     title,
-    description = "Xiri Conciergerie - Gestion premium de locations saisonnières. Optimisez vos revenus locatifs en toute sérénité.",
+    description = "Xiri Conciergerie - Gestion premium de locations saisonnières en France. Optimisez vos revenus locatifs en toute sérénité.",
     navLight = false,
 } = Astro.props;
 ---
@@ -39,7 +39,11 @@ const {
     <body class="bg-xiri-bg text-xiri-navy">
         <Navbar light={navLight} />
         <slot />
-        <Footer />
+        <Footer>
+            <p>
+                12 Boulevard de l'Empereur,<br />20000 Ajaccio
+            </p>
+        </Footer>
     </body>
 </html>
 

@@ -10,7 +10,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "Est-ce légal ?",
-    answer: "Absolument. La location saisonnière en France, et particulièrement en Corse, est strictement encadrée. Nous vous accompagnons dans toutes les démarches administratives : déclaration en mairie, obtention du numéro d'enregistrement et gestion de la taxe de séjour. Nous privilégions le statut LMNP (Loueur en Meublé Non Professionnel) qui offre des avantages fiscaux majeurs sur l'île."
+    answer: "Absolument. La location saisonnière en France est strictement encadrée. Nous vous accompagnons dans toutes les démarches administratives : déclaration en mairie, obtention du numéro d'enregistrement et gestion de la taxe de séjour. Nous privilégions le statut LMNP (Loueur en Meublé Non Professionnel) qui offre des avantages fiscaux majeurs sur l'ensemble du territoire."
   },
   {
     question: "Qui encaisse l’argent ?",
@@ -18,7 +18,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Combien de jours puis-je louer ?",
-    answer: "S'il s'agit de votre résidence secondaire, il n'y a pas de limite de durée (contrairement à la limite de 120 jours pour une résidence principale). Vous avez une liberté totale pour maximiser votre rendement tout au long de l'année, de la haute saison estivale aux mois plus calmes mais très prisés du printemps corse."
+    answer: "S'il s'agit de votre résidence secondaire, il n'y a pas de limite de durée (contrairement à la limite de 120 jours pour une résidence principale). Vous avez une liberté totale pour maximiser votre rendement tout au long de l'année, de la haute saison estivale aux périodes plus calmes mais très prisées du printemps."
   },
   {
     question: "Qui paie en cas de casse ?",
@@ -96,7 +96,7 @@ const FAQ: React.FC = () => {
           <div className="absolute inset-0 bg-xiri-gold/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
           <div className="relative z-10 space-y-6">
             <h4 className="text-[24px] font-serif text-white">Une question plus spécifique ?</h4>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">Nos experts insulaires sont à votre disposition.</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">Nos experts sont à votre disposition.</p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 bg-xiri-gold text-white text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-xl rounded-xl"

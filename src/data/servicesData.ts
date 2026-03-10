@@ -6,7 +6,7 @@ export const servicesData: Record<string, ServiceData> = {
     id: "01",
     title: "Marketing & Boost d'Annonces",
     description: "Photos professionnelles, rédaction séduisante et tarification dynamique pour maximiser votre taux d'occupation.",
-    fullContent: "La visibilité est la clé de la réussite sur les plateformes de location saisonnière. Notre expertise Xiri transforme votre propriété en une annonce irrésistible. Nous ne nous contentons pas de poster des photos ; nous racontons une histoire, celle de votre bien au cœur de la Corse. Grâce à des algorithmes prédictifs et une connaissance pointue du marché local, nous ajustons vos tarifs en temps réel pour capturer chaque opportunité.",
+    fullContent: "La visibilité est la clé de la réussite sur les plateformes de location saisonnière. Notre expertise Xiri transforme votre propriété en une annonce irrésistible. Nous ne nous contentons pas de poster des photos ; nous racontons une histoire, celle de votre bien partout en France. Grâce à des algorithmes prédictifs et une connaissance pointue du marché local, nous ajustons vos tarifs en temps réel pour capturer chaque opportunité.",
     img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
@@ -95,8 +95,8 @@ export const servicesData: Record<string, ServiceData> = {
   "maintenance-assistance": {
     id: "06",
     title: "Assistance & Réparations 24/7",
-    description: "Réactivité totale pour tous les petits imprévus techniques du quotidien sur l'île.",
-    fullContent: "Une ampoule grillée ou une climatisation capricieuse ne doivent pas gâcher un séjour. L'expertise Xiri mobilise un réseau d'artisans corses réactifs pour intervenir rapidement. Nous assurons une maintenance préventive et curative, veillant à ce que votre investissement reste en parfait état tout au long de l'année.",
+    description: "Réactivité totale pour tous les petits imprévus techniques du quotidien.",
+    fullContent: "Une ampoule grillée ou une climatisation capricieuse ne doivent pas gâcher un séjour. L'expertise Xiri mobilise un réseau d'artisans réactifs pour intervenir rapidement. Nous assurons une maintenance préventive et curative, veillant à ce que votre investissement reste en parfait état tout au long de l'année.",
     img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1595113316349-9fa40464094d?auto=format&fit=crop&q=80&w=800",

@@ -101,9 +101,9 @@ const AISimulator: React.FC = () => {
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-      const prompt = `Tu es un expert analyste du marché immobilier de prestige en Corse pour XIRI CONCIERGERIE. 
+      const prompt = `Tu es un expert analyste du marché immobilier de prestige en France pour XIRI CONCIERGERIE. 
       Estime le potentiel locatif annuel pour ce bien :
-      - Localisation : ${formData.city} (Corse)
+      - Localisation : ${formData.city} (France)
       - Type de bien : ${formData.type}
       - Équipements : ${formData.amenities.join(', ')}
       
@@ -175,7 +175,7 @@ const AISimulator: React.FC = () => {
                 .
               </h2>
               <p className="text-[17px] text-xiri-navy/60 leading-relaxed font-light max-w-md">
-                Libérez le plein potentiel de votre propriété. Notre algorithme analyse le marché corse en temps réel pour une projection de revenus nette et transparente.
+                Libérez le plein potentiel de votre propriété. Notre algorithme analyse le marché en temps réel pour une projection de revenus nette et transparente.
               </p>
             </motion.div>
 
@@ -213,7 +213,7 @@ const AISimulator: React.FC = () => {
                       <MapPin className="absolute left-0 bottom-4 text-xiri-gold" size={20} />
                       <input
                         type="text"
-                        placeholder="Ex: Porto-Vecchio, Bonifacio, Saint-Florent..."
+                        placeholder="Ex: Paris, Cannes, Megève, Ajaccio..."
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                         className="w-full bg-transparent border-b-2 border-xiri-navy/10 py-3 pl-8 outline-none focus:border-xiri-gold transition-all text-lg font-serif placeholder:text-xiri-navy/20"
@@ -250,8 +250,8 @@ const AISimulator: React.FC = () => {
                             nextStep();
                           }}
                           className={`flex items-center gap-4 p-6 rounded-2xl border-2 transition-all text-left ${formData.type === type.label
-                              ? 'border-xiri-gold bg-xiri-gold/5 text-xiri-navy'
-                              : 'border-xiri-navy/5 hover:border-xiri-navy/20'
+                            ? 'border-xiri-gold bg-xiri-gold/5 text-xiri-navy'
+                            : 'border-xiri-navy/5 hover:border-xiri-navy/20'
                             }`}
                         >
                           <div className={`p-3 rounded-xl ${formData.type === type.label ? 'bg-xiri-gold text-white' : 'bg-xiri-bg text-xiri-gold'}`}>
@@ -285,8 +285,8 @@ const AISimulator: React.FC = () => {
                           key={opt}
                           onClick={() => handleToggleAmenity(opt)}
                           className={`px-5 py-4 rounded-full border-2 transition-all font-bold uppercase tracking-widest text-[10px] ${formData.amenities.includes(opt)
-                              ? 'bg-xiri-navy text-white border-xiri-navy shadow-lg'
-                              : 'bg-white text-xiri-navy/60 border-xiri-navy/10 hover:border-xiri-gold hover:text-xiri-gold'
+                            ? 'bg-xiri-navy text-white border-xiri-navy shadow-lg'
+                            : 'bg-white text-xiri-navy/60 border-xiri-navy/10 hover:border-xiri-gold hover:text-xiri-gold'
                             }`}
                         >
                           {opt}
