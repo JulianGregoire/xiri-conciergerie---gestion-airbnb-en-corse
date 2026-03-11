@@ -58,14 +58,9 @@ const navLinks = [
                 <a
                     href="/#contact"
                     id="nav-cta"
-                    class:list={[
-                        "px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-bold transition-all border rounded-xl no-underline cursor-pointer",
-                        light 
-                            ? "border-white/30 text-white hover:bg-white hover:text-xiri-navy" 
-                            : "border-xiri-navy/20 text-xiri-navy hover:bg-xiri-navy hover:text-white"
-                    ]}
+                    class="px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-extrabold transition-all rounded-xl no-underline cursor-pointer bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white shadow-lg hover:scale-105 hover:shadow-xl ring-1 ring-white/30"
                 >
-                    Estimer ma rentabilité
+                    ESTIMER MA RENTABILITÉ
                 </a>
             </div>
 
@@ -199,9 +194,6 @@ const navLinks = [
                 link.classList.remove("text-white");
             });
             
-            navCta?.classList.add("border-xiri-navy", "text-xiri-navy", "hover:bg-xiri-navy", "hover:text-white");
-            navCta?.classList.remove("border-xiri-navy/20", "border-white/30", "text-white", "hover:bg-white", "hover:text-xiri-navy");
-            
             mobileMenuButton?.classList.add("text-xiri-navy");
             mobileMenuButton?.classList.remove("text-white");
         } else {
@@ -217,9 +209,6 @@ const navLinks = [
                     link.classList.remove("text-xiri-navy");
                 });
                 
-                navCta?.classList.add("border-white/30", "text-white", "hover:bg-white", "hover:text-xiri-navy");
-                navCta?.classList.remove("border-xiri-navy", "text-xiri-navy", "hover:bg-xiri-navy", "hover:text-white", "border-xiri-navy/20");
-                
                 mobileMenuButton?.classList.add("text-white");
                 mobileMenuButton?.classList.remove("text-xiri-navy");
             } else {
@@ -230,9 +219,6 @@ const navLinks = [
                     link.classList.add("text-xiri-navy");
                     link.classList.remove("text-white");
                 });
-                
-                navCta?.classList.add("border-xiri-navy/20", "text-xiri-navy", "hover:bg-xiri-navy", "hover:text-white");
-                navCta?.classList.remove("border-xiri-navy", "border-white/30", "text-white", "hover:bg-white", "hover:text-xiri-navy");
                 
                 mobileMenuButton?.classList.add("text-xiri-navy");
                 mobileMenuButton?.classList.remove("text-white");
