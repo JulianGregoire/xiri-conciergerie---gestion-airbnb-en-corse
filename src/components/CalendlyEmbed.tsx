@@ -1,23 +1,7 @@
 import * as React from 'react';
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const CalendlyEmbed: React.FC = () => {
-    useEffect(() => {
-        // Load Calendly script
-        const script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.async = true;
-        document.body.appendChild(script);
-
-        return () => {
-            // Clean up script on unmount
-            if (document.body.contains(script)) {
-                document.body.removeChild(script);
-            }
-        };
-    }, []);
-
     return (
         <section id="simulator" className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
             {/* Background Ornaments */}
@@ -64,13 +48,14 @@ const CalendlyEmbed: React.FC = () => {
                             layout
                             className="bg-white rounded-[32px] shadow-[0_32px_80px_-20px_rgba(15,23,42,0.1)] border border-xiri-navy/5 overflow-hidden p-2 md:p-4"
                         >
-                            {/* Calendly inline widget begin */}
-                            <div
-                                className="calendly-inline-widget"
-                                data-url="https://calendly.com/xirihouse34/30min"
-                                style={{ minWidth: '320px', height: '700px' }}
-                            ></div>
-                            {/* Calendly inline widget end */}
+                            <iframe
+                                src="https://calendly.com/xirihouse34/30min?embed_domain=localhost&embed_type=Inline"
+                                width="100%"
+                                height="700"
+                                frameBorder="0"
+                                title="Calendly Scheduling Page"
+                                style={{ minWidth: '320px', borderRadius: '24px' }}
+                            ></iframe>
                         </motion.div>
                     </div>
                 </div>
