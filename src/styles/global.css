@@ -4,8 +4,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  /* Dégradé doux et chaleureux pour plus de vie */
-  background: linear-gradient(135deg, #E8F1F5 0%, #FFFFFF 35%, #FDF4E3 75%, #F5E1C8 100%);
+  /* Dégradé doux et chaleureux pour plus de vie, accentué */
+  background: linear-gradient(135deg, #D8E6ED 0%, #FFFFFF 35%, #FBE5C8 75%, #E8C18E 100%);
   color: #1B2B44;
   scroll-behavior: smooth;
   min-height: 100vh;
@@ -26,9 +26,11 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-15px);
   }
+
   100% {
     transform: translateY(0px);
   }
