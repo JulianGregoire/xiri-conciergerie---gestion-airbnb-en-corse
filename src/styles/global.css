@@ -4,9 +4,10 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #F0F7FA;
+  background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #FCF8F2 100%);
   color: #1B2B44;
   scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
 .editorial-spacing {

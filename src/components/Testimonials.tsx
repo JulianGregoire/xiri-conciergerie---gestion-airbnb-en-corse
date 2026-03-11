@@ -79,7 +79,7 @@ const Testimonials: React.FC = () => {
   }, [handleNext]);
 
   return (
-    <section id="testimonials" className="py-10 md:py-14 bg-[#F8FAFC] relative overflow-hidden border-y border-xiri-navy/5">
+    <section id="testimonials" className="py-24 md:py-32 lg:py-48 bg-[#F8FAFC] relative overflow-hidden border-y border-xiri-navy/5">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex flex-col mb-10 md:mb-12 gap-3 text-center">
           <span className="text-xiri-gold text-[11px] font-bold uppercase tracking-[0.25em]">Excellence Reconnue</span>
