@@ -5,8 +5,11 @@ interface Props {
 
 const { light = false } = Astro.props;
 
+import { regions } from '../data/regionsData';
+
 const navLinks = [
-    { href: "/#services", label: "Services", dropdown: true },
+    { href: "/#services", label: "Services", dropdown: "services" },
+    { href: "/#conciergeries", label: "Nos Conciergeries", dropdown: "regions" },
     { href: "/a-propos", label: "Notre Approche" },
     { href: "/#pricing", label: "Tarifs" },
     { href: "/blog", label: "Blog" },
@@ -51,7 +54,7 @@ const serviceLinks = [
                 {
                     navLinks.map((link) => (
                         link.dropdown ? (
-                            <div class="relative group/services">
+                            <div class="relative group/nav-item">
                                 <a
                                     href={link.href}
                                     class:list={[
@@ -60,12 +63,12 @@ const serviceLinks = [
                                     ]}
                                 >
                                     {link.label}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover/services:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover/nav-item:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
                                 </a>
                                 <!-- Dropdown panel -->
-                                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none group-hover/services:opacity-100 group-hover/services:pointer-events-auto transition-all duration-200 z-50">
+                                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none group-hover/nav-item:opacity-100 group-hover/nav-item:pointer-events-auto transition-all duration-200 z-50">
                                     <div class="bg-white rounded-2xl shadow-2xl border border-xiri-navy/5 overflow-hidden min-w-[240px] py-2">
-                                        {serviceLinks.map((s) => (
+                                        {link.dropdown === "services" && serviceLinks.map((s) => (
                                             <a
                                                 href={s.href}
                                                 class="flex items-center gap-3 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-xiri-navy hover:text-xiri-gold hover:bg-xiri-gold/5 transition-all no-underline"
@@ -73,6 +76,23 @@ const serviceLinks = [
                                                 <span class="w-1 h-1 rounded-full bg-xiri-gold flex-shrink-0"></span>
                                                 {s.label}
                                             </a>
+                                        ))}
+                                        {link.dropdown === "regions" && regions.map((r) => (
+                                            <div class="px-5 py-2">
+                                                <span class="text-[9px] font-black uppercase tracking-[0.15em] text-xiri-navy/40 block border-b border-xiri-navy/5 pb-1 mb-1">
+                                                    {r.name}
+                                                </span>
+                                                <div class="space-y-1">
+                                                    {r.villes.map((v) => (
+                                                        <a
+                                                            href={v.href}
+                                                            class="block py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] text-xiri-navy/70 hover:text-xiri-gold transition-colors no-underline"
+                                                        >
+                                                            {v.name}
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         ))}
                                     </div>
                                 </div>
@@ -193,11 +213,6 @@ const serviceLinks = [
                         </a>
                     ))
                 }
-                <a
-                    href="/a-propos"
-                    class="mobile-nav-link block text-[22px] font-serif text-xiri-navy no-underline"
-                    >Notre approche</a
-                >
             </div>
 
 
