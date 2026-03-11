@@ -56,7 +56,7 @@ export const servicesData: Record<string, ServiceData> = {
       "https://images.unsplash.com/photo-1595113316349-9fa40464094d?auto=format&fit=crop&q=80&w=800"
     ],
     expertisePoints: [
-      "Livret d'accueil digital et physique",
+      "Livret d'accueil",
       "Présentation des équipements",
       "Inventaire détaillé au départ",
       "Gestion flexible des horaires"
@@ -76,7 +76,7 @@ export const servicesData: Record<string, ServiceData> = {
       "https://images.unsplash.com/photo-1544161515-4af6b1d462c2?auto=format&fit=crop&q=80&w=800"
     ],
     expertisePoints: [
-      "Nettoyage certifié haute désinfection",
+      "Nettoyage certifié",
       "Linge de qualité premium (lavage industriel)",
       "Produits d'accueil éco-responsables",
       "Contrôle qualité systématique avant arrivée"
@@ -98,8 +98,7 @@ export const servicesData: Record<string, ServiceData> = {
     expertisePoints: [
       "Gestion des cautions sans débit",
       "Intermédiation en cas de litige",
-      "Conseil en assurance spécifique",
-      "Protection juridique incluse"
+      "Conseil en assurance spécifique"
     ]
   },
   "maintenance-assistance": {
