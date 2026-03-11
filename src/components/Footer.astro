@@ -1,11 +1,47 @@
 ---
 const year = new Date().getFullYear();
 
+const regions = [
+    {
+        name: "Corse",
+        villes: [
+            { name: "Porto-Vecchio", href: "/villes/porto-vecchio" },
+            { name: "Bonifacio", href: "/villes/bonifacio" },
+            { name: "Ajaccio", href: "/villes/ajaccio" },
+            { name: "Calvi", href: "/villes/calvi" },
+            { name: "Bastia", href: "/villes/bastia" },
+            { name: "Lumio / Sant'Ambroggio", href: "/villes/lumio" },
+        ],
+    },
+    {
+        name: "Finistère Sud",
+        villes: [
+            { name: "Quimper", href: "/villes/quimper" },
+            { name: "Concarneau", href: "/villes/concarneau" },
+            { name: "Bénodet", href: "/villes/benodet" },
+        ],
+    },
+    {
+        name: "Hérault",
+        villes: [
+            { name: "Narbonne", href: "/villes/narbonne" },
+            { name: "Valras-Plage", href: "/villes/valras-plage" },
+            { name: "Cap d'Agde", href: "/villes/cap-dagde" },
+        ],
+    },
+    {
+        name: "Savoie",
+        villes: [
+            { name: "Megève", href: "/villes/megeve" },
+        ],
+    },
+];
+
 
 ---
 
 <footer
-    class="bg-xiri-navy py-16 md:py-24 px-6 lg:px-12 border-t border-white/5 relative overflow-hidden"
+    class="bg-xiri-navy py-16 md:py-24 px-6 lg:px-12 border-t border-white/5 relative"
 >
     <div
         class="absolute bottom-0 left-0 w-full h-[5px] bg-gradient-to-r from-xiri-navy via-xiri-gold to-xiri-navy"
@@ -54,7 +90,7 @@ const year = new Date().getFullYear();
                 </div>
             </div>
 
-            <div class="lg:col-span-9 grid grid-cols-2 md:grid-cols-4 gap-12">
+            <div class="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
                 <div class="space-y-8">
                     <h5
                         class="text-[10px] font-bold tracking-[0.3em] text-xiri-gold uppercase"
@@ -99,6 +135,36 @@ const year = new Date().getFullYear();
                     </ul>
                 </div>
 
+                <div class="sm:col-span-2 space-y-8">
+                    <h5
+                        class="text-[10px] font-bold tracking-[0.3em] text-xiri-gold uppercase"
+                    >
+                        Nos Conciergeries
+                    </h5>
+                    <div class="grid grid-cols-2 gap-x-12 gap-y-12">
+                        {
+                            regions.map((region) => (
+                                <div class="space-y-4">
+                                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-white/30 border-b border-white/5 pb-2 block">
+                                        {region.name}
+                                    </span>
+                                    <ul class="text-[11px] space-y-3 list-none p-0">
+                                        {region.villes.map((ville) => (
+                                            <li>
+                                                <a
+                                                    href={ville.href}
+                                                    class="hover:text-white transition-colors uppercase tracking-[0.15em] text-white/60 no-underline"
+                                                >
+                                                    {ville.name}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
 
                 <div class="space-y-8">
                     <h5
