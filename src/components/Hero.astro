@@ -111,37 +111,35 @@ const strongPoints = [
                     }
                 </ul>
 
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-4 pt-4">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
                         <a
                             href="#contact"
                             class="bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white px-9 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:scale-110 hover:shadow-2xl transition-all duration-300 rounded-2xl no-underline text-center shadow-xl shadow-xiri-gold/30 ring-2 ring-xiri-gold/80 ring-offset-2 ring-offset-white"
                         >
                             Estimer ma rentabilité
                         </a>
-                        <!-- Google Rating Badge -->
-                        <div class="flex flex-col gap-1 px-1">
-                            <div class="flex items-center gap-1">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star
-                                        key={i}
-                                        size={12}
-                                        className="text-[#fbbc04] fill-[#fbbc04]"
-                                    />
-                                ))}
-                            </div>
-                            <div class="text-[12px] font-bold text-xiri-navy/80 tracking-wide">
-                                4.9/5 <span class="font-normal opacity-60 italic">sur Google</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
                         <a
                             href="#services"
-                            class="bg-white text-xiri-navy border border-xiri-navy/10 px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:border-xiri-navy transition-all duration-500 rounded-xl no-underline text-center w-full"
+                            class="bg-white text-xiri-navy border border-xiri-navy/10 px-8 py-5 text-[11px] uppercase tracking-[0.25em] font-black hover:border-xiri-navy hover:shadow-lg transition-all duration-500 rounded-2xl no-underline text-center"
                         >
                             Explorer nos services
                         </a>
+                    </div>
+                    <!-- Google Rating Badge -->
+                    <div class="flex flex-col gap-1 px-2 mt-1">
+                        <div class="flex items-center gap-1">
+                            {[...Array(5)].map((_, i) => (
+                                <Star
+                                    key={i}
+                                    size={12}
+                                    className="text-[#fbbc04] fill-[#fbbc04]"
+                                />
+                            ))}
+                        </div>
+                        <div class="text-[12px] font-bold text-xiri-navy/80 tracking-wide">
+                            4.9/5 <span class="font-normal opacity-60 italic">sur Google</span>
+                        </div>
                     </div>
                 </div>
             </div>
