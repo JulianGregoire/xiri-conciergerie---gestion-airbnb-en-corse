@@ -112,9 +112,9 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="pt-2">
-                  <button className="group relative w-full bg-xiri-navy text-white overflow-hidden py-4 text-[11px] uppercase tracking-[0.2em] font-bold shadow-2xl transition-all hover:bg-black rounded-xl">
+                  <button className="group relative w-full bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white overflow-hidden py-4 text-[11px] uppercase tracking-[0.2em] font-bold shadow-xl shadow-xiri-gold/20 transition-all hover:scale-[1.02] rounded-xl">
                     <span className="relative z-10">Envoyer ma demande</span>
-                    <div className="absolute inset-0 bg-xiri-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 opacity-10"></div>
+                    <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 opacity-10"></div>
                   </button>
                 </div>
               </form>

@@ -406,7 +406,7 @@ const AISimulator: React.FC = () => {
                               const contactSection = document.getElementById('contact');
                               contactSection?.scrollIntoView({ behavior: 'smooth' });
                             }}
-                            className="flex-1 bg-xiri-navy text-white py-6 rounded-2xl font-bold uppercase tracking-widest text-[10px] hover:bg-black transition-all"
+                            className="flex-1 bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white py-6 rounded-2xl font-bold uppercase tracking-widest text-[10px] hover:scale-105 transition-all shadow-xl shadow-xiri-gold/20"
                           >
                             Demander l'étude complète
                           </button>
