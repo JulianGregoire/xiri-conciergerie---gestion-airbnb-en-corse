@@ -29,7 +29,7 @@ export const servicesData: Record<string, ServiceData> = {
     benefit: "Louez en toute sérénité",
     benefitSummary: "Protégez votre patrimoine avec un filtrage rigoureux et une sélection humaine des voyageurs les plus fiables.",
     fullContent: "Votre patrimoine mérite le respect et une sécurité sans compromis. Notre processus de sélection ne repose pas uniquement sur des algorithmes, mais sur une expertise humaine rigoureuse. Nous vérifions systématiquement les profils, analysons les avis passés et échangeons directement avec chaque voyageur avant de valider une réservation. Cette approche proactive nous permet de garantir que votre bien est confié à des personnes de confiance, respectueuses de votre règlement intérieur et de l'âme de votre demeure. En cas de besoin, nous gérons l'intégralité des dépôts de garantie via une plateforme sécurisée, vous offrant ainsi une tranquillité d'esprit absolue, quel que soit l'éloignement.",
-    img: "https://images.unsplash.com/photo-1556911220-e15224bbaf40?auto=format&fit=crop&q=80&w=1200", // Image de confiance/accueil mise à jour
+    img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200", // Image de confiance/accueil mise à jour (Alternative working URL)
     gallery: [
       "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=800",
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
@@ -51,9 +51,9 @@ export const servicesData: Record<string, ServiceData> = {
     fullContent: "L'arrivée est le moment où commence l'expérience client et où se forge la première impression, souvent décisive pour la suite du séjour. Chez Xiri Conciergerie, nous transformons ce passage obligé en un véritable moment d'accueil. Nos équipes locales accueillent personnellement vos voyageurs, leur présentent les spécificités du logement et partagent leurs meilleurs conseils sur la région. Nous remettons un livret d'accueil complet et restons disponibles pour répondre à toutes leurs questions initiales. Ce contact humain renforce le sentiment de considération des voyageurs et favorise des commentaires élogieux. Au départ, nous réalisons un état des lieux minutieux pour nous assurer que votre propriété vous est restituée dans un état impeccable.",
     img: "https://images.unsplash.com/photo-1531234799389-dcb7651eb0a2?auto=format&fit=crop&q=80&w=1200",
     gallery: [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800",
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1551882547-ff43c639f625?auto=format&fit=crop&q=80&w=800"
+      "https://images.unsplash.com/photo-1595113316349-9fa40464094d?auto=format&fit=crop&q=80&w=800"
     ],
     expertisePoints: [
       "Livret d'accueil digital et physique",
@@ -111,7 +111,7 @@ export const servicesData: Record<string, ServiceData> = {
     fullContent: "Une ampoule grillée ou une climatisation capricieuse ne doivent pas gâcher un séjour ni ternir votre réputation d'hôte. Notre service de maintenance ultra-réactif est prêt à intervenir à tout moment pour résoudre les imprévus techniques. Nous disposons d'un réseau d'artisans locaux qualifiés (électriciens, plombiers, serruriers) capables d'intervenir dans les plus brefs délais. Plus qu'un simple dépannage, nous assurons également une maintenance préventive entre les saisons pour détecter d'éventuelles faiblesses avant qu'elles ne deviennent des problèmes critiques. Vous recevez un rapport d'intervention détaillé pour chaque action menée, vous permettant de suivre l'état de votre patrimoine sans avoir à vous déplacer.",
     img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200",
     gallery: [
-      "https://images.unsplash.com/photo-1595113316349-9fa40464094d?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800",
       "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800"
     ],
