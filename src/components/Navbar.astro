@@ -43,10 +43,10 @@ const navLinks = [
                     navLinks.map((link) => (
                         <a
                             href={link.href}
-                            class:list={[
-                                "nav-link text-[11px] uppercase tracking-[0.14em] font-bold transition-all hover:text-xiri-gold no-underline",
-                                light ? "text-white" : "text-xiri-navy"
-                            ]}
+                        "px-5 py-3 text-[11px] uppercase tracking-[0.16em] font-extrabold transition-all rounded-xl no-underline cursor-pointer bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white shadow-lg hover:scale-105 hover:shadow-xl",
+                        light 
+                            ? "border border-white/30"
+                            : "border border-xiri-gold/60"
                         >
                             {link.label}
                         </a>
@@ -164,7 +164,7 @@ const navLinks = [
             <div class="mt-auto flex flex-col gap-4">
                 <a
                     href="/#contact"
-                    class="mobile-nav-link block w-full bg-xiri-navy text-white text-center py-4 text-[11px] uppercase tracking-[0.12em] font-bold shadow-xl rounded-xl no-underline"
+                    class="mobile-nav-link block w-full bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white text-center py-4 text-[11px] uppercase tracking-[0.16em] font-extrabold shadow-xl rounded-2xl no-underline ring-2 ring-xiri-gold/70 ring-offset-2 ring-offset-white"
                 >
                     ESTIMER MA RENTABILITÉ
                 </a>
