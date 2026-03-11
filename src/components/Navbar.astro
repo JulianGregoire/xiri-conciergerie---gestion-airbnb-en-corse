@@ -43,10 +43,10 @@ const navLinks = [
                     navLinks.map((link) => (
                         <a
                             href={link.href}
-                        "px-5 py-3 text-[11px] uppercase tracking-[0.16em] font-extrabold transition-all rounded-xl no-underline cursor-pointer bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white shadow-lg hover:scale-105 hover:shadow-xl",
-                        light 
-                            ? "border border-white/30"
-                            : "border border-xiri-gold/60"
+                            class:list={[
+                                "nav-link text-[10px] font-bold uppercase tracking-[0.15em] transition-colors duration-300 no-underline",
+                                light ? "text-white hover:text-xiri-gold" : "text-xiri-navy hover:text-xiri-gold"
+                            ]}
                         >
                             {link.label}
                         </a>
@@ -58,7 +58,7 @@ const navLinks = [
                 <a
                     href="/#contact"
                     id="nav-cta"
-                    class="px-5 py-3 text-[11px] uppercase tracking-[0.12em] font-extrabold transition-all rounded-xl no-underline cursor-pointer bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white shadow-lg hover:scale-105 hover:shadow-xl ring-1 ring-white/30"
+                    class="px-5 py-2.5 text-[10px] uppercase tracking-[0.12em] font-extrabold transition-all rounded-xl no-underline cursor-pointer bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white shadow-lg hover:scale-105 hover:shadow-xl ring-1 ring-white/30"
                 >
                     ESTIMER MA RENTABILITÉ
                 </a>

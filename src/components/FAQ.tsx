@@ -42,16 +42,16 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 md:py-32 lg:py-48 relative overflow-hidden">
+    <section id="faq" className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute right-12 top-0 bottom-0 w-[1px] bg-xiri-navy/5 hidden lg:block"></div>
 
       <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-10 md:mb-12 space-y-4">
-          <span className="text-xiri-gold text-[11px] font-black uppercase tracking-[0.25em] block">Sérénité Garantie</span>
-          <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
+        <div className="text-center mb-8 md:mb-10 space-y-3">
+          <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.25em] block">Sérénité Garantie</span>
+          <h2 className="text-[26px] md:text-[30px] font-serif text-xiri-navy leading-tight">
             FAQ
           </h2>
-          <p className="text-[16px] text-xiri-navy/80 font-medium mt-2">
+          <p className="text-[15px] text-xiri-navy/80 font-medium mt-1">
             Les réponses aux points qui bloquent le plus souvent une décision.
           </p>
         </div>

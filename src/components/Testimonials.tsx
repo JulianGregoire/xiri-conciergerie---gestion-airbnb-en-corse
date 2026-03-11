@@ -79,38 +79,38 @@ const Testimonials: React.FC = () => {
   }, [handleNext]);
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 lg:py-48 bg-[#F8FAFC] relative overflow-hidden border-y border-xiri-navy/5">
+    <section id="testimonials" className="py-16 md:py-24 lg:py-32 bg-[#F8FAFC] relative overflow-hidden border-y border-xiri-navy/5">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col mb-10 md:mb-12 gap-3 text-center">
-          <span className="text-xiri-gold text-[11px] font-bold uppercase tracking-[0.25em]">Excellence Reconnue</span>
-          <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
+        <div className="flex flex-col mb-8 md:mb-10 gap-2 text-center">
+          <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.25em]">Excellence Reconnue</span>
+          <h2 className="text-[26px] md:text-[30px] font-serif text-xiri-navy leading-tight">
             Avis <span className="text-xiri-gold font-light">Propriétaires</span>
           </h2>
-          <div className="flex justify-center items-center gap-3 mt-3">
+          <div className="flex justify-center items-center gap-2 mt-2">
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={18} className="text-[#fbbc04] fill-[#fbbc04]" />
+                <Star key={i} size={16} className="text-[#fbbc04] fill-[#fbbc04]" />
               ))}
             </div>
-            <span className="text-[18px] font-bold text-gray-900">4.9/5</span>
-            <span className="text-gray-500 text-[14px] font-medium">(130+ avis)</span>
+            <span className="text-[16px] font-bold text-gray-900">4.9/5</span>
+            <span className="text-gray-500 text-[13px] font-medium">(130+ avis)</span>
           </div>
         </div>
 
-        <div className="relative overflow-visible pb-12">
+        <div className="relative overflow-visible pb-8">
           {/* Controls */}
-          <div className="absolute -top-16 right-0 flex gap-4 hidden md:flex">
+          <div className="absolute -top-14 right-0 flex gap-3 hidden md:flex">
             <button
               onClick={handlePrev}
-              className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-xiri-navy hover:text-xiri-gold transition-colors hover:shadow-lg border border-gray-100 cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-xiri-navy hover:text-xiri-gold transition-colors hover:shadow-lg border border-gray-100 cursor-pointer"
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={18} />
             </button>
             <button
               onClick={handleNext}
-              className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-xiri-navy hover:text-xiri-gold transition-colors hover:shadow-lg border border-gray-100 cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-xiri-navy hover:text-xiri-gold transition-colors hover:shadow-lg border border-gray-100 cursor-pointer"
             >
-              <ChevronRight size={20} />
+              <ChevronRight size={18} />
             </button>
           </div>
 
@@ -123,21 +123,21 @@ const Testimonials: React.FC = () => {
             {testimonials.map((item, idx) => (
               <div
                 key={idx}
-                className="px-4 flex-shrink-0"
+                className="px-3 flex-shrink-0"
                 style={{ width: `${100 / itemsToShow}%` }}
               >
                 {/* Google Review Card */}
-                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100/50 flex flex-col h-full hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-white p-5 md:p-6 rounded-[20px] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100/50 flex flex-col h-full hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-1">
 
                   {/* Header: User Info */}
-                  <div className="flex items-center gap-4 mb-5">
+                  <div className="flex items-center gap-3 mb-4">
                     <div className="flex-shrink-0">
-                      <img src={item.avatar} alt={item.author} className="w-12 h-12 rounded-full object-cover" />
+                      <img src={item.avatar} alt={item.author} className="w-10 h-10 rounded-full object-cover" />
                     </div>
                     <div className="flex-grow">
-                      <h4 className="text-[15px] font-semibold text-gray-900 leading-tight">{item.author}</h4>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-[13px] text-gray-500 font-medium">{item.time}</span>
+                      <h4 className="text-[14px] font-semibold text-gray-900 leading-tight">{item.author}</h4>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        <span className="text-[12px] text-gray-500 font-medium">{item.time}</span>
                       </div>
                     </div>
                     {/* Google G Logo */}

@@ -140,27 +140,27 @@ const AISimulator: React.FC = () => {
   };
 
   return (
-    <section id="ai-simulator" className="py-24 md:py-32 lg:py-48 relative overflow-hidden">
+    <section id="ai-simulator" className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-xiri-bg/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50 -z-10"></div>
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-xiri-gold/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl opacity-50 -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Text Content */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="space-y-5"
             >
-              <div className="flex items-center gap-3">
-                <span className="h-[2px] w-12 bg-xiri-gold"></span>
-                <span className="text-xiri-gold text-[11px] font-black uppercase tracking-[0.6em]">Expertise Prédictive</span>
+              <div className="flex items-center gap-2">
+                <span className="h-[2px] w-8 bg-xiri-gold"></span>
+                <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em]">Expertise Prédictive</span>
               </div>
-              <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy leading-[1.1]">
+              <h2 className="text-4xl md:text-6xl font-serif text-xiri-navy leading-[1.1]">
                 Simulateur de <br />
                 <span className="relative inline-block text-xiri-gold italic font-light">
                   Revenus
@@ -173,7 +173,7 @@ const AISimulator: React.FC = () => {
                   ></motion.span>
                 </span>
               </h2>
-              <p className="text-[17px] text-xiri-navy/60 leading-relaxed font-light max-w-md">
+              <p className="text-[16px] text-xiri-navy/60 leading-relaxed font-light max-w-md">
                 Libérez le plein potentiel de votre propriété. Notre algorithme analyse le marché en temps réel pour une projection de revenus nette et transparente.
               </p>
             </motion.div>
@@ -193,7 +193,7 @@ const AISimulator: React.FC = () => {
           <div className="lg:col-span-7">
             <motion.div
               layout
-              className="bg-white rounded-[32px] shadow-[0_32px_80px_-20px_rgba(15,23,42,0.1)] border border-xiri-navy/5 overflow-hidden p-8 md:p-12"
+              className="bg-white rounded-[32px] shadow-[0_32px_80px_-20px_rgba(15,23,42,0.1)] border border-xiri-navy/5 overflow-hidden p-6 md:p-10"
             >
               <AnimatePresence mode="wait">
                 {step === 1 && (

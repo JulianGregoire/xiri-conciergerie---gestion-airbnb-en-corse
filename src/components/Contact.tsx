@@ -3,18 +3,18 @@ import React from 'react';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 lg:py-48 relative overflow-hidden border-t border-xiri-navy/5">
+    <section id="contact" className="py-16 md:py-24 lg:py-32 relative overflow-hidden border-t border-xiri-navy/5">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10">
 
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
-            <div className="space-y-4">
-              <span className="text-xiri-gold text-[11px] font-bold uppercase tracking-[0.25em] block">Prendre Contact</span>
-              <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
+          <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
+            <div className="space-y-3">
+              <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.25em] block">Prendre Contact</span>
+              <h2 className="text-[26px] md:text-[30px] font-serif text-xiri-navy leading-tight">
                 Nous Contacter
               </h2>
-              <p className="text-[15px] text-xiri-navy/70 leading-relaxed font-medium max-w-md">
+              <p className="text-[14px] text-xiri-navy/70 leading-relaxed font-medium max-w-md">
                 Réponse sous 24h avec un plan d'action adapté à votre bien et à vos objectifs.
               </p>
             </div>
@@ -43,9 +43,9 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="bg-white p-10 md:p-14 framed-img shadow-[0_32px_80px_-20px_rgba(27,43,68,0.25)] rounded-3xl">
-              <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="bg-white p-6 md:p-8 framed-img shadow-[0_32px_80px_-20px_rgba(27,43,68,0.25)] rounded-3xl">
+              <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="group relative">
                     <input
                       type="text"
