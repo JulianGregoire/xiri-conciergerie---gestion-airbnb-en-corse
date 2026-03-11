@@ -51,6 +51,8 @@ const testimonials = [
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(3.5);
+  const touchStartX = React.useRef<number | null>(null);
+  const touchEndX = React.useRef<number | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -77,6 +79,25 @@ const Testimonials: React.FC = () => {
     const timer = setInterval(handleNext, 8000);
     return () => clearInterval(timer);
   }, [handleNext]);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const delta = touchStartX.current - touchEndX.current;
+    if (Math.abs(delta) > 40) {
+      delta > 0 ? handleNext() : handlePrev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   return (
     <section id="testimonials" className="py-16 md:py-24 lg:py-32 bg-[#F8FAFC] relative overflow-hidden border-y border-xiri-navy/5">
@@ -115,10 +136,13 @@ const Testimonials: React.FC = () => {
           </div>
 
           <div
-            className="flex transition-transform duration-700 ease-out"
+            className="flex transition-transform duration-700 ease-out select-none"
             style={{
               transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
             }}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
           >
             {testimonials.map((item, idx) => (
               <div
