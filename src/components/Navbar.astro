@@ -79,9 +79,9 @@ const serviceLinks = [
                                         ))}
                                         {link.dropdown === "regions" && regions.map((r) => (
                                             <div class="px-5 py-2">
-                                                <span class="text-[9px] font-black uppercase tracking-[0.15em] text-xiri-navy/40 block border-b border-xiri-navy/5 pb-1 mb-1">
+                                                <a href={`/regions/${r.slug}`} class="text-[9px] font-black uppercase tracking-[0.15em] text-xiri-navy/40 block border-b border-xiri-navy/5 pb-1 mb-1 hover:text-xiri-gold transition-colors no-underline">
                                                     {r.name}
-                                                </span>
+                                                </a>
                                                 <div class="space-y-1">
                                                     {r.villes.map((v) => (
                                                         <a
