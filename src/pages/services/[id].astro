@@ -162,6 +162,32 @@ const { service } = Astro.props;
             </div>
         </section>
 
+        {service.gallery.length > 1 && (
+            <section class="py-32 bg-[#FDFDFD] border-t border-xiri-navy/5">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="space-y-12">
+                        <div class="space-y-4">
+                            <span class="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.8em] block">Immersion</span>
+                            <h2 class="text-3xl md:text-5xl font-serif text-xiri-navy">Galerie d'Expertise</h2>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {service.gallery.map((image, idx) => (
+                                <div class="group relative aspect-[4/5] overflow-hidden bg-gray-100 shadow-xl">
+                                    <img 
+                                        src={image} 
+                                        alt={`${service.title} gallery ${idx + 1}`}
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div class="absolute inset-0 bg-xiri-navy/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        )}
+
 
 
         <section

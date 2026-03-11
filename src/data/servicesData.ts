@@ -28,8 +28,8 @@ export const servicesData: Record<string, ServiceData> = {
     description: "Nous gérons toute la communication et filtrons rigoureusement les profils pour votre sérénité.",
     benefit: "Louez en toute sérénité",
     benefitSummary: "Protégez votre patrimoine avec un filtrage rigoureux et une sélection humaine des voyageurs les plus fiables.",
-    fullContent: "Votre patrimoine mérite le respect...",
-    img: "https://images.unsplash.com/photo-1521791136064-7986c29535a7?auto=format&fit=crop&q=80&w=1200", // Image de confiance/accueil
+    fullContent: "Votre patrimoine mérite le respect et une sécurité sans compromis. Notre processus de sélection ne repose pas uniquement sur des algorithmes, mais sur une expertise humaine rigoureuse. Nous vérifions systématiquement les profils, analysons les avis passés et échangeons directement avec chaque voyageur avant de valider une réservation. Cette approche proactive nous permet de garantir que votre bien est confié à des personnes de confiance, respectueuses de votre règlement intérieur et de l'âme de votre demeure. En cas de besoin, nous gérons l'intégralité des dépôts de garantie via une plateforme sécurisée, vous offrant ainsi une tranquillité d'esprit absolue, quel que soit l'éloignement.",
+    img: "https://images.unsplash.com/photo-1556911220-e15224bbaf40?auto=format&fit=crop&q=80&w=1200", // Image de confiance/accueil mise à jour
     gallery: [
       "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=800",
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
@@ -48,7 +48,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: "Un accueil personnalisé et un état des lieux rigoureux à chaque départ par nos équipes locales.",
     benefit: "Une expérience 5 étoiles",
     benefitSummary: "Garantissez une première impression mémorable et fidélisez vos voyageurs avec un accueil chaleureux et professionnel.",
-    fullContent: "L'arrivée est le moment où commence l'expérience client...",
+    fullContent: "L'arrivée est le moment où commence l'expérience client et où se forge la première impression, souvent décisive pour la suite du séjour. Chez Xiri Conciergerie, nous transformons ce passage obligé en un véritable moment d'accueil. Nos équipes locales accueillent personnellement vos voyageurs, leur présentent les spécificités du logement et partagent leurs meilleurs conseils sur la région. Nous remettons un livret d'accueil complet et restons disponibles pour répondre à toutes leurs questions initiales. Ce contact humain renforce le sentiment de considération des voyageurs et favorise des commentaires élogieux. Au départ, nous réalisons un état des lieux minutieux pour nous assurer que votre propriété vous est restituée dans un état impeccable.",
     img: "https://images.unsplash.com/photo-1531234799389-dcb7651eb0a2?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
@@ -68,7 +68,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: "Propreté hôtelière et linge de qualité premium pour chaque nouveau séjour.",
     benefit: "Standard hôtelier garanti",
     benefitSummary: "Offrez une propreté irréprochable et un confort premium digne des plus grands hôtels à chacun de vos hôtes.",
-    fullContent: "La propreté est le critère numéro 1 pour obtenir des avis 5 étoiles...",
+    fullContent: "La propreté est le critère numéro 1 pour obtenir des avis 5 étoiles et fidéliser une clientèle exigeante. Nous ne nous contentons pas d'un simple nettoyage de surface ; nous appliquons des standards hôteliers de haute désinfection à chaque rotation. Nos équipes de nettoyage professionnelles utilisent des protocoles rigoureux et des produits éco-responsables de qualité. Côté blanchisserie, nous fournissons un linge de maison premium (draps en coton de haute qualité, serviettes moelleuses) traité par un circuit industriel pour garantir une hygiène parfaite et un confort supérieur. Chaque détail compte : pliage soigné, disposition harmonieuse des produits d'accueil et vérification finale par un superviseur avant chaque arrivée.",
     img: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&q=80&w=800",
@@ -108,7 +108,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: "Réactivité totale pour tous les petits imprévus techniques du quotidien.",
     benefit: "Intervention sous 24h",
     benefitSummary: "Préservez la valeur de votre bien et la satisfaction de vos voyageurs avec une assistance technique ultra-réactive.",
-    fullContent: "Une ampoule grillée ou une climatisation capricieuse ne doivent pas gâcher un séjour...",
+    fullContent: "Une ampoule grillée ou une climatisation capricieuse ne doivent pas gâcher un séjour ni ternir votre réputation d'hôte. Notre service de maintenance ultra-réactif est prêt à intervenir à tout moment pour résoudre les imprévus techniques. Nous disposons d'un réseau d'artisans locaux qualifiés (électriciens, plombiers, serruriers) capables d'intervenir dans les plus brefs délais. Plus qu'un simple dépannage, nous assurons également une maintenance préventive entre les saisons pour détecter d'éventuelles faiblesses avant qu'elles ne deviennent des problèmes critiques. Vous recevez un rapport d'intervention détaillé pour chaque action menée, vous permettant de suivre l'état de votre patrimoine sans avoir à vous déplacer.",
     img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1595113316349-9fa40464094d?auto=format&fit=crop&q=80&w=800",
