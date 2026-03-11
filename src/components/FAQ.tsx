@@ -49,7 +49,7 @@ const FAQ: React.FC = () => {
         <div className="text-center mb-10 md:mb-12 space-y-4">
           <span className="text-xiri-gold text-[11px] font-black uppercase tracking-[0.25em] block">Sérénité Garantie</span>
           <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
-            Questions <br /><span className="font-light">Fréquentes</span>.
+            FAQ
           </h2>
           <p className="text-[16px] text-xiri-navy/80 font-medium mt-2">
             Les réponses aux points qui bloquent le plus souvent une décision.

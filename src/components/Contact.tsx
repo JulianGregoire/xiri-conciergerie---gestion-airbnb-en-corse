@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
             <div className="space-y-4">
               <span className="text-xiri-gold text-[11px] font-bold uppercase tracking-[0.25em] block">Prendre Contact</span>
               <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
-                Demandez votre estimation de rentabilité.
+                Nous Contacter
               </h2>
               <p className="text-[15px] text-xiri-navy/70 leading-relaxed font-medium max-w-md">
                 Réponse sous 24h avec un plan d'action adapté à votre bien et à vos objectifs.

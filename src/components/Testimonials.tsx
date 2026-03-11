@@ -84,7 +84,7 @@ const Testimonials: React.FC = () => {
         <div className="flex flex-col mb-10 md:mb-12 gap-3 text-center">
           <span className="text-xiri-gold text-[11px] font-bold uppercase tracking-[0.25em]">Excellence Reconnue</span>
           <h2 className="text-[30px] md:text-[34px] font-serif text-xiri-navy leading-tight">
-            Ce que disent nos <span className="text-xiri-gold font-light">propriétaires</span>.
+            Avis <span className="text-xiri-gold font-light">Propriétaires</span>
           </h2>
           <div className="flex justify-center items-center gap-3 mt-3">
             <div className="flex items-center gap-1">

@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             </span>
 
             <h1 className="text-[32px] sm:text-[40px] lg:text-[46px] font-serif text-xiri-navy leading-[1.15]">
-              Confiez votre bien. Revenus optimisés, gestion 100% déléguée.
+              Gestion de Locations Airbnb Haut de Gamme
             </h1>
 
             <p className="text-[16px] text-xiri-navy/80 leading-relaxed max-w-2xl font-medium">

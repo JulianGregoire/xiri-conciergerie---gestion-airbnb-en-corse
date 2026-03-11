@@ -161,9 +161,9 @@ const AISimulator: React.FC = () => {
                 <span className="text-xiri-gold text-[11px] font-black uppercase tracking-[0.6em]">Expertise Prédictive</span>
               </div>
               <h2 className="text-5xl md:text-7xl font-serif text-xiri-navy leading-[1.1]">
-                Valorisez votre <br />
+                Simulateur de <br />
                 <span className="relative inline-block text-xiri-gold italic font-light">
-                  patrimoine
+                  Revenus
                   <motion.span
                     initial={{ width: 0 }}
                     whileInView={{ width: '100%' }}
@@ -172,7 +172,6 @@ const AISimulator: React.FC = () => {
                     className="absolute -bottom-2 left-0 h-[3px] bg-xiri-gold/30 rounded-full"
                   ></motion.span>
                 </span>
-                .
               </h2>
               <p className="text-[17px] text-xiri-navy/60 leading-relaxed font-light max-w-md">
                 Libérez le plein potentiel de votre propriété. Notre algorithme analyse le marché en temps réel pour une projection de revenus nette et transparente.
