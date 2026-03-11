@@ -32,7 +32,7 @@ const otherSites = [
 ];
 ---
 
-<section class="py-40 relative overflow-hidden">
+<section class="py-20 relative overflow-hidden">
     <div
         class="absolute top-1/2 left-0 -translate-y-1/2 opacity-[0.01] pointer-events-none w-full text-center"
     >
@@ -50,7 +50,7 @@ const otherSites = [
                 >Nos Autres Destinations</span
             >
             <h2
-                class="text-5xl md:text-7xl font-serif text-xiri-navy leading-tight"
+                class="text-3xl md:text-4xl font-serif text-xiri-navy leading-tight"
             >
                 Explorez notre <br /><span class="font-light"
                     >Collection Privée</span
@@ -59,7 +59,7 @@ const otherSites = [
             <div class="w-24 h-[1px] bg-xiri-gold mx-auto mt-12"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {
                 otherSites.map((site) => (
                     <a
@@ -68,7 +68,7 @@ const otherSites = [
                         rel="noopener noreferrer"
                         class="group block space-y-10 no-underline"
                     >
-                        <div class="relative aspect-[3/4] overflow-hidden p-[10px] bg-white shadow-xl transition-transform duration-1000 group-hover:-translate-y-4">
+                        <div class="relative aspect-[4/3] overflow-hidden p-[8px] bg-white shadow-lg transition-transform duration-700 group-hover:-translate-y-2">
                             <img
                                 src={site.image.src}
                                 alt={site.title}
