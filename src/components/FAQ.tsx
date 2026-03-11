@@ -42,7 +42,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 md:py-32 lg:py-48 bg-white relative overflow-hidden">
+    <section id="faq" className="py-24 md:py-32 lg:py-48 relative overflow-hidden">
       <div className="absolute right-12 top-0 bottom-0 w-[1px] bg-xiri-navy/5 hidden lg:block"></div>
 
       <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
