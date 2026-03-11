@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
                 Nous Contacter
               </h2>
               <p className="text-[14px] text-xiri-navy/70 leading-relaxed font-medium max-w-md">
-                Réponse sous 24h avec un plan d'action adapté à votre bien et à vos objectifs.
+                Réponse sous 24h avec un premier plan d'action pour votre bien.
               </p>
             </div>
 

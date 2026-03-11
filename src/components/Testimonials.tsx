@@ -5,43 +5,43 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const testimonials = [
   {
-    text: "Confier ma villa à Xiri a été ma meilleure décision. Une présence physique sur place et des réservations directes qui explosent. Je recommande vivement leurs services pour une rentabilité optimale.",
+    text: "Confier ma villa à Xiri était la meilleure décision. Les réservations ont explosé. Je recommande.",
     author: "Jean-Pierre C.",
     time: "il y a 3 semaines",
     avatar: "https://ui-avatars.com/api/?name=Jean-Pierre+C&background=f0f2f5&color=1B2B44&bold=true"
   },
   {
-    text: "Enfin une conciergerie sérieuse. Le ménage est impeccable et le suivi via l'application me rassure énormément car je vis loin de mon bien. Très professionnels.",
+    text: "Enfin une conciergerie sérieuse. Ménage impeccable, suivi clair, équipe professionnelle.",
     author: "Lætitia S.",
     time: "il y a 1 mois",
     avatar: "https://ui-avatars.com/api/?name=Laetitia+S&background=f0f2f5&color=C5A059&bold=true"
   },
   {
-    text: "Xiri gère mes 3 bergeries. La rentabilité est exceptionnelle grâce à leur pack Performance et la visibilité internationale qu'ils m'offrent. Une vraie stratégie digitale.",
+    text: "Xiri gère mes 3 bergeries. Rentabilité exceptionnelle grâce au pack Performance et leur stratégie digitale.",
     author: "Dominique M.",
     time: "il y a 2 mois",
     avatar: "https://ui-avatars.com/api/?name=Dominique+M&background=f0f2f5&color=1B2B44&bold=true"
   },
   {
-    text: "Une équipe qui comprend les enjeux du luxe. Ma propriété est gérée avec un soin méticuleux, comme si c'était la leur. Excellent relationnel avec les équipes.",
+    text: "Une équipe qui comprend le marché du luxe. Ma propriété est gérée avec le plus grand soin.",
     author: "Marc-Antoine B.",
     time: "il y a 3 mois",
     avatar: "https://ui-avatars.com/api/?name=Marc-Antoine+B&background=f0f2f5&color=C5A059&bold=true"
   },
   {
-    text: "Le site web dédié créé par Xiri a totalement réduit ma dépendance à Airbnb. 40% de mes réservations sont désormais en direct. Un ROI imbattable et une gestion fluide.",
+    text: "40% de réservations en direct grâce au site créé par Xiri. Réduction totale de ma dépendance Airbnb.",
     author: "Sophie L.",
     time: "il y a 4 mois",
     avatar: "https://ui-avatars.com/api/?name=Sophie+L&background=f0f2f5&color=1B2B44&bold=true"
   },
   {
-    text: "Réactivité exemplaire. Même en cas de petit souci technique, Xiri intervient dans l'heure. C'est le niveau de service premium que j'attendais pour mon investissement.",
+    text: "Réactivité exemplaire. Intervention sous une heure. Le niveau premium que j'attendais.",
     author: "Pierre-Félix G.",
     time: "il y a 5 mois",
     avatar: "https://ui-avatars.com/api/?name=Pierre-Felix+G&background=f0f2f5&color=C5A059&bold=true"
   },
   {
-    text: "Une approche moderne de la conciergerie. L'intelligence artificielle pour la réactivité avec les voyageurs nous a permis de sécuriser des réservations même en pleine nuit. Bravo.",
+    text: "Aucune réservation perdue, même la nuit. L'IA de Xiri gère les réponses en temps réel.",
     author: "Marie-Claire D.",
     time: "il y a 6 mois",
     avatar: "https://ui-avatars.com/api/?name=Marie-Claire+D&background=f0f2f5&color=1B2B44&bold=true"

@@ -10,27 +10,27 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "Est-ce légal ?",
-    answer: "Absolument. La location saisonnière en France est strictement encadrée. Nous vous accompagnons dans toutes les démarches administratives : déclaration en mairie, obtention du numéro d'enregistrement et gestion de la taxe de séjour. Nous privilégions le statut LMNP (Loueur en Meublé Non Professionnel) qui offre des avantages fiscaux majeurs sur l'ensemble du territoire."
+    answer: "Oui. Nous gérons toutes les démarches : déclaration en mairie, numéro d'enregistrement, taxe de séjour. Statut LMNP mis en place si souhaité."
   },
   {
-    question: "Qui encaisse l’argent ?",
-    answer: "C'est l'un de nos points forts : vous restez maître de votre trésorerie. Grâce à notre écosystème digital, les fonds des réservations directes sont versés sur votre compte Stripe personnel. Pour les plateformes comme Airbnb, les versements arrivent également sur votre compte. Xiri ne prélève sa commission qu'une fois l'argent en votre possession."
+    question: "Qui encaisse l'argent ?",
+    answer: "Vous. Les paiements arrivent directement sur votre compte (Stripe perso pour les réservations directes, Airbnb pour les plateformes). Xiri prélève sa commission après coup."
   },
   {
     question: "Combien de jours puis-je louer ?",
-    answer: "S'il s'agit de votre résidence secondaire, il n'y a pas de limite de durée (contrairement à la limite de 120 jours pour une résidence principale). Vous avez une liberté totale pour maximiser votre rendement tout au long de l'année, de la haute saison estivale aux périodes plus calmes mais très prisées du printemps."
+    answer: "Pour une résidence secondaire, aucune limite. Vous pouvez maximiser toute l'année, haute saison comme basse saison."
   },
   {
     question: "Qui paie en cas de casse ?",
-    answer: "La sécurité de votre patrimoine est notre priorité. Nous utilisons un système de caution sécurisée (empreinte bancaire) via Swikly ou Stripe pour chaque voyageur. En cas de dégradation constatée lors du check-out rigoureux, nous gérons intégralement le dossier de réclamation et l'activation des assurances (AirCover ou assurance privée) pour couvrir les frais de remise en état."
+    answer: "Caution sécurisée (Swikly / Stripe) pour chaque séjour. En cas de dégradation, nous gérons le dossier et activons les assurances (AirCover ou privée)."
   },
   {
     question: "Comment sont sélectionnés les voyageurs ?",
-    answer: "Nous ne laissons rien au hasard. Chaque profil est analysé : vérification d'identité, historique des commentaires sur les plateformes et motif du séjour. Nous privilégions une communication directe avant validation pour nous assurer que les voyageurs correspondent au standing de votre propriété et respecteront le voisinage."
+    answer: "Vérification d'identité, historique Airbnb, motif du séjour. Aucun profil douteux ne passe. Votre bien mérite mieux."
   },
   {
     question: "Puis-je bloquer des dates ?",
-    answer: "Bien entendu. Votre bien reste avant tout le vôtre. Via notre interface propriétaire, vous pouvez bloquer les dates de votre choix en temps réel pour votre usage personnel, votre famille ou vos amis. Nous recommandons simplement d'anticiper ces blocages avant l'ouverture des réservations pour la haute saison."
+    answer: "Oui. Via votre espace propriétaire, vous bloquez les dates que vous souhaitez en temps réel. Votre bien reste le vôtre."
   }
 ];
 
@@ -52,7 +52,7 @@ const FAQ: React.FC = () => {
             FAQ
           </h2>
           <p className="text-[15px] text-xiri-navy/80 font-medium mt-1">
-            Les réponses aux points qui bloquent le plus souvent une décision.
+            Toutes les réponses en un coup d'œil.
           </p>
         </div>
 
@@ -95,8 +95,8 @@ const FAQ: React.FC = () => {
         <div className="mt-10 p-8 bg-xiri-navy text-center space-y-5 relative group overflow-hidden rounded-3xl">
           <div className="absolute inset-0 bg-xiri-gold/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
           <div className="relative z-10 space-y-6">
-            <h4 className="text-[24px] font-serif text-white">Une question plus spécifique ?</h4>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">Nos experts sont à votre disposition.</p>
+            <h4 className="text-[24px] font-serif text-white">Une autre question ?</h4>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-white/50 font-medium">On répond sous 24h.</p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 bg-xiri-gold text-white text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-xiri-navy transition-all shadow-xl rounded-xl"
