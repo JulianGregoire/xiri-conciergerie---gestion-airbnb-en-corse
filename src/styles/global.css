@@ -4,7 +4,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #FCF8F2 100%);
+  /* Dégradé doux avec une légère touche dorée pour plus de vie */
+  background: linear-gradient(140deg, #F0F7FA 0%, #FFFFFF 40%, #F7EAD4 85%, #FCF4E4 100%);
   color: #1B2B44;
   scroll-behavior: smooth;
   min-height: 100vh;
