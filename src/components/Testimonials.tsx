@@ -80,21 +80,39 @@ const Testimonials: React.FC = () => {
     return () => clearInterval(timer);
   }, [handleNext]);
 
+  // Touch handlers (mobile)
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
     touchEndX.current = null;
   };
-
   const onTouchMove = (e: React.TouchEvent) => {
     touchEndX.current = e.touches[0].clientX;
   };
-
   const onTouchEnd = () => {
     if (touchStartX.current === null || touchEndX.current === null) return;
     const delta = touchStartX.current - touchEndX.current;
-    if (Math.abs(delta) > 40) {
-      delta > 0 ? handleNext() : handlePrev();
+    if (Math.abs(delta) > 40) { delta > 0 ? handleNext() : handlePrev(); }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  // Mouse drag handlers (desktop)
+  const onMouseDown = (e: React.MouseEvent) => {
+    touchStartX.current = e.clientX;
+    touchEndX.current = null;
+  };
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (touchStartX.current !== null) touchEndX.current = e.clientX;
+  };
+  const onMouseUp = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const delta = touchStartX.current - touchEndX.current;
+      if (Math.abs(delta) > 40) { delta > 0 ? handleNext() : handlePrev(); }
     }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+  const onMouseLeave = () => {
     touchStartX.current = null;
     touchEndX.current = null;
   };
@@ -102,30 +120,27 @@ const Testimonials: React.FC = () => {
   return (
     <section id="testimonials" className="py-16 md:py-24 lg:py-32 bg-[#F8FAFC] relative overflow-hidden border-y border-xiri-navy/5">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col mb-8 md:mb-10 gap-2 text-center">
-          <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.25em]">Excellence Reconnue</span>
-          <h2 className="text-[26px] md:text-[30px] font-serif text-xiri-navy leading-tight">
-            Avis <span className="text-xiri-gold font-light">Propriétaires</span>
-          </h2>
-          <div className="flex justify-center items-center gap-2 mt-2">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} className="text-[#fbbc04] fill-[#fbbc04]" />
-              ))}
-            </div>
-            <span className="text-[16px] font-bold text-gray-900">4.9/5</span>
-            <span className="text-gray-500 text-[13px] font-medium">(130+ avis)</span>
-          </div>
-        </div>
 
-        <div
-          className="relative overflow-hidden pb-8"
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
-        >
-          {/* Controls */}
-          <div className="absolute -top-14 right-0 flex gap-3">
+        {/* Header + arrows */}
+        <div className="flex flex-col mb-8 md:mb-10 gap-4">
+          <div className="text-center">
+            <span className="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.25em]">Excellence Reconnue</span>
+            <h2 className="text-[26px] md:text-[30px] font-serif text-xiri-navy leading-tight">
+              Avis <span className="text-xiri-gold font-light">Propriétaires</span>
+            </h2>
+            <div className="flex justify-center items-center gap-2 mt-2">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={16} className="text-[#fbbc04] fill-[#fbbc04]" />
+                ))}
+              </div>
+              <span className="text-[16px] font-bold text-gray-900">4.9/5</span>
+              <span className="text-gray-500 text-[13px] font-medium">(130+ avis)</span>
+            </div>
+          </div>
+
+          {/* Navigation arrows — always visible */}
+          <div className="flex justify-end gap-3">
             <button
               onClick={handlePrev}
               className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-xiri-navy hover:text-xiri-gold transition-colors hover:shadow-lg border border-gray-100 cursor-pointer"
@@ -139,12 +154,22 @@ const Testimonials: React.FC = () => {
               <ChevronRight size={18} />
             </button>
           </div>
+        </div>
 
+        {/* Carousel track */}
+        <div
+          className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseLeave}
+        >
           <div
-            className="flex transition-transform duration-700 ease-out select-none"
-            style={{
-              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
-            }}
+            className="flex transition-transform duration-700 ease-out pb-4"
+            style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
           >
             {testimonials.map((item, idx) => (
               <div
@@ -152,21 +177,17 @@ const Testimonials: React.FC = () => {
                 className="px-3 flex-shrink-0"
                 style={{ width: `${100 / itemsToShow}%` }}
               >
-                {/* Google Review Card */}
                 <div className="bg-white p-5 md:p-6 rounded-[20px] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100/50 flex flex-col h-full hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-1">
 
-                  {/* Header: User Info */}
+                  {/* Header */}
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex-shrink-0">
                       <img src={item.avatar} alt={item.author} className="w-10 h-10 rounded-full object-cover" />
                     </div>
                     <div className="flex-grow">
                       <h4 className="text-[14px] font-semibold text-gray-900 leading-tight">{item.author}</h4>
-                      <div className="flex items-center gap-2 mt-0.5">
-                        <span className="text-[12px] text-gray-500 font-medium">{item.time}</span>
-                      </div>
+                      <span className="text-[12px] text-gray-500 font-medium">{item.time}</span>
                     </div>
-                    {/* Google G Logo */}
                     <div className="flex-shrink-0 w-6 h-6 self-start mt-1">
                       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -184,7 +205,7 @@ const Testimonials: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Review Text */}
+                  {/* Text */}
                   <div className="text-[15px] text-gray-700 leading-relaxed font-normal flex-grow">
                     {item.text}
                   </div>
@@ -194,8 +215,8 @@ const Testimonials: React.FC = () => {
           </div>
         </div>
 
-      </div >
-    </section >
+      </div>
+    </section>
   );
 };
 
