@@ -125,7 +125,7 @@ const Testimonials: React.FC = () => {
           onTouchEnd={onTouchEnd}
         >
           {/* Controls */}
-          <div className="absolute -top-14 right-0 flex gap-3 hidden md:flex">
+          <div className="absolute -top-14 right-0 flex gap-3">
             <button
               onClick={handlePrev}
               className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-xiri-navy hover:text-xiri-gold transition-colors hover:shadow-lg border border-gray-100 cursor-pointer"
