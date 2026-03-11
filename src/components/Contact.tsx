@@ -43,20 +43,20 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="bg-white p-7 md:p-10 framed-img shadow-[0_24px_60px_-20px_rgba(27,43,68,0.2)] rounded-3xl">
-              <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-10 md:p-14 framed-img shadow-[0_32px_80px_-20px_rgba(27,43,68,0.25)] rounded-3xl">
+              <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="group relative">
                     <input
                       type="text"
                       required
-                      className="peer w-full bg-white border border-xiri-navy/10 py-4 px-4 rounded-xl outline-none focus:border-xiri-gold transition-all text-sm placeholder-transparent"
+                      className="peer w-full bg-white border border-xiri-navy/10 py-5 px-6 rounded-2xl outline-none focus:border-xiri-gold transition-all text-base placeholder-transparent"
                       id="name"
                       placeholder="Nom"
                     />
                     <label
                       htmlFor="name"
-                      className="absolute left-0 top-0 text-[10px] uppercase tracking-[0.3em] font-bold text-xiri-navy/40 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-xs peer-focus:top-0 peer-focus:text-[10px] peer-focus:text-xiri-gold"
+                      className="absolute left-0 top-0 text-xs uppercase tracking-[0.3em] font-bold text-xiri-navy/40 transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-xiri-gold"
                     >
                       Nom Complet
                     </label>
@@ -65,13 +65,13 @@ const Contact: React.FC = () => {
                     <input
                       type="email"
                       required
-                      className="peer w-full bg-white border border-xiri-navy/10 py-4 px-4 rounded-xl outline-none focus:border-xiri-gold transition-all text-sm placeholder-transparent"
+                      className="peer w-full bg-white border border-xiri-navy/10 py-5 px-6 rounded-2xl outline-none focus:border-xiri-gold transition-all text-base placeholder-transparent"
                       id="email"
                       placeholder="Email"
                     />
                     <label
                       htmlFor="email"
-                      className="absolute left-0 top-0 text-[10px] uppercase tracking-[0.3em] font-bold text-xiri-navy/40 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-xs peer-focus:top-0 peer-focus:text-[10px] peer-focus:text-xiri-gold"
+                      className="absolute left-0 top-0 text-xs uppercase tracking-[0.3em] font-bold text-xiri-navy/40 transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-xiri-gold"
                     >
                       Email Professionnel
                     </label>
@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
 
                 <div className="group relative">
                   <select
-                    className="peer w-full bg-white border border-xiri-navy/10 py-4 px-4 rounded-xl outline-none focus:border-xiri-gold transition-all text-sm appearance-none"
+                    className="peer w-full bg-white border border-xiri-navy/10 py-5 px-6 rounded-2xl outline-none focus:border-xiri-gold transition-all text-base appearance-none"
                     id="property"
                   >
                     <option>Villa avec piscine</option>
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
                   </select>
                   <label
                     htmlFor="property"
-                    className="absolute left-0 top-0 text-[10px] uppercase tracking-[0.3em] font-bold text-xiri-navy/40"
+                    className="absolute left-0 -top-2 text-xs uppercase tracking-[0.3em] font-bold text-xiri-navy/40 bg-white px-2"
                   >
                     Type de bien
                   </label>
@@ -98,21 +98,21 @@ const Contact: React.FC = () => {
 
                 <div className="group relative">
                   <textarea
-                    rows={4}
-                    className="peer w-full bg-white border border-xiri-navy/10 py-4 px-4 rounded-xl outline-none focus:border-xiri-gold transition-all text-sm placeholder-transparent resize-none"
+                    rows={5}
+                    className="peer w-full bg-white border border-xiri-navy/10 py-5 px-6 rounded-2xl outline-none focus:border-xiri-gold transition-all text-base placeholder-transparent resize-none"
                     id="message"
                     placeholder="Message"
                   ></textarea>
                   <label
                     htmlFor="message"
-                    className="absolute left-0 top-0 text-[10px] uppercase tracking-[0.3em] font-bold text-xiri-navy/40 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-xs peer-focus:top-0 peer-focus:text-[10px] peer-focus:text-xiri-gold"
+                    className="absolute left-0 top-0 text-xs uppercase tracking-[0.3em] font-bold text-xiri-navy/40 transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-xiri-gold"
                   >
                     Votre Message
                   </label>
                 </div>
 
-                <div className="pt-2">
-                  <button className="group relative w-full bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white overflow-hidden py-4 text-[11px] uppercase tracking-[0.2em] font-bold shadow-xl shadow-xiri-gold/20 transition-all hover:scale-[1.02] rounded-xl">
+                <div className="pt-4">
+                  <button className="group relative w-full bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white overflow-hidden py-5 text-xs uppercase tracking-[0.25em] font-extrabold shadow-2xl shadow-xiri-gold/30 transition-all hover:scale-[1.02] rounded-2xl">
                     <span className="relative z-10">Envoyer ma demande</span>
                     <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 opacity-10"></div>
                   </button>
