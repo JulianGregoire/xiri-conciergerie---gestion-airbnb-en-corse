@@ -118,7 +118,12 @@ const Testimonials: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative overflow-visible pb-8">
+        <div
+          className="relative overflow-hidden pb-8"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           {/* Controls */}
           <div className="absolute -top-14 right-0 flex gap-3 hidden md:flex">
             <button
@@ -140,9 +145,6 @@ const Testimonials: React.FC = () => {
             style={{
               transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
             }}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
           >
             {testimonials.map((item, idx) => (
               <div
