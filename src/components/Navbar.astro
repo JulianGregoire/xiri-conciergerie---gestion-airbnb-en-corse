@@ -6,11 +6,20 @@ interface Props {
 const { light = false } = Astro.props;
 
 const navLinks = [
-    { href: "/#services", label: "Services" },
+    { href: "/#services", label: "Services", dropdown: true },
     { href: "/a-propos", label: "Notre Approche" },
     { href: "/#pricing", label: "Tarifs" },
     { href: "/blog", label: "Blog" },
     { href: "/#faq", label: "FAQ" },
+];
+
+const serviceLinks = [
+    { href: "/services/gestion-airbnb", label: "Marketing & Annonces" },
+    { href: "/services/selection-voyageurs", label: "Filtrage Voyageurs" },
+    { href: "/services/check-in-out", label: "Accueil & Remise de Clés" },
+    { href: "/services/menage-linge", label: "Ménage & Blanchisserie" },
+    { href: "/services/assurances-cautions", label: "Garanties & Cautions" },
+    { href: "/services/maintenance-assistance", label: "Assistance 24/7" },
 ];
 ---
 
@@ -41,15 +50,44 @@ const navLinks = [
             <div class="hidden lg:flex items-center gap-6">
                 {
                     navLinks.map((link) => (
-                        <a
-                            href={link.href}
-                            class:list={[
-                                "nav-link text-[10px] font-bold uppercase tracking-[0.15em] transition-colors duration-300 no-underline",
-                                light ? "text-white hover:text-xiri-gold" : "text-xiri-navy hover:text-xiri-gold"
-                            ]}
-                        >
-                            {link.label}
-                        </a>
+                        link.dropdown ? (
+                            <div class="relative group/services">
+                                <a
+                                    href={link.href}
+                                    class:list={[
+                                        "nav-link text-[10px] font-bold uppercase tracking-[0.15em] transition-colors duration-300 no-underline flex items-center gap-1",
+                                        light ? "text-white hover:text-xiri-gold" : "text-xiri-navy hover:text-xiri-gold"
+                                    ]}
+                                >
+                                    {link.label}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover/services:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
+                                </a>
+                                <!-- Dropdown panel -->
+                                <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none group-hover/services:opacity-100 group-hover/services:pointer-events-auto transition-all duration-200 z-50">
+                                    <div class="bg-white rounded-2xl shadow-2xl border border-xiri-navy/5 overflow-hidden min-w-[240px] py-2">
+                                        {serviceLinks.map((s) => (
+                                            <a
+                                                href={s.href}
+                                                class="flex items-center gap-3 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-xiri-navy hover:text-xiri-gold hover:bg-xiri-gold/5 transition-all no-underline"
+                                            >
+                                                <span class="w-1 h-1 rounded-full bg-xiri-gold flex-shrink-0"></span>
+                                                {s.label}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <a
+                                href={link.href}
+                                class:list={[
+                                    "nav-link text-[10px] font-bold uppercase tracking-[0.15em] transition-colors duration-300 no-underline",
+                                    light ? "text-white hover:text-xiri-gold" : "text-xiri-navy hover:text-xiri-gold"
+                                ]}
+                            >
+                                {link.label}
+                            </a>
+                        )
                     ))
                 }
             </div>
