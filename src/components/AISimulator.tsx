@@ -140,7 +140,7 @@ const AISimulator: React.FC = () => {
   };
 
   return (
-    <section id="ai-simulator" className="py-24 md:py-32 lg:py-48 bg-white relative overflow-hidden">
+    <section id="ai-simulator" className="py-24 md:py-32 lg:py-48 relative overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-xiri-bg/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50 -z-10"></div>
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-xiri-gold/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl opacity-50 -z-10"></div>

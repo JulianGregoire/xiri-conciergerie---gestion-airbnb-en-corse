@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative pt-20 pb-10 md:pt-24 md:pb-12 lg:pt-32 lg:pb-16 bg-white overflow-hidden border-b border-xiri-navy/5">
+    <section id="home" className="relative pt-20 pb-10 md:pt-24 md:pb-12 lg:pt-32 lg:pb-16 overflow-hidden border-b border-xiri-navy/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
