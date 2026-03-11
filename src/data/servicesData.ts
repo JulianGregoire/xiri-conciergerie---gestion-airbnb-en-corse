@@ -8,7 +8,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: "Photos professionnelles, rédaction séduisante et tarification dynamique pour maximiser votre taux d'occupation.",
     benefit: "Maximisez vos revenus",
     benefitSummary: "Optimisez la visibilité de votre annonce et boostez vos revenus grâce à notre expertise en marketing digital et tarification dynamique.",
-    fullContent: "La visibilité est la clé de la réussite sur les plateformes de location saisonnière...",
+    fullContent: "La visibilité est la clé de la réussite sur les plateformes de location saisonnière. Chez Xiri Conciergerie, nous ne nous contentons pas de publier une annonce ; nous créons une expérience visuelle et textuelle irrésistible. Grâce à nos photographes professionnels spécialisés en architecture et nos rédacteurs SEO multilingues, nous positionnons votre bien en tête des résultats de recherche. Notre expertise en tarification dynamique nous permet d'ajuster vos prix en temps réel selon la demande locale, les événements et la saisonnalité, garantissant ainsi un taux d'occupation optimal et des revenus maximisés tout au long de l'année.",
     img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
@@ -88,7 +88,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: "Protection complète de votre bien et gestion des litiges éventuels pour une tranquillité totale.",
     benefit: "Protection 100% sécurisée",
     benefitSummary: "Sécurisez vos revenus et votre bien grâce à une gestion intégrale des cautions et des garanties d'assurance.",
-    fullContent: "Louer en toute sérénité nécessite une protection sans faille...",
+    fullContent: "Louer en toute sérénité nécessite une protection sans faille pour votre patrimoine. Nous mettons en place un système complet de garanties et de dépôts sécurisés pour chaque séjour. Contrairement à une gestion classique, nous gérons l'intégralité du processus de caution sans débit immédiat pour le voyageur, ce qui facilite la réservation tout en maintenant une sécurité totale. En cas de dommage, même mineur, nos équipes documentent précisément les faits et assurent l'intermédiation avec les plateformes et les assurances pour obtenir une réparation rapide et juste. Vous n'avez plus à vous soucier des aspects juridiques ou financiers liés aux éventuels incidents.",
     img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=800",
