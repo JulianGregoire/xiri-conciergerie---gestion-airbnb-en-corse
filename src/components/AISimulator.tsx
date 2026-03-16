@@ -158,12 +158,12 @@ const AISimulator: React.FC = () => {
             >
               <div className="flex items-center gap-2">
                 <span className="h-[2px] w-8 bg-xiri-gold"></span>
-                <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em]">Expertise Prédictive</span>
+                <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em]">Analyse Intelligente</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-serif text-xiri-navy leading-[1.1]">
-                Simulateur de <br />
+                Estimation <br />
                 <span className="relative inline-block text-xiri-gold italic font-light">
-                  Revenus
+                  IA Instantanée
                   <motion.span
                     initial={{ width: 0 }}
                     whileInView={{ width: '100%' }}

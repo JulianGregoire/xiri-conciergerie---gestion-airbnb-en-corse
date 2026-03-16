@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const CalendlyEmbed: React.FC = () => {
     return (
-        <section id="simulator" className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+        <section id="simulator" className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
             {/* Background Ornaments */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-xiri-bg/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50 -z-10"></div>
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-xiri-gold/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl opacity-50 -z-10"></div>
@@ -24,9 +24,9 @@ const CalendlyEmbed: React.FC = () => {
                                 <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em]">Expertise Prédictive</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-serif text-xiri-navy leading-[1.1]">
-                                Simulateur de <br />
+                                Audit & <br />
                                 <span className="relative inline-block text-xiri-gold italic font-light">
-                                    Revenus
+                                    Accompagnement
                                     <motion.span
                                         initial={{ width: 0 }}
                                         whileInView={{ width: '100%' }}
