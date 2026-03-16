@@ -118,7 +118,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 lg:py-32 bg-[#F8FAFC] relative overflow-hidden border-y border-xiri-navy/5">
+    <section id="testimonials" className="py-12 md:py-16 lg:py-20 bg-[#F8FAFC] relative overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
 
         {/* Header + arrows */}
