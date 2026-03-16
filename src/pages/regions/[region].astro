@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import FloatingContact from '../../components/FloatingContact.astro';
-import Contact from '../../components/Contact';
 import { regions } from '../../data/regionsData';
+import { Minus, ArrowLeft } from "lucide-react";
+import Contact from '../../components/Contact';
 
 export function getStaticPaths() {
   return regions.map((region) => ({
@@ -19,104 +19,163 @@ const description = region.description;
 ---
 
 <Layout title={title} description={description}>
-  <FloatingContact />
-
-  <main class="space-y-20 lg:space-y-32">
-    {/* Hero Section */}
-    <section class="relative min-h-[70vh] flex items-center pt-32 pb-20 justify-center overflow-hidden">
-      <!-- Background Image -->
-      <div class="absolute inset-0 z-0">
-        <img
-          src={region.image.src}
-          alt={`Conciergerie ${region.name}`}
-          class="w-full h-full object-cover"
-        />
-        <!-- Gradients for readability -->
-        <div class="absolute inset-0 bg-gradient-to-r from-xiri-navy/90 via-xiri-navy/80 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-xiri-navy/60 via-transparent to-xiri-navy/40"></div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
-        <div class="max-w-3xl space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <div class="flex items-center gap-4">
-            <span class="h-[2px] w-12 bg-xiri-gold"></span>
-            <span class="text-xiri-gold text-[10px] md:text-xs font-black uppercase tracking-[0.4em] md:tracking-[0.6em] whitespace-nowrap">
-              VOTRE CONCIERGERIE EN
-            </span>
-          </div>
-          
-          <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1] tracking-tight">
-            {region.name}
-          </h1>
-          
-          <p class="text-lg md:text-xl text-white/90 leading-relaxed font-light max-w-2xl">
-            {region.description}
-          </p>
-
-          <div class="pt-8 flex flex-col sm:flex-row gap-6">
+    <div class="min-h-screen bg-[#FDFDFD]">
+        <!-- Back Button -->
+        <div class="fixed top-24 left-6 lg:left-12 z-50">
             <a
-              href="#contact"
-              class="group relative inline-flex items-center justify-center bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white px-8 py-4 text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.2em] rounded-xl overflow-hidden shadow-[0_0_40px_rgba(201,160,80,0.3)] transition-all hover:scale-105"
+                href="/"
+                class="group flex items-center gap-4 text-[9px] uppercase tracking-[0.4em] font-bold text-xiri-navy bg-white/80 backdrop-blur-md px-6 py-4 shadow-sm border border-xiri-navy/5 hover:bg-xiri-navy hover:text-white transition-all no-underline"
             >
-              <span class="relative z-10">Confier mon bien</span>
-              <div class="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 opacity-20"></div>
+                <ArrowLeft
+                    size={14}
+                    class="group-hover:-translate-x-1 transition-transform"
+                />
+                Retour
             </a>
-          </div>
         </div>
 
-        {/* Metrics Bar */}
-        <div class="grid grid-cols-3 gap-8 md:gap-16 pt-20 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-            <div class="space-y-2 border-r border-white/20">
-                <p class="text-3xl md:text-4xl font-serif text-xiri-gold">{region.metrics.properties}</p>
-                <p class="text-[9px] md:text-[10px] text-white/70 uppercase tracking-[0.2em] font-bold">Biens d'exception</p>
-            </div>
-            <div class="space-y-2 border-r border-white/20">
-                <p class="text-3xl md:text-4xl font-serif text-xiri-gold">{region.metrics.rating}</p>
-                <p class="text-[9px] md:text-[10px] text-white/70 uppercase tracking-[0.2em] font-bold">Avis Voyageurs</p>
-            </div>
-            <div class="space-y-2">
-                <p class="text-3xl md:text-4xl font-serif text-xiri-gold">{region.metrics.experience}</p>
-                <p class="text-[9px] md:text-[10px] text-white/70 uppercase tracking-[0.2em] font-bold">D'Expertise locale</p>
-            </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Cities Section */}
-    <section class="py-20 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-            <div class="text-center mb-20 space-y-6">
-                <span class="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em] block">Secteurs Gérés</span>
-                <h2 class="text-4xl md:text-5xl font-serif text-xiri-navy">
-                    Nos Villes d'Intervention
-                </h2>
-                <div class="w-16 h-[1px] bg-xiri-gold mx-auto"></div>
-                <p class="text-xiri-navy/60 max-w-2xl mx-auto pt-4 leading-relaxed">
-                    Nous sélectionnons rigoureusement les secteurs où nous opérons afin de garantir une proximité et une réactivité exemplaires pour nos propriétaires et voyageurs.
-                </p>
+        <!-- Hero Section : Split Paradigm -->
+        <section class="relative min-h-screen flex flex-col lg:flex-row">
+            <div
+                class="w-full lg:w-1/2 h-[60vh] lg:h-screen sticky top-0 overflow-hidden"
+            >
+                <img
+                    src={region.image.src}
+                    alt={region.name}
+                    class="w-full h-full object-cover animate-slow-zoom"
+                />
+                <div class="absolute inset-0 bg-xiri-navy/10"></div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {region.villes.map((ville) => (
-                    <a 
-                        href={ville.href}
-                        class="group block bg-[#F8FAFC] border border-xiri-navy/5 p-8 rounded-2xl hover:bg-xiri-navy transition-colors duration-500 no-underline"
+            <div
+                class="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-24 bg-white"
+            >
+                <div class="max-w-xl space-y-12">
+                    <div class="space-y-4">
+                        <span class="text-xiri-gold text-[10px] uppercase tracking-[0.6em] font-black block">NOTRE RÉSEAU EXCLUSIF</span>
+                        <h1
+                            class="text-5xl md:text-7xl font-serif leading-[1.1] text-xiri-navy"
+                        >
+                            {
+                                region.name
+                                    .split(" ")
+                                    .map((word, i) => (
+                                        <span
+                                            class={
+                                                i < 2 ? "" : "font-light italic text-xiri-gold"
+                                            }
+                                        >
+                                            {word}{" "}
+                                        </span>
+                                    ))
+                            }
+                        </h1>
+                    </div>
+
+                    <p
+                        class="text-xl md:text-2xl font-serif text-[#000000] leading-relaxed border-l-2 border-xiri-gold pl-8 font-medium"
                     >
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-serif text-xiri-navy group-hover:text-xiri-gold transition-colors duration-500">
-                                {ville.name}
-                            </h3>
-                            <div class="w-8 h-8 rounded-full bg-white/50 group-hover:bg-xiri-gold/10 flex items-center justify-center transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-xiri-navy group-hover:text-xiri-gold transition-colors"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        {region.description}
+                    </p>
+
+                    {/* Metrics in the Hero area */}
+                    <div class="grid grid-cols-3 gap-8 pt-8">
+                        <div class="space-y-1">
+                            <p class="text-2xl font-serif text-xiri-gold">{region.metrics.properties}</p>
+                            <p class="text-[9px] text-xiri-navy/40 uppercase tracking-[0.2em] font-bold">Propriétés</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-2xl font-serif text-xiri-gold">{region.metrics.rating}</p>
+                            <p class="text-[9px] text-xiri-navy/40 uppercase tracking-[0.2em] font-bold">Avis</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-2xl font-serif text-xiri-gold">{region.metrics.experience}</p>
+                            <p class="text-[9px] text-xiri-navy/40 uppercase tracking-[0.2em] font-bold">Expertise</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-12">
+                        <a href="#villes" class="flex items-center gap-4 text-[10px] uppercase tracking-[0.5em] font-black text-[#000000] no-underline group hover:text-xiri-gold transition-colors">
+                            <div class="w-12 h-[1px] bg-xiri-gold group-hover:w-16 transition-all"></div>
+                            Découvrir nos secteurs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Cities Section */}
+        <section id="villes" class="py-32 lg:py-56 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
+                    <div class="lg:col-span-4 lg:pt-32">
+                        <div class="sticky top-40 space-y-16">
+                            <div class="space-y-8">
+                                <span class="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Secteurs Gérés</span>
+                                <h2 class="text-3xl md:text-5xl font-serif text-xiri-navy leading-tight">
+                                    Une présence <span class="font-light italic">locale</span> & réactive.
+                                </h2>
+                                <p class="text-[17px] text-[#000000] leading-relaxed font-medium">
+                                    Nous sélectionnons rigoureusement les secteurs où nous opérons afin de garantir une proximité exemplaire pour nos propriétaires et voyageurs.
+                                </p>
                             </div>
                         </div>
-                    </a>
-                ))}
-            </div>
-        </div>
-    </section>
+                    </div>
 
-    {/* Contact Section */}
-    <Contact client:visible />
-  </main>
+                    <div class="lg:col-span-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-12">
+                            {region.villes.map((ville) => (
+                                <a 
+                                    href={ville.href}
+                                    class="group block bg-[#F8FAFC] border border-xiri-navy/5 p-10 rounded-2xl hover:bg-xiri-navy transition-all duration-500 no-underline shadow-sm hover:shadow-xl hover:-translate-y-1"
+                                >
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="text-2xl font-serif text-xiri-navy group-hover:text-xiri-gold transition-colors duration-500">
+                                            {ville.name}
+                                        </h3>
+                                        <div class="w-10 h-10 rounded-full bg-xiri-navy/5 group-hover:bg-xiri-gold/20 flex items-center justify-center transition-all">
+                                            <ArrowLeft size={18} class="text-xiri-navy group-hover:text-xiri-gold transition-colors rotate-180" />
+                                        </div>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Contact Section */}
+        <section class="py-40 bg-[#F8FAFC]">
+            <div class="max-w-4xl mx-auto px-6 text-center space-y-12">
+                <span class="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.6em] block">Étude de Projet</span>
+                <h2 class="text-3xl md:text-5xl font-serif text-xiri-navy leading-tight">
+                    Optimisez la rentabilité de votre bien en <span class="font-light text-xiri-gold italic">{region.slug === 'corse' ? 'Corse' : region.name.replace('Conciergerie de ', '').replace('Conciergerie du ', '')}</span>.
+                </h2>
+                <div class="pt-12">
+                    <a
+                        href="/#contact"
+                        class="inline-block bg-xiri-navy text-white px-16 py-7 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-black transition-all shadow-2xl hover:-translate-y-1 no-underline"
+                    >
+                        Confier mon bien
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="py-12 border-t border-xiri-navy/5 text-center">
+            <span class="text-[9px] uppercase tracking-[1em] text-xiri-navy/20">XIRI CONCIERGE • {region.name.toUpperCase()}</span>
+        </div>
+    </div>
 </Layout>
+
+<style>
+    @keyframes slow-zoom {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    .animate-slow-zoom {
+        animation: slow-zoom 20s ease-in-out infinite;
+    }
+</style>
