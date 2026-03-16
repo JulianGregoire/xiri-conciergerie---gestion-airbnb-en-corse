@@ -7,7 +7,7 @@ const savoieImg = { src: "https://images.unsplash.com/photo-1549880181-56a44cf4a
 
 export const regions = [
     {
-        name: "Corse",
+        name: "Conciergerie de Corse",
         slug: "corse",
         description: "Découvrez notre sélection exclusive de villas et propriétés de charme sur l'Île de Beauté. De Porto-Vecchio à la Balagne, nous offrons une gestion premium au cœur de la Corse.",
         image: corseImg,
@@ -17,16 +17,16 @@ export const regions = [
             experience: "10 ans"
         },
         villes: [
-            { name: "Porto-Vecchio", href: "/villes/porto-vecchio" },
-            { name: "Bonifacio", href: "/villes/bonifacio" },
-            { name: "Ajaccio", href: "/villes/ajaccio" },
-            { name: "Calvi", href: "/villes/calvi" },
-            { name: "Bastia", href: "/villes/bastia" },
-            { name: "Lumio / Sant'Ambroggio", href: "/villes/lumio" },
+            { name: "PORTO-VECCHIO", href: "/villes/porto-vecchio" },
+            { name: "BONIFACIO", href: "/villes/bonifacio" },
+            { name: "AJACCIO", href: "/villes/ajaccio" },
+            { name: "CALVI", href: "/villes/calvi" },
+            { name: "BASTIA", href: "/villes/bastia" },
+            { name: "LUMIO / SANT'AMBROGGIO", href: "/villes/lumio" },
         ],
     },
     {
-        name: "Finistère Sud",
+        name: "Conciergerie du Finistère Sud",
         slug: "finistere-sud",
         description: "L'authenticité bretonne sublimée par une conciergerie d'exception. Nous gérons vos biens sur la Riviera bretonne, de Bénodet à Concarneau, avec une exigence absolue.",
         image: finistereImg,
@@ -42,7 +42,7 @@ export const regions = [
         ],
     },
     {
-        name: "Hérault",
+        name: "Conciergerie de l'Hérault",
         slug: "herault",
         description: "Entre terre et mer, confiez-nous la gestion de votre résidence dans l'Hérault. Un service sur-mesure pour maximiser vos revenus locatifs sous le soleil d'Occitanie.",
         image: heraultImg,
@@ -58,7 +58,7 @@ export const regions = [
         ],
     },
     {
-        name: "Savoie",
+        name: "Conciergerie de Savoie",
         slug: "savoie",
         description: "L'excellence alpine à votre service. Notre réseau exclusif gère des chalets et appartements de prestige au cœur des domaines skiables les plus prisés.",
         image: savoieImg,
