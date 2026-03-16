@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { Send, X, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import chatbotIcon from '../images/chatbot.png';
 
 interface Message {
   id: string;
@@ -179,11 +180,11 @@ const ChatBot: React.FC = () => {
       {/* Actual trigger button that will be exported to FloatingContact */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-28 md:right-32 z-50 w-14 h-14 md:w-16 md:h-16 bg-white border border-xiri-navy/5 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 group ${isOpen ? 'ring-4 ring-xiri-gold/20' : ''}`}
+        className={`w-14 h-14 md:w-16 md:h-16 bg-white border border-xiri-navy/5 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 group ${isOpen ? 'ring-4 ring-xiri-gold/20' : ''}`}
         aria-label="Ouvrir le chat"
       >
-        <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-full">
-           <img src="/src/images/chatbot.png" alt="ChatBot" className={`w-30 h-30 object-cover transition-transform duration-500 ${isOpen ? 'scale-110' : 'scale-100'}`} />
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-full p-2">
+           <img src={chatbotIcon.src} alt="ChatBot" className={`w-full h-full object-contain transition-transform duration-500 ${isOpen ? 'scale-110' : 'scale-100'}`} />
            <div className="absolute inset-0 bg-xiri-navy/0 group-hover:bg-xiri-navy/5 transition-colors"></div>
         </div>
         {!isOpen && (
