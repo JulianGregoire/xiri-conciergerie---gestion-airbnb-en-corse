@@ -8,6 +8,7 @@ const savoieImg = { src: "https://images.unsplash.com/photo-1549880181-56a44cf4a
 export const regions = [
     {
         name: "Corse",
+        menuName: "Conciergerie de Corse",
         slug: "corse",
         description: "Découvrez notre sélection exclusive de villas et propriétés de charme sur l'Île de Beauté. De Porto-Vecchio à la Balagne, nous offrons une gestion premium au cœur de la Corse.",
         image: corseImg,
@@ -27,6 +28,7 @@ export const regions = [
     },
     {
         name: "Finistère Sud",
+        menuName: "Conciergerie du Finistère Sud",
         slug: "finistere-sud",
         description: "L'authenticité bretonne sublimée par une conciergerie d'exception. Nous gérons vos biens sur la Riviera bretonne, de Bénodet à Concarneau, avec une exigence absolue.",
         image: finistereImg,
@@ -43,6 +45,7 @@ export const regions = [
     },
     {
         name: "Hérault",
+        menuName: "Conciergerie de l'Hérault",
         slug: "herault",
         description: "Entre terre et mer, confiez-nous la gestion de votre résidence dans l'Hérault. Un service sur-mesure pour maximiser vos revenus locatifs sous le soleil d'Occitanie.",
         image: heraultImg,
@@ -59,6 +62,7 @@ export const regions = [
     },
     {
         name: "Savoie",
+        menuName: "Conciergerie de Savoie",
         slug: "savoie",
         description: "L'excellence alpine à votre service. Notre réseau exclusif gère des chalets et appartements de prestige au cœur des domaines skiables les plus prisés.",
         image: savoieImg,
