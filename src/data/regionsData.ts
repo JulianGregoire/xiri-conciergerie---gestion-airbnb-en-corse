@@ -1,9 +1,7 @@
-import corseImg from "../images/corse.png";
-import finistereImg from "../images/finister.png";
-import heraultImg from "../images/herault.png";
-
-// Import a placeholder or a new image for Savoie
-const savoieImg = { src: "https://images.unsplash.com/photo-1549880181-56a44cf4a9a1?auto=format&fit=crop&q=80&w=2670" };
+import corseImg from "../images/corse image.jpg";
+import finistereImg from "../images/Finistere Sud.jpg";
+import heraultImg from "../images/Hérault.jpg";
+import savoieImg from "../images/Savoie.jpg";
 
 export const regions = [
     {

@@ -1,0 +1,139 @@
+---
+import { regions } from '../data/regionsData';
+
+// We'll use the regions data to build the panels
+---
+
+<section class="banner-wrapper py-20">
+    <div class="banner">
+        {regions.map((region, index) => (
+            <a href={`/regions/${region.slug}`} class={`panel panel-${index + 1} no-underline group`}>
+                <div class="panel-bg" style={`background-image: url('${region.image.src}')`}></div>
+                <div class="text">
+                    <h2>Xiri Conciergerie</h2>
+                    <span>{region.slug === 'corse' ? 'Corse' : region.name.replace('Conciergerie de ', '').replace('Conciergerie du ', '')}</span>
+                </div>
+            </a>
+        ))}
+    </div>
+</section>
+
+<style>
+    .banner-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: transparent;
+    }
+
+    .banner {
+        display: flex;
+        height: 600px;
+        width: 95%;
+        max-width: 1400px;
+        overflow: hidden;
+        border-radius: 24px;
+        box-shadow: 0 40px 100px rgba(15, 23, 42, 0.15);
+        background: #0F172A; 
+    }
+
+    .panel {
+        flex: 1;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 60px;
+        transition: flex 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        margin-left: -1px; 
+        overflow: hidden;
+        backface-visibility: hidden;
+    }
+
+    .panel-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.8s ease;
+        z-index: 0;
+    }
+
+    /* Gradients for premium look */
+    .panel::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, 
+            rgba(15, 23, 42, 0.9) 0%, 
+            rgba(15, 23, 42, 0.3) 40%, 
+            rgba(15, 23, 42, 0) 100%);
+        z-index: 1;
+        transition: opacity 0.5s ease;
+    }
+
+    .panel:hover {
+        flex: 4;
+    }
+
+    .panel:hover .panel-bg {
+        transform: scale(1.1);
+    }
+
+    .text {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        transform: translateY(40px);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .panel:hover .text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .text h2 {
+        margin: 0;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .text span {
+        display: block;
+        font-size: 2.5rem;
+        font-family: serif;
+        font-style: italic;
+        color: #D4B475; /* xiri-gold */
+        margin-top: 10px;
+    }
+
+    /* Mobile : stacked columns */
+    @media (max-width: 768px) {
+        .banner {
+            flex-direction: column;
+            height: 100vh;
+        }
+        .panel {
+            margin-left: 0;
+            margin-top: -1px;
+        }
+        .panel:hover {
+            flex: 5;
+        }
+        .text span { font-size: 1.8rem; }
+        .text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+</style>
