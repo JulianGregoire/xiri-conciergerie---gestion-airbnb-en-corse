@@ -8,12 +8,14 @@ interface Props {
     title: string;
     description?: string;
     navLight?: boolean;
+    navSolid?: boolean;
 }
 
 const {
     title,
     description = "Xiri Conciergerie - Gestion premium de locations saisonnières en France. Optimisez vos revenus locatifs en toute sérénité.",
     navLight = false,
+    navSolid = false,
 } = Astro.props;
 ---
 
@@ -38,7 +40,7 @@ const {
         />
     </head>
     <body class="text-xiri-navy bg-gradient-to-br from-[#EAF3F8] via-[#FFFFFF] to-[#FAF3E8] min-h-screen">
-        <Navbar light={navLight} />
+        <Navbar light={navLight} solid={navSolid} />
         <slot />
         <Footer />
         <FloatingContact />

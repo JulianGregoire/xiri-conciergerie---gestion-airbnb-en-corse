@@ -1,9 +1,10 @@
 ---
 interface Props {
     light?: boolean;
+    solid?: boolean;
 }
 
-const { light = false } = Astro.props;
+const { light = false, solid = false } = Astro.props;
 
 import { regions } from '../data/regionsData';
 
@@ -28,8 +29,12 @@ const serviceLinks = [
 
 <nav
     id="main-nav"
-    class="w-full fixed top-0 z-50 transition-all duration-500 bg-transparent py-4"
+    class:list={[
+        "w-full fixed top-0 z-50 transition-all duration-500 py-4",
+        solid ? "bg-white/95 backdrop-blur-sm shadow-md py-3" : "bg-transparent py-4"
+    ]}
     data-light={light}
+    data-solid={solid}
 >
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="flex justify-between items-center">
@@ -223,6 +228,7 @@ const serviceLinks = [
 <script>
     const nav = document.getElementById("main-nav");
     const isLightMode = nav?.dataset.light === "true";
+    const isSolidMode = nav?.dataset.solid === "true";
     const logoText = document.getElementById("nav-logo-text");
     const navLinksList = document.querySelectorAll(".nav-link");
     const navCta = document.getElementById("nav-cta");
@@ -234,7 +240,7 @@ const serviceLinks = [
     const updateNav = () => {
         const isScrolled = window.scrollY > 50;
 
-        if (isScrolled) {
+        if (isScrolled || isSolidMode) {
             nav?.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-md", "py-3");
             nav?.classList.remove("bg-transparent", "py-4");
             
