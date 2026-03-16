@@ -7,7 +7,7 @@ export const regions = [
     {
         name: "Conciergerie de Corse",
         slug: "corse",
-        description: "Découvrez notre sélection exclusive de villas et propriétés de charme sur l'Île de Beauté. De Porto-Vecchio à la Balagne, nous offrons une gestion premium au cœur de la Corse.",
+        description: "L'excellence au cœur de la Balagne. De Calvi à la Marine de Sant'Ambroggio, nous offrons une gestion premium et un service d'exception sur ce littoral prestigieux.",
         image: corseImg,
         metrics: {
             properties: "45+",
@@ -15,12 +15,9 @@ export const regions = [
             experience: "10 ans"
         },
         villes: [
-            { name: "PORTO-VECCHIO", href: "/villes/porto-vecchio" },
-            { name: "BONIFACIO", href: "/villes/bonifacio" },
-            { name: "AJACCIO", href: "/villes/ajaccio" },
             { name: "CALVI", href: "/villes/calvi" },
-            { name: "BASTIA", href: "/villes/bastia" },
-            { name: "LUMIO / SANT'AMBROGGIO", href: "/villes/lumio" },
+            { name: "LUMIO", href: "/villes/lumio" },
+            { name: "MARINE DE SANT'AMBROGGIO", href: "/villes/sant-ambroggio" },
         ],
     },
     {

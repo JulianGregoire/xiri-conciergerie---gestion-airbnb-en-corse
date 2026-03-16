@@ -3,39 +3,6 @@ import type { LocalCityData } from '../types';
 
 export const localSeoData: Record<string, LocalCityData> = {
   // --- CORSE ---
-  "porto-vecchio": {
-    id: "porto-vecchio",
-    name: "Porto-Vecchio",
-    title: "Conciergerie Porto-Vecchio : l'Excellence en Extrême Sud",
-    heroImg: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=2000",
-    intro: "Porto-Vecchio, la perle de l'Extrême-Sud, exige un standard d'accueil à la hauteur de ses plages mythiques. De Palombaggia à Santa Giulia, nous sublimons vos villas.",
-    localExpertise: "Nous maîtrisons parfaitement les règlementations de l'Extrême Sud. Que votre bien soit situé à Cala Rossa ou sur les hauteurs de l'Ospedale, notre équipe locale intervient en un temps record.",
-    neighborhoods: ["Palombaggia", "Santa Giulia", "Cala Rossa", "Marina di Fiori", "L'Ospedale"],
-    metaTitle: "Conciergerie Porto-Vecchio | Gestion Airbnb de Prestige | Xiri",
-    metaDesc: "Confiez votre villa à Porto-Vecchio à Xiri. Gestion complète, 100% légale, revenus optimisés. On gère tout, de Palombaggia à Cala Rossa."
-  },
-  "bonifacio": {
-    id: "bonifacio",
-    name: "Bonifacio",
-    title: "Conciergerie Bonifacio : l'Art de Vivre sur les Falaises",
-    heroImg: "https://images.unsplash.com/photo-1590011502933-28c00547902d?auto=format&fit=crop&q=80&w=2000",
-    intro: "Surplombant les bouches de Bonifacio, votre propriété mérite une gestion millimétrée. Nous transformons votre demeure en une escale de luxe inoubliable.",
-    localExpertise: "Le marché de Bonifacio est unique. Nous gérons l'accès complexe à la Citadelle et les domaines de Sperone avec une logistique éprouvée et une discrétion absolue.",
-    neighborhoods: ["Citadelle", "Sperone", "Marina de Bonifacio", "Maora", "Piantarella"],
-    metaTitle: "Conciergerie Bonifacio | Gestion Locative d'Exception | Xiri",
-    metaDesc: "Gestion Airbnb à Bonifacio. Xiri s'occupe de tout pour votre propriété. Sécurité, légalité et revenus optimisés sans compromis."
-  },
-  "ajaccio": {
-    id: "ajaccio",
-    name: "Ajaccio",
-    title: "Conciergerie Ajaccio : Gestion Sereine en Cité Impériale",
-    heroImg: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=2000",
-    intro: "Du cours Napoléon aux Îles Sanguinaires, Ajaccio est une destination de premier plan. Nous gérons vos appartements et villas avec une rigueur absolue.",
-    localExpertise: "En tant que capitale régionale, Ajaccio impose des normes strictes. Xiri sécurise votre activité : 100% légal, nous gérons toutes les déclarations administratives.",
-    neighborhoods: ["Route des Sanguinaires", "Casone", "Cours Napoléon", "Porticcio", "Mezzavia"],
-    metaTitle: "Conciergerie Ajaccio | Gestion Airbnb & Villas | Xiri",
-    metaDesc: "Expert en gestion locative à Ajaccio. Délégation totale, zéro effort pour le propriétaire. On gère tout pour votre bien ajaccien."
-  },
   "calvi": {
     id: "calvi",
     name: "Calvi",
