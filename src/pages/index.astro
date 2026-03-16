@@ -12,6 +12,7 @@ import Contact from "../components/Contact";
 import RelatedSites from "../components/RelatedSites.astro";
 import RegionAccordion from "../components/RegionAccordion.astro";
 import OperationalSetup from "../components/OperationalSetup.astro";
+import AISimulator from "../components/AISimulator";
 
 // Define the title and description for SEO
 const title = "Xiri Conciergerie | L'Art de Vivre - Gestion Locative Premium";
@@ -23,19 +24,24 @@ const description =
   <main class="space-y-12 lg:space-y-16 xl:space-y-20">
     <Hero />
     <Services />
-    <Testimonials client:visible />
     <RegionAccordion />
     <HowItWorks />
-    <Ecosystem />
+    
+    <AISimulator client:visible />
     <OperationalSetup />
-    <Pricing />
     <section id="simulator">
       <CalendlyEmbed client:visible />
     </section>
+    
+    <Pricing />
+    <Testimonials client:visible />
     <FAQ client:visible />
+    
     <section id="contact">
       <Contact client:visible />
     </section>
+
+    <Ecosystem />
     <RelatedSites />
 
   </main>
