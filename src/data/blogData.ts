@@ -47,21 +47,6 @@ export const blogData: Record<string, ArticleData> = {
       "Cette rigueur administrative vous protège contre tout contrôle et garantit une image irréprochable auprès des institutions locales. La sérénité passe aussi par une gestion fiscale limpide."
     ]
   },
-  "reglementation-airbnb-ajaccio": {
-    id: "reglementation-airbnb-ajaccio",
-    category: "MUNICIPAL",
-    date: "15 FÉVRIER 2024",
-    readTime: "7 MIN",
-    author: "Jean-Baptiste G., Expert Réglementaire",
-    title: "Réglementation Ajaccio : Ce qu'il faut savoir",
-    excerpt: "La ville d'Ajaccio a durci les règles pour les locations saisonnières. Xiri vous assure une mise en conformité totale.",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=1200",
-    content: [
-      "La mairie d'Ajaccio impose désormais l'obtention d'un numéro d'enregistrement pour toute location saisonnière, même courte. Dans certaines zones du centre-ville, des règles de changement d'usage peuvent s'appliquer si vous louez plus d'une certaine durée ou plusieurs appartements.",
-      "Notre équipe à Ajaccio connaît parfaitement ces dossiers. Nous effectuons pour vous la déclaration initiale et le suivi des quotas si nécessaire. Vous ne prenez aucun risque de amende administrative (pouvant atteindre 50 000€).",
-      "Xiri & Co est votre bouclier réglementaire. On gère tout le dossier en mairie pour que votre activité reste 100% légale et transparente vis-à-vis du voisinage et de la municipalité."
-    ]
-  },
   "residence-secondaire-corse-liberte": {
     id: "residence-secondaire-corse-liberte",
     category: "GESTION",

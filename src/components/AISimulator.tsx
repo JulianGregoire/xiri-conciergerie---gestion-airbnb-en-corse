@@ -212,7 +212,7 @@ const AISimulator: React.FC = () => {
                       <MapPin className="absolute left-0 bottom-4 text-xiri-gold" size={20} />
                       <input
                         type="text"
-                        placeholder="Ex: Paris, Cannes, Megève, Ajaccio..."
+                        placeholder="Ex: Calvi, Lumio, Megève, Quimper..."
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                         className="w-full bg-transparent border-b-2 border-xiri-navy/10 py-3 pl-8 outline-none focus:border-xiri-gold transition-all text-lg font-serif placeholder:text-xiri-navy/20"
