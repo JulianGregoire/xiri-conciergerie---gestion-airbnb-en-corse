@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect, useRef } from 'react';
-import { Send, X, Sparkles, MessageSquare, RotateCcw } from 'lucide-react';
+import { Send, X, MessageSquare, RotateCcw } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import chatbotIcon from '../images/chatbot.png';
@@ -175,8 +175,8 @@ const ChatBot: React.FC = () => {
             {/* Header */}
             <div className="bg-xiri-navy p-5 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-                  <Sparkles size={20} className="text-xiri-gold" />
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden p-1.5 shadow-inner">
+                  <img src={chatbotIcon.src} alt="Xiri AI" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <h3 className="text-white text-sm font-bold uppercase tracking-widest">Assistant XIRI</h3>
