@@ -1,6 +1,6 @@
 import corseImg from "../images/corse image.jpg";
 import finistereImg from "../images/Finistere Sud.jpg";
-import heraultImg from "../images/Hérault.jpg";
+import heraultImg from "../images/Herault.jpg";
 import savoieImg from "../images/Savoie.jpg";
 
 export const regions = [
