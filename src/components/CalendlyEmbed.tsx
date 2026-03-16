@@ -24,9 +24,9 @@ const CalendlyEmbed: React.FC = () => {
                                 <span className="text-xiri-gold text-[10px] font-black uppercase tracking-[0.6em]">Expertise Prédictive</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-serif text-xiri-navy leading-[1.1]">
-                                Audit & <br />
+                                Prendre <br />
                                 <span className="relative inline-block text-xiri-gold italic font-light">
-                                    Accompagnement
+                                    Rendez-vous
                                     <motion.span
                                         initial={{ width: 0 }}
                                         whileInView={{ width: '100%' }}
