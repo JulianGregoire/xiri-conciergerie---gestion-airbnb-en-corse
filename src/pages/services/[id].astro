@@ -130,7 +130,57 @@ const { service } = Astro.props;
                     </div>
                 </div>
 
+                    <div class="lg:col-span-4 lg:pt-32">
+                        <div class="sticky top-40 space-y-16">
+                            <div
+                                class="aspect-[3/4] overflow-hidden p-[10px] bg-white shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-1000"
+                            >
+                                <img
+                                    src={service.gallery[0]}
+                                    alt="Atmosphere"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div class="space-y-8">
+                                <h3
+                                    class="text-[10px] uppercase tracking-[0.5em] font-bold text-xiri-gold"
+                                >
+                                    La Méthode Xiri
+                                </h3>
+                                <p
+                                    class="text-[15px] text-[#000000] leading-relaxed font-medium"
+                                >
+                                    "Nous ne gérons pas seulement des propriétés
+                                    ; nous protégeons l'héritage de nos clients
+                                    tout en offrant une immersion authentique
+                                    aux voyageurs."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section
+            class="h-[60vh] relative flex items-center justify-center bg-xiri-navy overflow-hidden"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1200"
+                class="absolute inset-0 w-full h-full object-cover opacity-30 scale-110"
+                alt="Sea mood"
+            />
+            <div class="relative z-10 text-center px-6 max-w-4xl">
+                <h3
+                    class="text-3xl md:text-5xl font-serif text-white leading-relaxed"
+                >
+                    "Rien n'est laissé au hasard, car chaque détail raconte une
+                    histoire."
+                </h3>
             </div>
         </section>
 
