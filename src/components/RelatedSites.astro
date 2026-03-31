@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 import corseImg from "../images/corse.png";
 import finistereImg from "../images/finister.png";
 import heraultImg from "../images/herault.png";
-import megeveImg from "../images/savoie_megeve.png";
+import megeveImg from "../images/savoie2.jpg";
 
 const otherSites = [
     {
@@ -13,22 +13,25 @@ const otherSites = [
             "Une immersion confidentielle dans le maquis. Pierres ancestrales et hospitalité traditionnelle au cœur de l'île.",
         image: corseImg,
         link: "https://cassetta92-lumio.xiri-conciergerie.fr/",
+        email: "xirihouse34@gmail.com"
     },
     {
-        title: "Mobilhome au Finistère",
+        title: "Mobilhome en Finistère",
         category: "ÉVASION IODÉE",
         description:
             "Le confort moderne face à la puissance de l'Atlantique. Une escale nature sur les côtes sauvages de Bretagne.",
         image: finistereImg,
         link: "https://finistere-mobilhome.xiri-conciergerie.fr/",
+        email: "xirihouse34@gmail.com"
     },
     {
-        title: "Maison d’Hôte au Hérault",
+        title: "Maison d’Hôte en Hérault",
         category: "DOUCEUR OCCITANE",
         description:
             "L'élégance du Sud entre vignes et oliviers. Une parenthèse de sérénité dans l'arrière-pays héraultais.",
         image: heraultImg,
         link: "https://herault-xiri.pages.dev/",
+        email: "xirihouse34@gmail.com"
     },
     {
         title: "Studio à Megève",
@@ -37,6 +40,7 @@ const otherSites = [
             "L'élégance du bois et le confort moderne au pied des pistes. Une escale de luxe pour vos séjours en altitude.",
         image: megeveImg,
         link: "#",
+        email: "xirihouse34@gmail.com"
     },
 ];
 ---
@@ -109,6 +113,9 @@ const otherSites = [
                             </h3>
                             <p class="text-[14px] text-[#000000] leading-relaxed font-medium max-w-xs mx-auto md:mx-0">
                                 "{site.description}"
+                            </p>
+                            <p class="text-[11px] text-xiri-navy/60 font-bold tracking-widest mt-4">
+                                CONTACT : {site.email}
                             </p>
 
                             <div class="pt-6">
