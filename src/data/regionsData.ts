@@ -49,7 +49,7 @@ export const regions = [
         villes: [
             { name: "Narbonne", href: "/villes/narbonne" },
             { name: "Valras-Plage", href: "/villes/valras-plage" },
-            { name: "Cap d'Agde", href: "/villes/cap-dagde" },
+            { name: "Béziers", href: "/villes/beziers" },
         ],
     },
     {

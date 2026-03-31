@@ -95,16 +95,16 @@ export const localSeoData: Record<string, LocalCityData> = {
     metaTitle: "Conciergerie Valras-Plage | Gestion Airbnb & Saisonnière | Xiri",
     metaDesc: "Gérez votre bien à Valras-Plage en toute simplicité. Xiri s'occupe de la diffusion, du ménage et de l'accueil de vos voyageurs."
   },
-  "cap-dagde": {
-    id: "cap-dagde",
-    name: "Cap d'Agde",
-    title: "Conciergerie Cap d'Agde : L'Expertise sur la Perle Noire",
+  "beziers": {
+    id: "beziers",
+    name: "Béziers",
+    title: "Conciergerie Béziers : Gestion de Patrimoine en Terre d'Occitanie",
     heroImg: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=2000",
-    intro: "Première station balnéaire de France, le Cap d'Agde nécessite une réactivité sans faille. Nous gérons vos appartements avec une efficacité redoutable.",
-    localExpertise: "Nous maîtrisons les flux touristiques massifs du Cap. Notre équipe locale assure une rotation rapide et de haute qualité pour maximiser vos revenus.",
-    neighborhoods: ["Le Port", "Rochelongue", "La Roquille", "หมู่บ้าน Naturiste", "Mont Saint-Loup"],
-    metaTitle: "Conciergerie Cap d'Agde | Gestion Airbnb & Appartements | Xiri",
-    metaDesc: "Optimisez votre rentabilité locative au Cap d'Agde avec Xiri. Gestion complète 24/7 et accueil professionnel de vos voyageurs."
+    intro: "Ville d'histoire et de culture, Béziers est un carrefour stratégique de l'Hérault. Nous valorisons vos biens au cœur de cette cité millénaire.",
+    localExpertise: "Expertise sur le marché biterrois, du centre historique aux nouveaux quartiers. Nous assurons une gestion rigoureuse et une rentabilité optimisée.",
+    neighborhoods: ["Centre Historique", "Les Allées", "Fonseranes", "Champ de Mars", "La Devèze"],
+    metaTitle: "Conciergerie Béziers | Gestion Airbnb & Patrimoine | Xiri",
+    metaDesc: "Gérez votre bien à Béziers en toute sérénité. Xiri s'occupe de tout : accueil, ménage et optimisation de vos revenus locatifs."
   },
 
   // --- SAVOIE ---
