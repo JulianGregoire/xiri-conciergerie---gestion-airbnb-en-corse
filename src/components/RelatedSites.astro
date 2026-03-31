@@ -13,7 +13,9 @@ const otherSites = [
             "Une immersion confidentielle dans le maquis. Pierres ancestrales et hospitalité traditionnelle au cœur de l'île.",
         image: corseImg,
         link: "https://cassetta92-lumio.xiri-conciergerie.fr/",
-        email: "xirihouse34@gmail.com"
+        email: "xirihouse34@gmail.com",
+        availability: "Ouvert d'avril à octobre",
+        price: "À partir de 98€ / nuit"
     },
     {
         title: "Mobilhome en Finistère",
@@ -22,7 +24,9 @@ const otherSites = [
             "Le confort moderne face à la puissance de l'Atlantique. Une escale nature sur les côtes sauvages de Bretagne.",
         image: finistereImg,
         link: "https://finistere-mobilhome.xiri-conciergerie.fr/",
-        email: "xirihouse34@gmail.com"
+        email: "xirihouse34@gmail.com",
+        availability: "Ouvert du 1er mars au 31 octobre",
+        price: "95€ / nuit (juillet & août)"
     },
     {
         title: "Maison d’Hôte en Hérault",
@@ -31,7 +35,9 @@ const otherSites = [
             "L'élégance du Sud entre vignes et oliviers. Une parenthèse de sérénité dans l'arrière-pays héraultais.",
         image: heraultImg,
         link: "https://herault-xiri.pages.dev/",
-        email: "xirihouse34@gmail.com"
+        email: "xirihouse34@gmail.com",
+        availability: "Ouvert de mars à décembre",
+        price: "Chambre d'hôtes dès 90€ / nuit"
     },
     {
         title: "Studio à Megève",
@@ -40,7 +46,9 @@ const otherSites = [
             "L'élégance du bois et le confort moderne au pied des pistes. Une escale de luxe pour vos séjours en altitude.",
         image: megeveImg,
         link: "#",
-        email: "xirihouse34@gmail.com"
+        email: "xirihouse34@gmail.com",
+        availability: "Ouvert toute l'année",
+        price: "À partir de 144€ / nuit"
     },
 ];
 ---
@@ -114,9 +122,20 @@ const otherSites = [
                             <p class="text-[14px] text-[#000000] leading-relaxed font-medium max-w-xs mx-auto md:mx-0">
                                 "{site.description}"
                             </p>
-                            <p class="text-[11px] text-xiri-navy/60 font-bold tracking-widest mt-4">
-                                CONTACT : {site.email}
-                            </p>
+
+                            <div class="space-y-2 pt-4 border-t border-xiri-navy/5">
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-xiri-gold/60">Disponibilité</span>
+                                    <span class="text-[11px] font-bold text-xiri-navy uppercase tracking-widest">{site.availability}</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-xiri-gold/60">Tarif</span>
+                                    <span class="text-[13px] font-serif text-xiri-navy">{site.price}</span>
+                                </div>
+                                <p class="text-[9px] text-xiri-navy/40 font-bold tracking-[0.1em] uppercase pt-2">
+                                    Contact : {site.email}
+                                </p>
+                            </div>
 
                             <div class="pt-6">
                                 <div class="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-xiri-navy">
