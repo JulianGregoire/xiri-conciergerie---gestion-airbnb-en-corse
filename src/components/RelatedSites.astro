@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import corseImg from "../images/corse.png";
 import finistereImg from "../images/finister.png";
 import heraultImg from "../images/herault.png";
+import megeveImg from "../images/savoie_megeve.png";
 
 const otherSites = [
     {
@@ -28,6 +29,14 @@ const otherSites = [
             "L'élégance du Sud entre vignes et oliviers. Une parenthèse de sérénité dans l'arrière-pays héraultais.",
         image: heraultImg,
         link: "https://herault-xiri.pages.dev/",
+    },
+    {
+        title: "Studio à Megève",
+        category: "ÉVASION ALPINE",
+        description:
+            "L'élégance du bois et le confort moderne au pied des pistes. Une escale de luxe pour vos séjours en altitude.",
+        image: megeveImg,
+        link: "#",
     },
 ];
 ---
@@ -59,7 +68,7 @@ const otherSites = [
             <div class="w-24 h-[1px] bg-xiri-gold mx-auto mt-12"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 lg:gap-x-12">
             {
                 otherSites.map((site) => (
                     <a
