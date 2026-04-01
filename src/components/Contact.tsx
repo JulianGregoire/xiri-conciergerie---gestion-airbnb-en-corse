@@ -46,7 +46,11 @@ const Contact: React.FC = () => {
           {/* Right: form */}
           <div className="lg:col-span-7">
             <div className="bg-white p-6 md:p-8 shadow-[0_32px_80px_-20px_rgba(27,43,68,0.2)] rounded-3xl border border-xiri-navy/5">
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form
+                className="space-y-5"
+                action="https://formbold.com/s/9xmDR"
+                method="POST"
+              >
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
@@ -57,6 +61,7 @@ const Contact: React.FC = () => {
                       type="text"
                       required
                       id="name"
+                      name="name"
                       placeholder="Jean Dupont"
                       className="w-full bg-[#F8FAFC] border border-xiri-navy/10 py-3.5 px-4 rounded-xl outline-none focus:border-xiri-gold focus:bg-white transition-all text-[14px] text-xiri-navy placeholder:text-xiri-navy/30"
                     />
@@ -69,6 +74,7 @@ const Contact: React.FC = () => {
                       type="email"
                       required
                       id="email"
+                      name="email"
                       placeholder="jean@example.com"
                       className="w-full bg-[#F8FAFC] border border-xiri-navy/10 py-3.5 px-4 rounded-xl outline-none focus:border-xiri-gold focus:bg-white transition-all text-[14px] text-xiri-navy placeholder:text-xiri-navy/30"
                     />
@@ -81,6 +87,7 @@ const Contact: React.FC = () => {
                   </label>
                   <select
                     id="property"
+                    name="property"
                     className="w-full bg-[#F8FAFC] border border-xiri-navy/10 py-3.5 px-4 rounded-xl outline-none focus:border-xiri-gold focus:bg-white transition-all text-[14px] text-xiri-navy appearance-none"
                   >
                     <option>Villa avec piscine</option>
@@ -97,6 +104,7 @@ const Contact: React.FC = () => {
                   <textarea
                     rows={4}
                     id="message"
+                    name="message"
                     placeholder="Décrivez votre bien et vos objectifs..."
                     className="w-full bg-[#F8FAFC] border border-xiri-navy/10 py-3.5 px-4 rounded-xl outline-none focus:border-xiri-gold focus:bg-white transition-all text-[14px] text-xiri-navy placeholder:text-xiri-navy/30 resize-none"
                   ></textarea>
