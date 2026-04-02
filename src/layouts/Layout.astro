@@ -9,6 +9,8 @@ interface Props {
     description?: string;
     navLight?: boolean;
     navSolid?: boolean;
+    ogImage?: string;
+    schema?: string;
 }
 
 const {
@@ -16,7 +18,49 @@ const {
     description = "Xiri Conciergerie - Gestion premium de locations saisonnières en France. Optimisez vos revenus locatifs en toute sérénité.",
     navLight = false,
     navSolid = false,
+    ogImage = "https://xiri-conciergerie.fr/og-default.jpg",
+    schema,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, "https://xiri-conciergerie.fr");
+
+const organizationSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Xiri Conciergerie",
+    "url": "https://xiri-conciergerie.fr",
+    "logo": "https://xiri-conciergerie.fr/favicon.svg",
+    "description": "Conciergerie Airbnb premium en Corse, Hérault, Finistère Sud et Savoie. Gestion complète de locations saisonnières.",
+    "telephone": "+33782312206",
+    "email": "xirihouse34@gmail.com",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 Impasse Lucie Aubrac",
+        "addressLocality": "Nissan-lez-Ensérune",
+        "postalCode": "34440",
+        "addressCountry": "FR"
+    },
+    "areaServed": [
+        { "@type": "Place", "name": "Corse" },
+        { "@type": "Place", "name": "Hérault" },
+        { "@type": "Place", "name": "Finistère Sud" },
+        { "@type": "Place", "name": "Savoie" }
+    ],
+    "sameAs": []
+});
+
+const breadcrumbSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://xiri-conciergerie.fr/"
+        }
+    ]
+});
 ---
 
 <!doctype html>
@@ -28,6 +72,28 @@ const {
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL.href} />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL.href} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:site_name" content="Xiri Conciergerie" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <!-- Schema.org -->
+        <script type="application/ld+json" set:html={organizationSchema} />
+        <script type="application/ld+json" set:html={breadcrumbSchema} />
+        {schema && <script type="application/ld+json" set:html={schema} />}
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
             rel="preconnect"

@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Mentions Légales | Xiri Conciergerie";
+const description = "Mentions légales du site Xiri Conciergerie. Informations sur l'éditeur, l'hébergeur et les conditions d'utilisation.";
+---
+
+<Layout title={title} description={description} navSolid={true}>
+  <main class="bg-white">
+    <section class="pt-32 pb-20 px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto prose prose-xiri">
+        <h1 class="text-4xl font-serif text-xiri-navy mb-12">Mentions Légales</h1>
+
+        <h2 class="text-xl font-serif text-xiri-navy mt-10 mb-4">1. Éditeur du site</h2>
+        <p class="text-xiri-navy/70 leading-relaxed">
+          <strong>Nom :</strong> XIRI-HOUSE<br />
+          <strong>Adresse :</strong> 9 Impasse Lucie Aubrac, 34440 Nissan-lez-Ensérune, France<br />
+          <strong>Téléphone :</strong> 07 82 31 22 06<br />
+          <strong>Email :</strong> xirihouse34@gmail.com<br />
+          <strong>Activité :</strong> Conciergerie et gestion locative saisonnière — co-hôte sur plateformes de location
+        </p>
+
+        <h2 class="text-xl font-serif text-xiri-navy mt-10 mb-4">2. Statut juridique</h2>
+        <p class="text-xiri-navy/70 leading-relaxed">
+          La conciergerie XIRI-HOUSE n'est pas titulaire de la carte professionnelle visée par la loi du 02/01/1970 (loi Hoguet).
+          Elle n'effectue aucun maniement de fonds. Les prestations sont payées sur facture.
+          XIRI-HOUSE agit en tant que co-hôte sur les diverses plateformes de location.
+        </p>
+
+        <h2 class="text-xl font-serif text-xiri-navy mt-10 mb-4">3. Hébergement</h2>
+        <p class="text-xiri-navy/70 leading-relaxed">
+          Ce site est hébergé par :<br />
+          <strong>Vercel Inc.</strong><br />
+          440 N Bashaw St, Covina, CA 91723, États-Unis<br />
+          Site web : <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="text-xiri-gold hover:underline">vercel.com</a>
+        </p>
+
+        <h2 class="text-xl font-serif text-xiri-navy mt-10 mb-4">4. Propriété intellectuelle</h2>
+        <p class="text-xiri-navy/70 leading-relaxed">
+          L'ensemble du contenu du site (textes, images, graphismes, logo, icônes, sons, logiciels) est la propriété de XIRI-HOUSE
+          ou de ses partenaires et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.
+          Toute reproduction, représentation, modification ou adaptation de tout ou partie du site est strictement interdite sans autorisation écrite préalable.
+        </p>
+
+        <h2 class="text-xl font-serif text-xiri-navy mt-10 mb-4">5. Responsabilité</h2>
+        <p class="text-xiri-navy/70 leading-relaxed">
+          XIRI-HOUSE s'efforce de fournir des informations aussi précises que possible sur le site.
+          Toutefois, elle ne pourra être tenue responsable des omissions, des inexactitudes ou des carences dans la mise à jour de ces informations.
+          XIRI-HOUSE décline toute responsabilité pour les difficultés rencontrées lors de l'accès au site ou pour toute défaillance de communication.
+        </p>
+
+        <h2 class="text-xl font-serif text-xiri-navy mt-10 mb-4">6. Contact</h2>
+        <p class="text-xiri-navy/70 leading-relaxed">
+          Pour toute question relative aux mentions légales, vous pouvez nous contacter à l'adresse :
+          <a href="mailto:xirihouse34@gmail.com" class="text-xiri-gold hover:underline">xirihouse34@gmail.com</a>
+        </p>
+
+        <p class="text-xiri-navy/40 text-sm mt-16 pt-8 border-t border-xiri-navy/10">
+          Dernière mise à jour : Avril 2026
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -13,9 +13,9 @@ export function getStaticPaths() {
 
 const { region } = Astro.props;
 
-// Meta tags
-const title = `${region.name} | Xiri Conciergerie Premium`;
-const description = region.description;
+// Meta tags — SEO optimized
+const title = `Conciergerie Airbnb ${region.name} | Gestion Location Saisonnière | Xiri`;
+const description = `Conciergerie Airbnb en ${region.name}. ${region.description}`;
 ---
 
 <Layout title={title} description={description} navSolid={true}>

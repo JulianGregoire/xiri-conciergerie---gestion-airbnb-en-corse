@@ -14,12 +14,67 @@ import RegionAccordion from "../components/RegionAccordion.astro";
 import OperationalSetup from "../components/OperationalSetup.astro";
 
 // Define the title and description for SEO
-const title = "Xiri Conciergerie | L'Art de Vivre - Gestion Locative Premium";
+const title = "Conciergerie Airbnb Corse, Hérault, Finistère & Savoie | Xiri Conciergerie";
 const description =
-  "Xiri Conciergerie : Gestion complète de vos locations saisonnières. Optimisation des revenus, ménage, maintenance et accueil premium.";
+  "Conciergerie Airbnb premium en Corse, Hérault, Finistère Sud et Savoie. Gestion complète de vos locations saisonnières : marketing, ménage 5★, yield management. Commission dès 12%.";
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Est-ce légal de louer sur Airbnb avec Xiri Conciergerie ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Nous gérons toutes les démarches : déclaration en mairie, numéro d'enregistrement, taxe de séjour. Statut LMNP mis en place si souhaité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qui encaisse l'argent des locations ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vous. Les paiements arrivent directement sur votre compte (Stripe perso pour les réservations directes, Airbnb pour les plateformes). Xiri prélève sa commission après coup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de jours puis-je louer mon bien ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour une résidence secondaire, aucune limite. Vous pouvez maximiser toute l'année, haute saison comme basse saison."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qui paie en cas de casse ou dégradation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caution sécurisée (Swikly / Stripe) pour chaque séjour. En cas de dégradation, nous gérons le dossier et activons les assurances (AirCover ou privée)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment sont sélectionnés les voyageurs ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vérification d'identité, historique Airbnb, motif du séjour. Aucun profil douteux ne passe. Votre bien mérite mieux."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je bloquer des dates pour usage personnel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Via votre espace propriétaire, vous bloquez les dates que vous souhaitez en temps réel. Votre bien reste le vôtre."
+      }
+    }
+  ]
+});
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={faqSchema}>
   <main class="space-y-12 lg:space-y-16 xl:space-y-20">
     <Hero />
     <Services />

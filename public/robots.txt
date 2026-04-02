@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xiri-conciergerie.fr/sitemap-index.xml

@@ -14,8 +14,8 @@ const { service } = Astro.props;
 ---
 
 <Layout
-    title={`${service.title} | Xiri Conciergerie`}
-    description={service.description}
+    title={`${service.title} | Conciergerie Airbnb | Xiri`}
+    description={service.fullContent ? service.fullContent.substring(0, 155) + '...' : service.description}
     navSolid={true}
 >
     <div class="min-h-screen bg-[#FDFDFD]">

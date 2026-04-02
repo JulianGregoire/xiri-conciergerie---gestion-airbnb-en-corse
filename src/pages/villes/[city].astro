@@ -24,9 +24,25 @@ const strongPoints = [
     "Maintenance & Entretien d'excellence",
     "Visibilité financière en temps réel",
 ];
+
+const localBusinessSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `Xiri Conciergerie ${data.name}`,
+    "description": data.metaDesc,
+    "url": `https://xiri-conciergerie.fr/villes/${data.id}`,
+    "telephone": "+33782312206",
+    "email": "xirihouse34@gmail.com",
+    "areaServed": {
+        "@type": "Place",
+        "name": data.name
+    },
+    "serviceType": ["Conciergerie Airbnb", "Gestion locative saisonnière", "Ménage hôtelier", "Accueil voyageurs"],
+    "priceRange": "12%-18% commission"
+});
 ---
 
-<Layout title={data.metaTitle} description={data.metaDesc} navSolid={true}>
+<Layout title={data.metaTitle} description={data.metaDesc} navSolid={true} schema={localBusinessSchema}>
     <main class="bg-white">
         <!-- Hero Section - Refactored to match Home design -->
         <section

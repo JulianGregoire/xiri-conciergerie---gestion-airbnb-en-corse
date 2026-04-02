@@ -49,7 +49,7 @@ const CalendlyEmbed: React.FC = () => {
                             className="bg-white rounded-[32px] shadow-[0_32px_80px_-20px_rgba(15,23,42,0.1)] border border-xiri-navy/5 overflow-hidden p-2 md:p-4"
                         >
                             <iframe
-                                src="https://calendly.com/xirihouse34/30min?embed_domain=localhost&embed_type=Inline"
+                                src="https://calendly.com/xirihouse34/30min?embed_domain=xiri-conciergerie.fr&embed_type=Inline"
                                 width="100%"
                                 height="700"
                                 frameBorder="0"
