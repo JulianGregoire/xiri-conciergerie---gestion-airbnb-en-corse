@@ -7,15 +7,16 @@ import megeveImg from "../images/savoie2.jpg";
 
 const otherSites = [
     {
-        title: "Maison d’Hôte en Corse",
+        title: "Studio d'hôte en Corse",
         category: "CHARME & AUTHENTICITÉ",
         description:
             "Une immersion confidentielle dans le maquis. Pierres ancestrales et hospitalité traditionnelle au cœur de l'île.",
         image: corseImg,
         link: "https://cassetta92-lumio.xiri-conciergerie.fr/",
         email: "xirihouse34@gmail.com",
-        availability: "Ouvert d'avril à octobre",
-        price: "À partir de 98€ / nuit"
+        phone: "06 11 66 35 19",
+        availability: "Ouvert toute l'année",
+        price: "À partir de 95€ / nuit"
     },
     {
         title: "Mobilhome en Finistère",
@@ -26,7 +27,7 @@ const otherSites = [
         link: "https://finistere-mobilhome.xiri-conciergerie.fr/",
         email: "xirihouse34@gmail.com",
         availability: "Ouvert du 1er mars au 31 octobre",
-        price: "95€ / nuit (juillet & août)"
+        price: "89€ / nuit (juillet & août)"
     },
     {
         title: "Maison d’Hôte en Hérault",
@@ -36,8 +37,8 @@ const otherSites = [
         image: heraultImg,
         link: "https://herault-xiri.pages.dev/",
         email: "xirihouse34@gmail.com",
-        availability: "Ouvert de mars à décembre",
-        price: "Chambre d'hôtes dès 90€ / nuit"
+        availability: "Ouvert toute l'année",
+        price: "Tarif 85€ / nuit"
     },
     {
         title: "Studio à Megève",
@@ -48,7 +49,7 @@ const otherSites = [
         link: "#",
         email: "xirihouse34@gmail.com",
         availability: "Ouvert toute l'année",
-        price: "À partir de 144€ / nuit"
+        price: "Tarif à partir de 115€ / nuit"
     },
 ];
 ---
@@ -133,7 +134,7 @@ const otherSites = [
                                     <span class="text-[13px] font-serif text-xiri-navy">{site.price}</span>
                                 </div>
                                 <p class="text-[9px] text-xiri-navy/40 font-bold tracking-[0.1em] uppercase pt-2">
-                                    Contact : {site.email}
+                                    Contact : {site.email} {site.phone && `| ${site.phone}`}
                                 </p>
                             </div>
 

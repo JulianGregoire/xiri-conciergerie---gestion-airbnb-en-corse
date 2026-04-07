@@ -36,7 +36,7 @@ const ChatBot: React.FC = () => {
   
   TON STYLE : Premium, professionnel, accueillant, concis.
   CONSIGNE : Si la question est trop précise, propose toujours un audit gratuit ou un rappel par un expert. Ne donne jamais de prix fixes sans préciser que c'est sur commission.
-  SUPPORT TECHNIQUE : En cas de problème technique sur le site ou le chatbot, invite l'utilisateur à contacter Julian Gregoire au 07 86 28 84 60 ou au 07 82 31 22 06.`;
+  SUPPORT TECHNIQUE : En cas de problème technique sur le site ou le chatbot, invite l'utilisateur à contacter Julian Gregoire au 07 86 28 84 60 ou au 06 11 66 35 19.`;
 
   // Load from localStorage
   useEffect(() => {
@@ -137,7 +137,7 @@ const ChatBot: React.FC = () => {
         const botMessage: Message = {
           id: (Date.now() + 1).toString(),
           type: 'bot',
-          text: "Je rencontre une petite difficulté technique. Pour une assistance immédiate, vous pouvez contacter Julian Gregoire au 07 86 28 84 60 ou au 07 82 31 22 06. Sinon, laissez-moi vos coordonnées pour qu'un conseiller vous rappelle.",
+          text: "Je rencontre une petite difficulté technique. Pour une assistance immédiate, vous pouvez contacter Julian Gregoire au 07 86 28 84 60 ou au 06 11 66 35 19. Sinon, laissez-moi vos coordonnées pour qu'un conseiller vous rappelle.",
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         };
         setMessages(prev => [...prev, botMessage]);
