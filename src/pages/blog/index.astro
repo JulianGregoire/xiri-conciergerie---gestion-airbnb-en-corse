@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { blogData } from "../../data/blogData";
 
-const articles = Object.values(blogData);
+const articles = Object.values(blogData).filter(article => !article.draft);
 const title = "Le Blog Xiri | Conseils & Actualités Conciergerie en France";
 const description =
     "Découvrez nos guides sur la gestion locative, la fiscalité LMNP et l'optimisation de vos revenus saisonniers en France.";
