@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { servicesData } from "../data/servicesData";
+import { services } from "../data/services";
 
 import img01 from "../images/gestion_annonces_airbnb.png";
 import img02 from "../images/selection_des_voyageurs.png";
@@ -9,7 +9,7 @@ import img04 from "../images/menagee.png";
 import img05 from "../images/assurances_cautions.png";
 import img06 from "../images/maintenance_assistance.png";
 
-const services = Object.values(servicesData);
+const services = Object.values(services);
 
 // Icon mapping to SVG components or imported Images
 const icons: Record<string, any> = {
@@ -50,7 +50,7 @@ const icons: Record<string, any> = {
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
             {
-                Object.entries(servicesData).map(([key, service]) => (
+                Object.entries(services).map(([key, service]) => (
                     <a 
                         href={`/services/${key}`}
                         class="bg-white border border-xiri-navy/10 p-6 md:p-8 h-full flex flex-col items-center text-center rounded-[28px] shadow-sm hover:shadow-xl hover:border-xiri-gold/30 hover:-translate-y-1 transition-all duration-500 no-underline group"

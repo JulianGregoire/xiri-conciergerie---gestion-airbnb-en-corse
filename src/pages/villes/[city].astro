@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { localSeoData } from "../../data/localSeoData";
+import { localSeo } from "../../data/local-seo";
 import {
     MapPin,
     ShieldCheck,
@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 
 export function getStaticPaths() {
-    return Object.keys(localSeoData).map((city) => ({
+    return Object.keys(localSeo).map((city) => ({
         params: { city },
-        props: { data: localSeoData[city] },
+        props: { data: localSeo[city] },
     }));
 }
 

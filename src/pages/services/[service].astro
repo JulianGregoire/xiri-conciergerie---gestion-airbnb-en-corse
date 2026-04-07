@@ -1,12 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { servicesData } from "../../data/servicesData";
+import { services } from "../../data/services";
 import { Minus, ArrowLeft } from "lucide-react";
 
 export function getStaticPaths() {
-    return Object.keys(servicesData).map((id) => ({
-        params: { id },
-        props: { service: servicesData[id] },
+    return Object.keys(services).map((service) => ({
+        params: { service },
+        props: { service: services[service] },
     }));
 }
 

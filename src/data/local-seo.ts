@@ -1,7 +1,7 @@
 
 import type { LocalCityData } from '../types';
 
-export const localSeoData: Record<string, LocalCityData> = {
+export const localSeo: Record<string, LocalCityData> = {
   // --- CORSE ---
   "calvi": {
     id: "calvi",

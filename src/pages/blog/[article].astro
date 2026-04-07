@@ -1,12 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { blogData } from "../../data/blogData";
+import { blog } from "../../data/blog";
 import { ArrowLeft, Clock, Facebook, Twitter, Linkedin } from "lucide-react";
 
 export function getStaticPaths() {
-    return Object.keys(blogData).map((id) => ({
-        params: { id },
-        props: { article: blogData[id] },
+    return Object.keys(blog).map((article) => ({
+        params: { article },
+        props: { article: blog[article] },
     }));
 }
 
@@ -138,23 +138,28 @@ const { article } = Astro.props;
                                 )
                             }
 
-                            {
-                                article.sections && article.sections.map((section) => (
-                                    <div class="mt-16 space-y-8">
-                                        <h2 class="text-2xl md:text-3xl font-serif text-xiri-navy border-l-4 border-xiri-gold pl-6 py-2">
-                                            {section.title}
-                                        </h2>
-                                        <div class="space-y-6">
-                                            {section.paragraphs.map((p) => (
-                                                <p>{p}</p>
-                                            ))}
-                                        </div>
-                                    </div>
-                                ))
-                            }
                         </div>
                     </div>
                 </div>
+
+                {
+                    article.sections && (
+                        <div class="space-y-24 mt-16">
+                            {article.sections.map((section) => (
+                                <div class="space-y-8 animate-fade-in-up">
+                                    <h2 class="text-3xl md:text-4xl font-serif text-xiri-navy border-l-4 border-xiri-gold pl-6 py-2">
+                                        {section.title}
+                                    </h2>
+                                    <div class="space-y-8 text-xl md:text-2xl text-[#000000] leading-loose font-medium">
+                                        {section.paragraphs.map((p) => (
+                                            <p>{p}</p>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )
+                }
 
                 <div
                     class="bg-xiri-navy p-12 lg:p-20 text-center space-y-8 relative overflow-hidden group rounded-3xl text-white"

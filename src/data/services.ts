@@ -1,7 +1,7 @@
 
 import type { ServiceData } from '../types';
 
-export const servicesData: Record<string, ServiceData> = {
+export const services: Record<string, ServiceData> = {
   "gestion-airbnb": {
     id: "01",
     title: "Marketing & Boost d'Annonces",

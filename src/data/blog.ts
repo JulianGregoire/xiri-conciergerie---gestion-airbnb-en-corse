@@ -1,7 +1,7 @@
 
 import type { ArticleData } from '../types';
 
-export const blogData: Record<string, ArticleData> = {
+export const blog: Record<string, ArticleData> = {
   "optimisation-annonce-2024": {
     id: "optimisation-annonce-2024",
     category: "CONSEILS",
