@@ -1,10 +1,10 @@
 
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import hero0 from '../images/hero.xiri.jpg';
-import hero1 from '../images/hero.xiri1.jpg';
-import hero2 from '../images/hero.xiri2.jpg';
-import hero3 from '../images/hero.xiri3.jpg';
+import hero0 from '../../assets/images/hero/hero.xiri.jpg';
+import hero1 from '../../assets/images/hero/hero.xiri1.jpg';
+import hero2 from '../../assets/images/hero/hero.xiri2.jpg';
+import hero3 from '../../assets/images/hero/hero.xiri3.jpg';
 
 const images = [hero0, hero1, hero2, hero3];
 

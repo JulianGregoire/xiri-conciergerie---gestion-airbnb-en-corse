@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Send, X, MessageSquare, RotateCcw } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import chatbotIcon from '../images/chatbot.png';
+import chatbotIcon from '../../assets/images/ui/chatbot.png';
 
 interface Message {
   id: string;

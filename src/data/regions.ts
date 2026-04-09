@@ -1,7 +1,7 @@
-import corseImg from "../images/corse image.jpg";
-import finistereImg from "../images/Finistere Sud.jpg";
-import heraultImg from "../images/Herault.jpg";
-import savoieImg from "../images/Savoie.jpg";
+import corseImg from "../assets/images/regions/corse.jpg";
+import finistereImg from "../assets/images/regions/finistere-sud.jpg";
+import heraultImg from "../assets/images/regions/herault.jpg";
+import savoieImg from "../assets/images/regions/savoie.jpg";
 
 export const regions = [
     {
