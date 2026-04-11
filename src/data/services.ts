@@ -4,7 +4,7 @@ import type { ServiceData } from '../types';
 export const services: Record<string, ServiceData> = {
   "gestion-airbnb": {
     id: "01",
-    title: "Marketing & Boost d'Annonces",
+    title: "Annonces qui performent",
     description: "Photos professionnelles, rédaction séduisante et tarification dynamique pour maximiser votre taux d'occupation.",
     benefit: "Maximisez vos revenus",
     benefitSummary: "Optimisez la visibilité de votre annonce et boostez vos revenus grâce à notre expertise en marketing digital et tarification dynamique.",
