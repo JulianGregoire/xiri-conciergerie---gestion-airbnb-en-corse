@@ -1,0 +1,29 @@
+---
+---
+
+<section class="py-10 md:py-12 bg-xiri-bg/60 border-y border-xiri-navy/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+            <!-- Accent vertical bar -->
+            <div class="hidden md:block w-1 h-20 bg-gradient-to-b from-xiri-gold to-xiri-gold/20 rounded-full flex-shrink-0"></div>
+
+            <div class="flex flex-col gap-2 md:gap-3">
+                <h2 class="text-[20px] md:text-[24px] font-serif text-xiri-navy leading-snug">
+                    Xiri, c'est avant tout <span class="text-xiri-gold">notre équipe.</span>
+                </h2>
+                <p class="text-[14px] md:text-[15px] text-xiri-navy/70 font-medium leading-relaxed max-w-2xl">
+                    Des gens du coin, implantés en Hérault, Savoie, Corse et Finistère Sud. Une vraie personne au bout du fil que vous pouvez appeler, rencontrer, et qui connaît votre bien.
+                </p>
+            </div>
+
+            <!-- Regions tags -->
+            <div class="flex flex-wrap gap-2 md:ml-auto md:flex-shrink-0">
+                {["Hérault", "Savoie", "Corse", "Finistère Sud"].map((region) => (
+                    <span class="px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-xiri-gold bg-xiri-gold/8 border border-xiri-gold/20 rounded-full">
+                        {region}
+                    </span>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

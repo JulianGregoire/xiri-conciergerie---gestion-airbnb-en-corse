@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/sections/Hero.astro";
+import Reassurance from "../components/sections/Reassurance.astro";
 import Services from "../components/sections/Services.astro";
 import HowItWorks from "../components/sections/HowItWorks.astro";
 import Ecosystem from "../components/sections/Ecosystem.astro";
 import Pricing from "../components/sections/Pricing.astro";
+import Parcours from "../components/sections/Parcours.astro";
 import CalendlyEmbed from "../components/ui/CalendlyEmbed";
 import Testimonials from "../components/ui/Testimonials";
 import FAQ from "../components/ui/FAQ";
@@ -77,16 +79,18 @@ const faqSchema = JSON.stringify({
 <Layout title={title} description={description} schema={faqSchema}>
   <main class="space-y-12 lg:space-y-16 xl:space-y-20">
     <Hero />
+    <Reassurance />
     <Services />
     <RegionAccordion />
     <HowItWorks />
-    
+
     <section id="simulator">
       <CalendlyEmbed client:visible />
     </section>
-    
+
     <OperationalSetup />
-    
+    <Parcours />
+
     <Pricing />
     <Testimonials client:visible />
     <FAQ client:visible />

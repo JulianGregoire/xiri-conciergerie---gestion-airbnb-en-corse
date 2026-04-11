@@ -80,15 +80,97 @@ const icons: Record<string, any> = {
                             {service.description}
                         </p>
 
-                        <div class="mt-auto pt-6 border-t border-xiri-navy/5 w-full flex items-center justify-center gap-3">
-                            <div class="w-1.5 h-1.5 rounded-full bg-xiri-gold animate-pulse"></div>
-                            <span class="text-[11px] font-black uppercase tracking-[0.2em] text-xiri-gold">
+                        <div class="mt-auto pt-6 border-t border-xiri-navy/5 w-full flex items-center justify-center">
+                            <span class="text-[13px] font-bold text-xiri-gold group-hover:translate-x-1 transition-transform duration-300">
                                 {service.benefit}
                             </span>
                         </div>
                     </a>
                 ))
             }
+        </div>
+
+        <!-- Section Premium: Visibilité Maximum -->
+        <div class="mt-16 md:mt-20 pt-14 border-t border-xiri-navy/8">
+            <div class="mb-8 md:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-5">
+                <div>
+                    <span class="text-xiri-gold text-[10px] font-bold uppercase tracking-[0.25em] mb-2 block">SERVICES PREMIUM</span>
+                    <h2 class="text-[26px] md:text-[30px] font-serif text-xiri-navy leading-[1.2]">
+                        Visibilité Maximum
+                    </h2>
+                </div>
+                <a
+                    href="#contact"
+                    class="bg-xiri-navy text-white px-5 py-2.5 text-[10px] uppercase tracking-[0.2em] font-extrabold hover:bg-xiri-gold transition-all duration-300 rounded-xl no-underline inline-block"
+                >
+                    En savoir plus
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Carte 1: Drone -->
+                <div class="bg-xiri-navy p-6 md:p-8 flex flex-col items-center text-center rounded-[28px] shadow-sm group relative overflow-hidden">
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-xiri-gold/10 rounded-full blur-2xl"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-xiri-gold/15 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
+                        <svg class="w-7 h-7 text-xiri-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.125A59.769 59.769 0 0121.485 12 59.768 59.768 0 013.27 20.875L5.999 12zm0 0h7.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl md:text-[22px] font-serif text-white leading-tight mb-3 relative z-10">
+                        Visite Drone Professionnelle
+                    </h3>
+                    <p class="text-[13px] md:text-[14px] text-white/60 font-medium leading-relaxed max-w-[260px] mb-6 relative z-10">
+                        Survol extérieur et visite intérieure filmée par drone. Des images qui font la différence et déclenchent les réservations.
+                    </p>
+                    <div class="mt-auto pt-5 border-t border-white/10 w-full flex items-center justify-center relative z-10">
+                        <span class="text-[13px] font-bold text-xiri-gold group-hover:translate-x-1 transition-transform duration-300">
+                            → Voir un exemple
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Carte 2: Site dédié -->
+                <div class="bg-xiri-navy p-6 md:p-8 flex flex-col items-center text-center rounded-[28px] shadow-sm group relative overflow-hidden">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-xiri-gold/10 rounded-full blur-2xl"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-xiri-gold/15 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
+                        <svg class="w-7 h-7 text-xiri-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl md:text-[22px] font-serif text-white leading-tight mb-3 relative z-10">
+                        Votre Bien a Son Site
+                    </h3>
+                    <p class="text-[13px] md:text-[14px] text-white/60 font-medium leading-relaxed max-w-[260px] mb-6 relative z-10">
+                        On crée un site dédié à votre logement avec son propre nom de domaine. Une vitrine professionnelle, indépendante des plateformes.
+                    </p>
+                    <div class="mt-auto pt-5 border-t border-white/10 w-full flex items-center justify-center relative z-10">
+                        <span class="text-[13px] font-bold text-xiri-gold group-hover:translate-x-1 transition-transform duration-300">
+                            → En savoir plus
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Carte 3: Catalogue -->
+                <div class="bg-xiri-navy p-6 md:p-8 flex flex-col items-center text-center rounded-[28px] shadow-sm group relative overflow-hidden">
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-xiri-gold/10 rounded-full blur-2xl"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-xiri-gold/15 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
+                        <svg class="w-7 h-7 text-xiri-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl md:text-[22px] font-serif text-white leading-tight mb-3 relative z-10">
+                        Référencé dans Notre Catalogue
+                    </h3>
+                    <p class="text-[13px] md:text-[14px] text-white/60 font-medium leading-relaxed max-w-[260px] mb-6 relative z-10">
+                        Votre bien est mis en avant sur notre site avec des liens qui boostent sa visibilité Google. Plus de trafic, plus de réservations directes.
+                    </p>
+                    <div class="mt-auto pt-5 border-t border-white/10 w-full flex items-center justify-center relative z-10">
+                        <span class="text-[13px] font-bold text-xiri-gold group-hover:translate-x-1 transition-transform duration-300">
+                            → Référencer mon bien
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
