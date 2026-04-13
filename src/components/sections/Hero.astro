@@ -1,6 +1,7 @@
 ---
-import HeroSlider from "../ui/HeroSlider";
+import { Image } from "astro:assets";
 import { Check, Star } from "lucide-react";
+import heroImg from "../../assets/images/hero/chambre-apaisante-et-moderne.webp";
 
 const strongPoints = [
     "Zéro appel, zéro stress",
@@ -145,7 +146,14 @@ const strongPoints = [
                     class="absolute -inset-4 bg-xiri-gold/5 rounded-[40px] -rotate-2"
                 >
                 </div>
-                <HeroSlider client:load />
+                <div class="relative h-full w-full rounded-[32px] overflow-hidden shadow-2xl">
+                    <Image
+                        src={heroImg}
+                        alt="Chambre apaisante et moderne – Xiri Conciergerie"
+                        class="w-full h-full object-cover"
+                        loading="eager"
+                    />
+                </div>
             </div>
         </div>
     </div>
