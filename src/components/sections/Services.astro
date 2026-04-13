@@ -9,6 +9,10 @@ import img04 from "../../assets/images/services/menage-linge.png";
 import img05 from "../../assets/images/services/assurances-cautions.png";
 import img06 from "../../assets/images/services/maintenance-assistance.png";
 
+import imgDrone from "../../assets/images/services/icone-de-drone.png";
+import imgSite from "../../assets/images/services/site-web-chambre-d-hote.png";
+import imgBoost from "../../assets/images/services/boost-sponso.png";
+
 // Icon mapping to SVG components or imported Images
 const icons: Record<string, any> = {
     "01": img01,
@@ -111,10 +115,8 @@ const icons: Record<string, any> = {
                 <!-- Carte 1: Drone -->
                 <div class="bg-xiri-navy p-6 md:p-8 flex flex-col items-center text-center rounded-[28px] shadow-sm group relative overflow-hidden">
                     <div class="absolute -top-6 -right-6 w-32 h-32 bg-xiri-gold/10 rounded-full blur-2xl"></div>
-                    <div class="w-14 h-14 rounded-2xl bg-xiri-gold/15 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
-                        <svg class="w-7 h-7 text-xiri-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.125A59.769 59.769 0 0121.485 12 59.768 59.768 0 013.27 20.875L5.999 12zm0 0h7.5" />
-                        </svg>
+                    <div class="w-16 h-16 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
+                        <Image src={imgDrone} alt="Visite drone professionnelle" class="w-16 h-16 object-contain" />
                     </div>
                     <h3 class="text-xl md:text-[22px] font-serif text-white leading-tight mb-3 relative z-10">
                         Visite Drone Professionnelle
@@ -132,10 +134,8 @@ const icons: Record<string, any> = {
                 <!-- Carte 2: Site dédié -->
                 <div class="bg-xiri-navy p-6 md:p-8 flex flex-col items-center text-center rounded-[28px] shadow-sm group relative overflow-hidden">
                     <div class="absolute -top-6 -left-6 w-32 h-32 bg-xiri-gold/10 rounded-full blur-2xl"></div>
-                    <div class="w-14 h-14 rounded-2xl bg-xiri-gold/15 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
-                        <svg class="w-7 h-7 text-xiri-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                        </svg>
+                    <div class="w-16 h-16 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
+                        <Image src={imgSite} alt="Votre bien a son site" class="w-16 h-16 object-contain" />
                     </div>
                     <h3 class="text-xl md:text-[22px] font-serif text-white leading-tight mb-3 relative z-10">
                         Votre Bien a Son Site
@@ -153,10 +153,8 @@ const icons: Record<string, any> = {
                 <!-- Carte 3: Catalogue -->
                 <div class="bg-xiri-navy p-6 md:p-8 flex flex-col items-center text-center rounded-[28px] shadow-sm group relative overflow-hidden">
                     <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-xiri-gold/10 rounded-full blur-2xl"></div>
-                    <div class="w-14 h-14 rounded-2xl bg-xiri-gold/15 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
-                        <svg class="w-7 h-7 text-xiri-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
-                        </svg>
+                    <div class="w-16 h-16 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 relative z-10">
+                        <Image src={imgBoost} alt="Référencé dans notre catalogue" class="w-16 h-16 object-contain" />
                     </div>
                     <h3 class="text-xl md:text-[22px] font-serif text-white leading-tight mb-3 relative z-10">
                         Référencé dans Notre Catalogue
