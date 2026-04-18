@@ -3,17 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/sections/Hero.astro";
 import Reassurance from "../components/sections/Reassurance.astro";
 import Services from "../components/sections/Services.astro";
-import HowItWorks from "../components/sections/HowItWorks.astro";
-import Ecosystem from "../components/sections/Ecosystem.astro";
 import Pricing from "../components/sections/Pricing.astro";
-import Parcours from "../components/sections/Parcours.astro";
 import CalendlyEmbed from "../components/ui/interactive/CalendlyEmbed";
 import Testimonials from "../components/ui/interactive/Testimonials";
 import FAQ from "../components/ui/interactive/FAQ";
 import Contact from "../components/ui/interactive/Contact";
 import RelatedSites from "../components/sections/RelatedSites.astro";
 import RegionAccordion from "../components/sections/RegionAccordion.astro";
-import OperationalSetup from "../components/sections/OperationalSetup.astro";
 
 // Define the title and description for SEO
 const title = "Conciergerie Airbnb Corse, Hérault, Finistère & Savoie | Xiri Conciergerie";
@@ -82,24 +78,19 @@ const faqSchema = JSON.stringify({
     <Reassurance />
     <Services />
     <RegionAccordion />
-    <HowItWorks />
 
     <section id="simulator">
       <CalendlyEmbed client:visible />
     </section>
 
-    <OperationalSetup />
-    <Parcours />
-
     <Pricing />
     <Testimonials client:visible />
     <FAQ client:visible />
-    
+
     <section id="contact">
       <Contact client:visible />
     </section>
 
-    <Ecosystem />
     <RelatedSites />
 
   </main>
