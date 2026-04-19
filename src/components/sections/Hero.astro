@@ -71,21 +71,6 @@ const strongPoints = [
                         }
                     </style>
 
-                    <!-- Google Rating Badge -->
-                    <div class="flex items-center gap-3">
-                        <div class="flex items-center gap-0.5">
-                            {[...Array(5)].map((_, i) => (
-                                <Star
-                                    key={i}
-                                    size={14}
-                                    className="text-[#fbbc04] fill-[#fbbc04]"
-                                />
-                            ))}
-                        </div>
-                        <div class="text-[13px] font-bold text-xiri-navy/80 tracking-wide">
-                            4.9/5 <span class="font-normal opacity-60 italic">sur Google</span>
-                        </div>
-                    </div>
 
                     <h1
                         class="text-[34px] sm:text-[42px] lg:text-[48px] font-serif text-xiri-navy leading-[1.1] tracking-tight"
@@ -122,7 +107,7 @@ const strongPoints = [
                     }
                 </ul>
 
-                <div class="flex flex-col gap-4 pt-4">
+                <div class="flex flex-col gap-5 pt-4">
                     <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
                         <a
                             href="#contact"
@@ -136,6 +121,36 @@ const strongPoints = [
                         >
                             Explorer nos services
                         </a>
+                    </div>
+
+                    <!-- Google Rating Badge — style Avenir -->
+                    <div class="flex items-center gap-3">
+                        <!-- Avatars superposés + compteur -->
+                        <div class="flex items-center">
+                            <div class="flex -space-x-2.5">
+                                <div class="w-9 h-9 rounded-full border-2 border-white bg-[#E8D5B0] flex items-center justify-center">
+                                    <span class="text-[11px] font-bold text-[#8B6914]">ML</span>
+                                </div>
+                                <div class="w-9 h-9 rounded-full border-2 border-white bg-[#C5D8E8] flex items-center justify-center">
+                                    <span class="text-[11px] font-bold text-[#1B4A6B]">TP</span>
+                                </div>
+                                <div class="w-9 h-9 rounded-full border-2 border-white bg-[#D4E8C5] flex items-center justify-center">
+                                    <span class="text-[11px] font-bold text-[#2D6B1B]">SC</span>
+                                </div>
+                            </div>
+                            <div class="w-9 h-9 rounded-full border-2 border-white bg-xiri-navy flex items-center justify-center -ml-2.5">
+                                <span class="text-[10px] font-black text-white">+50</span>
+                            </div>
+                        </div>
+                        <!-- Étoiles + note -->
+                        <div class="flex items-center gap-1.5">
+                            <div class="flex items-center gap-0.5">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} size={15} className="text-[#fbbc04] fill-[#fbbc04]" />
+                                ))}
+                            </div>
+                            <span class="text-[14px] font-bold text-xiri-navy">4.9/5 <span class="font-normal text-xiri-navy/60">sur Google</span></span>
+                        </div>
                     </div>
                 </div>
             </div>
