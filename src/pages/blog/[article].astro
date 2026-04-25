@@ -168,11 +168,11 @@ const { article } = Astro.props;
                                         {section.images && section.images.length > 0 && (
                                             <div class={`grid gap-6 mt-10 ${section.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
                                                 {section.images.map((img: any, i: number) => (
-                                                    <div class="aspect-[4/3] bg-xiri-navy/5 rounded-2xl overflow-hidden flex items-center justify-center">
+                                                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
                                                         {typeof img === 'string' ? (
-                                                            <img src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-contain" />
+                                                            <img src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover" />
                                                         ) : (
-                                                            <Image src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-contain" />
+                                                            <Image src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover" />
                                                         )}
                                                     </div>
                                                 ))}
