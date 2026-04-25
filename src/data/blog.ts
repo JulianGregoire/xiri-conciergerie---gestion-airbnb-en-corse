@@ -2,18 +2,23 @@
 import type { ArticleData } from '../types';
 
 // Images Megève
-import megeve1 from '../assets/images/blog/megeve/Megeve-article-image (1).jpeg';
-import megeve2 from '../assets/images/blog/megeve/Megeve-article-image (2).jpeg';
-import megeve3 from '../assets/images/blog/megeve/Megeve-article-image (3).jpeg';
-import megeve4 from '../assets/images/blog/megeve/Megeve-article-image (4).jpeg';
-import megeve5 from '../assets/images/blog/megeve/Megeve-article-image (5).jpeg';
-import megeve6 from '../assets/images/blog/megeve/Megeve-article-image (6).jpeg';
-import megeve7 from '../assets/images/blog/megeve/Megeve-article-image (7).jpeg';
-import megeve8 from '../assets/images/blog/megeve/Megeve-article-image (8).jpeg';
-import megeve9 from '../assets/images/blog/megeve/Megeve-article-image (9).jpeg';
-import megeve10 from '../assets/images/blog/megeve/Megeve-article-image (10).jpeg';
-import megeve11 from '../assets/images/blog/megeve/Megeve-article-image (11).jpeg';
-import megeve12 from '../assets/images/blog/megeve/Megeve-article-image (12).jpeg';
+import megeveHero         from '../assets/images/blog/megeve/haut-de-la-ville-megeve.jpeg';
+import megeveCentreVille  from '../assets/images/blog/megeve/centre-ville-megeve.jpeg';
+import chamonixCentre     from '../assets/images/blog/megeve/centre-ville-chamonix.jpeg';
+import appart1            from '../assets/images/blog/megeve/appartement-megeve (1).jpeg';
+import appart2            from '../assets/images/blog/megeve/appartement-megeve (2).jpeg';
+import appart3            from '../assets/images/blog/megeve/appartement-megeve (3).jpeg';
+import appart4            from '../assets/images/blog/megeve/appartement-megeve (4).jpeg';
+import appartChambre      from '../assets/images/blog/megeve/cahmbre-appartement.jpeg';
+import appartCuisine      from '../assets/images/blog/megeve/cuisine-appartement.jpeg';
+import terrasse           from '../assets/images/blog/megeve/terrasse-appartement.jpeg';
+import vueTerrasse        from '../assets/images/blog/megeve/vue-depuis-la-terrasse.jpeg';
+import hotel1             from '../assets/images/blog/megeve/vue-devant-hotel (1).jpeg';
+import hotel2             from '../assets/images/blog/megeve/vue-devant-hotel (2).jpeg';
+import hotel3             from '../assets/images/blog/megeve/vue-devant-hotel (3).jpeg';
+import hotel4             from '../assets/images/blog/megeve/vue-devant-hotel (4).jpeg';
+import montBlanc          from '../assets/images/blog/megeve/Mont-blanc.jpeg';
+import aiguilleduMidi     from '../assets/images/blog/megeve/aiguille-du-midi.jpeg';
 
 export const blog: Record<string, ArticleData> = {
   "optimisation-annonce-2024": {
@@ -102,7 +107,7 @@ export const blog: Record<string, ArticleData> = {
     author: "L'équipe Xiri",
     title: "Xiri ouvre une conciergerie à Megève : la Haute-Savoie rejoint notre réseau",
     excerpt: "Après l'Hérault, la Corse et le Finistère Sud, Xiri s'installe en Haute-Savoie avec une conciergerie physique à Megève et un premier appartement avec terrasse dans son catalogue.",
-    image: megeve1,
+    image: megeveHero,
     content: [
       "Après l'Hérault, la Corse et le Finistère Sud, Xiri pose ses valises en Haute-Savoie. Et on ne fait pas les choses à moitié : notre première adresse dans les Alpes, c'est Megève. Un territoire d'exception, qui méritait une présence à la hauteur."
     ],
@@ -111,17 +116,18 @@ export const blog: Record<string, ArticleData> = {
         title: "Megève, un marché locatif à part",
         paragraphs: [
           "Megève n'est pas une station comme les autres. Entre son architecture préservée, son positionnement haut de gamme et sa clientèle internationale, elle attire des voyageurs exigeants — qui attendent un niveau de service à la hauteur.",
-          "C'est précisément pour ça que Xiri a choisi d'y ouvrir une conciergerie physique, et non de gérer les biens à distance. Nos propriétaires méritent mieux qu'un gestionnaire qui ne connaît pas la route des pistes."
+          "Le marché locatif y est tendu, saisonnier et très sélectif. Les voyageurs qui choisissent Megève savent ce qu'ils veulent : du confort, du caractère, et une adresse dont ils se souviendront."
         ],
-        images: [megeve2, megeve3]
+        images: [megeveCentreVille, chamonixCentre]
       },
       {
-        title: "Un appartement avec terrasse pour ouvrir le bal",
+        title: "L'appartement : terrasse, vue et emplacement idéal",
         paragraphs: [
-          "Notre catalogue s'enrichit d'un premier bien à Megève : un appartement avec terrasse, idéalement situé pour profiter des Alpes en toutes saisons — ski en hiver, randonnées et fraîcheur en été.",
-          "Ce bien illustre exactement ce qu'on recherche pour nos propriétaires : un logement avec du caractère, du potentiel locatif fort, et une expérience voyageur mémorable."
+          "Notre premier bien à Megève coche toutes les cases. Situé au 2ème étage, l'appartement bénéficie d'une vue dégagée sur la campagne environnante depuis les fenêtres, et d'une vue panoramique sur toute la vallée dès qu'on sort sur la terrasse. L'altitude ? 1 100 mètres. L'air y est pur, les nuits fraîches, et le cadre alpin à couper le souffle.",
+          "Côté pratique, l'appartement dispose d'un parking privé fermé — un vrai atout à Megève, où stationner peut vite devenir un casse-tête.",
+          "L'appartement est idéalement situé à quelques pas du centre du village, des restaurants, des boutiques et des navettes pour les pistes. Un emplacement qui simplifie le séjour des voyageurs et valorise naturellement le bien."
         ],
-        images: [megeve4, megeve5, megeve6]
+        images: [appart1, appart2, terrasse, vueTerrasse, appartChambre, appartCuisine]
       },
       {
         title: "Une présence locale, pas une promesse creuse",
@@ -129,7 +135,7 @@ export const blog: Record<string, ArticleData> = {
           "Chez Xiri, \"être présent localement\" ne veut pas dire avoir un numéro de téléphone régional. Ça veut dire une équipe installée à Megève, disponible physiquement, des artisans locaux partenaires pour les interventions, un accueil en personne à chaque arrivée de voyageur, et une connaissance fine du marché — tarification, saisonnalité, concurrence.",
           "La Haute-Savoie a ses spécificités : des pics de demande très marqués sur les vacances scolaires, une clientèle étrangère importante, des biens souvent bien équipés mais mal valorisés en ligne. C'est exactement là où Xiri apporte de la valeur."
         ],
-        images: [megeve7, megeve8, megeve9]
+        images: [hotel1, hotel2, hotel3, hotel4]
       },
       {
         title: "Propriétaires en Haute-Savoie : c'est le moment",
@@ -137,7 +143,7 @@ export const blog: Record<string, ArticleData> = {
           "La demande locative en montagne est forte, les plateformes sont saturées d'annonces moyennes, et les voyageurs sont de plus en plus sélectifs. Un bien bien géré, avec de belles photos, un accueil soigné et une tarification dynamique, fait la différence.",
           "Si vous possédez un appartement, un chalet ou une maison en Haute-Savoie et que vous cherchez une conciergerie sérieuse — pas une agence anonyme — discutons-en. On est sur place, on connaît le terrain, et on est prêts à faire de votre bien l'une des meilleures adresses de la région."
         ],
-        images: [megeve10, megeve11, megeve12]
+        images: [montBlanc, aiguilleduMidi, appart3]
       }
     ]
   },
