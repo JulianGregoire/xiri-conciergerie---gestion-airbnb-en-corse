@@ -2,6 +2,7 @@
 import type { ArticleData } from '../types';
 
 // Images Megève
+import megeveHeroBanner   from '../assets/images/blog/megeve/banniere-hero-megeve.webp';
 import megeveHero         from '../assets/images/blog/megeve/haut-de-la-ville-megeve.jpeg';
 import megeveCentreVille  from '../assets/images/blog/megeve/centre-ville-megeve.jpeg';
 import chamonixCentre     from '../assets/images/blog/megeve/centre-ville-chamonix.jpeg';
@@ -9,6 +10,7 @@ import appart1            from '../assets/images/blog/megeve/appartement-megeve 
 import appart2            from '../assets/images/blog/megeve/appartement-megeve (2).jpeg';
 import appart3            from '../assets/images/blog/megeve/appartement-megeve (3).jpeg';
 import appart4            from '../assets/images/blog/megeve/appartement-megeve (4).jpeg';
+import parking            from '../assets/images/blog/megeve/appartement-megeve (5).jpeg';
 import appartChambre      from '../assets/images/blog/megeve/cahmbre-appartement.jpeg';
 import appartCuisine      from '../assets/images/blog/megeve/cuisine-appartement.jpeg';
 import terrasse           from '../assets/images/blog/megeve/terrasse-appartement.jpeg';
@@ -107,7 +109,7 @@ export const blog: Record<string, ArticleData> = {
     author: "L'équipe Xiri",
     title: "Xiri ouvre une conciergerie à Megève : la Haute-Savoie rejoint notre réseau",
     excerpt: "Après l'Hérault, la Corse et le Finistère Sud, Xiri s'installe en Haute-Savoie avec une conciergerie physique à Megève et un premier appartement avec terrasse dans son catalogue.",
-    image: megeveHero,
+    image: megeveHeroBanner,
     content: [
       "Après l'Hérault, la Corse et le Finistère Sud, Xiri pose ses valises en Haute-Savoie. Et on ne fait pas les choses à moitié : notre première adresse dans les Alpes, c'est Megève. Un territoire d'exception, qui méritait une présence à la hauteur."
     ],
@@ -124,10 +126,10 @@ export const blog: Record<string, ArticleData> = {
         title: "L'appartement : terrasse, vue et emplacement idéal",
         paragraphs: [
           "Notre premier bien à Megève coche toutes les cases. Situé au 2ème étage, l'appartement bénéficie d'une vue dégagée sur la campagne environnante depuis les fenêtres, et d'une vue panoramique sur toute la vallée dès qu'on sort sur la terrasse. L'altitude ? 1 100 mètres. L'air y est pur, les nuits fraîches, et le cadre alpin à couper le souffle.",
-          "Côté pratique, l'appartement dispose d'un parking privé fermé — un vrai atout à Megève, où stationner peut vite devenir un casse-tête.",
-          "L'appartement est idéalement situé à quelques pas du centre du village, des restaurants, des boutiques et des navettes pour les pistes. Un emplacement qui simplifie le séjour des voyageurs et valorise naturellement le bien."
+          "L'appartement est idéalement situé à quelques pas du centre du village, des restaurants, des boutiques et des navettes pour les pistes. Un emplacement qui simplifie le séjour des voyageurs et valorise naturellement le bien.",
+          "Côté pratique, l'appartement dispose également d'un parking privé fermé — un vrai atout à Megève où stationner peut vite devenir un casse-tête — ainsi que d'un local à ski privatif, directement rattaché à l'appartement. Sur les photos, le parking peut paraître sombre : c'est simplement parce qu'il est entièrement couvert et sécurisé. En réalité, c'est exactement ce qu'on cherche en montagne : un espace protégé, fermé à clé, à l'abri des intempéries."
         ],
-        images: [appart1, appart2, terrasse, vueTerrasse, appartChambre, appartCuisine]
+        images: [appart1, appart2, terrasse, vueTerrasse, appartChambre, appartCuisine, parking]
       },
       {
         title: "Une présence locale, pas une promesse creuse",
