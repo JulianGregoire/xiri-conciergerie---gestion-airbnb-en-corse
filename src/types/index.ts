@@ -33,8 +33,8 @@ export interface ArticleData {
   title: string;
   excerpt: string;
   content: string[];
-  sections?: { title: string; paragraphs: string[] }[];
-  image: string;
+  sections?: { title: string; paragraphs: string[]; images?: any[] }[];
+  image: string | any;
   author: string;
   draft?: boolean;
 }

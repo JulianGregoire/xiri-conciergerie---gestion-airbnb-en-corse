@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { blog } from "../../data/blog";
 import { ArrowLeft, Clock, Facebook, Twitter, Linkedin } from "lucide-react";
 
@@ -38,11 +39,19 @@ const { article } = Astro.props;
         <header
             class="relative h-[80vh] w-full flex items-center justify-center overflow-hidden"
         >
-            <img
-                src={article.image}
-                class="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
-                alt={article.title}
-            />
+            {typeof article.image === 'string' ? (
+                <img
+                    src={article.image}
+                    class="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
+                    alt={article.title}
+                />
+            ) : (
+                <Image
+                    src={article.image}
+                    alt={article.title}
+                    class="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
+                />
+            )}
             <div class="absolute inset-0 bg-black/30"></div>
             <div
                 class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white"
@@ -156,6 +165,17 @@ const { article } = Astro.props;
                                                 <p class="max-w-4xl">{p}</p>
                                             ))}
                                         </div>
+                                        {section.images && section.images.length > 0 && (
+                                            <div class={`grid gap-4 mt-10 ${section.images.length === 1 ? 'grid-cols-1' : section.images.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
+                                                {section.images.map((img: any, i: number) => (
+                                                    typeof img === 'string' ? (
+                                                        <img src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-64 object-cover rounded-2xl" />
+                                                    ) : (
+                                                        <Image src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-64 object-cover rounded-2xl" />
+                                                    )
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>
