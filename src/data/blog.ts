@@ -80,6 +80,49 @@ export const blog: Record<string, ArticleData> = {
       "C’est pour cela que la gestion reste locale, au plus proche des propriétés. Garder le contrôle, c’est aussi savoir que quelqu’un connaît réellement votre environnement et agit sur place. Confier son bien ne veut pas dire s’effacer. Cela signifie choisir une gestion structurée, professionnelle et transparente. Vous ne perdez pas la main. Vous gagnez en sérénité. Et souvent, le vrai contrôle commence justement le jour où l’on décide de ne plus tout faire seul."
     ]
   },
+  "xiri-megeve-haute-savoie": {
+    id: "xiri-megeve-haute-savoie",
+    category: "ACTUALITÉS",
+    date: "25 AVRIL 2026",
+    readTime: "5 MIN",
+    author: "L'équipe Xiri",
+    title: "Xiri ouvre une conciergerie à Megève : la Haute-Savoie rejoint notre réseau",
+    excerpt: "Après l'Hérault, la Corse et le Finistère Sud, Xiri s'installe en Haute-Savoie avec une conciergerie physique à Megève et un premier appartement avec terrasse dans son catalogue.",
+    image: "https://images.unsplash.com/photo-1548777123-e216912df7d8?auto=format&fit=crop&q=80&w=1200",
+    content: [
+      "Après l'Hérault, la Corse et le Finistère Sud, Xiri pose ses valises en Haute-Savoie. Et on ne fait pas les choses à moitié : notre première adresse dans les Alpes, c'est Megève. Un territoire d'exception, qui méritait une présence à la hauteur."
+    ],
+    sections: [
+      {
+        title: "Megève, un marché locatif à part",
+        paragraphs: [
+          "Megève n'est pas une station comme les autres. Entre son architecture préservée, son positionnement haut de gamme et sa clientèle internationale, elle attire des voyageurs exigeants — qui attendent un niveau de service à la hauteur.",
+          "C'est précisément pour ça que Xiri a choisi d'y ouvrir une conciergerie physique, et non de gérer les biens à distance. Nos propriétaires méritent mieux qu'un gestionnaire qui ne connaît pas la route des pistes."
+        ]
+      },
+      {
+        title: "Un appartement avec terrasse pour ouvrir le bal",
+        paragraphs: [
+          "Notre catalogue s'enrichit d'un premier bien à Megève : un appartement avec terrasse, idéalement situé pour profiter des Alpes en toutes saisons — ski en hiver, randonnées et fraîcheur en été.",
+          "Ce bien illustre exactement ce qu'on recherche pour nos propriétaires : un logement avec du caractère, du potentiel locatif fort, et une expérience voyageur mémorable."
+        ]
+      },
+      {
+        title: "Une présence locale, pas une promesse creuse",
+        paragraphs: [
+          "Chez Xiri, \"être présent localement\" ne veut pas dire avoir un numéro de téléphone régional. Ça veut dire une équipe installée à Megève, disponible physiquement, des artisans locaux partenaires pour les interventions, un accueil en personne à chaque arrivée de voyageur, et une connaissance fine du marché — tarification, saisonnalité, concurrence.",
+          "La Haute-Savoie a ses spécificités : des pics de demande très marqués sur les vacances scolaires, une clientèle étrangère importante, des biens souvent bien équipés mais mal valorisés en ligne. C'est exactement là où Xiri apporte de la valeur."
+        ]
+      },
+      {
+        title: "Propriétaires en Haute-Savoie : c'est le moment",
+        paragraphs: [
+          "La demande locative en montagne est forte, les plateformes sont saturées d'annonces moyennes, et les voyageurs sont de plus en plus sélectifs. Un bien bien géré, avec de belles photos, un accueil soigné et une tarification dynamique, fait la différence.",
+          "Si vous possédez un appartement, un chalet ou une maison en Haute-Savoie et que vous cherchez une conciergerie sérieuse — pas une agence anonyme — discutons-en. On est sur place, on connaît le terrain, et on est prêts à faire de votre bien l'une des meilleures adresses de la région."
+        ]
+      }
+    ]
+  },
   "rentabilite-residence-secondaire": {
     id: "rentabilite-residence-secondaire",
     category: "STRATÉGIE",
