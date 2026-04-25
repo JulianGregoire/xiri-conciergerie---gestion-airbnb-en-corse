@@ -168,13 +168,23 @@ const { article } = Astro.props;
                                         {section.images && section.images.length > 0 && (
                                             <div class={`grid gap-6 mt-10 ${section.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
                                                 {section.images.map((img: any, i: number) => (
-                                                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                                                    <button type="button" class="zoomable-image group aspect-[4/3] rounded-2xl overflow-hidden relative cursor-zoom-in p-0 border-0 bg-transparent">
                                                         {typeof img === 'string' ? (
-                                                            <img src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover" />
+                                                            <img src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                                         ) : (
-                                                            <Image src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover" />
+                                                            <Image src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                                         )}
-                                                    </div>
+                                                        <span class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                                                            <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-xiri-navy">
+                                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </button>
                                                 ))}
                                             </div>
                                         )}
@@ -218,10 +228,38 @@ const { article } = Astro.props;
                 Retour au Blog
             </a>
         </footer>
+
+        <!-- Lightbox -->
+        <div
+            id="image-lightbox"
+            class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md hidden items-center justify-center p-6 md:p-12 cursor-zoom-out"
+            role="dialog"
+            aria-modal="true"
+            aria-hidden="true"
+        >
+            <button
+                type="button"
+                id="lightbox-close"
+                aria-label="Fermer"
+                class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-colors border-0 cursor-pointer"
+            >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <img
+                id="lightbox-image"
+                src=""
+                alt=""
+                class="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            />
+        </div>
     </div>
 </Layout>
 
 <script>
+    // Scroll progress bar
     window.addEventListener("scroll", () => {
         const progressBar = document.getElementById("progress-bar");
         if (progressBar) {
@@ -229,6 +267,61 @@ const { article } = Astro.props;
                 document.documentElement.scrollHeight - window.innerHeight;
             const progress = (window.scrollY / totalHeight) * 100;
             progressBar.style.width = `${progress}%`;
+        }
+    });
+
+    // Image lightbox
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImage = document.getElementById("lightbox-image") as HTMLImageElement | null;
+    const lightboxClose = document.getElementById("lightbox-close");
+    const zoomableImages = document.querySelectorAll<HTMLButtonElement>(".zoomable-image");
+
+    function openLightbox(src: string, alt: string) {
+        if (!lightbox || !lightboxImage) return;
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+        if (!lightbox || !lightboxImage) return;
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        document.body.style.overflow = "";
+    }
+
+    zoomableImages.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const img = btn.querySelector("img");
+            if (!img) return;
+            // Use the largest available source for full-quality zoom
+            const src = img.currentSrc || img.src;
+            openLightbox(src, img.alt || "");
+        });
+    });
+
+    if (lightbox) {
+        lightbox.addEventListener("click", (e) => {
+            // Close when clicking outside the image (i.e. on the dim backdrop)
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeLightbox();
+        });
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox && !lightbox.classList.contains("hidden")) {
+            closeLightbox();
         }
     });
 </script>
