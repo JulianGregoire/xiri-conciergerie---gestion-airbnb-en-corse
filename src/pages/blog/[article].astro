@@ -1,17 +1,21 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import { blog } from "../../data/blog";
+import { getCollection } from "astro:content";
 import { ArrowLeft, Clock, Facebook, Twitter, Linkedin } from "lucide-react";
 
-export function getStaticPaths() {
-    return Object.keys(blog).map((article) => ({
-        params: { article },
-        props: { article: blog[article] },
+export async function getStaticPaths() {
+    const entries = await getCollection("blog", ({ data }) => !data.draft);
+    return entries.map((entry) => ({
+        params: { article: entry.id },
+        props: { article: entry.data },
     }));
 }
 
 const { article } = Astro.props;
+// Normalize intro/sections to always be arrays for the template
+const intro = article.intro ?? [];
+const sections = article.sections ?? [];
 ---
 
 <Layout title={`${article.title} | Blog Xiri Conciergerie`} description={article.excerpt} navLight={true}>
@@ -39,15 +43,15 @@ const { article } = Astro.props;
         <header
             class="relative h-[80vh] w-full flex items-center justify-center overflow-hidden"
         >
-            {typeof article.image === 'string' ? (
+            {typeof article.heroImage === 'string' ? (
                 <img
-                    src={article.image}
+                    src={article.heroImage}
                     class="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
                     alt={article.title}
                 />
             ) : (
                 <Image
-                    src={article.image}
+                    src={article.heroImage}
                     alt={article.title}
                     class="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
                 />
@@ -130,9 +134,9 @@ const { article } = Astro.props;
                             class="space-y-8 text-lg md:text-xl text-[#000000] leading-loose font-medium"
                         >
                             {
-                                article.content && article.content.length > 0 && (
+                                intro.length > 0 && (
                                     <div class="space-y-8">
-                                        {article.content.map((paragraph, idx) => (
+                                        {intro.map((paragraph, idx) => (
                                             <p
                                                 class={
                                                     idx === 0
@@ -153,9 +157,9 @@ const { article } = Astro.props;
 
                 <div class="border-t border-xiri-navy/5 pt-16">
                     {
-                        article.sections && (
+                        sections.length > 0 && (
                             <div class="space-y-32">
-                                {article.sections.map((section) => (
+                                {sections.map((section) => (
                                     <div class="space-y-10 animate-fade-in-up max-w-5xl">
                                         <h2 class="text-2xl md:text-3xl font-serif text-xiri-navy border-l-8 border-xiri-gold pl-8 py-2 mb-12">
                                             {section.title}
@@ -169,11 +173,7 @@ const { article } = Astro.props;
                                             <div class={`grid gap-6 mt-10 ${section.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
                                                 {section.images.map((img: any, i: number) => (
                                                     <button type="button" class="zoomable-image group aspect-[4/3] rounded-2xl overflow-hidden relative cursor-zoom-in p-0 border-0 bg-transparent">
-                                                        {typeof img === 'string' ? (
-                                                            <img src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                                        ) : (
-                                                            <Image src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                                        )}
+                                                        <Image src={img} alt={`${section.title} – photo ${i + 1}`} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                                         <span class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                                                             <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
                                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-xiri-navy">

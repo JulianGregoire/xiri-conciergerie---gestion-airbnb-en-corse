@@ -1,7 +1,12 @@
 ---
-import { blog } from "../../data/blog";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 
-const articles = Object.values(blog).slice(0, 3);
+const entries = await getCollection("blog", ({ data }) => !data.draft);
+const articles = entries
+    .map((e) => ({ id: e.id, ...e.data }))
+    .sort((a, b) => b.sortDate.getTime() - a.sortDate.getTime())
+    .slice(0, 3);
 ---
 
 <section class="py-12 md:py-16 lg:py-20 relative overflow-hidden">
@@ -30,9 +35,9 @@ const articles = Object.values(blog).slice(0, 3);
                     Fiscalité, réglementation, stratégie — tout ce qu'il faut savoir pour louer mieux.
                 </p>
             </div>
-            
-            <a 
-                href="/blog" 
+
+            <a
+                href="/blog"
                 class="inline-flex items-center gap-3 text-xiri-navy font-bold uppercase tracking-[0.2em] text-[11px] hover:text-xiri-gold transition-colors border-b-2 border-xiri-gold pb-1 w-fit"
             >
                 Voir tous les articles
@@ -44,11 +49,19 @@ const articles = Object.values(blog).slice(0, 3);
                 articles.map((article) => (
                     <a href={`/blog/${article.id}`} class="group no-underline block">
                         <div class="relative h-[300px] mb-8 overflow-hidden p-[10px] bg-white shadow-lg transition-transform duration-700 group-hover:-translate-y-3">
-                            <img
-                                src={article.image}
-                                alt={article.title}
-                                class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                            />
+                            {typeof article.heroImage === 'string' ? (
+                                <img
+                                    src={article.heroImage}
+                                    alt={article.title}
+                                    class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                                />
+                            ) : (
+                                <Image
+                                    src={article.heroImage}
+                                    alt={article.title}
+                                    class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                                />
+                            )}
                             <div class="absolute inset-0 bg-xiri-navy/5 group-hover:bg-transparent transition-colors duration-500" />
                             <div class="absolute top-6 left-6">
                                 <span class="bg-white/95 backdrop-blur-sm px-4 py-1.5 shadow-sm text-[9px] font-black uppercase tracking-widest text-xiri-navy">
@@ -79,4 +92,3 @@ const articles = Object.values(blog).slice(0, 3);
         </div>
     </div>
 </section>
-
