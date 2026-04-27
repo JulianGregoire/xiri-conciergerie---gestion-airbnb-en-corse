@@ -1,6 +1,6 @@
 ---
-title: "Conciergerie à Lumio & Sant'Ambroggio : Xiri gère votre location saisonnière en Balagne"
-excerpt: "Propriétaire d'une villa, d'une maison ou d'un studio à Lumio, à la Marine de Sant'Ambroggio ou ailleurs en Balagne ? Xiri est implantée localement, avec une équipe de terrain et un premier bien déjà en gestion à Lumio."
+title: "Xiri en Balagne : conciergerie à Lumio & Sant'Ambroggio"
+excerpt: "Xiri s'installe en Balagne avec une équipe locale et un premier bien en gestion à Lumio."
 category: "ACTUALITÉS"
 date: "27 AVRIL 2026"
 sortDate: 2026-04-27
