@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm run:*)",
-      "Read(//c/Users/Perso/Desktop/SITES WEB/Xiri/**)"
+      "Read(//c/Users/Perso/Desktop/SITES WEB/Xiri/**)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

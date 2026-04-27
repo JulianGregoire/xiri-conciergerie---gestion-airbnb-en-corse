@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import julianPhoto from "../../assets/images/team/julian-profile.webp";
 ---
 
 <section class="py-10 md:py-12 bg-xiri-bg/60 border-y border-xiri-navy/5">
@@ -16,12 +18,21 @@
                 </p>
             </div>
 
-            <!-- Regions tags -->
-            <div class="flex flex-wrap gap-2 md:ml-auto md:flex-shrink-0">
-                {["Hérault", "Savoie", "Corse", "Finistère Sud"].map((region) => (
-                    <span class="px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-xiri-gold bg-xiri-gold/8 border border-xiri-gold/20 rounded-full">
-                        {region}
-                    </span>
+            <!-- Team avatars -->
+            <div class="flex items-center md:ml-auto md:flex-shrink-0">
+                <Image
+                    src={julianPhoto}
+                    alt="Membre de l'équipe Xiri"
+                    width={48}
+                    height={48}
+                    class="w-12 h-12 rounded-full object-cover ring-2 ring-white"
+                />
+                {[1, 2, 3].map(() => (
+                    <div class="w-12 h-12 rounded-full bg-xiri-navy/8 ring-2 ring-white flex items-center justify-center -ml-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-xiri-navy/25" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                        </svg>
+                    </div>
                 ))}
             </div>
         </div>
