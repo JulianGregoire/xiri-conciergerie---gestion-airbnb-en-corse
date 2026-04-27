@@ -21,20 +21,20 @@ export const localSeo: Record<string, LocalCityData> = {
     heroImg: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=2000",
     intro: "Village de lumière surplombant le golfe de Calvi, Lumio abrite certaines des plus belles demeures de l'île. Nous gérons votre patrimoine avec une attention particulière.",
     localExpertise: "Nous intervenons sur les propriétés d'exception de Lumio. Notre réseau de prestataires locaux garantit un entretien irréprochable et un accueil haut de gamme.",
-    neighborhoods: ["Le Village", "Marine de Sant'Ambroggio", "Arinella", "Occi", "Plage de Lumio"],
+    neighborhoods: ["Le Village", "Marine de Sant'Ambrogio", "Arinella", "Occi", "Plage de Lumio"],
     metaTitle: "Conciergerie Lumio | Gestion de Villas de Luxe | Xiri",
     metaDesc: "Gestion locative premium à Lumio. Confiez-nous votre villa pour une optimisation maximale et une tranquillité totale."
   },
   "sant-ambroggio": {
     id: "sant-ambroggio",
-    name: "Sant Ambroggio",
-    title: "Conciergerie Marine de Sant Ambroggio : Calme & Prestige",
+    name: "Sant Ambrogio",
+    title: "Conciergerie Marine de Sant Ambrogio : Calme & Prestige",
     heroImg: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000",
-    intro: "Entre mer et maquis, la Marine de Sant Ambroggio est une enclave de paix. Nous gérons vos biens avec la rigueur indispensable à cette destination prisée.",
+    intro: "Entre mer et maquis, la Marine de Sant Ambrogio est une enclave de paix. Nous gérons vos biens avec la rigueur indispensable à cette destination prisée.",
     localExpertise: "Spécialistes de la marine, nous gérons la logistique spécifique aux résidences côtières. Entretien, accueil et conciergerie 24/7 pour vos voyageurs.",
-    neighborhoods: ["La Marine", "Le Port", "Plage de Cocody", "Hauts de Sant Ambroggio", "Algajola"],
-    metaTitle: "Conciergerie Sant Ambroggio | Marina & Plage | Xiri",
-    metaDesc: "Gérez votre appartement ou villa à Sant Ambroggio sans contrainte. Xiri assure une gestion professionnelle et rentable."
+    neighborhoods: ["La Marine", "Le Port", "Plage de Cocody", "Hauts de Sant Ambrogio", "Algajola"],
+    metaTitle: "Conciergerie Sant Ambrogio | Marina & Plage | Xiri",
+    metaDesc: "Gérez votre appartement ou villa à Sant Ambrogio sans contrainte. Xiri assure une gestion professionnelle et rentable."
   },
 
   // --- FINISTÈRE SUD ---

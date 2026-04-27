@@ -7,7 +7,7 @@ export const regions = [
     {
         name: "Conciergerie de Corse",
         slug: "corse",
-        description: "L'excellence au cœur de la Balagne. De Calvi à la Marine de Sant'Ambroggio, nous offrons une gestion premium et un service d'exception sur ce littoral prestigieux.",
+        description: "L'excellence au cœur de la Balagne. De Calvi à la Marine de Sant'Ambrogio, nous offrons une gestion premium et un service d'exception sur ce littoral prestigieux.",
         image: corseImg,
         metrics: {
             properties: "45+",
@@ -17,7 +17,7 @@ export const regions = [
         villes: [
             { name: "CALVI", href: "/villes/calvi" },
             { name: "LUMIO", href: "/villes/lumio" },
-            { name: "MARINE DE SANT'AMBROGGIO", href: "/villes/sant-ambroggio" },
+            { name: "MARINE DE SANT'AMBROGIO", href: "/villes/sant-ambroggio" },
         ],
     },
     {

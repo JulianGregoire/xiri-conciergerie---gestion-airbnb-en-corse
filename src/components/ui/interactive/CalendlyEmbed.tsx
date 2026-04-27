@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const CalendlyEmbed: React.FC = () => {
     return (
-        <section id="simulator" className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
+        <section id="simulator" className="py-8 md:py-10 lg:py-12 relative overflow-hidden">
             {/* Background Ornaments */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-xiri-bg/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50 -z-10"></div>
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-xiri-gold/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl opacity-50 -z-10"></div>
