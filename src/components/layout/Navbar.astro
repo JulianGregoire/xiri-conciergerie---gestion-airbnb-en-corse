@@ -6,7 +6,9 @@ interface Props {
 
 const { light = false, solid = false } = Astro.props;
 
+import { Image } from 'astro:assets';
 import { regions } from '../../data/regions';
+import logoXiri from '../../assets/images/logo/logo-xiri-clair.png';
 
 const navLinks = [
     { href: "/#services", label: "Services", dropdown: "services" },
@@ -40,19 +42,15 @@ const serviceLinks = [
         <div class="flex justify-between items-center">
             <a
                 href="/"
-                class="flex flex-col items-center group cursor-pointer no-underline"
+                class="flex items-center group cursor-pointer no-underline"
             >
-                <span
-                    id="nav-logo-text"
-                    class:list={[
-                        "text-base md:text-lg font-serif font-medium tracking-[0.08em] transition-colors duration-500",
-                        light ? "text-white" : "text-xiri-navy"
-                    ]}
-                >XIRI CONCIERGERIE</span>
-                <span
-                    class="text-[9px] uppercase tracking-[0.22em] -mt-0.5 font-bold text-xiri-gold"
-                    >Hérault, Savoie, Corse, Finistère Sud</span
-                >
+                <Image
+                    src={logoXiri}
+                    alt="Xiri Conciergerie"
+                    width={160}
+                    height={48}
+                    class="h-10 md:h-12 w-auto"
+                />
             </a>
 
             <div class="hidden lg:flex items-center gap-6">
@@ -171,16 +169,13 @@ const serviceLinks = [
     >
         <div class="h-full flex flex-col p-8">
             <div class="flex justify-between items-center mb-10">
-                <div class="flex flex-col">
-                    <span
-                        class="text-lg font-serif font-medium tracking-[0.1em] text-xiri-navy"
-                        >XIRI CONCIERGERIE</span
-                    >
-                    <span
-                        class="text-[9px] uppercase tracking-[0.2em] font-bold text-xiri-gold"
-                        >Hérault, Savoie, Corse, Finistère Sud</span
-                    >
-                </div>
+                <Image
+                    src={logoXiri}
+                    alt="Xiri Conciergerie"
+                    width={160}
+                    height={48}
+                    class="h-12 w-auto"
+                />
                 <button
                     id="close-menu-button"
                     class="text-xiri-navy bg-transparent border-none cursor-pointer"
@@ -229,7 +224,6 @@ const serviceLinks = [
     const nav = document.getElementById("main-nav");
     const isLightMode = nav?.dataset.light === "true";
     const isSolidMode = nav?.dataset.solid === "true";
-    const logoText = document.getElementById("nav-logo-text");
     const navLinksList = document.querySelectorAll(".nav-link");
     const navCta = document.getElementById("nav-cta");
     const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -243,15 +237,12 @@ const serviceLinks = [
         if (isScrolled || isSolidMode) {
             nav?.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-md", "py-3");
             nav?.classList.remove("bg-transparent", "py-4");
-            
-            logoText?.classList.add("text-xiri-navy");
-            logoText?.classList.remove("text-white");
-            
+
             navLinksList.forEach((link) => {
                 link.classList.add("text-xiri-navy");
                 link.classList.remove("text-white");
             });
-            
+
             mobileMenuButton?.classList.add("text-xiri-navy");
             mobileMenuButton?.classList.remove("text-white");
         } else {
@@ -259,25 +250,19 @@ const serviceLinks = [
             nav?.classList.add("bg-transparent", "py-4");
 
             if (isLightMode) {
-                logoText?.classList.add("text-white");
-                logoText?.classList.remove("text-xiri-navy");
-                
                 navLinksList.forEach((link) => {
                     link.classList.add("text-white");
                     link.classList.remove("text-xiri-navy");
                 });
-                
+
                 mobileMenuButton?.classList.add("text-white");
                 mobileMenuButton?.classList.remove("text-xiri-navy");
             } else {
-                logoText?.classList.add("text-xiri-navy");
-                logoText?.classList.remove("text-white");
-                
                 navLinksList.forEach((link) => {
                     link.classList.add("text-xiri-navy");
                     link.classList.remove("text-white");
                 });
-                
+
                 mobileMenuButton?.classList.add("text-xiri-navy");
                 mobileMenuButton?.classList.remove("text-white");
             }

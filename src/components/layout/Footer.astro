@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { regions } from '../../data/regions';
+import logoXiriDark from '../../assets/images/logo/logo-xiri-sombre.png';
 const year = new Date().getFullYear();
 
 
@@ -16,15 +18,14 @@ const year = new Date().getFullYear();
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 mb-16 md:mb-20">
             <div class="lg:col-span-3 space-y-8">
-                <a href="/" class="flex flex-col text-left no-underline group">
-                    <span
-                        class="text-xl font-serif font-medium tracking-[0.1em] text-white group-hover:text-xiri-gold transition-colors"
-                        >XIRI CONCIERGERIE</span
-                    >
-                    <span
-                        class="text-[10px] uppercase tracking-[0.5em] font-bold text-xiri-gold"
-                        >Hérault, Savoie, Corse, Finistère Sud</span
-                    >
+                <a href="/" class="inline-block no-underline group">
+                    <Image
+                        src={logoXiriDark}
+                        alt="Xiri Conciergerie"
+                        width={200}
+                        height={64}
+                        class="h-14 w-auto group-hover:opacity-80 transition-opacity"
+                    />
                 </a>
                 <p
                     class="text-[13px] text-white/60 leading-loose font-light max-w-xs"
