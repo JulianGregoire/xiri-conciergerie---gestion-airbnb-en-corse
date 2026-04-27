@@ -6,6 +6,7 @@ date: "07 AVRIL 2026"
 sortDate: 2026-04-07
 readTime: "12 MIN"
 author: "Elena Rossi, Directrice Artistique"
+draft: true
 heroImage: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1200"
 
 intro:

@@ -6,6 +6,7 @@ date: "18 FÉVRIER 2024"
 sortDate: 2024-02-18
 readTime: "6 MIN"
 author: "Sophie Colonna, Responsable Administrative"
+draft: true
 heroImage: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=1200"
 
 intro:
