@@ -5,44 +5,37 @@ const plans = [
         name: "Pack ESSENTIEL",
         price: "12%",
         unit: "commission sur revenus",
-        description: "La gestion opérationnelle, sans prise de tête.",
+        description:
+            "Tous les services de gestion pour mettre votre bien en location en toute sérénité.",
         features: [
-            "Check-in / check-out",
-            "Ménage et linge",
-            "Support voyageurs",
-            "Gestion incidents",
+            "Annonces sur toutes les plateformes",
+            "Sélection des voyageurs",
+            "Accueil & remise des clés",
+            "Ménage & blanchisserie hôtelière",
+            "Garanties & cautions",
+            "Assistance 24/7",
         ],
+        cta: "Demander un audit",
         recommended: false,
     },
     {
         id: "02",
-        name: "Pack PERFORMANCE 360",
-        price: "15%",
-        unit: "commission sur revenus",
-        description:
-            "Pilotage digital + opération terrain. Le meilleur équilibre.",
-        features: [
-            "Tout le Pack Essentiel",
-            "Yield management avancé",
-            "Optimisation multi-canaux",
-            "Reporting mensuel détaillé",
-        ],
-        recommended: true,
-    },
-    {
-        id: "03",
         name: "Pack SIGNATURE",
-        price: "18%",
-        unit: "commission sur revenus",
+        price: "899€",
+        unit: "forfait annuel",
         description:
-            "Pour les biens à fort potentiel. Accompagnement stratégique complet.",
+            "Pour aller plus loin et booster la visibilité de votre bien. Inclut tous les services Essentiel.",
         features: [
-            "Tout le Pack Performance",
-            "Réservations directes",
-            "Shooting & contenu premium",
-            "Comité performance trimestriel",
+            "Tout le Pack Essentiel inclus",
+            "Visite drone professionnelle",
+            "Site web dédié à votre bien",
+            "Référencement dans notre catalogue",
+            "Boost SEO & réservations directes",
         ],
-        recommended: false,
+        eligibility:
+            "Sur conditions : chiffre d'affaires minimum + reconduction en 2ᵉ année",
+        cta: "Vérifier mon éligibilité",
+        recommended: true,
     },
 ];
 ---
@@ -51,7 +44,7 @@ const plans = [
     id="pricing"
     class="py-10 md:py-12 lg:py-14 relative overflow-hidden"
 >
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
         <div class="text-center mb-8 md:mb-10 space-y-3">
             <span
                 class="text-xiri-gold text-[10px] font-black uppercase tracking-[0.25em] block"
@@ -63,26 +56,25 @@ const plans = [
                 Nos Tarifs
             </h2>
             <p
-                class="text-[16px] text-xiri-navy/80 max-w-2xl mx-auto font-medium leading-relaxed"
+                class="text-[15px] md:text-[16px] text-xiri-navy/80 max-w-2xl mx-auto font-medium leading-relaxed"
             >
-                Commission uniquement sur revenus générés. Zéro frais fixes.
+                Deux offres, zéro frais cachés. Vous ne payez qu'à la performance.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
             {
                 plans.map((plan) => (
                     <div
-                        class={`relative p-6 border flex flex-col rounded-2xl ${
+                        class={`relative p-7 md:p-8 border flex flex-col rounded-2xl ${
                             plan.recommended
                                 ? "bg-xiri-navy text-white border-xiri-gold/40 shadow-[0_24px_60px_-20px_rgba(27,43,68,0.55)]"
                                 : "bg-white text-xiri-navy border-xiri-navy/10"
-                        }
-          `}
+                        }`}
                     >
                         {plan.recommended && (
                             <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-xiri-gold text-white text-[10px] uppercase tracking-[0.18em] font-bold whitespace-nowrap rounded-full">
-                                Recommandé
+                                Pour aller plus loin
                             </div>
                         )}
 
@@ -93,18 +85,18 @@ const plans = [
                         </p>
 
                         <div class="mt-3 mb-3">
-                            <p class="text-5xl font-serif leading-none">
+                            <p class="text-5xl md:text-6xl font-serif leading-none">
                                 {plan.price}
                             </p>
                             <p
-                                class={`text-[11px] uppercase tracking-[0.12em] font-bold ${plan.recommended ? "text-white/60" : "text-xiri-navy/45"}`}
+                                class={`text-[11px] uppercase tracking-[0.12em] font-bold mt-2 ${plan.recommended ? "text-white/60" : "text-xiri-navy/45"}`}
                             >
                                 {plan.unit}
                             </p>
                         </div>
 
                         <p
-                            class={`text-[14px] leading-relaxed font-medium min-h-[62px] ${plan.recommended ? "text-white/85" : "text-xiri-navy/75"}`}
+                            class={`text-[14px] leading-relaxed font-medium ${plan.recommended ? "text-white/85" : "text-xiri-navy/75"}`}
                         >
                             {plan.description}
                         </p>
@@ -135,16 +127,23 @@ const plans = [
                             ))}
                         </div>
 
+                        {plan.eligibility && (
+                            <p
+                                class={`mt-5 text-[11px] italic leading-relaxed ${plan.recommended ? "text-white/55" : "text-xiri-navy/55"}`}
+                            >
+                                {plan.eligibility}
+                            </p>
+                        )}
+
                         <a
                             href="#contact"
-                            class={`mt-6 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold transition-all no-underline text-center block ${
+                            class={`mt-6 py-3 text-[11px] uppercase tracking-[0.14em] font-extrabold transition-all no-underline text-center block rounded-xl ${
                                 plan.recommended
                                     ? "bg-white text-xiri-navy hover:scale-105"
                                     : "bg-gradient-to-r from-xiri-gold to-[#D4B475] text-white hover:scale-105 shadow-lg shadow-xiri-gold/20"
-                            }
-            } rounded-xl`}
+                            }`}
                         >
-                            Demander un audit
+                            {plan.cta}
                         </a>
                     </div>
                 ))
