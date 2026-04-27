@@ -1,0 +1,57 @@
+---
+interface Props {
+    size?: "sm" | "md" | "lg";
+    id?: string;
+    class?: string;
+}
+
+const { size = "md", id, class: className = "" } = Astro.props;
+
+const sizes = {
+    sm: {
+        wrap: "gap-2.5",
+        dash: "w-4 h-px",
+        xiri: "text-[22px]",
+        concierge: "text-[7px] tracking-[0.4em] mt-0.5",
+    },
+    md: {
+        wrap: "gap-3",
+        dash: "w-6 h-px md:w-7",
+        xiri: "text-[28px] md:text-[34px]",
+        concierge: "text-[8px] md:text-[9px] tracking-[0.45em] mt-1",
+    },
+    lg: {
+        wrap: "gap-4",
+        dash: "w-9 h-[1.5px]",
+        xiri: "text-[42px]",
+        concierge: "text-[10px] tracking-[0.5em] mt-1.5",
+    },
+};
+
+const s = sizes[size];
+---
+
+<span class:list={["inline-flex items-center", s.wrap, className]}>
+    <span class:list={[s.dash, "bg-xiri-gold flex-shrink-0"]}></span>
+    <span class="flex flex-col items-center leading-none">
+        <span
+            id={id}
+            class:list={[
+                "font-serif font-medium leading-none transition-colors duration-500",
+                s.xiri,
+            ]}
+            style="color: currentColor;"
+        >
+            xiri
+        </span>
+        <span
+            class:list={[
+                "uppercase font-bold text-xiri-gold leading-none",
+                s.concierge,
+            ]}
+        >
+            Conciergerie
+        </span>
+    </span>
+    <span class:list={[s.dash, "bg-xiri-gold flex-shrink-0"]}></span>
+</span>

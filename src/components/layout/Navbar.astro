@@ -6,9 +6,8 @@ interface Props {
 
 const { light = false, solid = false } = Astro.props;
 
-import { Image } from 'astro:assets';
 import { regions } from '../../data/regions';
-import logoXiri from '../../assets/images/logo/logo-xiri-clair.png';
+import Logo from './Logo.astro';
 
 const navLinks = [
     { href: "/#services", label: "Services", dropdown: "services" },
@@ -42,15 +41,14 @@ const serviceLinks = [
         <div class="flex justify-between items-center">
             <a
                 href="/"
-                class="flex items-center group cursor-pointer no-underline"
+                id="nav-logo-link"
+                class:list={[
+                    "flex items-center group cursor-pointer no-underline transition-colors duration-500",
+                    light ? "text-white" : "text-xiri-navy",
+                ]}
+                aria-label="Xiri Conciergerie - Accueil"
             >
-                <Image
-                    src={logoXiri}
-                    alt="Xiri Conciergerie"
-                    width={160}
-                    height={48}
-                    class="h-10 md:h-12 w-auto"
-                />
+                <Logo size="md" />
             </a>
 
             <div class="hidden lg:flex items-center gap-6">
@@ -169,13 +167,9 @@ const serviceLinks = [
     >
         <div class="h-full flex flex-col p-8">
             <div class="flex justify-between items-center mb-10">
-                <Image
-                    src={logoXiri}
-                    alt="Xiri Conciergerie"
-                    width={160}
-                    height={48}
-                    class="h-12 w-auto"
-                />
+                <span class="text-xiri-navy">
+                    <Logo size="md" />
+                </span>
                 <button
                     id="close-menu-button"
                     class="text-xiri-navy bg-transparent border-none cursor-pointer"
@@ -224,6 +218,7 @@ const serviceLinks = [
     const nav = document.getElementById("main-nav");
     const isLightMode = nav?.dataset.light === "true";
     const isSolidMode = nav?.dataset.solid === "true";
+    const navLogoLink = document.getElementById("nav-logo-link");
     const navLinksList = document.querySelectorAll(".nav-link");
     const navCta = document.getElementById("nav-cta");
     const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -234,37 +229,34 @@ const serviceLinks = [
     const updateNav = () => {
         const isScrolled = window.scrollY > 50;
 
+        const setNavy = (el: Element | null | undefined) => {
+            el?.classList.add("text-xiri-navy");
+            el?.classList.remove("text-white");
+        };
+        const setWhite = (el: Element | null | undefined) => {
+            el?.classList.add("text-white");
+            el?.classList.remove("text-xiri-navy");
+        };
+
         if (isScrolled || isSolidMode) {
             nav?.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-md", "py-3");
             nav?.classList.remove("bg-transparent", "py-4");
 
-            navLinksList.forEach((link) => {
-                link.classList.add("text-xiri-navy");
-                link.classList.remove("text-white");
-            });
-
-            mobileMenuButton?.classList.add("text-xiri-navy");
-            mobileMenuButton?.classList.remove("text-white");
+            setNavy(navLogoLink);
+            navLinksList.forEach(setNavy);
+            setNavy(mobileMenuButton);
         } else {
             nav?.classList.remove("bg-white/95", "backdrop-blur-sm", "shadow-md", "py-3");
             nav?.classList.add("bg-transparent", "py-4");
 
             if (isLightMode) {
-                navLinksList.forEach((link) => {
-                    link.classList.add("text-white");
-                    link.classList.remove("text-xiri-navy");
-                });
-
-                mobileMenuButton?.classList.add("text-white");
-                mobileMenuButton?.classList.remove("text-xiri-navy");
+                setWhite(navLogoLink);
+                navLinksList.forEach(setWhite);
+                setWhite(mobileMenuButton);
             } else {
-                navLinksList.forEach((link) => {
-                    link.classList.add("text-xiri-navy");
-                    link.classList.remove("text-white");
-                });
-
-                mobileMenuButton?.classList.add("text-xiri-navy");
-                mobileMenuButton?.classList.remove("text-white");
+                setNavy(navLogoLink);
+                navLinksList.forEach(setNavy);
+                setNavy(mobileMenuButton);
             }
         }
     };
