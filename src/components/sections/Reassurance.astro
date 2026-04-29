@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import julianPhoto from "../../assets/images/team/julian-profile.webp";
+import didierPhoto from "../../assets/images/team/didier-profile.webp";
+import femmeDidierPhoto from "../../assets/images/team/femme-didier-profile.webp";
 ---
 
 <section class="py-8 md:py-10 bg-xiri-bg/60 border-y border-xiri-navy/5">
@@ -22,18 +24,30 @@ import julianPhoto from "../../assets/images/team/julian-profile.webp";
             <div class="flex items-center md:ml-auto md:flex-shrink-0">
                 <Image
                     src={julianPhoto}
-                    alt="Membre de l'équipe Xiri"
+                    alt="Julian, équipe Xiri"
                     width={72}
                     height={72}
                     class="w-[72px] h-[72px] rounded-full object-cover ring-2 ring-xiri-gold"
                 />
-                {[1, 2, 3].map(() => (
-                    <div class="w-[72px] h-[72px] rounded-full bg-xiri-navy/8 ring-2 ring-xiri-gold flex items-center justify-center -ml-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-xiri-navy/25" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-                        </svg>
-                    </div>
-                ))}
+                <Image
+                    src={didierPhoto}
+                    alt="Didier, équipe Xiri"
+                    width={72}
+                    height={72}
+                    class="w-[72px] h-[72px] rounded-full object-cover ring-2 ring-xiri-gold -ml-3"
+                />
+                <Image
+                    src={femmeDidierPhoto}
+                    alt="Membre de l'équipe Xiri"
+                    width={72}
+                    height={72}
+                    class="w-[72px] h-[72px] rounded-full object-cover ring-2 ring-xiri-gold -ml-3"
+                />
+                <div class="w-[72px] h-[72px] rounded-full bg-xiri-navy/8 ring-2 ring-xiri-gold flex items-center justify-center -ml-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-xiri-navy/25" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>

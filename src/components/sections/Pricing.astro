@@ -59,11 +59,11 @@ const plans = [
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 md:[grid-template-rows:auto_auto_auto_1fr_auto]">
             {
                 plans.map((plan) => (
                     <div
-                        class={`relative p-7 md:p-8 border flex flex-col rounded-2xl ${
+                        class={`relative p-7 md:p-8 border flex flex-col md:grid md:[grid-template-rows:subgrid] md:row-span-5 rounded-2xl ${
                             plan.recommended
                                 ? "bg-xiri-navy text-white border-xiri-gold/40 shadow-[0_24px_60px_-20px_rgba(27,43,68,0.55)]"
                                 : "bg-white text-xiri-navy border-xiri-navy/10"
